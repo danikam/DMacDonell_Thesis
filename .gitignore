@@ -1,0 +1,6 @@
+*.aux
+*.cb
+*.cb2
+*.log
+*.out
+*/*.aux
