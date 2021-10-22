@@ -8,8 +8,8 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
       - run: |
+          pwd
           . make_thesis.sh
-         
       - uses: actions/upload-artifact@v2
         with:
           name: thesis_pdf
