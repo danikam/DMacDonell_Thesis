@@ -8,8 +8,10 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
       - run: |
-          . make_thesis.sh
-         
+          pdflatex DMacDonell_Thesis.tex
+          bibtex DMacDonell_Thesis
+          pdflatex DMacDonell_Thesis.tex
+          pdflatex DMacDonell_Thesis.tex
       - uses: actions/upload-artifact@v2
         with:
           name: thesis_pdf
