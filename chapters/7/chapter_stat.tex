@@ -1,3 +1,23 @@
 \startchapter{Statistical Framework}
 \label{chapter:stat}
 
+\begin{itemize}
+\item Presentation of likelihood function to be maximized in fit, and definition of each component of the likelihood.
+\begin{itemize}
+\item Present the strategy used to continuously interpolate changes in the binned yields going into the likelihood function associated with varying each NP.
+\item Explain how NPs associated with statistical and systematic uncertainties are constrained using Gaussian constraint functions in the likelihood.
+\item Present the methods used in HistFitter to handle different types of uncertainty in the fit
+\begin{itemize}
+\item Global normalization uncertainties
+\item Correlated uncertainties of shape and normalization
+\item Statistical uncertainty in each bin associated with MC simulation
+\end{itemize}
+\end{itemize}
+\item Presentation of how normalization factors for the \wjets and \ttbar backgrounds are constrained in the CRs using a background-only fit and extrapolated to the SRs. 
+\item Discussion of the evaluation of transfer factor systematics for the \wjets and \ttbar backgrounds to account for the above normalization constraint and extrapolation procedure.
+\item Presentation of the discovery test to be done after unblinding $\rightarrow$ check if any fits for signal strength with unblinded data produce a statistically significant inconsistency with 0.
+\item Presentation of the profiled log-likelihood ratio $q_{\mu_\text{sig}}$, and description of how $q_{\mu_\text{sig}}$ is used to calculate a p-value for the exclusion hypothesis test (in case no significant excess found in the discovery test).
+\item Discussion of the use of the asymptotic formula to avoid the need to throw random pseudo-experiments when evaluating the p-value, and its regime of validity ($>\mathcal{O}(5)$ events per bin).
+\item Brief discussion of the CLs method for limit setting.
+\item Description of how the limits are presented in the \ms vs. $m_{Z'}$ plane.
+\end{itemize}

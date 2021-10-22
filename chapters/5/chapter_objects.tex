@@ -1,3 +1,54 @@
 \startchapter{Object Definitions, Triggers and Event Selection}
 \label{chapter:objects}
 
+\begin{itemize}
+\item Object Definitions (propose to roughly follow structure presented in support note)
+\begin{itemize}
+\item Electrons
+\item Muons
+\item Small-radius \aktfour jets
+\item TAR jets
+\item Overlap Removal
+\item \met
+\item Dark Higgs candidate mass \ms
+\end{itemize}
+
+\item Trigger
+\begin{itemize}
+\item State the trigger combination used for the search (\met OR single muon)
+\item Show trigger efficiency curves for \met only and \met OR single muon to show that the (OR single muon) is a necessary addition in the muon channel to achieve 100\% sensitivity.
+\item Explain why \met trigger alone is insufficient in the muon channel due the exclusive use of calorimeter information by the ATLAS \met trigger.
+\end{itemize}
+
+\item Event Selections
+\begin{itemize}
+\item High level discussion of why we apply event selections, and goals for optimal signal region definition.
+\begin{itemize}
+\item Broadly: maximize predicted signal content and minimize simulated background content, while maintaining sufficient MC and data statistics to enable a meaningful comparison between MC and data.
+\item Prioritize optimization of signal points near the edge of expected search sensitivity. 
+\item Keep signal region blind during optimization to avoid biasing selection.
+\end{itemize}
+\item Introduce variables used for event selection. Distinguish between variables that are optimized (eg. \mtlepmet) vs. fixed (eg. 1-lepton requirement) during optimization.
+\item Present concept and implementation of signal region optimization strategy.
+\item High-level discussion of why we define CRs to constrain normalizations of dominant \wjets and \ttbar backgrounds.
+\begin{itemize}
+\item Provides data-driven normalization constraint which can be extrapolated to the signal region (more details on extrapolation procedure in Chapter 7)
+\item Reduces the impact of (and reliance on) theoretical uncertainties involved in simulating the correct normalizations for these backgrounds. Emphasize the difficulty involved with assigning reliable theoretical uncertainties, and hence the value of using data-driven constraints.
+\end{itemize}
+\item Summary of design goals for control region
+\begin{itemize}
+\item High purity of background of interest.
+\item Orthogonal to SR.
+\item Phase space kinematically similar to SR.
+\item Signal contamination negligible compared with uncertainty of total background yield.
+\end{itemize}
+\item Present the \wjets control region, and motivate the \dR reversal used to define it.
+\item Present the \ttbar control region, and motivate the \bjet veto reversal used to define it.
+\item Present the additional modifications that were needed in the \merged category to optimize the CR definitions
+\begin{itemize}
+\item Reducing the lower bound on \metsig to boost stats.
+\item Increasing the lower bound on \dR in the \wjets CR to reduce the signal contamination to an acceptable level.
+\end{itemize}
+\item Summary of all analysis regions.
+\end{itemize}
+\end{itemize}
