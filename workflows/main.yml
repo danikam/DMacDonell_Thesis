@@ -1,0 +1,16 @@
+name: phd_thesis
+on: push
+jobs:
+  make_thesis:
+    runs-on: ubuntu-latest
+    container: blang/latex:ubuntu
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+      - run: |
+          make_thesis.sh
+         
+      - uses: actions/upload-artifact@v2
+        with:
+          name: thesis_pdf
+          path: DMacDonell_thesis.pdf

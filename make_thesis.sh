@@ -1,2 +1,3 @@
 rm DMacDonell_Thesis.aux DMacDonell_Thesis.log DMacDonell_Thesis.out
 pdflatex DMacDonell_Thesis.tex
+pdflatex DMacDonell_Thesis.tex
