@@ -8,7 +8,7 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
       - run: |
-          make_thesis.sh
+          . make_thesis.sh
          
       - uses: actions/upload-artifact@v2
         with:
