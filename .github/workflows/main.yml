@@ -15,4 +15,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: thesis_pdf
-          path: DMacDonell_thesis.pdf
+          path: DMacDonell_Thesis.pdf
