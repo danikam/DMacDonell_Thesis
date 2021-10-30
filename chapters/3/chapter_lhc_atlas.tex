@@ -38,7 +38,7 @@ Figure \ref{fig:ATLAS_xsections} shows a summary of cross sections for the produ
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Figures/3/ATLAS_xsections.png}
+	\includegraphics[width=0.9\textwidth]{Figures/3/ATLAS_xsections.png}
 	\caption[]{Summary of Standard Model cross sections for particle production processes measured by the ATLAS detector. Figure from $\copyright$ \cite{ATL-PHYS-PUB-2021-032}.}
 	\label{fig:ATLAS_xsections}
 \end{figure}
@@ -54,38 +54,116 @@ Unstable particles produced by the parton collisions will subsequently decay to 
 	\label{fig:W_decays}
 \end{figure}
 
-\section{Experiments at the LHC}
+\section{Detectors at the LHC}
 
 The DM search presented in this thesis uses data collected from the ATLAS (A Toroidal LHC ApparatuS) detector \cite{atlas}. ATLAS is one of four particle detectors at the LHC which are designed to measure the energetic debris of particles produced by high energy particle collisions to perform precision measurements of the SM and search for new physics using the resulting particle collision data. This section briefly introduces each of the four particle detectors at the LHC, and what each contributes to the LHC physics programme.
 
-The two largest, \textbf{ATLAS} (A Toroidal LHC ApparatuS) \cite{atlas} and \textbf{CMS} (Compact Muon Solenoid) \cite{cms}, are both general-purpose detectors designed to record all SM decay products from the collisions, with the exception of neutrinos which pass through due to their very low interaction cross sections. Thanks to their near-complete detection of decay products, data from these detectors can be used to study a wide range of physics processes resulting from the collisions, including both measurements of the SM and searches for new physics beyond the SM. While the physics goals of these two detectors are very similar, they are accomplished using different detector designs and technologies, and as such they are able to produce complementary physics studies.
+The two largest, \textbf{ATLAS} (A Toroidal LHC ApparatuS) \cite{atlas} and \textbf{CMS} (Compact Muon Solenoid) \cite{cms}, are both general-purpose detectors designed to record all SM decay products from the collisions, with the exception of neutrinos which pass through due to their very low interaction cross sections. Thanks to their near-complete detection of decay products, data from these detectors can be used to study a wide range of physics processes resulting from the collisions, including both measurements of the SM and searches for new physics beyond the SM. By taking a general-purpose approach, rather than specializing in the study of one particular collision or decay process, these experiments seek to maintain sensitivity to the broadest possible range of particle processes, in the hopes of allowing physicists to detect and measure new physics processes in whatever form they may take. While the physics goals of these two detectors are very similar, they are accomplished using different detector designs and technologies, and as such they are able to produce complementary physics studies.
 
 The Large Hadron Collider beauty (LHCb) detector \cite{LHCb} is designed to measure heavy quark ($b$ and $c$) decays resulting from proton-proton collisions. Precise measurement of heavy quark decays are of particular interest for the study of CP violation in the SM, and in the search for potential sources of CP violation beyond the SM. Rather than providing full coverage of all collision products, the LHCb detector is comprised of a series of sub-detectors which provide ``forward angle" coverage to detect particles produced with a large boost along the direction of one of the two proton beams. This forward region is of particular interest for measurements of heavy quark decays, because this is the angular region in which heavy quark pairs are predominantly produced at high collision energy collisions.
 
-A Large Ion Collider Experiment (ALICE) is designed to measure the products of heavy-ion collisions produced during special LHC runs in which the proton beams are replaced by Pb beams, which are collided a a centre of mass energy of 5 TeV. The high-energy Pb collisions produce a sufficiently high temperature and density to form an unbound state of quarks and gluons known as ``quark-gluon plasma". The study of this exotic sta
-
+A Large Ion Collider Experiment (ALICE) \cite{ALICE} is designed to measure the products of heavy-ion collisions produced during special LHC runs in which the proton beams are replaced by Pb beams, which are collided a a centre of mass energy of 5 TeV. The high-energy Pb collisions produce a sufficiently high temperature and density to form an unbound state of quarks and gluons known as ``quark-gluon plasma" which would have occurred in the early universe. The study of this exotic state could give novel insights into the theory of quantum chromodynamics, including the phenomena of quark confinement and chiral-symmetry restoration \cite{quark_confinement, Karsch:845568}.
 
 
 \section{Introduction to the ATLAS detector}
 
-The ATLAS detector, shown schematically in figure \ref{fig:detector}, provides full 4$\pi$ coverage around the interaction point, with the exception of the beam pipe. It consists of several layers of sub-detectors, each of which is specialized for recording certain kinematic information and particle types. The sub-detectors are described in some detail below. 
+Introduction to the ATLAS detector, giving an idea of its scale and significance as one of the two general purpose particle detectors at the LHC (enables a wide range of physics measurement and search programmes; complementarity with CMS).
 
-\begin{itemize}
-\item Introduction to the ATLAS detector, giving an idea of its scale and significance as one of the two general purpose particle detectors at the LHC (enables a wide range of physics measurement and search programmes; complementarity with CMS).
-\item Inner detector $\rightarrow$ discussion of charged particle tracking will be relevant for later description of TAR jet reconstruction (may want to point that out already).
-\item Calorimeters $\rightarrow$ emphasize distinction between small- and large-radius jets, and between electromagnetic and hadronic showers. 
-\begin{itemize}
-\item Talk about electron detection after/during the description of the EM calorimeter (should have all needed info since the inner tracker has already been discussed). 
-\end{itemize}
-\item Muon spectrometer for muon detection $\rightarrow$ emphasize that muons pass through the other sub-detectors. 
-\item \met 
-\begin{itemize}
-\item Define \met here, now that all sub-detectors have been described. This intro to \met will be needed for the discussion of the \met trigger in the next section.
-\item Shouldn't need to go into too much detail on the objects involved in \met reconstruction, since this will be covered in more detail in Chapter 5.
-\end{itemize}
-\item Trigger system 
-\begin{itemize}
-\item Discuss the relatively enormous cross sections of soft QCD processes $\rightarrow$ emphasize that much of the trigger design and data selections are devoted to reducing this soft QCD background to focus on the rarer physics processes of interest for measurements/searches. 
-\item Otherwise, focus on the \met trigger, and mention that it only uses info from the calorimeter (relevant for later presentation of our use of the \met OR single muon trigger).
-\end{itemize}
-\end{itemize}
+The ATLAS detector \cite{atlas}, shown schematically in figure \ref{fig:detector}, is the largest detector by volume to have been built at any particle collider, with a length of 44 m and a height of 25 m, constituting a total weight of approximately 7,000 tonnes. The tremendous amount of detector material is needed to absorb and measure the highly energetic decay products of the proton-proton collisions with sufficient resolution to enable a detailed reconstruction of the particles involved and their kinematic properties. Such a complete and detailed reconstruction of the collisions and subsequent decay processes enable physicists to carry out the impressive range of physics goals shared by the ATLAS and CMS collaborations. These goals include precision measurements of the SM, which profit both from the enormous collision rate, and from the large centre of mass collision energy which enables on-shell production of all known SM particles. The detector is also designed to be sensitive to as wide a range of new physics signatures as possible. Particular emphasis was placed on designing the detector to be sensitive to the anticipated production modes of the Higgs boson, which was jointly discovered by the ATLAS and CMS collaborations in 2012 \cite{atlas_higgs, cms_higgs}. 
+
+The detector provides full 4$\pi$ coverage around the proton-proton interaction point, with the exception of the beam pipe. It consists of several layers of sub-detectors, each of which is specialized for recording specific kinematic information and particle types. The sub-detectors are described in some detail in the following sections.
+
+The ATLAS detector is described spatially using the standard coordinate system of $(x,y,z)$ coordinates and ($\theta$, $\phi$) angles shown in Figure \ref{fig:coord_system}. The origin of the coordinate system is placed at the interaction point of the colliding proton beams, and the z axis lies along the beam line. The angle of a particle or detector component in the plane transverse to the beam line is given by the angle $\phi$, and the angle relative to the beam line is given by $\theta$. The ``pseudorapidity" $\eta$ is a quantity related $\theta$ according to:
+
+\begin{equation}
+\label{eq:pseudorapidity}
+\eta=-\ln\Big[\tan\Big(\frac{\theta}{2}\Big)\Big]
+\end{equation}
+
+Pseudorapidity is often used rather than $\theta$ because differences $\Delta\eta$ in pseudorapidity are invariant under Lorentz boosts.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{Figures/3/detector.jpg}
+	\caption[]{Schematic diagram of the ATLAS detector. Figure from $\copyright$ \cite{atlas}}
+	\label{fig:detector}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+	\includegraphics[width=0.9\textwidth]{Figures/3/detector.jpg}
+	\caption{ATLAS Detector}
+	\label{fig:detector}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+	\includegraphics[width=0.8\textwidth]{Figures/3/ATLAS_coordinate_system.png}
+	\caption{Standard coordinate system for the ATLAS Detector}
+	\label{fig:coord_system}
+	\end{subfigure}
+	\caption[]{Left: Schematic diagram of the ATLAS detector (figure from $\copyright$ \cite{atlas}). Right: Standard coordinate system used for the ATLAS detector.}.
+	\label{fig:detector}
+\end{figure}
+
+\subsection{The Inner Detector}
+
+Inner detector $\rightarrow$ discussion of charged particle tracking will be relevant for later description of TAR jet reconstruction (may want to point that out already).
+
+The inner detector (ID), located nearest the beam pipe, is specialized for charged particle tracking. It is immersed in a 2T magnetic field oriented parallel to the beam pipe, which bends the trajectories (``tracks") of electrically charged particles as they pass through the field. Three distinct but complementary high-resolution tracking technologies are employed along with pattern recognition tools to map the trajectories of charged particles passing through the ID. The tracking is accomplished with as little material as possible in the ID, such that the trajectories of particles can be mapped with minimal energy absorption before they reach the calorimeters \cite{id_thesis}. 
+
+Tracks from the inner detector are reconstructed by assembling clusters of ``hits" in channels of the ID tracking layers \cite{electron_reco}. The reconstructed tracks are a critical component of vertex reconstruction, and the degree of bending and direction of the bent tracks at the production vertex provide information about the momentum, charge, and identity of the charged particles that produced them. 
+
+
+\subsection{The Calorimeters}
+
+Calorimeters $\rightarrow$ emphasize distinction between small- and large-radius jets, and between electromagnetic and hadronic showers. 
+
+The calorimeter is designed to measure the energy of all particles which pass through it by initiating cascades of secondary particle production in the high-density detector material known as ``showers", and fully absorbing the energy of each shower. The only particles which cannot be absorbed by the calorimeter are muons and neutrinos, which pass through without showering. The calorimeter is divided into two sub-detectors, the electromagnetic and hadronic calorimeters. Both are ``sampling calorimeters", which means they are comprised of repeated layers of dense absorbing material with ``sampling" layers in between. The sampling layers track the location of the shower and record a small fraction of its energy, to which a calibration factor can be applied to infer the full shower energy. 
+
+\subsubsection{Electromagnetic Calorimeter}
+
+Talk about electron detection after/during the description of the EM calorimeter (should have all needed info since the inner tracker has already been discussed). 
+
+The electromagnetic (EM) calorimeter forms the inner calorimeter layer, and is designed to fully absorb and measure the energies of electrons, positrons and photons. Energy is primarily deposited in the lead absorbing layers in the form of EM showers \cite{em_showers}, in which the initial electron or photon interacts with the absorbing material to produce a cascade of photon radiation and electron pair production. The sampling layers are filled with liquid argon (LAr), which absorbs relatively little energy compared with the lead absorbing layers due to its lower density. Ionization is produced when a charged particle passes through the LAr \cite{em_cal} layer, which drifts through an electric field generated by a high voltage placed between absorber plates and readout electrodes on either end of the LAr layer to produce a triangular current pulse \cite{LAr_calo}. 
+
+Candidate EM showers (``clusters") are reconstructed from energy deposits in calorimeter cells using a ``seed-cluster" algorithm described in Ref. \cite{electron_reco}. The seed-cluster algorithm works by dividing the $\eta\times\phi$ space of the EM calorimeter into a grid of $\eta\times\phi=0.025\times0.025$ solid angle elements called ``towers". For each such element, the energy detected in all the calorimeter layers which lie within the given patch of solid angle is summed to form the energy of the tower. A sliding window algorithm of size $3\times5$ towers is used to construct energy clusters which constitute EM clusters from localized energy deposits.
+
+\textbf{Electron reconstruction}
+
+Reconstruction and selection of electron candidates \cite{electron_reco} is performed with the use of a complex matching algorithm to match candidate reconstructed tracks in the ID with EM clusters in the calorimeter based on their proximity in $\eta\times\phi$ space. This matching is complicated by the fact that electrons may radiate photons via bremsstrahlung in the ID prior to reaching the calorimeters. The radiated photons can subsequently decay into an electron-positron pair, which themselves can generate tracks in the ID. As a result, it is possible to reconstruct multiple tracks in the ID, all originating from the same electron, and match these tracks to EM clusters in the calorimeter. In case several tracks in the ID can be matched to the same EM cluster, the track considered to be associated with the primary electron is selected by an algorithm that accounts for, among other quantities, the number of hits in the ID and the distance in $(\eta, \phi)$ between the tracks extrapolated into the calorimeter and the barycentre of the EM cluster. 
+
+Reconstructed objects selected as electron candidates are subsequently passed through a likelihood-based electron identification algorithm, described in detail in Section 6 of Ref. \cite{electron_reco}, which uses as a discriminant the ratio 
+
+\begin{equation}
+\label{eq:electron_likelihood_id_discriminant}
+d_L = \frac{L_S}{L_S+L_B}
+\end{equation}
+
+Where the likelihood function $L_S(B)$ is a product of signal (background) PDFs for various quantities related to the reconstructed object such as track conditions, details of the track-cluster matching, and reconstructed EM shower widths for the EM cluster in various layers of the EM calorimeter. The signal is prompt electrons, and the background is a combination of jets that mimic prompt electron signatures, electrons from photon conversions in the detector and non-prompt electrons originating from hadron decays.
+
+\subsubsection{Hadronic Calorimeter}
+
+The hadronic calorimeter surrounds the EM calorimeter, and is designed to fully absorb and measure hadronic showers, also known as ``jets", initiated by hadrons, which can pass through the EM calorimeter without showering due to their relatively long interaction length \cite{atlas}. Unlike the EM showers described above which proceed exclusively via electromagnetic interactions, hadronic showers proceed via both the strong and EM interactions, and as a result are in general more variable and less localized. 
+
+The hadronic calorimeter is comprised of a tile calorimeter which encircles the EM calorimeter barrel, and a LAr calorimeter with copper and tungsten absorbers in the end-cap region which encloses the two ends of the barrel. The tile calorimeter uses steel as the absorber material and scintillators read out by photomultiplier tubes (PMTs) in the sampling layers. 
+
+Candidate hadronic jets are 
+
+\textbf{Reconstruction of hadronic jets}
+
+Hadronic jets are 
+
+\subsection{The Muon Spectrometer}
+
+Muon spectrometer for muon detection $\rightarrow$ emphasize that muons pass through the other sub-detectors. 
+
+The muon spectrometer \cite{atlas} surrounding the calorimeter is specialized for tracking muons and measuring their momentum. It employs the same principle used in the inner detector of applying a strong magnetic field and measuring the resulting bent trajectories of the electrically charged muons passing through to infer their momentum. 
+
+The magnetic field is generated by rectangular superconducting ``toroid magnets" arranged azimuthally in radial planes around the beam axis, which set up a toroidal field concentric to the beam axis. In the region containing the strong field established by the toroid magnets, muon tracks are recorded by three cylindrical layers of muon tracking chambers in the barrel region and three layers of chambers arranged in wheels perpendicular to the beam axis in the end-cap region. 
+%Additional layers of fast trigger chambers deliver muon track information to the ATLAS trigger system so it can be incorporated into the event readout decision. 
+
+\subsection{The Trigger System}
+
+Discuss the relatively enormous cross sections of soft QCD processes $\rightarrow$ emphasize that much of the trigger design and data selections are devoted to reducing this soft QCD background to focus on the rarer physics processes of interest for measurements/searches. 
+
+Otherwise, focus on the \met trigger, and mention that it only uses info from the calorimeter (relevant for later presentation of our use of the \met OR single muon trigger).
