@@ -116,11 +116,9 @@ Tracks from the inner detector are reconstructed by assembling clusters of ``hit
 
 \subsection{The Calorimeters}
 
-Calorimeters $\rightarrow$ emphasize distinction between small- and large-radius jets, and between electromagnetic and hadronic showers. 
-
 The calorimeter is designed to measure the energy of all particles which pass through it by initiating cascades of secondary particle production in the high-density detector material known as ``showers", and fully absorbing the energy of each shower. The only particles which cannot be absorbed by the calorimeter are muons and neutrinos, which pass through without showering. The calorimeter is divided into two sub-detectors, the electromagnetic and hadronic calorimeters. Both are ``sampling calorimeters", which means they are comprised of repeated layers of dense absorbing material with ``sampling" layers in between. The sampling layers track the location of the shower and record a small fraction of its energy, to which a calibration factor can be applied to infer the full shower energy. 
 
-\subsubsection{Electromagnetic Calorimeter}
+\subsubsection{The Electromagnetic Calorimeter}
 \label{sec:EM_calo}
 
 Talk about electron detection after/during the description of the EM calorimeter (should have all needed info since the inner tracker has already been discussed). 
@@ -142,7 +140,7 @@ d_L = \frac{L_S}{L_S+L_B}
 
 Where the likelihood function $L_S(B)$ is a product of signal (background) PDFs for various quantities related to the reconstructed object such as track conditions, details of the track-cluster matching, and reconstructed EM shower widths for the EM cluster in various layers of the EM calorimeter. The signal is ``prompt" electrons, which originate from the primary interaction, and the background is a combination of jets that mimic prompt electron signatures, electrons from photon conversions in the detector and non-prompt electrons originating from hadron decays.
 
-\subsubsection{Hadronic Calorimeter}
+\subsubsection{The Hadronic Calorimeter}
 
 The vast majority of collision events that occur in the ATLAS detector ultimately result in the production of quarks and gluons. Due to the phenomenon of colour confinement, quarks and gluons cannot exist in isolation, and immediately ``hadronize" to form colour-neutral combinations of quarks called ``hadrons". As these hadrons pass through the detector, they eventually undergo a showering process similar in principle to the EM showers described in Section \ref{sec:EM_calo}. In the case of these ``hadronic showers", the shower is initiated by the strong interaction of a hadron with the detector material to produce a cascade of secondary hadrons \cite{shower_theory}. Unlike the EM showers which proceed exclusively via electromagnetic interactions, hadronic showers proceed via both the strong and EM interactions, where the EM interactions are primarily induced by electromagnetic decays of neutral pions ($\pi^0$) \cite{shower_theory}. Because hadronic showers involve strong interactions, they are in general much more complex in terms of the variety of particles and mechanisms involved in the showering, and as a result are in general more variable and less localized compared with EM showers.
 
@@ -152,21 +150,31 @@ The hadronic calorimeter surrounds the EM calorimeter, and is designed to fully 
 
 Hadronic showers are reconstructed as ``jets" using clusters of energy deposited in the hadronic calorimeter cells \cite{jet_reco}. The jets can be reconstructed within a range of angular radii, and can make use of different reconstruction algorithms depending on the use case. 
 
-Most jet reconstruction algorithms use clusters of topologically connected calorimeter cells known as ``topo-clusters" as basic building blocks for jet reconstruction. Topo-clusters are designed with the goal of extracting significant signals of energy deposits originating from energetic quarks and gluons from the background of detector noise and other sources of fluctuation in the calorimeter cells. Candidate clusters are formed from ``seed cells" in which the deposited energy $E$ is $E>S\sigma_\text{cell}$, where \sigma is the average noise for the given cell and $S$ is the ``seed threshold" significance, set to 4 by default \cite{topo_cell_clustering}, and collecting neighbouring cells with energy $E>N\sigma_\text{cell}$, where $N$ is the ``growth threshold", set to 2 by default. If a neighbouring cell passes the $E>N\sigma_\text{cell}$ requirement, its neighbours will also be added to the cluster if their energy significance exceeds the growth threshold, and this process repeats until there are no remaining neighbouring cells with significance above the growth threshold. 
+Most jet reconstruction algorithms use clusters of topologically connected calorimeter cells known as ``topo-clusters" as basic building blocks for jet reconstruction. Topo-clusters are designed with the goal of extracting significant signals of energy deposits originating from energetic quarks and gluons from the background of detector noise and other sources of fluctuation in the calorimeter cells. Candidate clusters are formed from ``seed cells" in which the deposited energy $E$ is $E>S\sigma_\text{cell}$, where $\sigma$ is the average noise for the given cell and $S$ is the ``seed threshold" significance, set to 4 by default \cite{topo_cell_clustering}, and collecting neighbouring cells with energy $E>N\sigma_\text{cell}$, where $N$ is the ``growth threshold", set to 2 by default. If a neighbouring cell passes the $E>N\sigma_\text{cell}$ requirement, its neighbours will also be added to the cluster if their energy significance exceeds the growth threshold, and this process repeats until there are no remaining neighbouring cells with significance above the growth threshold. 
 
-Jets are reconstructed using these topo-clusters 
+Jets are reconstructed using these topo-clusters using the anti-$k_t$ clustering algorithm described in Ref. \cite{akt_algo} in a cone with an angular radius $R$ in $(eta, phi)$ space, given by:
+
+\begin{equation}
+\label{eq:jet_radius}
+R = \sqrt{\eta^2 + \phi^2}
+\end{equation}
+
+The jet radius $R$ determines the angular radius within which the anti-$k_t$ algorithm will include calorimeter deposits in the vicinity of a topo-cluster or a set of topo-clusters to group the energy deposits into jets. Different choices of $R$ can be used in the algorithm depending on the identity and kinematics of the shower parent particle(s) that one is interested in reconstructing \cite{jet_reco}. Jets produced by quarks and gluons which either originate from different parent particles, or whose shared parent particle is has a relatively low momentum in the lab frame (a.k.a. ``low boost"), generally have sufficient angular separation that they can be individually reconstructed using relatively small radius parameters such as $R=0.2$ or $R=0.4$. 
+
+Jets which originate from boosted hadronically decaying massive particles, such as the hadronically decaying $W$ boson in the search presented in this paper, generally contain two or more significant topo-clusters (a.k.a. ``prongs") in close angular proximity, each having been induced by the hadronization of a strongly interacting daughter particle produced by the hadronic decay of the massive parent particle. In this latter case, the angular proximity of these significant topo-clusters can make it challenging to usefully reconstruct them as individual small-radius jets due to the resulting jet overlap. In such cases, it may be more useful to capture all the decay products in a single jet reconstructed with a larger radius parameter such as $R=0.8$ or $R=1.0$, such that the resulting large-radius jet fully reconstructs the massive parent particle. Methods such as the TAR algorithm \cite{TAR_algo} employed in this analysis are subsequently applied to the reconstructed large-radius jet to obtain useful jet sub-structure information, such as the likely number of prongs contained within the jet.
 
 \subsection{The Muon Spectrometer}
 
 Muon spectrometer for muon detection $\rightarrow$ emphasize that muons pass through the other sub-detectors. 
 
-The muon spectrometer \cite{atlas} surrounding the calorimeter is specialized for tracking muons and measuring their momentum. It employs the same principle used in the inner detector of applying a strong magnetic field and measuring the resulting bent trajectories of the electrically charged muons passing through to infer their momentum. 
+The muon spectrometer \cite{atlas} surrounding the calorimeter is specialized for tracking muons and measuring their momentum. It employs the same principle used in the inner detector of applying a strong magnetic field and measuring the resulting bent trajectories of the electrically charged muons passing through to infer their momenta. 
 
-The magnetic field is generated by rectangular superconducting ``toroid magnets" arranged azimuthally in radial planes around the beam axis, which set up a toroidal field concentric to the beam axis. In the region containing the strong field established by the toroid magnets, muon tracks are recorded by three cylindrical layers of muon tracking chambers in the barrel region and three layers of chambers arranged in wheels perpendicular to the beam axis in the end-cap region. 
-%Additional layers of fast trigger chambers deliver muon track information to the ATLAS trigger system so it can be incorporated into the event readout decision. 
+The magnetic field is generated by rectangular superconducting ``toroid magnets" arranged azimuthally in radial planes around the beam axis, which sets up a toroidal field concentric to the beam axis. In the region containing the strong field established by the toroid magnets, muon tracks are recorded by three cylindrical layers of muon tracking chambers in the barrel region and three layers of chambers arranged in wheels perpendicular to the beam axis in the end-cap region. Additional layers of fast trigger chambers deliver muon track information to the ATLAS trigger system so it can be incorporated into the event readout decision. 
 
 \subsection{The Trigger System}
 
 Discuss the relatively enormous cross sections of soft QCD processes $\rightarrow$ emphasize that much of the trigger design and data selections are devoted to reducing this soft QCD background to focus on the rarer physics processes of interest for measurements/searches. 
 
 Otherwise, focus on the \met trigger, and mention that it only uses info from the calorimeter (relevant for later presentation of our use of the \met OR single muon trigger).
+
+
