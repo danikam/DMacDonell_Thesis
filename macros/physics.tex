@@ -3,6 +3,7 @@
 \newcommand*{\metvec}{\ensuremath{\vec{E}_\text{T}^\text{miss}} }
 \newcommand*{\pT}{\ensuremath{p_{\text{T}}}\xspace}
 \newcommand*{\pt}{\ensuremath{p_{\text{T}}}\xspace}
+\newcommand*{\Zprime}{\ensuremath{Z^\prime}\xspace}
 
 % ATLAS jets standard terms
 \newcommand*{\kt}{\ensuremath{k_{t}}\xspace}
@@ -23,6 +24,8 @@
 \newcommand*{\pp}{\ensuremath{pp}\xspace}
 \newcommand*{\antibar}[1]{\ensuremath{#1\bar{#1}}\xspace}
 \newcommand*{\ms}{\ensuremath{m_s}\xspace}
+\newcommand*{\mchi}{\ensuremath{m_{\chi}}\xspace}
+\newcommand*{\mZp}{\ensuremath{m_{\Zprime}}\xspace}
 \newcommand*{\merged}{``merged''\xspace}
 \newcommand*{\resolved}{``resolved''\xspace}
 \newcommand{\wjets}{\ensuremath{W\!+\!{\mathrm{jets}}}\xspace}
@@ -47,3 +50,19 @@
 \newcommand*{\NTAR}{\ensuremath{N (\text{TAR Jets})}\xspace}
 \newcommand*{\Njets}{\ensuremath{N (\text{Jets})}\xspace}
 \newcommand*{\mtop}{\ensuremath{m_\text{top}}\xspace}
+
+% ATLAS generator shorthands
+% +--------------------------------------------------------------------+
+% |  Monte Carlo generators                                            |
+% +--------------------------------------------------------------------+
+% Set up generic command for MC with optional version number
+%%% e.g. \PYTHIA[8] -> Pythia 8
+\NewDocumentCommand {\AtlasMC} { o m } {%
+  \IfNoValueTF {#1} {%
+    \textsc{#2}\xspace%
+  }{%
+    \textsc{#2}\,#1\xspace%
+  }%
+}
+\NewDocumentCommand {\MGNLO} { o } {\AtlasMC[#1]{MadGraph5\_aMC@NLO}}
+
