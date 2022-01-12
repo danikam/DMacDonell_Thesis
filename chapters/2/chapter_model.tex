@@ -114,12 +114,113 @@ Figure \ref{fig:Feynman_DH} shows three Feynman diagrams \textcolor{red}{(Note t
 
 \section{Theoretical Motivation for the Dark Higgs Model}
 
-Given that the particles of the SM acquire mass via their interaction with the Higgs field \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3}, the hypothetical ``Dark Higgs" field - and its associated particle the DH boson - is motivated by the need to likewise generate masses of particles in the dark sector. Furthermore, by virtue of its role as a portal mediator between dark sector and SM particles, the DH boson opens up a new mechanism by which processes of annihilation and creation between DM and SM particles could take place in the early Universe. According to the thermal freeze-out hypothesis discussed in Chapter 1, these creation and annihilation processes would have produced thermal equilibrium between SM particles and the dark sector in the early Universe \cite{DM_earlyUniverse}, which set the DM relic abundance observed in the Universe today. 
+Given that the particles of the SM acquire mass via their interaction with the Higgs field \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3}, the hypothetical ``Dark Higgs" field - and its associated particle the DH boson - is motivated by the need to likewise generate masses of particles in the dark sector. More generally, the existence of so-called portal mediators which enable interactions between dark sector and SM particles is motivated by theoretical arguments, discussed in Chapter \ref{chapter:introduction} \textcolor{red}{(Note to Bob/self: will point to specific section presenting the thermal freeze-out hypothesis once it's written)}, for the presence of thermal equilibrium between DM and SM particles in the early Universe \cite{DM_earlyUniverse}, which would be established by creation and annihilation processes between the two sectors. The present-day relic abundance of DM, set at the time of thermal freeze-out, places constraints on the details of these creation and annihilation processes. The hypothesized DH boson would open up a new mechanism for portal interactions between DM and SM particles. As discussed in the following section, this new mechanism allows for a relaxation of constraints from the DM relic abundance compared with simpler models in which portal interactions are limited to those mediated by a vector boson mediator (the so-called \Zprime). 
 
-\subsection{Experimental Constraints on Direct DM Annihilation to SM Particles} 
+\subsection{Constraints on Generic \Zprime Mediator Models} 
 
-This section presents the current experimental constraints on models which predict the establishment of the observed relic abundance of DM via direct creation and annihilation processes between DM and SM particles. This is followed by a discussion of how the experimental constraints can be relaxed by the introduction of a new annihilation channel \(\chi\chi \rightarrow ss\) followed by decays of \(s\) to SM particles, which arises naturally if particles in the dark sector obtain their mass by interacting with a new Higgs field in the dark sector.   
+In addition to providing a mechanism by which particles acquire mass in the dark sector, the introduction of a new Higgs boson in the dark sector is motivated by strong theoretical and experimental constraints \cite{Zprime_portal_gen, Zprime_portal_LHC} on the more generic simplified model in which portal interactions between the dark sector and the DM are mediated exclusively by a  vector boson mediator - the so-called \Zprime. Removing the emission of the DH \(s\) from the contributing Feynman diagrams of the DH model in Figure \ref{fig:Feynman_DH} reduces all three to the generic ``s-channel" signature for DM production at the LHC via the \Zprime mediator, shown in Figure \ref{fig:Feynman_Zprime_DM}. 
 
+\begin{figure}[hp]
+	\centering
+\begin{subfigure}[t]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/2/FeyZprime.pdf}
+%		\begin{tikzpicture}
+%			\begin{feynman}
+%
+%		 		\vertex (b1);
+%		 		\vertex at ($(b1) + (-0.75cm, 1cm)$) (a1); %q
+%		 		\vertex at ($(b1) + (-0.75cm, -1cm)$) (a2); %qbar
+%				\vertex at ($(b1) + (1.5cm, 0cm)$) (c1); %Z'
+%				\vertex at ($(c1) + (0.75cm, -1cm)$) (d1); %chi
+%				\vertex at ($(c1) + (0.75cm, 1cm)$) (d2); %chi
+%				
+%				\diagram* {
+%				 (a1) -- [fermion, edge label=\(q\)](b1) -- [fermion, edge label=\(\bar{q}\)](a2),
+%				 (b1) -- [boson, edge label=\(Z'\)] (c1),
+%				 (d2) -- [fermion, edge label'=\(\bar{\chi}\)](c1) -- [fermion, edge label'=\(\chi\)](d1);
+%		 		};
+%		 	\end{feynman}
+%		 \end{tikzpicture}
+\caption{Generic DM production}
+\label{fig:Feynman_Zprime_DM}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/2/FeyZprime_dijet.pdf}
+%		\begin{tikzpicture}
+%			\begin{feynman}
+%
+%		 		\vertex (b1);
+%		 		\vertex at ($(b1) + (-0.75cm, 1cm)$) (a1); %q
+%		 		\vertex at ($(b1) + (-0.75cm, -1cm)$) (a2); %qbar
+%				\vertex at ($(b1) + (1.5cm, 0cm)$) (c1); %Z'
+%				\vertex at ($(c1) + (0.75cm, -1cm)$) (d1); %chi
+%				\vertex at ($(c1) + (0.75cm, 1cm)$) (d2); %chi
+%				
+%				\diagram* {
+%				 (a1) -- [fermion, edge label=\(q\)](b1) -- [fermion, edge label=\(\bar{q}\)](a2),
+%				 (b1) -- [boson, edge label=\(Z'\)] (c1),
+%				 (d2) -- [fermion, edge label'=\(\bar{q}\)](c1) -- [fermion, edge label'=\(q\)](d1);
+%		 		};
+%		 	\end{feynman}
+%		 \end{tikzpicture}
+\caption{Dijet resonance}
+\label{fig:Feynman_Zprime_dijet}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/2/FeyZprime_monoX.pdf}
+%		\begin{tikzpicture}
+%			\begin{feynman}
+%
+%		 		\vertex (b1);
+%		 		\vertex at ($(b1) + (-0.75cm, 1cm)$) (a1); %q
+%				\vertex at ($(b1) + (-0.375, 0.5cm)$) (s1); %SM
+%				\vertex at ($(s1) + (0.75, 0.75cm)$) (s2); %SM
+%		 		\vertex at ($(b1) + (-0.75cm, -1cm)$) (a2); %qbar
+%				\vertex at ($(b1) + (1.5cm, 0cm)$) (c1); %Z'
+%				\vertex at ($(c1) + (0.75cm, -1cm)$) (d1); %chi
+%				\vertex at ($(c1) + (0.75cm, 1cm)$) (d2); %chi
+%				
+%				\diagram* {
+%				 (a1) -- [fermion, edge label'=\(q\)](b1) -- [fermion, edge label=\(\bar{q}\)](a2),
+%				 (s1) -- [boson, edge label=X,near end](s2),
+%				 (b1) -- [boson, edge label=\(Z'\)] (c1),
+%				 (d2) -- [fermion, edge label'=\(\bar{\chi}\)](c1) -- [fermion, edge label'=\(\chi\)](d1);
+%		 		};
+%		 	\end{feynman}
+%		 \end{tikzpicture}
+\caption{Mono-X signature}
+\label{fig:Feynman_Zprime_monoX}
+\end{subfigure}
+	\caption{Signatures for DM production and detection via a Z' vector boson mediator at the LHC}
+	\label{fig:Feynman_Zprime}
+\end{figure}
+
+The Z' mediator model is probed at the LHC using either dijet resonance searches \cite{Zprime_portal_gen} in which the \Zprime decays back into a pair of quarks as shown in Figure \ref{fig:Feynman_Zprime_dijet}, or with so-called ``mono-X" searches \cite{Zprime_portal_monojet_dijet} in which a SM particle X is emitted as initial state radiation from one of the colliding quarks, as shown in Figure \ref{fig:Feynman_Zprime_monoX} to produce a signature of SM recoiling against missing transverse momentum due to the undetected DM pair \textcolor{red}{(Note to Bob/self: need to include brief intro to \met in ch. 1)}. 
+
+Dijet resonance searches probe the model by searching for the presence of a resonant peak in the dijet invariant mass spectrum over the background of QCD-induced dijet events that would be induced by the process in Figure \ref{fig:Feynman_Zprime_dijet}. Ref. \cite{Zprime_portal_dijet} presents a combination of dijet searches performed with ATLAS and CMS detectors, as well as an interpretations of the observed absence of any such above-background resonance in the context of the \Zprime mediator model. It is found that for typical choices of the coupling strengths \(g_q\) (\(g_\chi\)) between the \Zprime and quarks (DM), the model is excluded over a wide range of \Zprime masses (\(500~\GeV < \mZp < 3~\TeV\)) over nearly all DM masses up to 2 TeV. A combination mono-jet searches performed by ATLAS and CMS, in which the radiated particle X in Figure \ref{fig:Feynman_Zprime_monoX} is a quark or gluon, is presented in Ref. \cite{Zprime_portal_monojet_dijet}, and likewise excludes a large region of DM and vector boson mediator masses over a range of coupling choices.
+
+\begin{figure}[hp]
+	\centering
+\begin{subfigure}[t]{0.45\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/2/Zprime_constrants_dijet.pdf}
+\caption{Dijet resonance}
+\label{fig:Zprime_constraints_dijet}
+\end{subfigure}
+\begin{subfigure}[t]{0.54\textwidth}
+	\centering
+	\includegraphics[width=0.99\textwidth]{Figures/2/Zprime_constrants_monojet.pdf}
+\caption{Mono-jet}
+\label{fig:Zprime_constraints_monojet}
+\end{subfigure}
+	\caption{Constraints on the masses of the \Zprime vector boson mediator (labelled \mZp in \ref{fig:Zprime_constraints_dijet} and \(M_R\) in \ref{fig:Zprime_constraints_monojet}) and DM (labelled \(m_\text{DM}\) in \ref{fig:Zprime_constraints_dijet} and \(\mchi\) in \ref{fig:Zprime_constraints_monojet}) from combined ATLAS and CMS dijet searches \cite{Zprime_portal_monojet_dijet} (left) and mono-jet searches \cite{Zprime_portal_LHC} (right). The results are shown for typical coupling choices of the \Zprime to DM (\(g_\text{DM}\) in \ref{fig:Zprime_constraints_dijet} and \(g^A_\chi\) in \ref{fig:Zprime_constraints_monojet}), and of the \Zprime to quarks (\(g_q\) in \ref{fig:Zprime_constraints_dijet} and \(g^A_q\) or  \(g^A_{b,t}\) in \ref{fig:Zprime_constraints_monojet}, where \(g^A_{b,t}\) specifies the coupling to heavy quarks, which may be 0 for models which prohibit heavy quark couplings). Green lines in \ref{fig:Zprime_constraints_dijet} contain the region of \(\mZp, ~\mchi\) which reproduces the observed relic density of DM in the Universe. In the grey region perturbative unitarity \cite{Zprime_portal_monojet_dijet} is violated.}
+	\label{fig:Feynman_Zprime}
+\end{figure}
+
+This is followed by a discussion of how the experimental constraints can be relaxed by the introduction of a new annihilation channel \(\chi\chi \rightarrow ss\) followed by decays of \(s\) to SM particles, which arises naturally if particles in the dark sector obtain their mass by interacting with a new Higgs field in the dark sector.    
 
 As discussed above, the hypothesized decay of the DH to SM particles would proceed via a small mixing between the DH and the SM Higgs boson. 
 
