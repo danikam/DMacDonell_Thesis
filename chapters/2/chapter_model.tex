@@ -240,17 +240,82 @@ combinations of couplings, while in the white region all constraints can be evad
 
 The DH model, presented in Refs. \cite{Duerr_2016} and \cite{Duerr2017}, belongs to a wider class of simplified dark sector models which hypothesize that DM interacts with particles of the SM via the exchange of one or more new mediators, which act as so-called ``portals" between the SM and the dark sector. Candidate portals are broadly categorized according to the portal mediator into vector- \cite{vector_mediator_2012,vector_mediator_2020}, neutrino- \cite{neutrino_mediator_2019}, Higgs- \cite{higgs_mediator_2020} and axion-mediated \cite{axion_mediator_2009} portals. In this model, DM is assumed to be a Majorana fermion, which means that - like the photon, for example - it is its own antiparticle, and interacts with the SM via both vector-mediated and Higgs-mediated portals. 
 
-A new gauge group called the U(1)' with an associated vector gauge boson referred to as the \Zprime is introduced as an extension of the SM gauge group presented in Chapter \ref{chapter:introduction}. Both the DM and and teh \Zprime are assumed to obtain their mass from a new Higgs field, which gives rise to a new physical Higgs boson, the DH boson. The DM acquires an axial coupling to the \Zprime, such that all three dark sector particles interact with one another. The model considers a scenario in which the SM quarks are charged under the U(1)' gauge group, such that they can interact with the associated \Zprime vector boson, thus opening up a vector-mediated portal interactions between the SM and the dark sector. The model further postulates a Higgs-mediated portal interaction wherein the DH can decay to SM particles via a small mixing with the SM Higgs boson, with mixing angle \(\theta\). 
+A new gauge group called the U(1)' with an associated vector gauge boson, referred to as the \Zprime, is introduced as an extension of the SM gauge group presented in Chapter \ref{chapter:introduction}. Both the DM and and the \Zprime are assumed to obtain their mass from a new Higgs field with vaccum expectation value \(w\), which gives rise to a new physical Higgs boson, the DH boson \(s\). The DM acquires an axial coupling to the \Zprime, such that all three dark sector particles interact with one another. 
 
-The 
+The interactions of the U(1)' gauge group within the dark sector are expressed by the interaction Lagrangian (of which more details can be found in Appendix A of Ref. \cite{Duerr_2016}):
 
-\begin{itemize}
-\item Describe the production mechanism, including leading Feynman diagrams.
-\item Specify couplings to both SM and dark sector particles. 
-\item For god's sake give some detail on this DH-SM Higgs mixing...
+\begin{equation}
+\label{eq:DH_Lagrangian}
+    \mathcal{L}_{U(1)'} = - \frac{1}{2} \gchi {\Zprime}^{\mu} \bar{\chi} \gamma^{5} \gamma_{\mu} \chi - \gchi \frac{\mchi}{\mZp} s \bar{\chi} \chi + 2 \gchi {\Zprime}^{\mu} {\Zprime}_{\mu} (\gchi s^2 + \mZp s)
+\end{equation}
 
-As discussed above, the hypothesized decay of the DH to SM particles would proceed via a small mixing between the DH and the SM Higgs boson. 
+\noindent Considering each term in \(\mathcal{L}_{\chi}\) individually: 
 
+\begin{equation}
+\mathcal{L}_{\chi, \Zprime} = - \frac{1}{2} \gchi {\Zprime}^{\mu} \overline{\chi} \gamma^{5} \gamma_{\mu} \chi
+\end{equation}
+
+\noindent describes the axial coupling between the DM \(\chi\) and the \Zprime, with coupling strength \(g_\chi\). 
+
+\begin{equation}
+\label{eq:Lagrangian_chi_s}
+\mathcal{L}_{\chi, \text{DH}} =- \gchi \frac{\mchi}{\mZp} s \bar{\chi} \chi = - \frac{y_\chi}{2\sqrt{2}} s \bar{\chi} \chi
+\end{equation}
+
+\noindent describes the coupling between the DM \(\chi\) and the Dark Higgs field, where the associated coupling strength \(y_\chi\) on the right-hand side of Eq. \ref{eq:Lagrangian_chi_s} has the following dependence on the masses and coupling strength of the DM and the \Zprime: \(y_\chi = 2\sqrt{2}g_\chi\frac{\mchi}{\mZp}\).
+
+\begin{equation}
+\mathcal{L}_{\Zprime, \text{DH}} = 2 \gchi {\Zprime}^{\mu} {\Zprime}_{\mu} (\gchi s^2 + \mZp s)
+\end{equation}
+
+\noindent describes the interaction between the \Zprime and the Dark Higgs field.
+
+Motivated by models of gauged baryon number \cite{baryon_number,Duerr_2016,Duerr2017}, the SM quarks are charged under the U(1)' gauge group, and as a result interact with the \Zprime vector boson via vector coupling described by the following interaction Lagrangian:
+
+\begin{equation}
+\label{eq:quark_Zprime_coupling}
+\mathcal{L}_{q, \Zprime} = -\gchi{\Zprime}^\mu\bar{q}\gamma_\mu q
+\end{equation}
+
+\noindent thus opening up a mechanism for vector-mediated portal interactions between the SM and the dark sector. 
+
+ The most general Lagrangian describing the scalar Higgs \(h\) and Dark Higgs \(s\) is given by \cite{DH_SMHiggs_mixing_2016}:
+ 
+ \begin{equation}
+ \label{eq:scalar_lagrangian}
+ \mathcal{L}_\mathcal{\text{scalar}} = -\lambda_h \Big(H^\dagger H - \frac{v^2}{2}\Big) - \lambda_s \Big(S^\dagger S - \frac{w^2}{2}\Big) - \lambda_{hs} \Big(H^\dagger H - \frac{v^2}{2}\Big) \Big(S^\dagger S - \frac{w^2}{2}\Big)
+ \end{equation}
+ 
+\noindent where \(H=\frac{1}{\sqrt{2}}(0, v+h)\) represents the SM Higgs field with vacuum expectation value \(h\), and \(S=\frac{1}{\sqrt{2}}(s+w)\) represents the Dark Higgs field. The third term with coupling \(\lambda_{hs}\) mixes the visible and dark sectors, such that the physical mass eigenstates \(h'\) and \(s'\) will be a superposition of the scalars \(h\) and \(s\):
+
+\begin{equation}
+\label{eq:higgs_mass_eigenstates}
+\begin{pmatrix}
+h' \\ s'
+\end{pmatrix} = 
+\begin{pmatrix}
+\cos\theta & \sin\theta \\
+\sin\theta & \cos\theta 
+\end{pmatrix}
+\begin{pmatrix}
+h \\ s
+\end{pmatrix}
+\end{equation}
+
+\noindent where the ``mixing angle" \(\theta\) is related to SM and Dark Higgs field couplings \(\lambda_h\) and \(\lambda_s\) and the vacuum expectation values \(v\) and \(w\) by:
+
+\begin{equation}
+\label{eq:higgs_mixing_angle}
+\tan2\theta = \frac{\lambda_{hs}vw}{\lambda_hv^2 ? \lambda_sw^2}
+\end{equation}
+
+If the mixing (\(\sin\theta > 0\)) between the physical SM and Dark Higgs bosons is nonzero, the possibility 
+
+%\begin{equation}
+%\label{eq:}
+%\end{equation}
+
+\begin{itemize} 
 \item Emphasize that $m_\chi>\frac{1}{2}\ms$ required to obtain signature in detector (otherwise $s\rightarrow\chi\chi$ decay would dominate).
 \end{itemize}
 
