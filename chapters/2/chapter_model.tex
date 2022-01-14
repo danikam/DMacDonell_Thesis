@@ -12,6 +12,7 @@ Figure \ref{fig:Feynman_DH} shows three Feynman diagrams \textcolor{red}{(Note t
 	\begin{subfigure}[t]{0.49\textwidth}
 	\centering
 	\includegraphics[width=0.95\textwidth]{Figures/2/Fey1.pdf}
+	\label{fig:dh_schannel_1}
 %		\begin{tikzpicture}
 %			\begin{feynman}
 %
@@ -69,6 +70,7 @@ Figure \ref{fig:Feynman_DH} shows three Feynman diagrams \textcolor{red}{(Note t
 %		 		};
 %		 	\end{feynman}
 %		 \end{tikzpicture}
+	\label{fig:dh_schannel_2}
 	\caption{s-channel (DM emitted from the \Zprime, DH emitted from the DM)}
 	\end{subfigure}
 	\begin{subfigure}[t]{.42\textwidth}
@@ -106,6 +108,7 @@ Figure \ref{fig:Feynman_DH} shows three Feynman diagrams \textcolor{red}{(Note t
 %		 	\end{feynman}
 %		 \end{tikzpicture}
 	\caption{t-channel (DH radiated off \(q\), DM emitted from the \Zprime)}
+	\label{fig:dh_tchannel}
 	\end{subfigure}
 	\caption{The most contributing Feynman diagrams for DM production at the LHC by means of the DH model}
 	\label{fig:Feynman_DH}
@@ -117,6 +120,7 @@ Figure \ref{fig:Feynman_DH} shows three Feynman diagrams \textcolor{red}{(Note t
 Given that the particles of the SM acquire mass via their interaction with the Higgs field \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3}, the hypothetical ``Dark Higgs" field - and its associated particle the DH boson - is motivated by the need to likewise generate masses of particles in the dark sector. More generally, the existence of so-called portal mediators which enable interactions between dark sector and SM particles is motivated by theoretical arguments, discussed in Chapter \ref{chapter:introduction} \textcolor{red}{(Note to Bob/self: will point to specific section presenting the thermal freeze-out hypothesis once it's written)}, for the presence of thermal equilibrium between DM and SM particles in the early Universe \cite{DM_earlyUniverse}, which would be established by creation and annihilation processes between the two sectors. The present-day relic abundance of DM, set at the time of thermal freeze-out, places constraints on the details of these creation and annihilation processes. The hypothesized DH boson would open up a new mechanism for portal interactions between DM and SM particles. As discussed in the following section, this new mechanism allows for a relaxation of constraints from the DM relic abundance compared with simpler models in which portal interactions are limited to those mediated by a vector boson mediator (the so-called \Zprime). 
 
 \subsection{Constraints on Generic \Zprime Mediator Models} 
+\label{sec:Zprime_model_constraints}
 
 In addition to providing a mechanism by which particles acquire mass in the dark sector, the introduction of a new Higgs boson in the dark sector is motivated by strong theoretical and experimental constraints \cite{Zprime_portal_gen, Zprime_portal_LHC} on the more generic simplified model in which portal interactions between the dark sector and the DM are mediated exclusively by a  vector boson mediator - the so-called \Zprime. Removing the emission of the DH \(s\) from the contributing Feynman diagrams of the DH model in Figure \ref{fig:Feynman_DH} reduces all three to the generic ``s-channel" signature for DM production at the LHC via the \Zprime mediator, shown in Figure \ref{fig:Feynman_Zprime_DM}. 
 
@@ -274,10 +278,10 @@ Motivated by models of gauged baryon number \cite{baryon_number,Duerr_2016,Duerr
 
 \begin{equation}
 \label{eq:quark_Zprime_coupling}
-\mathcal{L}_{q, \Zprime} = -\gchi{\Zprime}^\mu\bar{q}\gamma_\mu q
+\mathcal{L}_{q, \Zprime} = -g_q{\Zprime}^\mu\bar{q}\gamma_\mu q
 \end{equation}
 
-\noindent thus opening up a mechanism for vector-mediated portal interactions between the SM and the dark sector. 
+\noindent thus opening up a mechanism for vector-mediated portal interactions between the SM and the dark sector. Axial vector couplings of the \Zprime to quarks would also be expected to produce a signature at the LHC, but are for simplicity neglected \cite{Duerr2017}. 
 
  The most general Lagrangian describing the scalar Higgs \(h\) and Dark Higgs \(s\) is given by \cite{DH_SMHiggs_mixing_2016}:
  
@@ -306,24 +310,129 @@ h \\ s
 
 \begin{equation}
 \label{eq:higgs_mixing_angle}
-\tan2\theta = \frac{\lambda_{hs}vw}{\lambda_hv^2 ? \lambda_sw^2}
+\tan2\theta = \frac{\lambda_{hs}vw}{\lambda_hv^2  \lambda_sw^2}
 \end{equation}
 
-If the mixing (\(\sin\theta > 0\)) between the physical SM and Dark Higgs bosons is nonzero, the possibility 
+Therefore, if the mixing between the SM and Dark Higgs fields is nonzero (\(\sin\theta > 0\)), the physical Higgs eigenstate in the SM Lagrangian becomes \(h\cos\theta + s\sin\theta\). This opens up the possibility for interactions between the physical dark Higgs and SM particles, with coupling strengths scaled by \(\sin\theta\). For example, the Lagrangians describing the decay of the DH to SM fermions \(f\) and vector bosons \(V\) are described by \cite{Duerr_2016, PDG_2018}:  
 
-%\begin{equation}
-%\label{eq:}
-%\end{equation}
+\begin{equation}
+\mathcal{L}_{hf\bar{f}} = -g_{hf\bar{f}}\bar{f}f h\sin\theta 
+\end{equation}
 
-\begin{itemize} 
-\item Emphasize that $m_\chi>\frac{1}{2}\ms$ required to obtain signature in detector (otherwise $s\rightarrow\chi\chi$ decay would dominate).
+\noindent and
+
+\begin{equation}
+\mathcal{L}_{hVV} = -\delta_V g_{hVV}V_\mu V^\mu h\sin\theta 
+\end{equation}
+
+\noindent where (from SM physics):
+
+\begin{equation}
+g_{hf\bar{f}} = \frac{_f}{v}, ~ g_{hVV} = \frac{2m_V^2}{v}, ~ \delta_W = 1, ~ \delta_Z = \frac{1}{2}
+\end{equation}
+
+\subsection{Free Parameters in the Model}
+\label{sec:dh_model_free_parameters}
+
+The free parameters in the Dark Higgs model are as follows:
+
+%\medskip\noindent\textbf{Sum of Weights Normalization}
+\begin{itemize}
+\item \(\mathbf{m_\chi}\): The mass of the DM particle \(\chi\)
+\item \(\mathbf{m_{\Zprime}}\): The mass of the hypothetical \Zprime boson in the dark sector which mediates interactions between SM quarks \(q\) and the DM \(\chi\)
+\item \(\mathbf{m_s}\): The mass of the hypothetical DH boson, whose associated Higgs field provides a mechanism for particles in the dark sector to acquire mass, and which can decay to SM particles via a small mixing with the SM Higgs boson.
+\item \(\mathbf{g_q}\): Strength of the vector coupling between SM quarks and the \Zprime boson.
+\item \(\mathbf{g_\chi}\): The coupling strength between DM and the \Zprime boson.
+\item \(\mathbf{\theta}\): The mixing angle between the DH and the SM Higgs boson. The coupling strength associated with the decay of the DH to SM particles scales with \(\sin\theta\).
 \end{itemize}
 
+Some of these parameters are already constrained by other results. 
+
+Mixing between the DH and the SM Higgs in the model would introduce unobservable decay modes of the SM Higgs to dark sector particles, which would modify the observed yield of Higgs events observed at the LHC from the SM expectation. Given the observed agreement between the observed yield and the SM expectation \cite{ATLAS-CONF-2020-027,CMS-PAS-HIG-19-005}, an upper limit of \(|\sin\theta| < 0.25\) can be placed \cite{Collider_searches_2021} (assuming no other appreciable unobserved decay channels exist).
+
+Dijet resonance searches, discussed in Section \ref{sec:Zprime_model_constraints}, also place upper bounds on the coupling strength \(g_q\) of the \Zprime to SM quarks by looking for a resonant peak in the dijet spectrum associated with the scenario shown in Figure \ref{fig:Feynman_Zprime_dijet} in which a \Zprime is produced and decays immediately back to a pair of quarks. Based on the agreement with SM predictions observed in the = most recent dijet resonance searches performed by the ATLAS and CMS experiments \cite{dijet_1,dijet_2,dijet_3,dijet_4} limits on \(g_q\) ranging from 0.04 to 0.4 are set depending on the \Zprime mass. Figure \ref{fig:Dijet_gq_limits} shows upper bounds from two recent searches, one of which uses ``trigger-level jets" \cite{dijet_2} to boost sensitivity in the low-\mZp range. 
+
+\begin{figure}[hp]
+	\centering
+\begin{subfigure}[t]{0.57\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/2/Dijet_limits_ATLAS.pdf}
+\caption{Limits from ATLAS low-mass dijet resonance search. Figure from $\copyright$ \cite{dijet_2}.}
+\label{fig:dijet_gq_limits_ATLAS}
+\end{subfigure}
+\begin{subfigure}[t]{0.41\textwidth}
+	\centering
+	\includegraphics[width=0.99\textwidth]{Figures/2/Dijet_limits_CMS.pdf}
+\caption{Limits from recent CMS search. Figure from $\copyright$ \cite{dijet_3}.}
+\label{fig:dijet_gq_limits_CMS}
+\end{subfigure}
+	\caption{Upper bounds on the \(g_q\) coupling between the \Zprime and quarks, as reported by recent dijet resonance searches performed by ATLAS (left) and CMS (right).}
+	\label{fig:Dijet_gq_limits}
+\end{figure}
+
 \section{Search for the Dark Higgs Model at the LHC}
+\label{sec:dh_search_lhc}
+
+For certain choices of the model parameters discussed in Section \ref{sec:dh_model_free_parameters}, the Dark Higgs model predicts a unique and measurable signature by which it could be detected at the LHC. The signature, of which some of the most contributing Feynman diagrams are shown in Figure \ref{fig:Feynman_DH}, would occur when high-energy \(q\bar{q}\) in the colliding protons pair-annihilate to produce a \Zprime, which subsequently decays to DM. A measurable signature comes from the emission of a DH \(s\) either from a \(q\) or the \Zprime, which subsequently decays to a pair of SM particles. This produces a final state with the SM products from the \(s\) decay recoiling against \met in the detector due to the undetected DM pair \textcolor{red}{(Note to Bob: will include brief intro to \met in Ch. 1)}. In particular, assuming that the \Zprime is relatively low in mass compared with the centre of mass energy of the \(q\bar{q}\) collision, the \Zprime may be imparted with a large momentum (a.k.a. boost). As a result, the diagrams shown in Figures \ref{fig:dh_schannel_1} and \ref{fig:dh_schannel_2} in which the \(s\) is emitted from the \Zprime can produce highly boosted, collimated SM decay products from the boosted system, which make the signature distinct from typical mono-X final states in which the SM products (`X') recoiling against the DM are assumed to be produced exclusively as initial state radiation, as in Figure \ref{fig:dh_tchannel}.
+
+\subsection{Dark Higgs Decay Channels}
+
+As discussed in Section \ref{sec:DH_model_description}, since the DH decays to SM particles via mixing with the SM Higgs boson, its decay mechanisms - including its branching fractions for its various decay channels to different SM particles - will be analogous to that of the SM Higgs. As a result, the signature of boosted SM decay products recoiling against \met may be used to probe various ranges of \ms in the model depending on the particular choice of SM products (a.k.a. ``decay channel", or simply ``channel") from the \(s\) decay that the search targets. Figure \ref{fig:higgs_branching_fractions} shows the branching fraction that the SM Higgs - and consequently the DH \(s\) - would be expected to have to SM particles if its mass were allowed to float in the SM. For low \ms, the decay to \(b\bar{b}\) is dominant. At \(\ms\approx160~\GeV\), the decay to \(WW\) becomes kinematically accessible\footnote{A particular decay mode \(X\rightarrow YY\) generally becomes kinematically accessible for \(m_X > 2 m_Y\), because in this regime the on-shell parent particle \(X\) has a sufficient rest mass energy to decay to the daughter products \(YY\) while satisfying energy conservation.}, and is the dominant \(s\) decay channel for \(\ms\gtrsim160~\GeV\). The decay to \(ZZ\) also becomes kinematically accessible at \(\sim180~\GeV\), though its branching fraction remains sub-dominant compared with the \(WW\) decay. The decay to SM Higgses \(s\rightarrow HH\) opens up \(\sim250~\GeV\), above which this decay mode becomes appreciable, though still smaller than the \(WW\) mode. This suggests that searches in all four of these \(s\) decay channels could complement one another to collectively probe the full available \ms range, as summarized in Table \ref{tab:signal_grid_comparison}.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of DH decay channels to SM particles that could be targeted to probe various \ms ranges in Dark Higgs model}
+\label{tab:signal_grid_comparison}
+\begin{tabular}{l l }
+\toprule
+\textbf{\(\mathbf{\ms}\) Range} & \textbf{Sensitive DH Decay Channels} \\
+\midrule
+\midrule
+\(\ms < 160~\GeV\) & \(s\rightarrow bb\) \\
+\midrule
+\(160~\GeV < \ms < 180~\GeV\) & \(s\rightarrow WW\) \\
+\midrule
+\(180~\GeV < \ms < 250~\GeV\) & \(s\rightarrow WW\), \(s\rightarrow ZZ\) \\
+\midrule
+\(\ms >  250~\GeV\) & \(s\rightarrow WW\), \(s\rightarrow ZZ\), \(s\rightarrow HH\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[hp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/2/branchingratio.pdf}
+	\caption{Branching fraction of the DH boson to SM particles in dependence of \ms. The branching fractions of the \(s\rightarrow WW\) and \(s \rightarrow ZZ\) decay modes experience a drop-off at  \(\ms=2 m_H (= 250~\GeV)\), above which the decay to \(s \rightarrow HH\) to SM Higgs becomes kinematically accessible.}
+	\label{fig:higgs_branching_fractions}
+\end{figure}
+
+\subsection{Overview of Existing and Ongoing Searches}
+
+The search presented in this thesis is one of several existing or ongoing searches for the Dark Higgs model at the LHC, which target different \(s\) decay modes. 
+
+\subsubsection{ATLAS }
+The \(s\rightarrow bb\) decay mode was probed by the search presented in Ref. \cite{ATL-PHYS-PUB-2019-032}. The search used the RECAST framework \cite{Cranmer2011} to re-interpret an earlier search \cite{ATLAS-CONF-2018-039} for DM produced in association Higgs boson decaying to b-quarks in the context of the Dark Higgs model. This re-interpretation was possible because model that was used to optimize and interpret the original search, for which the most contributing Feynman diagram is shown in Figure \ref{fig:Fey_monoH}, is very similar in structure to the Dark Higgs model, and predicts the same final state of a boosted \(b\bar{b}\) pair recoiling against \met in the detector. 
+
+\begin{figure}[hp]
+	\centering
+\begin{subfigure}[t]{0.57\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/2/Fey_monoH.pdf}
+\caption{Figure from $\copyright$ \cite{ATLAS-CONF-2018-039}.}
+\label{fig:Fey_monoH}
+\end{subfigure}
+\begin{subfigure}[t]{0.41\textwidth}
+	\centering
+	\includegraphics[width=0.99\textwidth]{Figures/2/monosbb_limits.pdf}
+\caption{Figure from $\copyright$ \cite{dijet_3}.}
+\label{fig:monosbb_limits}
+\end{subfigure}
+	\caption{Left: Most contributing Feynman diagram for the original DM search \cite{ATLAS-CONF-2018-039} that was re-interpreted in Ref. \cite{ATL-PHYS-PUB-2019-032} to probe the Dark Higgs model in the \(s\rightarrow bb\) channel. Figure from $\copyright$ \cite{ATLAS-CONF-2018-039}. Right: Limits on the \ms and \mZp in the Dark Higgs model in the \(s\rightarrow bb\) channel. }
+	\label{fig:monosbb_DH_search}
+\end{figure}
 
 \begin{itemize}
-\item Discussion of the model's signature in the ATLAS detector (boosted SM pair recoiling against \met), and why the boosted topology is unique compared with generic mono-X searches in which the `X' is produced via ISR.
-\item Discussion of available search channels - mono-s(bb), mono-s(WW), mono-s(ZZ), mono-s(hh).
+\item Emphasize that $m_\chi>\frac{1}{2}\ms$ required to obtain signature in detector (otherwise $s\rightarrow\chi\chi$ decay would dominate).
 \begin{itemize}
 \item Overview of existing searches for the Dark Higgs model - re-interpreted mono-h(bb), hadronic mono-s(WW). Could also mention ongoing dedicated mono-s(bb) search.
 \item Identify the \ms regime in which the $s\rightarrow WW$ decay mode dominates in sensitivity.
