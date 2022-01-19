@@ -1,23 +1,27 @@
 \startchapter{Object Definitions, Triggers and Event Selection}
 \label{chapter:objects}
 
-This chapter describes the physics objects which are reconstructed on an event-by-event basis using collision data from the ATLAS detector and used in this DM search, and the triggers and event selection cuts which are applied to define the subsets of collision data and MC simulated data, also known as ``analysis regions", which are considered for the search. 
+This chapter describes the physics objects which are reconstructed on an event-by-event basis using collision data from the ATLAS detector and used in this DM search. It also discusses the triggers and event selection cuts which are applied to define the subsets of collision data and MC simulated data, also known as ``analysis regions", which are used for the search. 
 
 \section{Object Definitions}
+\label{ap:object_defs}
 
-The object definitions 
+The goal of the ATLAS detector is to identify particles that are produced by the proton-proton collisions that take place in the centre of the detector, and to reconstruct their kinematic properties. The particle identification and reconstruction is performed using various collections of measured signals in the detector sub-systems, which are broadly referred to as ``physics objects" \cite{physics_objects_atlas_2013}. The physics objects used to reconstruct all particles considered in this search are described in the following sections.
 
-\begin{itemize}
-\item Electrons
-\item Muons
-\item Small-radius \aktfour jets
-\item TAR jets
-\item Overlap Removal
-\item \met
-\item Dark Higgs candidate mass \ms
-\end{itemize}
+\subsection{Charged Leptons}
+\subsubsection{Electrons}
+\subsubsection{Muons}
+\subsection{Small-radius \aktfour jets}
+\subsection{TAR jets}
+\subsection{\met}
+\subsection{Dark Higgs Candidate Mass}
 
 \section{Triggers}
+\label{sec:triggers_evt_selection}
+
+As described in Section \ref{sec:trigger}, the ATLAS trigger system only saves collision events during data collection which pass both the hardware-based level-1 (L1) trigger and the software-based high-level trigger (HLT). The L1 trigger and the HLT are each comprised of numerous sets of selection criteria, which are also referred to as triggers. Any collision event which satisfies at least one of the triggers which comprise the L1 trigger is processed by the HLT, and likewise if the event satisfies any of the triggers which comprise the HLT it will be saved to storage.
+
+As part of the selection of events to be considered in an analysis, events are typically required to have passed some combination of HLT triggers which are relevant for the analysis. The search presented in this thesis is interested in events which produce a single energetic lepton due to the \(s\rightarrow WW(q\bar{q}\ell\nu)\) decay, in addition to high \met due to both the undetected boosted DM in the final state and the undetected \(\nu\) from the \(W\rightarrow \ell\nu\) decay. Therefore, in order to be considered for this search, events are required to have passed either the high-\met trigger (also referred to simply as the ``\met trigger), or the single muon trigger. 
 
 \begin{itemize}
 \item State the trigger combination used for the search (\met OR single muon)
