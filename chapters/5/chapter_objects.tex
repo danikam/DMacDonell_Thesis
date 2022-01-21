@@ -9,7 +9,81 @@ This chapter describes the physics objects which are reconstructed on an event-b
 The goal of the ATLAS detector is to identify particles that are produced by the proton-proton collisions that take place in the centre of the detector, and to reconstruct their kinematic properties. The particle identification and reconstruction is performed using various collections of measured signals in the detector sub-systems, which are broadly referred to as ``physics objects" \cite{physics_objects_atlas_2013}. The physics objects used to reconstruct all particles considered in this search are described in the following sections.
 
 \subsection{Charged Leptons}
+
+The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability be an electron, a muon or a tau. Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure zzz. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are only able to decay to a \(e\bar{\nu}_e\) pair because any other particles that the virtual \(W\) could in principle decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
+
+\begin{figure}[hp]
+	\centering
+	\begin{subfigure}[t]{0.49\textwidth}
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/5/mu_decay.pdf}
+%		 \begin{tikzpicture}
+%		 	\begin{feynman}
+%		 		\vertex (a1); %mu
+%
+%		 		\vertex at ($(a1) + (1cm, 0)$) (b1); % decay to W+nu_mu
+%				
+%		 		\vertex at ($(b1) + (1, 0.75)$) (c1); %nu_mu
+%				\vertex at ($(b1) + (1, -0.75)$) (c2); %W
+%				
+%				\vertex at ($(c2) + (0.75, 0.5)$) (d1); % nu_e
+%				\vertex at ($(c2) + (0.75, -0.5)$) (d2); % e
+%
+%		 		\diagram* {
+%		 		  (a1) -- [fermion, edge label=\(\mu\), near start] (b1),
+%		 		  (c1) -- [fermion, edge label'=\(\nu_\mu\), near start] (b1) -- [boson, edge label=\(W\)] (c2),
+%		 		  (d1) -- [fermion, edge label=\(\nu_e\), near start] (c2) -- [fermion, edge label'=\(e\), near end] (d2),
+%		 		};
+%		 	\end{feynman}
+%		 \end{tikzpicture}
+	\caption{Muon decay}
+	\label{fig:muon_decay}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+	\centering
+	\includegraphics[width=0.75\textwidth]{Figures/5/tau_decays.pdf}
+%		 \begin{tikzpicture}
+%		 	\begin{feynman}
+%		 		\vertex (a1); %tau
+%
+%		 		\vertex at ($(a1) + (1cm, 0)$) (b1); % decay to W+nu_tau
+%				
+%		 		\vertex at ($(b1) + (1, 0.75)$) (c1); %nu_tau
+%				\vertex at ($(b1) + (1, -0.75)$) (c2); %W
+%				
+%				\vertex at ($(c2) + (1.5, -1)$) (d1); % nu_e / nu_mu / u / d
+%				\vertex at ($(c2) + (1.5, 1)$) (d2); % e / mu / d / u
+%
+%		 		\diagram* {
+%		 		  (a1) -- [fermion, edge label=\(\tau\), near start] (b1),
+%		 		  (c1) -- [fermion, edge label'=\(\nu_\tau\), near start] (b1) -- [boson, edge label=\(W\)] (c2),
+%		 		  (d1) -- [fermion, edge label={\(\nu_e\) / \(\nu_\mu\) / \(u\)}, near start] (c2) -- [fermion, edge label'={\(e\) / \(\mu\) / \(d\)}, near end] (d2),
+%		 		};
+%		 	\end{feynman}
+%		 \end{tikzpicture}
+	\caption{Tau decay}
+	\label{fig:muon_decay}
+	\end{subfigure}
+	\caption{Decay mechanisms for muons and taus}
+	\label{fig:lepton_decays}
+\end{figure}
+
+Due to their relatively large mass of 1.8 \GeV, taus can decay either leptonically to \(e\bar{\nu}_e\) or \(\mu\bar{\nu}_\mu\), or hadronically to \(d\bar{u}\), as shown in Figure zzz, and their decays proceed with a much shorter mean lifetime compared with the muon of 0.3ps. Because of this relatively short lifetime, taus will decay before passing through the ATLAS detector, and as such it is their leptonic or hadronic decay products that are actually measured in the detector. As will be discussed in Section \ref{sec:evt_selections} below, the selections applied for this analysis require that events have exactly one electron or muon in the final state in order to be considered for the search. As a result, the search is sensitive to \(s\rightarrow WW\) decays in which the leptonically decaying \(W\) decays to \(\tau\nu_\tau\) only in the case where the \(\tau\) decays leptonically to produce a single energetic electron or muon in the final state, which occurs with a 35\% branching fraction.
+
 \subsubsection{Electrons}
+
+As discussed in Section \ref{sec:EM_calo}, electron objects are reconstructed from clusters of energy deposits in the electromagnetic calorimeter that are associated with tracks in the inner detector, and calibrated to the EM scale. Detailed information about electron reconstruction, identification, and calibration can be found in Refs.~\cite{ATL-PHYS-PUB-2017-022}, \cite{PERF-2017-01} and \cite{PERF-2017-03}. To accommodate the differing needs of the various studies which make use of electron objects, ATLAS reconstructs these objects with various levels of identification and isolation efficiency, where these different efficiency levels are referred to as ``working points". 
+
+ 
+Two types of electrons are defined for the search based on different sets of criteria:
+\newline \newline \emph{Baseline} electrons satisfy a relatively loose set of identification criteria, referred to in ATLAS. In addition, a loose isolation is required. This electron definition has a high efficiency, which means that it has a high probability of identifying electrons 
+
+ and is used to veto the presence of additional electrons in the final state.
+\newline \emph{Signal} electrons are designed to be high-purity electrons. They are required to satisfy the \emph{medium} identification and loose isolation criteria.
+\newline \newline Both types of electrons use a threshold of \(\pT > 7{\GeV} \) and a pseudorapidity range of \(|\eta| < 2.47\).
+%, and apply the recommended \(z_0 \sin \theta\) and \(d_0\) track-to-vertex association cuts.
+% All requirements are summarized in \Tab{\ref{tab:elDef}}.
+
 \subsubsection{Muons}
 \subsection{Small-radius \aktfour jets}
 \subsection{TAR jets}
@@ -173,12 +247,12 @@ The ATLAS trigger system also includes single-muon and single-electron triggers,
 
 The lepton triggers are known to be \(<100\%\) efficient, but the resulting scale factors and associated systematic uncertainties are in general well calibrated by dedicated measurements performed within the ATLAS collaboration. As a result, the charged lepton triggers are useful as a means of independently quantifying the efficiency of the \met trigger, as will be shown in a moment, but if the \met trigger can be shown to pass selected events with 100\% efficiency then it is desirable to simply require all selected events to have passed the \met trigger in order to avoid any application of scaling factors and evaluation of related uncertainties.
 
-The efficiency of the \met trigger in a given region ``X" is defined equivalently for ATLAS data (``data") and MC simulated events (``MC") relative to the single lepton trigger (defined as the logical OR of the single muon trigger and the single electron trigger):
+The efficiency of the \met trigger for a set of event selection criteria which define a given region ``X" is defined equivalently for ATLAS data (``data") and MC simulated events (``MC"). Events considered for the calculation of trigger efficiency are also required to have passed the single lepton trigger (defined as the logical OR of the single muon trigger and the single electron trigger), to independently ensure that all data events considered passed a trigger which is relevant to the final state of interest. The trigger efficiency is given by:
 
 \begin{equation}
 \label{eq:met_trig_eff}
 \begin{footnotesize}
-\text{eff}_\text{\met, region X} = \frac{\sum_i w_i\text{ passing (\met triggers)\&(single lepton triggers)\&(selection cuts for region X)}}{\sum_i w_i\text{ passing (single lepton triggers)\&(selection cuts for region X)}}
+\text{eff}_\text{\met, region X} = \frac{\sum_i w_i\text{ passing (\met triggers)\&(single lepton triggers)\&(selection cuts for region X)}}{\sum_i w_i\text{ passing (single lepton triggers)\text{ AND }(selection cuts for region X)}}
 \end{footnotesize}
 \end{equation}
 
@@ -195,12 +269,12 @@ Figure \ref{fig:mettrig} compares the \met trigger efficiency defined in Eq. \re
 \begin{figure}[htbp]
   \centering
      \begin{subfigure}{0.49\textwidth}
-     \includegraphics[width = 0.98\textwidth]{Figures/5/PreE_MetTST_met.pdf}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/METTrigger/PreE_MetTST_met.pdf}
     \caption{Electron Channel}
     \label{ig:mettrig_e}
      \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
-     \includegraphics[width = 0.98\textwidth]{Figures/5/PreM_MetTST_met.pdf}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/METTrigger/PreM_MetTST_met.pdf}
      \caption{Muon Channel}
      \label{ig:mettrig_mu}
      \end{subfigure}
@@ -208,13 +282,34 @@ Figure \ref{fig:mettrig} compares the \met trigger efficiency defined in Eq. \re
      \label{fig:mettrig}
   \end{figure}
   
-Comparing the trigger efficiencies in the Figures \ref{fig:mettrig_e} and \ref{fig:mettrig_mu}, the efficiency in the electron channel converged to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim90\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons largely pass through the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't make use of information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) > 200~\GeV. These high-\pt muon events can, however, be recovered by additionally accepting events which pass the single muon trigger.
+Comparing the trigger efficiencies in Figures \ref{fig:mettrig_e} and \ref{fig:mettrig_mu}, the efficiency in the electron channel converges to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim90\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons largely pass through the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't make use of information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) \(> 200~\GeV\). 
 
 \begin{figure}[htbp]
     \centering
-     \includegraphics[width = 0.6\textwidth]{Figures/5/Pre_MetTST_met.pdf}
-     \caption{\met trigger efficiency, as a function of the \met lower bound in the event selection for the baseline selection in the muon channel, with muons treated as invisible in the calculation of \met}
+     \includegraphics[width = 0.6\textwidth]{Figures/5/TriggerMuInvis/Pre_MetTST_met.pdf}
+     \caption{\met trigger efficiency, as a function of the \met lower bound for the loosened baseline event selection in the muon channel, with muons treated as invisible in the calculation of \met}
      \label{fig:metmuinvis}
   \end{figure}
+ 
+As discussed above, events which pass the baseline selection in the muon channel with \(\met > 200 ~\GeV\) but fail the \met trigger generally have large muon \pt. It was found that these high-\met events in the muon channel which fail the \met trigger do, however, pass the muon trigger with high efficiency. For this reason, the efficiency of a logical OR of the \met and single muon triggers is studied in the muon channel. This \met or single muon trigger efficiency is calculated as follows for MC simulated events for a given set of event selection criteria which define a region ``X":
 
-In order to be considered for this search, events are required to have passed either the high-\met trigger (also referred to simply as the ``\met trigger), or the single muon trigger.
+\begin{equation}
+\label{eq:met_or_single_muon_trig}
+\begin{footnotesize}
+\text{eff}_\text{\met OR single muon, MC, region X} = \frac{\sum_i w_i\text{ passing ($\met$ OR single muon triggers)\text{ AND }(in region X)}}{\sum_i w_i\text{ in region X}}
+\end{footnotesize}
+\end{equation}
+
+\noindent where the event weight \(w_i\) in the numerator includes the scale factors to correct for the known \(<100\%\) trigger efficiency of the single muon trigger. Note that since Eq. \ref{eq:met_or_single_muon_trig} is evaluated only for MC simulated events, there is no need for an independent trigger in the numerator and denominator such as the single lepton trigger included in Eq. \ref{eq:met_trig_eff}. As shown in Figure \ref{fig:trigger_OR}, the \met OR single muon trigger is found to be effectively 100\% efficient, given the application of appropriate scale factors for the single muon trigger, in the muon channel with the loosened baseline event selection for all lower bounds on the \met down to  \(\sim 100~\GeV\).
+
+  \begin{figure}[htbp]
+  \centering
+    \begin{subfigure}{0.49\textwidth}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/TriggerOR/Pre_MetTST_met.pdf}
+     \caption{Preselection}
+     \end{subfigure}
+     \caption{Efficiency of the \met OR single muon trigger, as a function of the \met lower bound, in the muon channel for the loosened baseline event selection in the muon channel.}
+     \label{fig:trigger_OR}
+  \end{figure}
+
+Based on the analysis presented in this section, it is concluded that, if all events considered in the analysis are explicitly required to have passed the \met or the single muon trigger, the trigger efficiency is known to be 100\% for all events except for the small subset of events with a high-\pt muon which pass the muon trigger but fail the \met trigger. For these events, scaling factors and associated uncertainties, which are determined by independent calibrations performed by the ATLAS collaboration, are included in the event weight to correct for the known \(<100\%\) efficiency of the single muon trigger. An additional ``trigger-matching" requirement is applied for events which fail the \met trigger but pass the single muon trigger. This trigger matching requires that the final state muon object that was reconstructed during data-taking and which activated the single muon trigger can be identified as the same muon object (i.e. as having originated from the same muon) that was later reconstructed with the more granular offline reconstruction software. 
