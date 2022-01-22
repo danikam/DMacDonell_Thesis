@@ -10,7 +10,7 @@ The goal of the ATLAS detector is to identify particles that are produced by the
 
 \subsection{Charged Leptons}
 
-The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability be an electron, a muon or a tau. Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure zzz. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are only able to decay to a \(e\bar{\nu}_e\) pair because any other particles that the virtual \(W\) could in principle decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
+The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability be an electron, a muon or a tau. Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are only able to decay to a \(e\bar{\nu}_e\) pair because any other particles that the virtual \(W\) could in principle decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
 
 \begin{figure}[hp]
 	\centering
@@ -62,40 +62,52 @@ The final state charged lepton produced from the leptonic decay of a \(W\) in th
 %		 	\end{feynman}
 %		 \end{tikzpicture}
 	\caption{Tau decay}
-	\label{fig:muon_decay}
+	\label{fig:tau_decay}
 	\end{subfigure}
 	\caption{Decay mechanisms for muons and taus}
 	\label{fig:lepton_decays}
 \end{figure}
 
-Due to their relatively large mass of 1.8 \GeV, taus can decay either leptonically to \(e\bar{\nu}_e\) or \(\mu\bar{\nu}_\mu\), or hadronically to \(d\bar{u}\), as shown in Figure zzz, and their decays proceed with a much shorter mean lifetime compared with the muon of 0.3ps. Because of this relatively short lifetime, taus will decay before passing through the ATLAS detector, and as such it is their leptonic or hadronic decay products that are actually measured in the detector. As will be discussed in Section \ref{sec:evt_selections} below, the selections applied for this analysis require that events have exactly one electron or muon in the final state in order to be considered for the search. As a result, the search is sensitive to \(s\rightarrow WW\) decays in which the leptonically decaying \(W\) decays to \(\tau\nu_\tau\) only in the case where the \(\tau\) decays leptonically to produce a single energetic electron or muon in the final state, which occurs with a 35\% branching fraction.
+Due to their relatively large mass of 1.8 \GeV, taus can decay either leptonically to \(e\bar{\nu}_e\) or \(\mu\bar{\nu}_\mu\), or hadronically to \(d\bar{u}\), as shown in Figure \ref{fig:tau_decay}, and their decays proceed with a much shorter mean lifetime compared with the muon of 0.3ps. Because of this relatively short lifetime, taus will decay before passing through the ATLAS detector, and as such it is their leptonic or hadronic decay products that are actually measured in the detector. As will be discussed in Section \ref{sec:evt_selections} below, the selections applied for this analysis require that events have exactly one electron or muon in the final state in order to be considered for the search. As a result, the search is sensitive to \(s\rightarrow WW\) decays in which the leptonically decaying \(W\) decays to \(\tau\nu_\tau\) only in the case where the \(\tau\) decays leptonically to produce a single energetic electron or muon in the final state, which occurs with a 35\% branching fraction.
 
 \subsubsection{Electrons}
 
-As discussed in Section \ref{sec:EM_calo}, electron objects are reconstructed from clusters of energy deposits in the electromagnetic calorimeter that are associated with tracks in the inner detector, and calibrated to the EM scale. Detailed information about electron reconstruction, identification, and calibration can be found in Refs.~\cite{ATL-PHYS-PUB-2017-022}, \cite{PERF-2017-01} and \cite{PERF-2017-03}. To accommodate the differing needs of the various studies which make use of electron objects, ATLAS reconstructs these objects at several levels of identification and isolation efficiency, where these different efficiency levels are referred to as ``working points", and are typically referred to as \emph{veryloose}, \emph{loose}, \emph{medium} and \emph{tight} for reasons that will be discussed in the following paragraphs.
+As discussed in Section \ref{sec:EM_calo}, electron objects are reconstructed from clusters of energy deposits in the electromagnetic calorimeter that are associated with tracks in the inner detector, and calibrated to the EM scale. Detailed information about electron reconstruction, identification, and calibration can be found in Refs.~\cite{ATL-PHYS-PUB-2017-022}, \cite{PERF-2017-01} and \cite{PERF-2017-03}. To accommodate the differing needs of the various studies which make use of electron objects, ATLAS reconstructs these objects at several levels of identification and isolation efficiency, where these different efficiency levels are referred to as ``working points", and are typically referred to as variants of \emph{Loose}, \emph{Medium} and \emph{Tight} for reasons that will be discussed in the following paragraphs.
 
 The identification efficiency refers to the probability that an electron passing through the detector will be correctly reconstructed and identified as such. In general, higher efficiency is achieved by loosening electron identification criteria, and comes at the cost of increased background acceptance. Increased background acceptance means that reconstructed objects have a higher probability of being incorrectly identified as having originated from an electron. 
 
 Electron isolation tackles a slightly different, though related, challenge in comparison with identification. The goal of isolation is to separate the so-called ``prompt" electrons that are produced from the primary decay processes of heavy mediators produced in the \(pp\) collisions from background processes such as semileptonic quark decays, hadrons misidentified as leptons and photons that convert into \(e^+e^-\) pairs before reaching the EM calorimeter. It is generally found that reconstructed objects which originate from prompt electrons can be characterized by a relative absence of (i.e. isolation) from significant activity in a small angular radius in \(\eta\times\phi\) around the object. In analogue with the identification efficiency, a high isolation efficiency is achieved by loosening the criteria for defining an object as isolated. As such, prompt electrons have a high probability of being identified as isolated, but comes at the cost of an increased rate of incorrectly identifying objects which originate from background processes as isolated.
  
 Two types of electrons are defined for the search based on different sets of criteria:
-\newline \newline \emph{Baseline} electrons satisfy a relatively loose set of identification criteria, referred to in ATLAS. In addition, a loose isolation is required. This electron definition has a high efficiency, and is used to veto the presence of additional electrons in the final state.
-\newline \emph{Signal} electrons are designed to be high-purity electrons. They are required to satisfy the \emph{medium} identification and loose isolation criteria.
-\newline \newline Both types of electrons use a threshold of \(\pT > 7{\GeV} \) and a pseudorapidity range of \(|\eta| < 2.47\).
+\newline \emph{Baseline} electrons use the \emph{Loose} working point for both identification and isolation. Isolation is measured within a fixed angular radius of \(\Delta R=0.2\) around the reconstructed electron object \cite{PERF-2017-01}. The \emph{Loose} identification working point is measured in dedicated studies performed within the ATLAS collaboration to have an efficiency of 93\% \cite{PERF-2017-01} for identifying prompt electrons with \(E_T=40~\GeV\). The \emph{Loose} isolation working point has a total measured efficiency of 98\% \cite{PERF-2017-01}. This electron definition has a relatively high efficiency, and is used to veto the presence of additional electrons in the final state.
+\newline \emph{Signal} electrons are designed to be high-purity electrons. They are required to satisfy the \emph{Medium} identification criteria, which are measured to have an 88\% efficiency \cite{PERF-2017-01}, and \emph{Loose} isolation criteria.
+\newline Both types of electrons require are required to have \(\pT > 7{\GeV} \) and a pseudorapidity in the range of \(|\eta| < 2.47\).
 %, and apply the recommended \(z_0 \sin \theta\) and \(d_0\) track-to-vertex association cuts.
 % All requirements are summarized in \Tab{\ref{tab:elDef}}.
 
 \subsubsection{Muons}
+
+As described in Section \ref{sec:muon_spec}, muons are reconstructed using information from the the inner detector and the muon spectrometer. Detailed information about muon reconstruction, identification and calibration can be found in Refs. \cite{PERF-2015-10} and \cite{ATL-PHYS-PROC-2018-052}. In analogy to electron objects, muon objects are reconstructed at several identification and isolation working points, and two definitions for muons are considered for this analysis:
+\newline \emph{Baseline} muons do not have any isolation requirement, and must satisfy the \emph{Loose} identification criteria, with a measured efficiency of 98\% for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}, for a high-efficiency selection.
+\newline \emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 98\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052} which use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
+\newline Both types of muons use a threshold of \(\pt > 7~\GeV \). 
+
+Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2.7\). For signal muons, a tighter pseudorapidity range of \(|\eta| < 2.5\) is required to ensure that the muons are well measured in the inner detector as well as the muon spectrometer. %Track-to-vertex association cuts are applied to both. All requirements are summarized in \Tab{\ref{tab:muDef}}.
+
 \subsection{Small-radius \aktfour jets}
-\subsection{TAR jets}
+
+As discussed in Section \ref{sec:had_calo}, quarks and gluons hadronize in the hadronic calorimeter to produce showers of energy deposits in the calorimeter known as jets. A variety of algorithms are employed which aim to reconstruct the resulting clusters of energy deposits in the hadronic calorimeter using topologically connected clusters of energy deposits (a.k.a. topo-clusters) in the calorimeter. The algorithms will also consider various angular radii  
+
+\SmallR jets are reconstructed by clustering particle flow objects \cite{PERF-2015-09} using the \akt algorithm \cite{Cacciari:2008gp} within an angular radius of \(R=0.4\). After they are fully calibrated \cite{ATLAS-CONF-2015-037}, only jets with \(\pt > 20~\GeV\) and \(|\eta| < 2.5\) are considered for the search. Jet cleaning \cite{ATLAS-CONF-2015-029} with the \verb|TightBad| working point is applied to suppress noise in the calorimeter and background jets which are not produced from the primary collision. The jet vertex tagger \cite{ATLAS-CONF-2014-018} is applied with the \verb|Tight| working pointto suppress ``pile-up" jets from other \(pp\) interactions in the same and neighbouring bunch crossings. These jets are used in the analysis to identify the hadronic decay products of a \(W\) boson in the \resolved case. 
+
+\subsubsection*{\btag}
+\btagged jets are identified with the \verb|DL1r| algorithm \cite{ATLAS-CONF-2018-006}, which uses a deep learning method for the identification. A fixed working point with 77\% efficiency is used. \btagged jets are vetoed in this analysis.
+
+\subsection{Resolved \(W\) Candidate}
+
+\subsection{TAR jets (Merged \(W\) Candidate)}
 \subsection{\met}
 \subsection{Dark Higgs Candidate Mass}
-
-\begin{itemize}
-\item State the trigger combination used for the search (\met OR single muon)
-\item Show trigger efficiency curves for \met only and \met OR single muon to show that the (OR single muon) is a necessary addition in the muon channel to achieve 100\% sensitivity.
-\item Explain why \met trigger alone is insufficient in the muon channel due the exclusive use of calorimeter information by the ATLAS \met trigger.
-\end{itemize}
 
 \section{Event Selections}
 \label{sec:evt_selections}
