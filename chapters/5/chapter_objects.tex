@@ -9,6 +9,7 @@ This chapter describes the physics objects which are reconstructed on an event-b
 The goal of the ATLAS detector is to identify particles that are produced by the proton-proton collisions that take place in the centre of the detector, and to reconstruct their kinematic properties. The particle identification and reconstruction is performed using various collections of measured signals in the detector sub-systems, which are broadly referred to as ``physics objects" \cite{physics_objects_atlas_2013}. The physics objects used to reconstruct all particles considered in this search are described in the following sections.
 
 \subsection{Charged Leptons}
+\label{sec:charged_leptons}
 
 The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability be an electron, a muon or a tau. Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are only able to decay to a \(e\bar{\nu}_e\) pair because any other particles that the virtual \(W\) could in principle decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
 
@@ -82,8 +83,6 @@ Two types of electrons are defined for the search based on different sets of cri
 \newline \emph{Baseline} electrons use the \emph{Loose} working point for both identification and isolation. Isolation is measured within a fixed angular radius of \(\Delta R=0.2\) around the reconstructed electron object \cite{PERF-2017-01}. The \emph{Loose} identification working point is measured in dedicated studies performed within the ATLAS collaboration to have an efficiency of 93\% \cite{PERF-2017-01} for identifying prompt electrons with \(E_T=40~\GeV\). The \emph{Loose} isolation working point has a total measured efficiency of 98\% \cite{PERF-2017-01}. This electron definition has a relatively high efficiency, and is used to veto the presence of additional electrons in the final state.
 \newline \emph{Signal} electrons are designed to be high-purity electrons. They are required to satisfy the \emph{Medium} identification criteria, which are measured to have an 88\% efficiency \cite{PERF-2017-01}, and \emph{Loose} isolation criteria.
 \newline Both types of electrons require are required to have \(\pT > 7{\GeV} \) and a pseudorapidity in the range of \(|\eta| < 2.47\).
-%, and apply the recommended \(z_0 \sin \theta\) and \(d_0\) track-to-vertex association cuts.
-% All requirements are summarized in \Tab{\ref{tab:elDef}}.
 
 \subsubsection{Muons}
 
@@ -92,16 +91,16 @@ As described in Section \ref{sec:muon_spec}, muons are reconstructed using infor
 \newline \emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 98\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052} which use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
 \newline Both types of muons use a threshold of \(\pt > 7~\GeV \). 
 
-Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2.7\). For signal muons, a tighter pseudorapidity range of \(|\eta| < 2.5\) is required to ensure that the muons are well measured in the inner detector as well as the muon spectrometer. %Track-to-vertex association cuts are applied to both. All requirements are summarized in \Tab{\ref{tab:muDef}}.
+Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2.7\). For signal muons, a tighter pseudorapidity range of \(|\eta| < 2.5\) is required to ensure that the muons are well measured in the inner detector as well as the muon spectrometer. 
 
 \subsection{Small-radius \aktfour jets}
 \label{sec:atk4_jets}
 
 As discussed in detail in Section \ref{sec:had_calo}, quarks and gluons hadronize in the hadronic calorimeter to produce showers of energy deposits in the calorimeter known as jets. This search uses the ``particle flow algorithm" \cite{PERF-2015-09} to reconstruct objects associated with the resulting energy deposits. The particle flow algorithm matches signals from the inner tracker and the topologically connected clusters of energy deposits in the calorimeter referred to as ``topo-clusters" with the aim of forming objects representing individual charged particles. The energy deposited in the calorimeter by these identified charged particle objects is, leaving behind an ensemble of ``particle flow objects" consisting of the remaining calorimeter energy and tracks which are matched to the hard interaction. The anti-\(k_t\) algorithm described in Ref. \cite{akt_algo} is then used to reconstruct jets using these particle flow objects. Various angular jet radii \(R\), where \(R\) is defined in Eq. \ref{eq:jet_radius}, may be considered for jet reconstruction depending on the kinematics and anticipated origins of the quark or gluon which initiated the shower (see discussion in Section \ref{sec:had_calo} for more details), where \(R\) determines the angular radius within which the anti-\(k_t\) algorithm includes calorimeter deposits for jet reconstruction. 
 
-As discussed in Chapter \ref{chapter:dh_model}, the final state signature of DH model targeted in this search involves a pair of energetic \(W\) bosons in the final state, one of which decays leptonically to a \(\ell\nu\) pair, and the other hadronically to a pair of quarks. If the boost of the hadronically decaying \(W\) is sufficiently low, the two quarks may have a large enough angular separation as to be most effectively reconstructed as two separate jets with small radius. In the so-called ``resolved" regime of the search, the quark-induced jets so resolved that it is not even possible to reconstruct them as a single multi-pronged large-radius jet. For this search, these so-called ``\SmallR" jets are reconstructed with a radius of \(R=0.4\).
+As discussed in Chapter \ref{chapter:dh_model}, the final state signature of DH model targeted in this search involves a pair of energetic \(W\) bosons in the final state, one of which decays leptonically to a \(\ell\nu\) pair, and the other hadronically to a pair of quarks. If the boost of the hadronically decaying \(W\) is sufficiently low, the two quarks may have a large enough angular separation as to be most effectively reconstructed as two separate jets with small radius. In the so-called ``resolved" regime of the search, the quark-induced jets so resolved that it is not even possible to reconstruct them as a single multi-pronged large-radius jet. For this search, these so-called ``\smallR" jets are reconstructed with a radius of \(R=0.4\).
 
-After the \SmallR jets are reconstructed are fully calibrated \cite{ATLAS-CONF-2015-037}, only jets with \(\pt > 20~\GeV\) and \(|\eta| < 2.5\) are considered for the search. Jet cleaning \cite{ATLAS-CONF-2015-029} with the \emph{TightBad} working point is applied to suppress noise in the calorimeter and background jets which are not produced from the primary \(pp\) collision. The jet vertex tagger \cite{ATLAS-CONF-2014-018} is applied with the \emph{Tight} working point to suppress pileup jets \cite{pileup} from other \(pp\) interactions in the same and neighbouring bunch crossings - see Section \ref{sec:evt_wts} for a more detailed discussion of pileup events. As described in Section \ref{sec:resolved_w_cand} below, these jets are used in the analysis to identify quarks originating from the hadronically-decaying \(W\) boson in the DH signal model in the resolved regime, and to reconstruct the \(W\) boson in this regime.
+After the \smallR jets are reconstructed are fully calibrated \cite{ATLAS-CONF-2015-037}, only jets with \(\pt > 20~\GeV\) and \(|\eta| < 2.5\) are considered for the search. Jet cleaning \cite{ATLAS-CONF-2015-029} with the \emph{TightBad} working point is applied to suppress noise in the calorimeter and background jets which are not produced from the primary \(pp\) collision. The jet vertex tagger \cite{ATLAS-CONF-2014-018} is applied with the \emph{Tight} working point to suppress pileup jets \cite{pileup} from other \(pp\) interactions in the same and neighbouring bunch crossings - see Section \ref{sec:evt_wts} for a more detailed discussion of pileup events. As described in Section \ref{sec:resolved_w_cand} below, these jets are used in the analysis to identify quarks originating from the hadronically-decaying \(W\) boson in the DH signal model in the resolved regime, and to reconstruct the \(W\) boson in this regime.
 
 \subsubsection*{\btag}
 \btagged jets are identified with the \verb|DL1r| algorithm \cite{ATLAS-CONF-2018-006}, which uses a deep learning method for the identification. A fixed working point with 77\% efficiency is used. \btagged jets are vetoed in the signal region to reduce the background of SM \ttbar and single-top processes (see Section \ref{sec:dominant_bkgs} for details).
@@ -109,21 +108,21 @@ After the \SmallR jets are reconstructed are fully calibrated \cite{ATLAS-CONF-2
 \subsection{Resolved \(W\) Candidate}
 \label{sec:resolved_w_cand}
 
-As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced by the hadronic decay of the \(W\) boson in the signal model are reconstructed as two resolved \SmallR jets in the less-boosted resolved regime. The parent \(W\) boson can then be reconstructed from \SmallR jets induced by its daughter quarks using the combined energy and momentum of the \SmallR jet pair. Given that \SmallR jets can also be produced by, for example, initial-state radiation and pileup, it is quite common for there to be more than two \SmallR jets reconstructed in the final state. These additional \SmallR jets introduce some ambiguity in terms of identifying which \SmallR jets reconstructed in the final state should be associated with the hadronic decay of a \(W\) in the signal model. For events with more than two \SmallR jets in the final state, the pair of \SmallR jets whose combined invariant mass is closest to the \(W\) boson mass are associated with the \(W\) decay products, and used to reconstruct the \(W\) boson candidate. The algorithm for this jet identification and \(W\) boson reconstruction so is as follows:
+As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced by the hadronic decay of the \(W\) boson in the signal model are reconstructed as two resolved \smallR jets in the less-boosted resolved regime. The parent \(W\) boson can then be reconstructed from \smallR jets induced by its daughter quarks using the combined energy and momentum of the \smallR jet pair. Given that \smallR jets can also be produced by, for example, initial-state radiation and pileup, it is quite common for there to be more than two \smallR jets reconstructed in the final state. These additional \smallR jets introduce some ambiguity in terms of identifying which \smallR jets reconstructed in the final state should be associated with the hadronic decay of a \(W\) in the signal model. For events with more than two \smallR jets in the final state, the pair of \smallR jets whose combined invariant mass is closest to the \(W\) boson mass are associated with the \(W\) decay products, and used to reconstruct the \(W\) boson candidate. The algorithm for this jet identification and \(W\) boson reconstruction so is as follows:
 
 \begin{itemize}
-\item Construct all possible combinations of two \SmallR jets (a.k.a. ``dijet pairs") in the final state.
+\item Construct all possible combinations of two \smallR jets (a.k.a. ``dijet pairs") in the final state.
 \item For each such candidate dijet pair, \(j_1\) and \(j_2\), sum the four-momenta of the reconstructed jets, \(\mathbf{p}_{j_1,j_2} = \mathbf{p}_{j_1} + \mathbf{p}_{j_2}\), and calculate their combined invariant mass: 
 
 \begin{equation}
 \label{eq:dijet_invt_mass}
 M_{j_1,j_2} = \sqrt{\mathbf{p}_{j_1,j_2} \cdot \mathbf{p}_{j_1,j_2} } 
 \end{equation}
-\item Select the dijet pair whose invariant mass is closest to the \(W\) boson mass of \(80.4~\GeV\) \cite{PDG_2018} as the \SmallR jets to be associated with the \(W\rightarrow q\bar{q}\) decay.
-\item Reconstruct the candidate \(W\) boson using the dijet pair with four-momentum \(\mathbf{p}_{j_1,j_2}\).
+\item Select the dijet pair whose invariant mass is closest to the \(W\) boson mass of \(80.4~\GeV\) \cite{PDG_2018} as the \smallR jets to be associated with the \(W\rightarrow q\bar{q}\) decay.
+\item Reconstruct the candidate hadronically decaying \(W\) boson using the dijet pair with four-momentum \(\mathbf{p}_{j_1,j_2}\).
 \end{itemize}
 
-Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed mass of the \(W\) boson candidate for MC simulated events generated at a range of sample \ms and \mZp after application of the baseline event selections presented in Section \ref{sec:evt_selections}, with the additional requirement that there be at least two \SmallR jets in the final state. The distributions are in general well centred around the \(W\) boson mass.
+Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed mass of the \(W\) boson candidate for MC simulated events generated at a range of sample \ms and \mZp after application of the baseline event selections presented in Section \ref{sec:evt_selections}, with the additional requirement that there be at least two \smallR jets in the final state. The distributions are in general well centred around the \(W\) boson mass.
 
 \begin{figure}[h]
 	\centering
@@ -137,49 +136,161 @@ Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed ma
 	\caption{\ms Fixed, \mZp Varied}
 	\label{fig:resolved_Wmass_reco_mZp}
 	\end{subfigure}
-	\caption[]{Distributions of the reconstructed W candidate mass for MC simulated events produced for the DH signal model over a range of \ms and \mZp. All events included in the distributions are required to pass the baseline event selection described in Section \ref{sec:evt_selections} is applied, and to have at least two \SmallR jets in the final state. The red dashed vertical line is placed at the \(W\) boson mass of 80.4 \GeV. Note that the differing amplitudes of the distributions are largely due to differing cross sections of the DH signal model at the different \ms and \mZp plotted.}
+	\caption[]{Distributions of the reconstructed W candidate mass for MC simulated events produced for the DH signal model over a range of \ms and \mZp. All events included in the distributions are required to pass the baseline event selection described in Section \ref{sec:evt_selections} is applied, and to have at least two \smallR jets in the final state. The red dashed vertical line is placed at the \(W\) boson mass of 80.4 \GeV. Note that the differing amplitudes of the distributions are largely due to differing cross sections of the DH signal model at the different \ms and \mZp plotted.}
 	\label{fig:resolved_Wmass_reco}
 \end{figure}
 
 \subsection{Track-Assisted Reclustered Jets (Merged \(W\) Candidate)}
+\label{sec:TAR_jets}
 
-If the hadronically decaying \(W\) boson is produced with a sufficiently large momentum (i.e. boost), the jets produced by the \(q\) pair may be sufficiently collimated (i.e. ``merged") that they are most effectively reconstructed as a single multi-pronged large-radius jet, as opposed to the resolved \SmallR jets used for \(W\) reconstruction in the resolved regime (see Sections \ref{sec:atk4_jets} and \ref{sec:resolved_w_cand} above for details). 
+If the hadronically decaying \(W\) boson is produced with a sufficiently large momentum (i.e. boost), the jets produced by the \(q\) pair may be sufficiently collimated (i.e. ``merged") that they are most effectively reconstructed as a single multi-pronged large-radius jet, as opposed to the resolved \smallR jets used for \(W\) reconstruction in the resolved regime (see Sections \ref{sec:atk4_jets} and \ref{sec:resolved_w_cand} above for details). 
 
-Since the signal model predicts that charged particle tracks and energy deposits in the detector will have originated primarily from the two quarks produced by the \(W\rightarrow q\bar{q}\) decay in the signal model, it is important to reconstruct the large-radius jet in this so-called merged regime with as much detailed substructure information as possible, in order to identify substructure qualities that would be consistent with the jet containing tracks and energy deposits originating from two energetic quarks originating from a \(W\) parent. Such substructure information includes the combined invariant mass of all particles which produced the jet, which would be expected to be consistent with the \(W\) boson mass within detector resolution, and variables which aim to quantify the number of distinct ``prongs" of localized energy deposition within the jet, which can be correlated to the number of high-\pt strongly interacting particles whose energy deposits are included in the jet (two such prongs would be expected for the signal model). 
+Since the signal model predicts that charged particle tracks and energy deposits in the detector will have originated primarily from the two quarks produced by the \(W\rightarrow q\bar{q}\) decay in the signal model, it is important to reconstruct the large-radius jet in this so-called merged regime with as much detailed kinematics and substructure information as possible, in order to identify features that would be consistent with the jet containing tracks and energy deposits originating from two energetic quarks originating from a \(W\) parent. Such features would include the combined invariant mass \mTAR of all particles which produced the jet, which would be expected to be consistent with the \(W\) boson mass within detector resolution. Important substructure information would include variables which aim to quantify the number of distinct ``prongs" of localized energy deposition within the jet, which can be correlated to the number of high-\pt strongly interacting particles whose energy deposits are included in the jet (two such prongs would be expected for the signal model). 
 
-This search uses the track-assisted reclustered (TAR) jet algorithm \cite{ATL-PHYS-PUB-2018-012} for large-radius jet reconstruction in the merged regime. Whereas most large-radius jet reconstruction techniques rely on energy deposits in the calorimeter to construct the jet substructure information, TAR jets are designed to combine charged particle tracks measured by the inner tracker with the calorimeter energy deposits to obtain a higher-resolution construction of TAR substructure information, taking advantage of the superior resolution of the inner tracker compared with calorimeter. 
+This search uses the track-assisted reclustered (TAR) jet algorithm \cite{ATL-PHYS-PUB-2018-012} for large-radius jet reconstruction in the merged regime. In this regime, the highest-\pt TAR jet reconstructed with a radius parameter of \(R=1.0\) is identified as the physics object which constitutes the the decay products of the candidate hadronically decaying \(W\) boson (\(W_\text{had}\)) in the DH signal model. Whereas most large-radius jet reconstruction techniques rely on energy deposits in the calorimeter to construct the jet substructure information, TAR jets are designed to combine charged particle tracks measured by the inner tracker with the calorimeter energy deposits to obtain a higher-resolution construction of TAR substructure information, taking advantage of the superior resolution of the inner tracker compared with calorimeter. 
 
-For this search, \(R=0.2\) \SmallR jets are used to reconstruct energy deposits in the calorimeter, and are input to the TAR algorithm along with tracks measured by the inner detector which satisfy a set of quality criteria summarized in Table \ref{tab:TARparameters}. Furthermore the TAR algorithm uses tracks which fulfill certain quality criteria - see \Tab{\ref{tab:TARparameters}}. The TAR workflow is as follows: \smallR jets are reclustered with the \akt algorithm with \(R=1.0\) to \largeR jets and trimming is applied. The tracks are then associated to the \smallR sub-jets that are left after trimming. The \pt of the tracks is then scaled using the \pt of the matched \smallR jet. While the kinematic properties of the TAR jets are calculated from the constituent \smallR jets, the jet substructure as well as the mass \(m^\text{TAR}\) are calculated from the constituent tracks. \Fig{\ref{fig:TARAlg}} shows a visual summary of the base TAR algorithm. The analysis uses the TAR algorithm on \smallR jets and tracks that have undergone a preselection to disentangle leptons. This is helpful in this analysis because the signal lepton often falls within the \(R=1.0\) cone of the TAR jet and disrupts the jet reconstruction, especially through calorimetric clusters created by an electron.
+\subsubsection{TAR Algorithm}
+\label{sec:TAR_algo}
 
-The following steps outline the algorithm (steps with a * are added to disentangle leptons:
+For this search, \(R=0.2\) \smallR jets are used to reconstruct energy deposits in the calorimeter, and are input to the TAR algorithm along with tracks measured by the inner detector which satisfy a set of quality criteria summarized in Table \ref{tab:TARparameters}. The TAR algorithm \cite{ATL-PHYS-PUB-2018-012} is as follows: the input \(R=0.2\) \smallR ``subjets" are reclustered using the \akt algorithm with \(R=1.0\) to \largeR jets. A trimming procedure is applied to mitigate the effects of pileup and background QCD processes within the triggered event that do not originate from the hard interaction. The trimming procedure removes any of the input subjets which carry less than a fraction \(\fcut=0.05\) of the total transverse momentum of the \largeR jet: \(\pt^\text{subjet}/\pt^\text{\largeR jet} < 0.05\).  The tracks from the inner detector are then matched to the remaining \smallR subjets using the ghost association procedure described in Ref. \cite{ghost_association_2008}, if possible. Any tracks which cannot be matched to subjets using ghost association are instead matched to the nearest subjet, provided that there is a jet within an angular radius \(\Delta R=0.3\) of the track. To account for the energy of the neutral hadronic jet components which do not leave tracks in the inner detector, the \pt of each track is scaled such that the \(\pt\)s of all tracks matched to a given subjet will sum to the energy of the subjet measured by the calorimeter:
+
+\begin{equation}
+\label{eq:tar_track_pt_scaling}
+\pt^\text{track, new} = \pt^\text{track, old} \times \frac{p_{T,j}^\text{subjet}}{\sum_{i \in j}p_{T, i}^\text{track, old}}
+\end{equation}
+
+\noindent where the index \(i\) runs over all tracks matched to the subjet \(j\). The rescaled tracks and remaining subjets are again reclustered using the \akt algorithm to form the final \largeR TAR jet.
+
+While the kinematic properties of the TAR jets are calculated from the constituent \smallR jets, the jet substructure as well as the mass \(m^\text{TAR}\) are calculated from the constituent tracks. Figure \ref{fig:TARAlg} shows a visual summary of the basic TAR algorithm. 
+
+\subsubsection{TAR-lepton Disentanglement}
+
+The analysis uses the TAR algorithm on \(R=0.2\) \smallR jets and tracks that have undergone a ``TAR-lepton disentanglement" preselection to remove tracks associated with any reconstructed baseline electrons or muons and any \(R=0.2\) jets which overlapped with the baseline electron tracks. This preselection is helpful in this analysis because the charged lepton produced by the leptonic \(W\rightarrow \ell\nu\) decay often falls within the \(R=1.0\) cone of the TAR jet, as illustrated in Figure \ref{fig:TAR_lepton_overlap_illustration}, and disrupts the jet reconstruction, particularly by means of additional jet energy induced by calorimetric clusters created by an overlapping electron.
+
+\begin{figure}[H]
+  \centering
+     \includegraphics[width = 0.3\textwidth]{Figures/5/lepton_overlap.pdf}
+     \caption{Illustration of the final state scenario in which the charged lepton produced by the leptonic \(W\rightarrow \ell\nu\) decay overlaps with the \largeR TAR jet reconstructed from the hadronic \(W\rightarrow qq\) decay.}
+     \label{fig:TAR_lepton_overlap_illustration}
+  \end{figure}
+  
+Figure \ref{fig:TARdisentaglementplots} shows a comparison of the distributions of reconstructed TAR jet mass \mTAR either without or with the TAR-lepton disentanglement preselection applied, for MC simulated events produced for the DH signal model at several representative \ms and \mZp, in which the reconstructed electron in the final state overlaps with the highest-\pt reconstructed TAR jet.  An additional requirement on the ``transverse mass" \(m_T\) between the lepton and the \met (see description in Section \ref{sec:transverse_mass} below) if \(\mtlepmet > 150~\GeV\) is applied to select for events with similar kinematics to those which pass the signal region selection presented in Section \ref{sec:evt_selections} below. For all the signal points, the TAR-lepton disentanglement preselection is found to substantially improve the ability of the TAR algorithm to reconstruct TAR jets with \mTAR near the \(W\) boson mass, as would be expected for the signal model.
+
+\begin{figure}[H]
+\centering
+   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp500_dm200_dh310.pdf}
+   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp1000_dm200_dh310.pdf}
+
+   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp1700_dm200_dh260.pdf}
+   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp2100_dm200_dh210.pdf}
+
+   \caption{Distributions of \mTAR for the leading-\pt TAR jet in MC simulated events generated for the DH signal model process with semileptonic \(WW\) decay at several representative \ms and \mZp, with and without application of the lepton disentanglement preselection. Events included in the distributions are required to have one signal electron and at least one reconstructed TAR jet, as well as \(\mtlepmet > 150~\GeV\). Distributions are normalized to unit area.}
+   \label{fig:TARdisentaglementplots}
+\end{figure}
+
+\subsubsection{Summary of the TAR Procedure}
+
+The following steps summarize the algorithm used to construct the TAR jets used in this search (steps with a * are added to disentangle leptons):
 \begin{itemize}
   \item Tracks and calibrated \akt \(R=0.2\) jets are chosen as input to the algorithm.
   \item Tracks associated with a baseline muon or electron are removed from the input collection (*).
-  \item \akt \(R=0.2\) jets overlapping with a baseline electron (\(\DeltaR<0.2\)) are removed from the input collection (*).
-  \item The remaining \akt \(R=0.2\) jets are reclustered using the \akt algorithm into \(R=1.0\) jets and trimmed using the \(p_T\) fraction \(\fcut=0.05\).
-  \item Input tracks are matched to \(R=0.2\) jets if possible using ghost association.
-  \item Tracks which remain unassociated are matched to the nearest \akt \(R=0.2\) jet within \(\DeltaR<0.3\)
-  \item The \pt of each track is rescaled using the \pt of the jet to which it is matched using the equation:
-  \begin{equation}
-  \pt^{\text{track, new}} = \pt^{\text{track, old}}\times \frac{\pt^{\text{subjet \(j\)}}}{\sum_{i \in j} \pt^{\text{track \(i\)}}} ,
-  \label{eq:TAR_rescale}
-  \end{equation}  where \(j\) is the \(R=0.2\) subjet that the track being rescaled is matched with, and the index \(i\) runs over all tracks matched to that subjet. This rescaling accounts for the missing neutral momentum, which is measured at calorimeter level but is not present at tracker level.
+  \item \(R=0.2\) jets overlapping with a baseline electron (\(\DeltaR<0.2\)) are removed from the input collection to the TAR algorithm (*).
+  \item The remaining \(R=0.2\) subjets are reclustered using the \akt algorithm into \(R=1.0\) jets and trimmed using the \(p_T\) fraction \(\fcut=0.05\).
+  \item Input tracks are matched to \(R=0.2\) subjets which remain after trimming, if possible, using ghost association.
+  \item Tracks which remain unassociated are matched to the nearest \akt \(R=0.2\) jet within \(\DeltaR<0.3\).
+  \item The \pt of each track is rescaled using the \pt of the jet to which it is matched using Eq. \ref{eq:tar_track_pt_scaling}. This rescaling accounts for the missing neutral momentum, which is measured at calorimeter level but is not present at tracker level.
   \item Finally, jet substructure variables and  \(m^\text{TAR}\) are calculated using the rescaled matched tracks.
 \end{itemize}
-The parameters of the TAR algorithm used are summarized in \Tab{{\ref{tab:TARparameters}}}. \\
-The primary advantages of using TAR jets for this analysis are two-fold:  First, and foremost, is the aforementioned ability to disentangle leptons, while an added benefit is that the calculation of substructure variables benefits from the better resolution of tracks as compared with a purely topocluster-based calculation.
+The parameters of the TAR algorithm used are summarized in Table \ref{tab:TARparameters}. \\
 
 \begin{figure}[htb]
   \centering
      \includegraphics[width = 0.80\textwidth]{Figures/5/TARJetdescription.pdf}
-     \caption{TAR jet reconstruction algorithm depicted without lepton disentanglement. Figure from \(\copyright\) \cite{ATL-PHYS-PUB-2018-012}}
+     \caption{TAR jet reconstruction algorithm depicted without lepton disentanglement. Figure adapted from \(\copyright\) \cite{ATL-PHYS-PUB-2018-012}}
      \label{fig:TARAlg}
   \end{figure}
 
+\begin{table}[htbp]
+\centering
+\caption{TAR jet reconstruction parameters}
+\label{tab:TARparameters}
+\begin{tabular}{l l }
+\toprule
+\multirow{3}{*}{Track selection} & \verb|Loose| quality\\
+	& \(\pt > 0.5~\GeV\) \\
+	& \(|\eta| < 2.5\)  \\
+Tracks removed if associated to & electrons, muons \\
+\midrule
+\multirow{3}{*}{Input jet selection} & \(R=0.2\) \akt jets \\
+	& \(\pt > 20~\GeV\) \\
+	&  \(|\eta| < 2.5\)  \\
+\midrule
+Reclustering radius & \(R=1.0\) \\
+TAR jet \pt & \(\pt^\text{TAR} > 100~\GeV\) \\
+Trimming radius & \(R=0.2\) \\
+Trimming \pt fraction & \(f_\text{cut}=0.05\) \\
+Track-to-jet association & \(\DeltaR(\text{jet, track}) < 0.3\) \\
+jet-electron overlap removal & \(\DeltaR(\text{jet, electron}) < 0.2\) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{\met}
 
+The missing transverse momentum \met, introduced in Section \ref{sec:met}, quantifies the imbalance of momentum in the plane transverse to the beam line. If all particles produced in a \(pp\) collision are fully detected, conservation of momentum implies that the transverse momenta of all objects produced by the event should sum to zero within detector resolution. As a result, large \met in an event is indicative of the production of undetected energetic particles. The semileptonic \(s\rightarrow WW(qq\ell\nu)\) decay channel of the LHC signature for the DH model probed in this DM search (see Chapter \ref{chapter:dh_model} for details) predicts large (i.e. above-detector-resolution) \met in the final state. The large \met would be due to both the DM pair produced from from the decay of the hypothetical \Zprime, as well as the neutrino produced by the leptonic decay of one of the \(W\) bosons in the final state. Both the DM pair and the neutrino would be expected to pass through the detector without any appreciable interactions due to their very low interaction cross sections with SM particles, and hence constitute undetected (i.e. missing) momentum in the event.
+
+The \met is calculated using fully calibrated and reconstructed physics objects \cite{PERF-2016-07}. For this analysis, \met terms from baseline electrons and muons (see \Sect{\ref{sec:charged_leptons}}) and \(R=0.4\) jets (see \Sect{\ref{sec:atk4_jets}}) are used. In addition, a soft term calculated from tracks that are not associated with any of these reconstructed objects is added. Reconstructed \(\tau\)-leptons and photons are not considered in the calculation of \met.
+
+This search also makes use of the object-based \met significance \metsig \cite{ATLAS-CONF-2018-038}, which is designed to be positively correlated with the likelihood that the measured \met was actually produced by undetected particles in the event, rather than by fluctuations arising from the limited resolution with which the objects used in the calculation of \met are reconstructed. The \met significance is calculated on an event-by-event basis using the uncertainties of the reconstructed objects going into the \met calculation for the given event, as well as terms for the soft term and a pileup correction.
+
+\subsection{Overlap Removal}
+
+To avoid double-counting of objects, a priority-based overlap removal (OR) strategy is employed which eliminates any overlap between reconstructed physics objects. This is accomplished by removing all but the highest-priority object from the overlapping region. The strategy presented in this section resolves any overlap between electrons, muons and \(R=0.4\) \smallR jets. The overlap removal between leptons and TAR jets is described in Section \ref{sec:TAR_algo}. No overlap removal between \(R=0.4\) jets and TAR jets is applied, as they are not used in the same selection (see Section \ref{sec:evt_selections} for details). Table \ref{tab:OR} summarizes the criteria under which overlap is removed between a given pair of objects. 
+
+Overlap removal is performed for baseline objects and only the remaining objects are considered as candidate signal objects. Note that the calorimeter-tagged (CT) muons \cite{muon_reco} listed in Table \ref{tab:OR} are identified and reconstructed using only inner detector tracks and calorimeter energy deposits consistent with a minimum-ionizing particle, and do not have any associated hits identified in the muon spectrometer. Due to the absence of any identified signal in the muon spectrometer, these CT muons are given a relatively low priority in the OR procedure compared with non-CT muons which do have an associated signal in the muon spectrometer.
+
+\begin{table}[htbp]
+\centering
+\caption{Object priorities and overlap removal criteria for each pair of physics objects considered in the OR procedure. Object pairs and removal criteria are listed in the sequence in which they are considered for OR, with the top row considered first.  }
+\label{tab:OR}
+\small{
+\begin{tabular}{l l p{7cm}}
+\toprule
+\textbf{Removed Object} & \textbf{Retained Object} & \textbf{Criteria for OR} \\
+\midrule
+\midrule
+Electron (lower \pt) & Electron (higher \pt) & shared inner detector track \\
+Muon & Electron & shared ID track, and muon is CT \\
+Electron & Muon & shared ID track, and muon is not CT \\
+\akt4 Jet & Electron & Angular separation \(\DeltaR < 0.2\) \\
+Electron & \akt4 Jet & \(\DeltaR < \min{(0.4, 0.04 + 10~\GeV / \pt(e))}\) \\
+\akt4 Jet & Muon & fewer than 3 tracks in jet, and (muon is ghost-associated to jet, or \(\DeltaR < 0.2\)) \\
+Muon & \akt4 Jet & \(\DeltaR < \min{(0.4, 0.04 + 10~\GeV / \pt(\mu))}\) \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 \subsection{Dark Higgs Candidate Mass}
+
+In principle, the four-momentum of the Dark Higgs boson \(s\) in the DH signal model is simply the sum of four-momenta of the \(WW\) pair that it decays to:
+
+\begin{equation}
+\label{eq:dh_4momentum}
+\mathbf{p}_{s} = \mathbf{p}_{W_\text{had}} + \mathbf{p}_{W_\text{lep}}
+\end{equation}
+
+\noindent where \(W_\text{had}\) denotes the hadronically decaying \(W\) and \(W_\text{lep}\) denotes the leptonically decaying \(W\). The \(W_\text{had}\) four-momentum is reconstructed in the resolved regime using the pair of \akt4 jets whose invariant mass is closest to the on-shell \(W\) mass of \(80.4~\GeV\) (see Section \ref{sec:resolved_w_cand}), or as the four-momentum of the highest-\pt \(R=1.0\) TAR jet in the merged regime (see Section \ref{sec:TAR_jets}). The four-momentum of the \(W_\text{lep}\) is the sum of four momenta of the lepton and neutrino that it decays to:
+
+\begin{equation}
+\label{eq:}
+\end{equation}
+
+If the neutrino were the 
+
+However, due to the presence of \met in the final state originating from both the DM pair and the neutrino produced by the \(W_\text{lep}\), the measured \met cannot be unambiguously assigned
+
+\subsection{Transverse Mass}
+\label{sec:transverse_mass}
 
 \section{Event Selections}
 \label{sec:evt_selections}
