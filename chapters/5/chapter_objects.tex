@@ -136,7 +136,7 @@ Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed ma
 	\caption{\ms Fixed, \mZp Varied}
 	\label{fig:resolved_Wmass_reco_mZp}
 	\end{subfigure}
-	\caption[]{Distributions of the reconstructed W candidate mass for MC simulated events produced for the DH signal model over a range of \ms and \mZp. All events included in the distributions are required to pass the baseline event selection described in Section \ref{sec:evt_selections} is applied, and to have at least two \smallR jets in the final state. The red dashed vertical line is placed at the \(W\) boson mass of 80.4 \GeV. Note that the differing amplitudes of the distributions are largely due to differing cross sections of the DH signal model at the different \ms and \mZp plotted.}
+	\caption[]{Distributions of the reconstructed W candidate mass for MC simulated events produced for the DH signal model over a range of \ms and \mZp. All events included in the distributions are required to pass the baseline event selection described in Section \ref{sec:evt_selections} is applied, and to have at least two \smallR jets in the final state. The red dashed vertical line is placed at the \(W\) boson mass of 80.4 \GeV. Distributions are normalized to unit area.}
 	\label{fig:resolved_Wmass_reco}
 \end{figure}
 
@@ -174,17 +174,31 @@ The analysis uses the TAR algorithm on \(R=0.2\) \smallR jets and tracks that ha
      \label{fig:TAR_lepton_overlap_illustration}
   \end{figure}
   
-Figure \ref{fig:TARdisentaglementplots} shows a comparison of the distributions of reconstructed TAR jet mass \mTAR either without or with the TAR-lepton disentanglement preselection applied, for MC simulated events produced for the DH signal model at several representative \ms and \mZp, in which the reconstructed electron in the final state overlaps with the highest-\pt reconstructed TAR jet.  An additional requirement on the ``transverse mass" \(m_T\) between the lepton and the \met (see description in Section \ref{sec:transverse_mass} below) if \(\mtlepmet > 150~\GeV\) is applied to select for events with similar kinematics to those which pass the signal region selection presented in Section \ref{sec:evt_selections} below. For all the signal points, the TAR-lepton disentanglement preselection is found to substantially improve the ability of the TAR algorithm to reconstruct TAR jets with \mTAR near the \(W\) boson mass, as would be expected for the signal model.
-
+Figure \ref{fig:TARdisentaglementplots} shows a comparison of the distributions of reconstructed TAR jet mass \mTAR either without or with the TAR-lepton disentanglement preselection applied, for MC simulated events produced for the DH signal model at several representative \ms and \mZp, in which the reconstructed electron in the final state overlaps with the highest-\pt reconstructed TAR jet. For all the signal points, the TAR-lepton disentanglement preselection is found to substantially improve the ability of the TAR algorithm to reconstruct TAR jets with \mTAR near the \(W\) boson mass, as would be expected for the signal model.
+  
 \begin{figure}[H]
 \centering
-   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp500_dm200_dh310.pdf}
-   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp1000_dm200_dh310.pdf}
-
-   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp1700_dm200_dh260.pdf}
+\begin{subfigure}{0.49\textwidth}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp500_dm200_dh310.pdf}
+   \caption{\((\ms, mZp) = (310, 500)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp500_dh310}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp1000_dm200_dh310.pdf}
+   \caption{\((\ms, mZp) = (310, 1000)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp1000_dh310}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp1700_dm200_dh260.pdf}
+   \caption{\((\ms, mZp) = (260, 1700)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp1700_dh260}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
    \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp2100_dm200_dh210.pdf}
-
-   \caption{Distributions of \mTAR for the leading-\pt TAR jet in MC simulated events generated for the DH signal model process with semileptonic \(WW\) decay at several representative \ms and \mZp, with and without application of the lepton disentanglement preselection. Events included in the distributions are required to have one signal electron and at least one reconstructed TAR jet, as well as \(\mtlepmet > 150~\GeV\). Distributions are normalized to unit area.}
+   \caption{\((\ms, mZp) = (210, 2100)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp2100_dh210}
+\end{subfigure}
+   \caption{Distributions of \mTAR for the leading-\pt TAR jet in MC simulated events generated for the DH signal model process with semileptonic \(WW\) decay at several representative \ms and \mZp, with and without application of the lepton disentanglement preselection. Events included in the distributions are required to pass the baseline selection requirements presented in Section \ref{evt_selections}, and to have one signal electron and at least one reconstructed TAR jet. Distributions are normalized to unit area.}
    \label{fig:TARdisentaglementplots}
 \end{figure}
 
@@ -271,6 +285,7 @@ Muon & \akt4 Jet & \(\DeltaR < \min{(0.4, 0.04 + 10~\GeV / \pt(\mu))}\) \\
 \end{table}
 
 \subsection{Dark Higgs Candidate Mass}
+\label{sec:minms}
 
 In principle, the four-momentum of the Dark Higgs boson \(s\) in the DH signal model is simply the sum of four-momenta of the \(WW\) pair that it decays to:
 
@@ -286,12 +301,106 @@ In principle, the four-momentum of the Dark Higgs boson \(s\) in the DH signal m
 \mathbf{p}_{W_\text{lep}} = \mathbf{p}_\ell + \mathbf{p}_\nu
 \end{equation}
 
-If the neutrino were the 
+If the neutrino were the only anticipated source of ``true \met" (i.e. \met arising from undetected particles rather than limited detector resolution) in the final state, the measured four-momentum of the final state \met could be unambiguously assigned to the neutrino, i.e. \(\mathbf{p}_\nu = \mathbf{p}_\nu\). However, since the DH signal model additionally predicts  \met originating from the DM pair in the final state, there is some ambiguity in terms of assessing what component of the measured \met in an event could have originated from the final-state neutrino in the signal model, and which from the DM pair. 
 
-However, due to the presence of \met in the final state originating from both the DM pair and the neutrino produced by the \(W_\text{lep}\), the measured \met cannot be unambiguously assigned
+An approximate solution is obtained by assuming that the DH is only as massive as is kinematically required in order to produce the observed final state, subject to the constraint that the invariant mass of the reconstructed \(\mathbf{p}_{W_\text{lep}}\) be equal to the on-shell \(W\) mass of \(80.4~\GeV\). The assumption of minimal DH mass \ms is motivated by the fact that the lower the mass of a mediator, the larger is the range of mediator momenta for which the decay of the mediator can produce a given final state for which the momentum of one of the final-state particles (the neutrino) is unknown but constrained (i.e. lying somewhere between 0 and the measured \met). Therefore, for a given final state, the lowest mediator mass that can kinematically produce the final state has the largest space of momenta available by which it could do so compared with larger candidate mediator masses, and hence the highest likelihood of being the actual mediator mass.
+
+To simplify the math involved in determining the minimum \ms, the coordinate system can be rotated without loss of generality such that the lepton is strictly traveling along the \(z\) axis, and the hadronically decaying \(W\) boson \(W_\text{had}\) is in the \(xz\) plane, as shown in Figure \ref{fig:minms_coords}.
+
+\begin{figure}[H]
+  \centering
+     \includegraphics[width = 0.4\textwidth]{Figures/5/minms_coords.pdf}
+     \caption{Coordinate system used to evaluate the minimum DH mass \ms that is kinematically required to produce the observed final state, subject to the constraint that \(m_{W_\text{lep}} = 80.4~\GeV\).}
+     \label{fig:minms_coords}
+  \end{figure}
+  
+In this rotated coordinate system, the four-momenta \(\mathbf{p}_\nu\), \(\mathbf{p}_\ell\) of the neutrino, lepton and hadronically decaying \(W\) boson, respectively, are given by:
+
+\begin{equation}
+\label{eq:neutrino_momentum}
+\mathbf{p}_\nu = E_\nu(\sin\theta_{\ell\nu}\cos\phi_\nu, \sin\theta_{\ell\nu}\sin\phi_\nu, \cos\theta_{\ell\nu}, 1)
+\end{equation}
+
+\begin{equation}
+\label{eq:lepton_momentum}
+\mathbf{p}_\ell = E_\ell(1, 0, 0, 1)
+\end{equation}
+
+\noindent and 
+
+\begin{equation}
+\label{eq:lepton_momentum}
+\mathbf{p}_{W_\text{had}} = (E_{W_\text{had}}, p_{W_\text{had}, x}, 0, p_{W_\text{had}, z})
+\end{equation}
+
+\noindent where \(\theta_{\ell\nu}\) is the angular separation between the lepton and the neutrino, and \(\phi_\nu\) is the angle of the neutrino relative to the \(x\) axis in the \(xy\) plane. The \ms is then obtained by squaring the four-momenta in Eq. \ref{eq:dh_4momentum}:
+
+\begin{multline}
+\label{eq:ms_squared}
+\ms^2 = (\mathbf{p}_{W_\text{had}} + \mathbf{p}_{W_\text{lep}})^2 = (\mathbf{p}_{W_\text{had}} + \mathbf{p}_\ell + \mathbf{p}_\nu)^2 \\
+= (E_{W_\text{had}} + E_\ell + E_{\nu})^2 - (p_{W_\text{had}, x} + E_{\nu}\sin \theta_{\ell\nu}\cos \phi_{\nu})^2 - (E_{\nu}\sin \theta_{\ell\nu}\sin \phi_{\nu})^2 - (E_\ell + p_{W_\text{had}, z} + E_{\nu}\cos \theta_{\ell\nu})^2
+\end{multline}
+
+\noindent It can be shown by taking derivatives of Eq. \ref{eq:ms_squared} that the minimum \ms occurs when \(\phi_v=0\) (i.e. when the neutrino is in the same plane as the \(\mathbf{p}_{W_\text{had}}\)).
+
+
+Setting \(\phi_v=0\) in Eq. \ref{eq:ms_squared} and using the pythagorean identity \(\sin \theta = \sqrt{1-\cos^2\theta}\):
+
+\begin{multline}
+\label{eq:ms_squared_simplified}
+m_s^2 = \left(E_\ell + E_\nu + E_{W_\text{had}}\right)^2 - \left(p_{W_\text{had}, x}  + E_\nu\sqrt{1 - \cos^2\theta_{\ell\nu}}\right)^2 \\ - \left(E_\ell + p_{W_\text{had}, z}\cos \theta_{Wl} + E_\nu\cos \theta_{\ell\nu} \right)^2
+\end{multline}
+
+This leaves an equation for \ms with two unknowns: the energy \(E_\nu\) of the neutrino, and the cosine \(\cos\theta_{\ell\nu}\) of the angle between the lepton and the neutrino. The neutrino energy is determined independently, by imposing the constraint that the mass \(m_{W_\text{lep}}\) of the leptonically decaying \(W\) boson be set to the on-shell \(W\) boson mass of \(m_W=80.4~\GeV\):
+
+\begin{equation}
+\label{eq:Ev}
+m_{W_\text{lep}}^2 = m_W = (p_\ell + p_{\nu})^2 = 2p_\ell p_{\nu} = 2E_\ell E_{\nu}(1 - \cos\ \theta_{\ell\nu})\\
+\end{equation}
+
+\noindent Solving for \(E_\nu\):
+
+\begin{equation}
+\label{eq:Ev_solved}
+E_{\nu} = \frac{m_W^2}{2E_\ell(1 - \cos\ \theta_{\ell\nu})}
+\end{equation}
+
+With this independent determination of \(E_\nu\), the minimum \ms in Eq. \ref{eq:ms_squared_simplified} is evaluated numerically by scanning over \(\cos\ \theta_{\ell\nu} \in [-1,1]\) and identifying the value of \(\cos\ \theta_{\ell\nu}\) which minimizes \ms (excluding \(\cos\ \theta_{\ell\nu}=1\) to avoid a singularity in Eq. \ref{eq:Ev_solved}).
+
+Figure \ref{fig:minms_reco} shows distributions of the minimized \ms (``\minms") for MC simulated events produced for the DH signal model over a range of \ms (left column) or \mZp (right column). The distributions are more sharply peaked for lower \ms, and for higher \ms the location of peak in \minms becomes increasingly shifted to the left of (i.e. below) the actual modelled \ms. The minimal variation between the different modelled values of \mZp presented in distributions in the right-hand column of Figure \ref{fig:minms_reco}, which scan over a range of \mZp for the same \ms, offers an encouraging indication that the value of the \minms variable is primarily a function of the \ms parameter in the model that it is designed to approximate, and that its dependence on other model parameters is minimal. 
+
+Despite the shifted location of the peaks at higher \ms, the presence of distinct peaks in the approximate vicinity of the modelled \ms imply that the \minms variable can be a valuable tool to aid in discriminating between events in the data that could be consistent with the DH signal process, and SM background processes. For this reason, events in the signal regions are binned in \ms when fitting the ATLAS data to the predicted yields of events produced by the DH signal model and the SM background processes to search for evidence of the DH model in the data in this DM search. The binning in \minms is presented in detail in Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)}.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_res_ms.pdf}
+	\caption{\(p_{W_\text{had}}\) reconstructed using \(R=0.4\) \smallR jets (see Section \ref{sec:resolved_w_cand}): \mZp Fixed, \ms Varied}
+	\label{fig:minms_res_ms}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_res_mZp.pdf}
+	\caption{\(p_{W_\text{had}}\) reconstructed using \(R=0.4\) \smallR jets (see Section \ref{sec:resolved_w_cand}): \mZp Fixed, \ms Varied\ms Fixed, \mZp Varied}
+	\label{fig:minms_res_mZp}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_mgd_ms.pdf}
+	\caption{\(p_{W_\text{had}}\) reconstructed using the leading TAR jet (see Section \ref{sec:TAR_jets}): \mZp Fixed, \ms Varied}
+	\label{fig:minms_res_ms}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_mgd_mZp.pdf}
+	\caption{\(p_{W_\text{had}}\) reconstructed using the leading TAR jet (see Section \ref{sec:TAR_jets}): \mZp Fixed, \ms Varied\ms Fixed, \mZp Varied}
+	\label{fig:minms_res_mZp}
+	\end{subfigure}
+	\caption[]{Distributions of the candidate \ms, reconstructed using the minimization strategy presented in Section \ref{sec:minms}, for MC simulated events produced for the DH signal model over a range of \ms and \mZp. Distributions are normalized to unit area. Events included in all distributions are required to pass the baseline selection requirements presented in Section \ref{evt_selections}. Events in the top row for which \(p_{W_\text{had}}\) is reconstructed using \(R=0.4\) \smallR jets are required to have at least two \(R=0.4\) \smallR jets reconstructed in the final state, and events in the bottom row for which \(p_{W_\text{had}}\) reconstructed using the leading TAR jet are required to have at least one TAR jet reconstructed in the final state.}
+	\label{fig:minms_reco}
+\end{figure}
 
 \subsection{Transverse Mass}
 \label{sec:transverse_mass}
+
+
 
 \section{Event Selections}
 \label{sec:evt_selections}
