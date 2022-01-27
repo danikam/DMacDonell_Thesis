@@ -400,25 +400,83 @@ Despite the shifted location of the peaks at higher \ms, the presence of distinc
 \subsection{Transverse Mass}
 \label{sec:transverse_mass}
 
+The transverse mass \(m_T(\met, \ell)\) between the lepton and \met is considered in this search because it is sensitive to the presence of additional \met beyond that arising from the neutrino in the leptonic decay of the \(W_\text{lep}\). It is computed for events measured in the ATLAS detector as:
 
+\begin{equation}
+\label{eq:mtlepmet_atlas}
+m_T(\ell, \met) = \sqrt{2p_{T, \ell} \met(1-\cos\theta_{\ell, \met})}
+\end{equation}
+
+
+\noindent which comes from the more general transverse mass definition \cite{PDG_kin}
+
+\begin{multline}
+\label{eq:mtlepmet_full}
+m_{T, \text{ full}}^2(\ell, \met) = (E_{T, \ell}^2 + E_{T, \met}^2 - (p_{T, \ell}^2 + p_{T, \met}^2)) \\
+= m_\ell^2+m_{\met}^2 + 2E_{T, \ell}, E_{T, \met}(1-\cos\theta_{\ell, \met})
+\end{multline}
+
+\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the energy of LHC collisions. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the pre-selection cuts, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/5/mT_lep_met_N_1.pdf}
+	\caption[]{Transverse mass distribution for SM background and several signal points with baseline selections, excluding the lower bound on \mtlepmet. The lower panel shows the ratio of yields predicted for the signal over the sum of MC background processes. The red line and arrow indicate the placement of the baseline selection on \mtlepmet.}
+	\label{fig:mT_lep_met}
+\end{figure}
 
 \section{Event Selections}
-\label{sec:evt_selections}
+\label{sec:evt_selections}'
+
+Selections are applied to the ATLAS collision data and MC simulated events with the aim of defining subsets, or ``regions" of data that are enriched in a particular process of interest for the search. The regions are designed and optimized using MC simulated data (see Section \ref{chapter:mc} for a detailed discussion of MC simulation and its application for simulating data produced by the ATLAS detector). The use of MC simulated data makes it possible to quantify the relative contribution to the expected yield of events in the region arising from each physics process.
+
+Selections which define the ``Signal regions" (SRs) are optimized to produce an enriched yield of MC simulated events produced using the DH signal model (referred to as ``signal events"), with a minimal yield of simulated events generated to model SM background processes (referred to as ``background events"). A discrepancy between the ATLAS collision data and the predicted yield of SM backgrounds in the signal regions would be an indication of a new BSM physics process producing a signature in the detector consistent with the signal model. ``Control regions" (CRs) are optimized to have an enriched yield of MC simulated events modelled by one particular SM background process. \wjets and \ttbar CRs are defined for this DM search to obtain a data-driven constraint on the overall normalization of these SM background processes in the signal region. 
+
+\subsection{Analysis Categories}
+
+The analysis selection is divided into two kinematic categories. The selections within each of the signal and control regions are divided into two 
+
+, we distinguish two categories describing the boost of the dijet system: \merged and \resolved. The \merged region is designed to target the regime in which the dijet system is sufficiently boosted as to be reconstructed as a single \largeR TAR jet. The \resolved region targets the low-boost regime in which the two jets in the final state can be individually resolved as \smallR \akt \(R=0.4\) jets.
+
+\Fig{\ref{fig:categories}} illustrates the two kinematic categories graphically.
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[t]{0.45\textwidth}
+	\centering
+	\includegraphics[width=0.75\textwidth]{Figures/5/merged.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{.45\textwidth}
+	\centering
+	\includegraphics[width=0.75\textwidth]{Figures/5/resolved.png}
+	\end{subfigure}
+	\caption{A graphical representation of two kinematic categories based on the characteristics of the signal. Left: \merged category, in which the jets produced by the \(q\bar{q}\) are sufficiently boosted as to be reconstructed as a single \largeR TAR jet. Right: \resolved category, in which the two quarks are reconstructed separately as two \smallR \akt \(R=0.4\) jets.}
+	\label{fig:categories}
+\end{figure}
+
+\subsection{Signal Region Definition}
+\label{sec:sr_selection}
+
+The signal region 
 
 \begin{itemize}
-\item High level discussion of why we apply event selections, and goals for optimal signal region definition.
+
+\item Signal region
 \begin{itemize}
 \item Broadly: maximize predicted signal content and minimize simulated background content, while maintaining sufficient MC and data statistics to enable a meaningful comparison between MC and data.
 \item Prioritize optimization of signal points near the edge of expected search sensitivity. 
 \item Keep signal region blind during optimization to avoid biasing selection.
-\end{itemize}
 \item Introduce variables used for event selection. Distinguish between variables that are optimized (eg. \mtlepmet) vs. fixed (eg. 1-lepton requirement) during optimization.
 \item Present concept and implementation of signal region optimization strategy.
 \item High-level discussion of why we define CRs to constrain normalizations of dominant \wjets and \ttbar backgrounds.
+\end{itemize}
+
+\item CRs
 \begin{itemize}
 \item Provides data-driven normalization constraint which can be extrapolated to the signal region (more details on extrapolation procedure in Chapter 7)
 \item Reduces the impact of (and reliance on) theoretical uncertainties involved in simulating the correct normalizations for these backgrounds. Emphasize the difficulty involved with assigning reliable theoretical uncertainties, and hence the value of using data-driven constraints.
 \end{itemize}
+
 \item Summary of design goals for control region
 \begin{itemize}
 \item High purity of background of interest.
@@ -426,6 +484,7 @@ Despite the shifted location of the peaks at higher \ms, the presence of distinc
 \item Phase space kinematically similar to SR.
 \item Signal contamination negligible compared with uncertainty of total background yield.
 \end{itemize}
+
 \item Present the \wjets control region, and motivate the \dR reversal used to define it.
 \item Present the \ttbar control region, and motivate the \bjet veto reversal used to define it.
 \item Present the additional modifications that were needed in the \merged category to optimize the CR definitions
@@ -433,7 +492,9 @@ Despite the shifted location of the peaks at higher \ms, the presence of distinc
 \item Reducing the lower bound on \metsig to boost stats.
 \item Increasing the lower bound on \dR in the \wjets CR to reduce the signal contamination to an acceptable level.
 \end{itemize}
+\begin{itemize}
 \item Summary of all analysis regions.
+\end{itemize}
 \end{itemize}
 
 \section{Triggers}
