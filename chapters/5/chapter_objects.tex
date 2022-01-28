@@ -103,6 +103,7 @@ As discussed in Chapter \ref{chapter:dh_model}, the final state signature of DH 
 After the \smallR jets are reconstructed are fully calibrated \cite{ATLAS-CONF-2015-037}, only jets with \(\pt > 20~\GeV\) and \(|\eta| < 2.5\) are considered for the search. Jet cleaning \cite{ATLAS-CONF-2015-029} with the \emph{TightBad} working point is applied to suppress noise in the calorimeter and background jets which are not produced from the primary \(pp\) collision. The jet vertex tagger \cite{ATLAS-CONF-2014-018} is applied with the \emph{Tight} working point to suppress pileup jets \cite{pileup} from other \(pp\) interactions in the same and neighbouring bunch crossings - see Section \ref{sec:evt_wts} for a more detailed discussion of pileup events. As described in Section \ref{sec:resolved_w_cand} below, these jets are used in the analysis to identify quarks originating from the hadronically-decaying \(W\) boson in the DH signal model in the resolved regime, and to reconstruct the \(W\) boson in this regime.
 
 \subsubsection*{\btag}
+\label{sec:btag}
 \btagged jets are identified with the \verb|DL1r| algorithm \cite{ATLAS-CONF-2018-006}, which uses a deep learning method for the identification. A fixed working point with 77\% efficiency is used. \btagged jets are vetoed in the signal region to reduce the background of SM \ttbar and single-top processes (see Section \ref{sec:dominant_bkgs} for details).
 
 \subsection{Resolved \(W\) Candidate}
@@ -194,7 +195,7 @@ Figure \ref{fig:TARdisentaglementplots} shows a comparison of the distributions 
    \label{fig:TARdisentaglementplots_zp1700_dh260}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
-   \includegraphics[width = 0.49\textwidth]{Figures/5/monoSww_semilep_zp2100_dm200_dh210.pdf}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp2100_dm200_dh210.pdf}
    \caption{\((\ms, mZp) = (210, 2100)~\GeV\)}
    \label{fig:TARdisentaglementplots_zp2100_dh210}
 \end{subfigure}
@@ -418,7 +419,7 @@ m_{T, \text{ full}}^2(\ell, \met) = (E_{T, \ell}^2 + E_{T, \met}^2 - (p_{T, \ell
 = m_\ell^2+m_{\met}^2 + 2E_{T, \ell}, E_{T, \met}(1-\cos\theta_{\ell, \met})
 \end{multline}
 
-\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the energy of LHC collisions. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the pre-selection cuts, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
+\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the energy of LHC collisions. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the baseline selection, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
 
 \begin{figure}[H]
 	\centering
@@ -435,12 +436,11 @@ Selections are applied to the ATLAS collision data and MC simulated events with 
 Selections which define the ``Signal regions" (SRs) are optimized to produce an enriched yield of MC simulated events produced using the DH signal model (referred to as ``signal events"), with a minimal yield of simulated events generated to model SM background processes (referred to as ``background events"). A discrepancy between the ATLAS collision data and the predicted yield of SM backgrounds in the signal regions would be an indication of a new BSM physics process producing a signature in the detector consistent with the signal model. ``Control regions" (CRs) are optimized to have an enriched yield of MC simulated events modelled by one particular SM background process. \wjets and \ttbar CRs are defined for this DM search to obtain a data-driven constraint on the overall normalization of these SM background processes in the signal region. 
 
 \subsection{Kinematic Categories}
+\label{sec:kin_categories}
 
-Within each of the signal and control regions, the analysis selection is divided into two kinematic regimes, referred to as ``categories". The ``merged" category is designed to target the merged regime discussed in Section \ref{sec:TAR_jets} in which the hadronic decay products are sufficiently boosted as to be reconstructed as a single \(R=1.0\) TAR jet. The leading \pt TAR jet is then used to reconstruct the candidate hadronically decaying \(W\) boson \(W_\text{had}\) in the signal model. The ``resolved" region targets the low-boost regime in which the hadronic decay products are have sufficient angular separation that they cannot be reclustered into a TAR jet, and are instead reconstructed as resolved \smallR \akt \(R=0.4\) jets, each of which is assumed to reconstruct an individual 
+Within each of the signal and control regions, the analysis selection is divided into two kinematic regimes, referred to as ``categories". The ``merged" category is designed to target the merged regime discussed in Section \ref{sec:TAR_jets} in which the hadronic decay products are sufficiently boosted as to be reconstructed as a single \(R=1.0\) TAR jet. The leading \pt TAR jet is then used to reconstruct the candidate hadronically decaying \(W\) boson \(W_\text{had}\) in the signal model. The ``resolved" region targets the low-boost regime in which the hadronic decay products are have sufficient angular separation that they cannot be reclustered into a TAR jet, and are instead reconstructed as resolved \smallR \akt \(R=0.4\) jets, and the \(W_\text{had}\) is reconstructed using the two \smallR jets whose combined invariant mass is closest to \(m_W=80.4~\GeV\).
 
-the two jets in the final state can be individually resolved as \smallR \akt \(R=0.4\) jets.
-
-\Fig{\ref{fig:categories}} illustrates the two kinematic categories graphically.
+\Fig{\ref{fig:categories}} illustrates the two kinematic categories.
 
 \begin{figure}[htbp]
 	\centering
@@ -452,14 +452,66 @@ the two jets in the final state can be individually resolved as \smallR \akt \(R
 	\centering
 	\includegraphics[width=0.75\textwidth]{Figures/5/resolved.png}
 	\end{subfigure}
-	\caption{A graphical representation of two kinematic categories based on the characteristics of the signal. Left: \merged category, in which the jets produced by the \(q\bar{q}\) are sufficiently boosted as to be reconstructed as a single \largeR TAR jet. Right: \resolved category, in which the two quarks are reconstructed separately as two \smallR \akt \(R=0.4\) jets.}
+	\caption{A graphical representation of two kinematic categories based on the characteristics of the signal. Left: merged category, in which the jets produced by the \(w\rightarrow q\bar{q}\) are sufficiently boosted as to be reconstructed within a single \largeR TAR jet. Right: \resolved category, in which the two quarks are reconstructed separately as two \smallR \akt \(R=0.4\) jets.}
 	\label{fig:categories}
 \end{figure}
+
+\subsection{Baseline selection}
+\label{ap:preselection}
+
+The baseline preselection is common to all analysis regions used in the search, and is used to roughly define the region of interest for the search prior to any detailed optimization of selection requirements or sub-division into separate analysis regions. The baseline selection is defined as follows:
+
+\begin{itemize}
+\item (1 signal muon or 1 signal electron) and no additional baseline muons or electrons
+\item (\met trigger passed) OR ( (single muon trigger passed) AND (signal muon matched to muon trigger) )
+\item \(\met > 200~\GeV\)
+\item \(\metsig > 5\)
+\item \(\mtlepmet > 50~\GeV\)
+%\item veto on b-tagged \smallR (\(R=0.4\)) jets (a.k.a. \bjet veto)
+\item \(\NTAR > 0\) or \(\Njets > 1\)
+\end{itemize}
+
+See Section \ref{sec:charged_leptons} for the definitions of baseline and signal muons and electrons, and Section \ref{sec:triggers_evt_selection} for details of the \met and single muon triggers as well as the single muon trigger matching requirement. The requirement that there be no baseline muons or electrons in addition to the single signal lepton is designed to obtain a higher purity of the single lepton final state predicted by the signal model by vetoing events in which an additional lepton was produced from the hard scatter and reconstructed as a baseline lepton, yet failed the criteria to be identified as a signal lepton. 
+
+This basic selection is further divided into the merged and resolved kinematic categories presented in Section \ref{sec:kin_categories}. Events are classified into the merged category if there is at least one reconstructed \(R=1.0\) TAR jet in the final state (\(\NTAR > 0\)), and the resolved category if there are at least two reconstructed \(R=0.4\) \smallR jets (\(\Njets > 1\)). It is worth noting that these two requirements are not mutually exclusive - i.e. there are events which have at least one \(R=1.0\) TAR jet \textbf{and} at least two \smallR jets. To avoid double-counting the same events in the search, orthogonality between the merged and resolved categories is therefore enforced by explicitly requiring events which pass the 
 
 \subsection{Signal Region Definition}
 \label{sec:sr_selection}
 
-The signal region 
+In addition to the baseline selection, a veto on jets identified as having been induced by a \(b\) quark (a.k.a. a \bjet veto) is applied in the SR to reduce the yield of SM \ttbar and single-top processes discussed in Section \ref{sec:SM_bkg_sim}. See Section \ref{sec:btag} for details of the \bjet tagging algorithm. 
+
+
+Within each category, the selection refined by optimizing the exact placements of upper or lower bounds, referred to as ``cuts", on variables for which the distributions of MC simulated events generated according to the signal model differs appreciably from MC simulated distributions of the SM background processes.
+
+Broadly, the cut placements are optimized to maximize the predicted yield of MC simulated events which model the DH signal process relative to the predicted yield of those which model the SM background processes. However, this basic benchmark fails to account for the fact that, as discussed in Section \ref{sec:mc_intro}, the relative statistical uncertainty associated with the MC simulated yield predictions will increase as the selections are tightened (i.e. lower bounds are increased or upper bounds are reduced) due to the resulting reduction in the number of MC simulated events which pass the selections. As the relative statistical uncertainty of the predicted yields increases, the ability of the search to confidently identify an excess of ATLAS collision events above the predicted yield of SM background processes - which would be indicative of additional events produced by a BSM process - is reduced. Furthermore, as the predicted yield of events is reduced, the relative statistical uncertainty associated with the number of observed events, derived from the Poisson distribution, will also increase and impact the sensitivity of the search. Therefore, while if is often valuable to tighten certain selections in order to increase the relative predicted yield of the signal process, it is also important to avoid over-tightening them to the point that the statistical uncertainty of the predicted and observed event yields begins to reduce the sensitivity of the search. 
+
+A metric known as the ``Asimov discovery significance" \cite{Buttinger:2643488} \(Z\) has been developed as a means of quantifying the sensitivity of a search given the predicted yields \(s\) and \(b\) of the signal and background processes, respectively, while also accounting for the statistical uncertainty \(\sigma_b\) associated with the MC simulation used to obtain the predicted background yield:
+
+
+\begin{equation}
+  Z = \left[ 2(s+b)\left(
+    \ln\left[ \frac{(s+b)(b+\sigma_b^2)}{b^2 + (s+b)\sigma_b^2} \right]
+    - \frac{b^2}{\sigma_b^2}\ln\left[ 1 + \frac{\sigma_b^2 s}{b(b+\sigma_b^2)} \right]
+  \right) \right]^\frac{1}{2}
+  \label{eq:asimov}
+\end{equation}
+
+Using the Asimov discovery significance as a performance metric, the placement of upper and lower bounds 
+
+\subsubsection{Variables Optimized in the Signal Region Selections}
+\begin{itemize}
+\item \met and its significance \metsig (see \Sect{\ref{ap:MET_object_defs}}).
+\item The transverse mass of the lepton \mtlepmet:
+\begin{equation}
+\mtlepmet =  \sqrt{2 p_{\text{T},\ell} \met \left( 1 - \cos(\phi_\ell - \phi_{\met}) \right) } .
+\end{equation}
+\item Transverse momentum and mass of the resolved hadronic \(W\) candidate \Wcand: \Wcandpt and \Wcandm. This candidate is defined as the pair of \(R=0.4\) jets \(i, j\) with the lowest \(|m_{ij} - 80.4~\GeV|\) of all possible di-jet combinations.
+\item Mass and energy correlation function \(D_2^{\beta=1}\) of the TAR jet with the highs reconstructed \pt: \mTAR, \DtwoTAR. \DtwoTAR is a method to identify a 2-pronged substructure of a jet by studying the angular separarion and transverse momenta of combinations of the jet constituents \cite{Larkoski:2013eya}.
+\item The angular separation between the lepton and the resolved hadronic \(W\) candidate or the leading TAR jet: \dRWl, \dRTARl. \DeltaR is by calculated with the from the differences in the azimuthal angle \(\Delta \phi\) and the pseudorapidity \(\Delta \eta\):
+\begin{equation}
+\DeltaR = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2} .
+\end{equation}
+\end{itemize}
 
 \begin{itemize}
 
