@@ -490,7 +490,7 @@ Broadly, the cut placements are optimized to maximize the predicted yield of MC 
 A metric known as the ``Asimov discovery significance" \cite{Buttinger:2643488} \(Z\) is used as a means of quantifying the sensitivity of a search given the predicted yields \(s\) and \(b\) of the signal and background processes, respectively, while also accounting for the statistical uncertainty \(\sigma_b\) associated with the MC simulation used to obtain the predicted background yield:
 
 \begin{equation}
-  Z = \left[ 2(s+b)\left(
+  Z(s, b, \sigma_b) = \left[ 2(s+b)\left(
     \ln\left[ \frac{(s+b)(b+\sigma_b^2)}{b^2 + (s+b)\sigma_b^2} \right]
     - \frac{b^2}{\sigma_b^2}\ln\left[ 1 + \frac{\sigma_b^2 s}{b(b+\sigma_b^2)} \right]
   \right) \right]^\frac{1}{2}
@@ -500,31 +500,54 @@ A metric known as the ``Asimov discovery significance" \cite{Buttinger:2643488} 
 \subsubsection{Optimization Strategy for Signal Region Definition}
 \label{sec:sr_opt}
 
-After applying the baseline selections and \bjet veto, the placement of upper and lower bounds is optimized for the selection variables listed in Table \ref{tab:opt_vars}. The choice of selection variables was made based on a visual assessment of the impact of cuts on all the variables considered as candidate selection variables on the Asimov discovery significance \(Z\). Visualization of \(Z\) with respect to the cut placement on each variable is done using so-called ``N-1" plots, which are shown for the finalized selections in the merged and resolved signal regions, respectively, in Figures \ref{zzz} and \ref{zzz}. The N-1 plots are produced for a given variable and a given set of candidate selections on all other variables as follows:
+After applying the baseline selections and \bjet veto, the placement of upper and lower bounds is optimized for the selection variables listed in Table \ref{tab:opt_vars}. The choice of selection variables was made based on a visual assessment of the impact of cuts on all the variables considered as candidate selection variables on the Asimov discovery significance \(Z\). Visualization of \(Z\) with respect to the cut placement on each variable is done using so-called ``N-1" plots, which are shown for the finalized selections in the merged and resolved signal regions, respectively, in Figures \ref{zzz} and \ref{zzz}. The N-1 plots are produced for a given variable \(v\) and a given set of candidate selections on all other variables as follows:
 
 \begin{itemize} 
-\item Place
+\item Place the candidate selections on all variables except for the variable \(v\).
+\item In the upper panel, plot the distributions of the background and signal processes, binned in the variable \(v\).
+\item In the lower panel, plot the distributions of the Asimov discovery significance \(Z\) for each signal process plotted in the upper panel.
+\item If comparing the placement of an \textbf{upper bound} \(v_u\) on the variable \(v\): calculate the Asimov significance \(Z(v_u)\) for all events with \(v<v_u\): 
+
+\begin{equation}
+\label{eq:asimov_upper}
+\begin{gathered}
+s_u = \sum_{i \in \{\text{signal}, v(i) < v_u\}} w(i) \\
+b_u =  \sum_{i \in \{\text{SM backgrounds}, v(i) < v_u\}} w(i) \\
+\sigma_{b_u} = \sqrt{ \sum_{i \in \{\text{SM backgrounds}, v(i) < v_u\}} \big[w(i)\big]^2 } \\
+Z(v_u) = Z(s_u, b_u, \sigma_{b_u})
+\end{gathered}
+\end{equation}
+
+\noindent where each event \(i\) is implicitly required to have passed all the other candidate selections for the given process (signal or SM backgrounds) in addition to \((v < v_u)\), and \(w(i)\) is the event weight associated with event \(i\) (see discussion of event weights in Section \ref{sec:evt_weights}). The statistical variance \((\sigma_b)^2\) is evaluated in Eq. \ref{eq:asimov_upper} as the sum of squared weights for events in the background process which pass all other candidate selections in addition to \((v < v_u)\). 
+
+\item Conversely, if comparing the placement of a \textbf{lower bound} \(v_d\): calculate the Asimov significance \(Z(v_d)\) for all events with \(v>v_d\) by replacing ``\(v<v_u\)" in Eq. \ref{eq:asimov_upper} with ``\(v>v_d\)".
 \end{itemize}
 
-The optimization was performed first in the merged category of the SR, with the additional requirement of at least one \(R=1.0\) TAR jet. Once the selections defining the merged SR were finalized, optimization was subsequently in the resolved category, with the \(\NTAR > 0\) requirement replaced by \(\Njets > 1\) in addition to a veto on any events which pass the finalized merged SR selections. 
+The optimization was performed first in the merged category of the SR, with the additional requirement of at least one \(R=1.0\) TAR jet. Once the selections defining the merged SR were finalized, optimization was subsequently performed in the resolved category, with the \(\NTAR > 0\) requirement replaced by \(\Njets > 1\) in addition to a veto on any events which pass the finalized merged SR selections. 
 
-Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. 
+Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. An iterative approach was used which combined:
+
+\begin{itemize}
+\item repeated grid searches which scanned \(> 1,000,000\) possible multi-dimensional combinations of cut placements on some or all of the optimized variables to identify combinations which maximized \(Z\), and 
+\item visual analysis of N-1 plots and 
+
+ approach testing \(> 1,000,000\) possible cut-combinations were used to achieve this optimization.
 
 \begin{table}[hp]
 \centering
 \caption{List of selection variables, with descriptions, for which the placements of cuts were optimized when designing the merged and resolved signal regions. The third and fourth columns indicate whether the variable is used in the merged category, the resolved category, or both.}
 \label{tab:opt_vars}
-\small{
-\begin{tabular}{l p{5cm} l l }
+\footnotesize{
+\begin{tabular}{l p{6cm} l l }
 \toprule
-\textbf{Variable} & \textbf{Description} & \textbf{Used in Merged?} & \textbf{Used in Resolved?} \\
+\textbf{Variable} & \textbf{Description} & \textbf{Merged} & \textbf{Resolved} \\
 \midrule
 \midrule
-\met & See description in Section \ref{sec:met_object_description}. & \checkmark & \checkmark \\
+\met & A \textbf{lower bound} is placed on \met to select for the production of undetected energetic particles. & \checkmark & \checkmark \\
 \midrule
-\metsig & See description in Section \ref{sec:met_object_description}. & \checkmark & \checkmark \\
+\metsig & A \textbf{lower bound} is placed on \metsig to select for a high likelihood that the measured \met arises from undetected particles rather than limited detector resolution. & \checkmark & \checkmark \\
 \midrule
-\mTAR & Reconstructed mass of the highest-\pt \(R=1.0\) TAR jet. & \checkmark & \(\times\) \\
+\mTAR & Reconstructed mass of the highest-\pt \(R=1.0\) TAR jet. A \textbf{window cut} around the \(W\) boson mass of \(80.4~\GeV\) is placed on \mTAR around the \(W\) to select for events in which the highest-\pt \(R=1.0\) TAR jet actually reconstructs the hadronic decay of a boosted \(W\) boson, rather than other potential sources of strongly interacting particles.  & \checkmark & \(\times\) \\
 \midrule
 \DtwoTAR & Energy correlation function of the highest-\pt \(R=1.0\) TAR jet. Used to quantify the likelihood that the TAR jet has a two-pronged substructure using the angular separation and transverse momenta of combinations of the jet constituents \cite{Larkoski:2013eya}. & \checkmark & \(\times\) \\
 \midrule
@@ -538,7 +561,6 @@ Since the optimal placement of selections was found to vary to some extent for M
 \midrule
 \end{tabular}}
 \end{table}
-
 
 
 \begin{itemize}
