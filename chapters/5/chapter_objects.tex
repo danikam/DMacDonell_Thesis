@@ -490,11 +490,11 @@ Broadly, the cut placements are optimized to maximize the predicted yield of MC 
 A metric known as the ``Asimov discovery significance" \cite{Buttinger:2643488} \(Z\) is used as a means of quantifying the sensitivity of a search given the predicted yields \(s\) and \(b\) of the signal and background processes, respectively, while also accounting for the statistical uncertainty \(\sigma_b\) associated with the MC simulation used to obtain the predicted background yield:
 
 \begin{equation}
+  \label{eq:asimov}
   Z(s, b, \sigma_b) = \left[ 2(s+b)\left(
     \ln\left[ \frac{(s+b)(b+\sigma_b^2)}{b^2 + (s+b)\sigma_b^2} \right]
     - \frac{b^2}{\sigma_b^2}\ln\left[ 1 + \frac{\sigma_b^2 s}{b(b+\sigma_b^2)} \right]
   \right) \right]^\frac{1}{2}
-  \label{eq:asimov}
 \end{equation}
 
 \subsubsection{Optimization Strategy for Signal Region Definition}
@@ -525,13 +525,18 @@ Z(v_u) = Z(s_u, b_u, \sigma_{b_u})
 
 The optimization was performed first in the merged category of the SR, with the additional requirement of at least one \(R=1.0\) TAR jet. Once the selections defining the merged SR were finalized, optimization was subsequently performed in the resolved category, with the \(\NTAR > 0\) requirement replaced by \(\Njets > 1\) in addition to a veto on any events which pass the finalized merged SR selections. 
 
-Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. An iterative approach was used which combined:
+Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. The \mZp values of these four mass points were chosen such that the points were near the edge of the so-called ``exclusion range", which represents the range of \ms and \mZp within which the search was expected to be sensitive to the presence (or absence) of events produced by the DH signal model in the ATLAS data, at a 95\% confidence level on the basis of sensitivity studies discussed in Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)}. It is particularly desirable to optimize the selections at points near the edge of the exclusion range because 
+
+An iterative approach was used to optimize the cut placements at the four signal points which combined:
 
 \begin{itemize}
-\item repeated grid searches which scanned \(> 1,000,000\) possible multi-dimensional combinations of cut placements on some or all of the optimized variables to identify combinations which maximized \(Z\), and 
-\item visual analysis of N-1 plots and 
+\item repeated grid searches which scanned over \(1,000,000\) candidate multi-dimensional combinations of cut placements on some or all of the optimized variables to identify combinations which maximized \(Z\), and 
+\item visual analysis of N-1 plots such as those shown in Figures \ref{zzz} and \ref{zzz} to visually validate the optimal placements found by the grid searches.
+\end{itemize}
 
- approach testing \(> 1,000,000\) possible cut-combinations were used to achieve this optimization.
+It is worth noting that, inspecting Eq. \ref{eq:asimov}, the Asimov discovery significance does not account for the statistical uncertainty \(\sigma_s\) arising from limited MC simulated events in the signal sample. Therefore, in order to ensure sufficient signal region that there were sufficient events in the signal samples, the grid search included an option to avoid cut combinations which reduced the predicted signal yield below some acceptable minimum set by the user. After some testing, it was found that setting a minimum acceptable predicted yield of 15 for the signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was adequate to ensure that the signal samples of interest for cut optimization had a sufficient number of events as to prevent their statistical uncertainty from becoming appreciable compared with other sources of uncertainty. The signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was chosen to define the minimum yield because it was among the signal points in the signal grid with the lowest predicted yield at the time of optimization.
+
+After 
 
 \begin{table}[hp]
 \centering
