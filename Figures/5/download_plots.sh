@@ -16,3 +16,7 @@ mv TARJets10_mTAR0.pdf TARJets10_mTAR0_mZp.pdf
 
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots_mT_SWWlep008/SR1L_Presel/*.pdf .
 
+scp_vm -r docker_test_3:/mnt/Git/makehistos/Plots_N_1_significance/* .
+rm SR1L_Merged/*.png
+rm SR1L_Resolved/*.png
+

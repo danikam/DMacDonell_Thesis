@@ -420,7 +420,7 @@ m_{T, \text{ full}}^2(\ell, \met) = (E_{T, \ell}^2 + E_{T, \met}^2 - (p_{T, \ell
 = m_\ell^2+m_{\met}^2 + 2E_{T, \ell}, E_{T, \met}(1-\cos\theta_{\ell, \met})
 \end{multline}
 
-\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the energy of LHC collisions. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the baseline selection, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
+\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the high energy of the \(pp\) collisions at the LHC. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the baseline selection, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
 
 \begin{figure}[H]
 	\centering
@@ -430,7 +430,7 @@ m_{T, \text{ full}}^2(\ell, \met) = (E_{T, \ell}^2 + E_{T, \met}^2 - (p_{T, \ell
 \end{figure}
 
 \section{Event Selections}
-\label{sec:evt_selections}'
+\label{sec:evt_selections}
 
 Selections are applied to the ATLAS collision data and MC simulated events with the aim of defining subsets, or ``regions" of data that are enriched in a particular process of interest for the search. The regions are designed and optimized using MC simulated data (see Section \ref{chapter:mc} for a detailed discussion of MC simulation and its application for simulating data produced by the ATLAS detector). The use of MC simulated data makes it possible to quantify the relative contribution to the expected yield of events in the region arising from each physics process.
 
@@ -500,7 +500,7 @@ A metric known as the ``Asimov discovery significance" \cite{Buttinger:2643488} 
 \subsubsection{Optimization Strategy for Signal Region Definition}
 \label{sec:sr_opt}
 
-After applying the baseline selections and \bjet veto, the placement of upper and lower bounds is optimized for the selection variables listed in Table \ref{tab:opt_vars}. The choice of selection variables was made based on a visual assessment of the impact of cuts on all the variables considered as candidate selection variables on the Asimov discovery significance \(Z\). Visualization of \(Z\) with respect to the cut placement on each variable is done using so-called ``N-1" plots, which are shown for the finalized selections in the merged and resolved signal regions, respectively, in Figures \ref{zzz} and \ref{zzz}. The N-1 plots are produced for a given variable \(v\) and a given set of candidate selections on all other variables as follows:
+After applying the baseline selections and \bjet veto, the placement of upper and lower bounds is optimized for the selection variables listed in Table \ref{tab:opt_vars}. The signal region was kept ``blinded" during optimization  The choice of selection variables was made based on a visual assessment of the impact of cuts on all the variables considered as candidate selection variables on the Asimov discovery significance \(Z\). Visualization of \(Z\) with respect to the cut placement on each variable is done using so-called ``N-1" plots, which are shown for the finalized selections in the merged and resolved signal regions, respectively, in Figures \ref{zzz} and \ref{zzz}. The N-1 plots are produced for a given variable \(v\) and a given set of candidate selections on all other variables as follows:
 
 \begin{itemize} 
 \item Place the candidate selections on all variables except for the variable \(v\).
@@ -525,7 +525,7 @@ Z(v_u) = Z(s_u, b_u, \sigma_{b_u})
 
 The optimization was performed first in the merged category of the SR, with the additional requirement of at least one \(R=1.0\) TAR jet. Once the selections defining the merged SR were finalized, optimization was subsequently performed in the resolved category, with the \(\NTAR > 0\) requirement replaced by \(\Njets > 1\) in addition to a veto on any events which pass the finalized merged SR selections. 
 
-Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. The \mZp values of these four mass points were chosen such that the points were near the edge of the so-called ``exclusion range", which represents the range of \ms and \mZp within which the search was expected to be sensitive to the presence (or absence) of events produced by the DH signal model in the ATLAS data, at a 95\% confidence level on the basis of sensitivity studies discussed in Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)}. It is particularly desirable to optimize the selections at points near the edge of the exclusion range because 
+Since the optimal placement of selections was found to vary to some extent for MC simulated data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. The \mZp values of these four mass points were chosen such that the points were near the edge of the so-called ``exclusion range", which represents the range of \ms and \mZp within which the search was expected to be sensitive to the presence (or absence) of events produced by the DH signal model in the ATLAS data, at a 95\% confidence level on the basis of sensitivity studies discussed in Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)}. It is particularly desirable to optimize the cut placements for mass points near the edge of the exclusion range in order to extend the range as much as possible. 
 
 An iterative approach was used to optimize the cut placements at the four signal points which combined:
 
@@ -536,63 +536,413 @@ An iterative approach was used to optimize the cut placements at the four signal
 
 It is worth noting that, inspecting Eq. \ref{eq:asimov}, the Asimov discovery significance does not account for the statistical uncertainty \(\sigma_s\) arising from limited MC simulated events in the signal sample. Therefore, in order to ensure sufficient signal region that there were sufficient events in the signal samples, the grid search included an option to avoid cut combinations which reduced the predicted signal yield below some acceptable minimum set by the user. After some testing, it was found that setting a minimum acceptable predicted yield of 15 for the signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was adequate to ensure that the signal samples of interest for cut optimization had a sufficient number of events as to prevent their statistical uncertainty from becoming appreciable compared with other sources of uncertainty. The signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was chosen to define the minimum yield because it was among the signal points in the signal grid with the lowest predicted yield at the time of optimization.
 
-After 
+After an optimized set of selections were determined for the four signal points considered in the iterative optimization procedure described above, these selections were validated and further refined by examining the projected sensitivity of the search over the full range of \mZp and \ms masses for which MC simulated datasets were produced for the search (also referred to as the ``signal grid"). Some minor refinements were made to cut placements with the aim of maximizing the exclusion range. See Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)} for a description of how the sensitivity is quantified for each MC simulated signal data set, and visualized over the full signal grid. For efficiency, only the statistical uncertainties associated with the MC simulation of signal and background processes were considered when evaluating the Asimov discovery significance and the sensitivity projections used for optimization, and the systematic uncertainties presented in Chapter zzz \textcolor{red}{(Note to Bob: will update when systematics chapter is written)} were neglected. The choice to neglect systematic uncertainties was justified by the fact that, following initial efforts to include the dominant theoretical sources of systematic uncertainty in evaluation of the Asimov discovery significance, their inclusion was found to have a negligible impact on the evaluation of optimal cut placements.
 
-\begin{table}[hp]
+\begin{table}
 \centering
 \caption{List of selection variables, with descriptions, for which the placements of cuts were optimized when designing the merged and resolved signal regions. The third and fourth columns indicate whether the variable is used in the merged category, the resolved category, or both.}
 \label{tab:opt_vars}
+%\begin{tabular}{l p{6cm} l l }
 \footnotesize{
-\begin{tabular}{l p{6cm} l l }
+\begin{tabular}{l p{10cm} l l }
 \toprule
-\textbf{Variable} & \textbf{Description} & \textbf{Merged} & \textbf{Resolved} \\
+\textbf{Variable} & \textbf{Description} & \textbf{Mgd} & \textbf{Res} \\
 \midrule
 \midrule
 \met & A \textbf{lower bound} is placed on \met to select for the production of undetected energetic particles. & \checkmark & \checkmark \\
 \midrule
 \metsig & A \textbf{lower bound} is placed on \metsig to select for a high likelihood that the measured \met arises from undetected particles rather than limited detector resolution. & \checkmark & \checkmark \\
 \midrule
+\mtlepmet & A \textbf{lower bound} is placed on \mtlepmet to select for a high likelihood that the  & \checkmark & \checkmark \\
+\midrule
 \mTAR & Reconstructed mass of the highest-\pt \(R=1.0\) TAR jet. A \textbf{window cut} around the \(W\) boson mass of \(80.4~\GeV\) is placed on \mTAR around the \(W\) to select for events in which the highest-\pt \(R=1.0\) TAR jet actually reconstructs the hadronic decay of a boosted \(W\) boson, rather than other potential sources of strongly interacting particles.  & \checkmark & \(\times\) \\
 \midrule
-\DtwoTAR & Energy correlation function of the highest-\pt \(R=1.0\) TAR jet. Used to quantify the likelihood that the TAR jet has a two-pronged substructure using the angular separation and transverse momenta of combinations of the jet constituents \cite{Larkoski:2013eya}. & \checkmark & \(\times\) \\
+\DtwoTAR & Energy correlation function of the highest-\pt \(R=1.0\) TAR jet. Used to discriminate \largeR jets with a two-pronged substructure from those with a single-pronged substructure using the angular separation and transverse momenta of combinations of the jet constituents \cite{Larkoski:2013eya,larkoski2016analytic}. An \textbf{upper bound} is placed on \DtwoTAR, because the \DtwoTAR distribution for two-pronged signal events is found to be peaked at lower \DtwoTAR compared with the (predominantly single-pronged) SM background events.  & \checkmark & \(\times\) \\
 \midrule
-\dRTARl & Angular separation in \(\eta\times\phi\) space between the TAR jet and lepton. & \checkmark & \(\times\) \\
+\dRTARl & Angular separation in \(\eta\times\phi\) space between the TAR jet and lepton. An \textbf{upper bound} is placed on \dRTARl to select for the expected signal topology in which the TAR jet and the \(\ell\nu\) form a collimated system, having originated from the decay of the boosted \(s\). & \checkmark & \(\times\) \\
 \midrule
-\Wcandpt & \pt of the reconstructed \(W\) candidate in the resolved regime. & \(\times\) & \checkmark \\
+\Wcandpt & \pt of the reconstructed \(W\) candidate in the resolved regime. A \textbf{lower bound} is placed on the \Wcandpt to select for the signal topology in which the \(W\) is produced with a large momentum from the decay of a boosted \(s\). & \(\times\) & \checkmark \\
 \midrule
-\Wcandm & Mass of the reconstructed \(W\) candidate in the resolved regime. & \(\times\) & \checkmark \\
+\Wcandm & Mass of the reconstructed \(W\) candidate in the resolved regime. A \textbf{window cut} is placed around the \(W\) boson mass of \(80.4~\GeV\). & \(\times\) & \checkmark \\
 \midrule
-\dRWl & Angular separation in \(\eta\times\phi\) space between the reconstructed \(W\) candidate and lepton in the resolved regime. & \(\times\) & \checkmark \\
+\dRWl & Angular separation in \(\eta\times\phi\) space between the reconstructed \(W\) candidate and lepton in the resolved regime. An \textbf{upper bound} is placed on \dRWl to select for the expected signal topology in which the \(W\) candidate and the \(\ell\nu\) form a collimated system, having originated from the decay of the boosted \(s\)& \(\times\) & \checkmark \\
 \midrule
 \end{tabular}}
 \end{table}
 
+Figures \ref{fig:Nminus1mergedSR} and \ref{fig:Nminus1resolvedSR} show N-1 plots with the finalized selections, as well as the placements of cuts, for each of the variables listed in Table \ref{tab:opt_vars}. The finalized selections are summarized in Table \ref{tab:SR_selection_opt} for the merged and resolved SRs, respectively. The lower bound on \met in the merged SR was ultimately kept at the same value of \(200~\GeV\) applied in the baseline selection, because it was found that with the other optimized selections applied there were very few signal and background events for \(\met<~250~\GeV\), and explicitly increasing the lower bound was not found to produce any appreciable sensitivity improvements in sensitivity.
+
+
+\begin{figure}[htbp]
+  \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged/mT_lep_met_N_1.pdf}
+    \caption{\mtlepmet}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged_mWlt/TARJets10_mTAR0_N_1.pdf}
+     \caption{\mTAR Cut (\(Z\) evaluated for upper bound)}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged_mWgt/TARJets10_mTAR0_N_1.pdf}
+     \caption{\mTAR Cut  (\(Z\) evaluated for lower bound)}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged/MetTST_Significance_N_1.pdf}
+    \caption{\metsig}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged/MetTST_met_N_1.pdf}
+    \caption{\met}
+    \end{subfigure}
+   \caption{N-1 Distributions for selection requirements in the merged signal region. Grey bands show statistical uncertainty on background estimate. The lower panel shows the cumulative Asimov significance, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
+   \label{fig:Nminus1mergedSR}
+\end{figure}
+ \begin{figure} \ContinuedFloat
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged/dR_lep_TARJets10_N_1.pdf}
+    \caption{\drTARl}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Merged/TARJets10_TAR_D20_N_1.pdf}
+    \caption{\DtwoTAR}
+    \end{subfigure}
+    \caption{N-1 Distributions for selection requirements in the merged signal region (continued)}
+  \end{figure}
+  
+  \begin{figure}[htbp]
+  \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved/mT_lep_met_N_1.pdf}
+    \caption{\mtlepmet}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved_mWlt/WCand_m_N_1.pdf}
+     \caption{\Wcandm Cut (\(Z\) evaluated for upper bound)}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved_mWgt/WCand_m_N_1.pdf}
+     \caption{\Wcandm Cut (\(Z\) evaluated for lower bound)}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved/MetTST_Significance_N_1.pdf}
+    \caption{\metsig}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved/MetTST_met_N_1.pdf}
+    \caption{\met}
+    \end{subfigure}
+     \caption{N-1 Distributions for selection requirements in the resolved signal region. Grey bands show statistical uncertainty on the background estimate. The lower panel shows the cumulative Asimov significance, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
+     \label{fig:Nminus1resolvedSR}
+\end{figure}
+\begin{figure} \ContinuedFloat
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved/dRWl_N_1.pdf}
+    \caption{\drWl}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/5/SR1L_Resolved/WCand_pt_N_1.pdf}
+    \caption{\Wcandpt}
+    \end{subfigure}
+     \caption{N-1 Distributions for selection requirements in the resolved signal region (continued)}
+  \end{figure}
+
+
+\begin{table}[htbp]
+  \centering
+  \caption{Optimized selection criteria for the signal region in the merged and resolved categories}
+  \label{tab:SR_selection_opt}
+  \begin{tabular}{l|l}
+    \toprule
+    \textbf{Merged Selection}  &  \textbf{Resolved Selection}  \\
+    \midrule
+    \midrule
+    \multicolumn{2}{c}{Passes baseline selection} \\
+     & Fails merged selection \\
+    \(\NTAR>0\) & \(\Njets > 1\)  \\
+    \(\mtlepmet>220~\GeV\) & \(\mtlepmet>200~\GeV\)\\
+    \(\met>200~\GeV\) & \(\met>250~\GeV\)\\    
+    \(\metsig>16\) & 68~\GeV < \(\metsig>16\) \\
+    \(68~\GeV < \mTAR < 89~\GeV\) & \(68~\GeV < \Wcandm < 89~\GeV\) \\
+    \(\dRTARl<1.2\) &  \(\drWl  < 1.4\) \\
+    \(\DtwoTAR<1.1\) &   \(\Wcandpt > 150~\GeV\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Tables \ref{tab:SR1L_Merged_bkg_cutflow} and  \ref{tab:SR1L_Resolved_bkg_cutflow} show the predicted yield of MC simulated events for the three dominant SM backgrounds after successive application of selections in the merged and resolved signal regions respectively, starting with the baseline selection.
+
+\begin{table}[ht]
+\caption{\label{tab:SR1L_Merged_bkg_cutflow} Cutflow yields after application of preselection cuts for the dominant SM backgrounds in the ``merged" SR. Percent passage is reported relative to the number \
+of weighted events after application of preselection cuts.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Cut} & \textbf{\wjets} & \textbf{\ttbar} & \textbf{Diboson}\tabularnewline
+\midrule
+\midrule
+None & 11352445.72 & 101404110.82  & 1270378.37 \tabularnewline
+\midrule
+baseline selection & 73748.00 (100.00\%) & 20353.18 (100.00\%) & 4717.12 (100.00\%)\tabularnewline
+\midrule
+\(\NTAR \geq 1\) & 22350.17 (30.31\%) & 16728.78 (82.19\%) & 3469.55 (73.55\%)\tabularnewline
+\midrule
+\bjet veto & 20807.33 (28.21\%) & 2014.77 (9.90\%) & 3158.69 (66.96\%)\tabularnewline
+\midrule
+\(\mtlepmet > 220~\GeV\) & 18665.36 (25.31\%) & 1755.96 (8.63\%) & 2713.21 (57.52\%)\tabularnewline
+\midrule
+\(\mTAR \in (68, 89)~\GeV\)  & 785.65 (1.07\%) & 85.61 (0.42\%) & 158.75 (3.37\%)\tabularnewline
+\midrule
+\(\metsig > 16\)  & 440.83 (0.60\%) & 21.63 (0.11\%) & 84.90 (1.80\%)\tabularnewline
+\midrule
+\(\drTARl < 1.2\) & 61.94 (0.08\%) & 10.26 (0.05\%) & 21.06 (0.45\%)\tabularnewline
+\midrule
+\(\DtwoTAR < 1.1\) & 24.04 (0.03\%) & 4.25 (0.02\%) & 7.50 (0.16\%)\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{\label{tab:SR1L_Resolved_bkg_cutflow} Cutflow yields after application of preselection cuts for the dominant SM backgrounds in the ``resolved" SR. Percent passage is reported relative to the num\
+ber of weighted events after application of preselection cuts.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Cut} & \textbf{\wjets} & \textbf{\ttbar} & \textbf{Diboson}\tabularnewline
+\midrule
+\midrule
+None & 11352445.72 & 101404110.82  & 1270378.37 \tabularnewline
+\midrule
+baseline selection & 73748.00 (100.00\%) & 20353.18 (100.00\%) & 4717.12 (100.00\%)\tabularnewline
+\midrule
+Fails merged selection & 73548.54 (99.73\%) & 20268.63 (99.58\%) & 4682.91 (99.27\%)\tabularnewline
+\midrule
+\(\Njets \geq 2\) & 27859.37 (37.78\%) & 18899.56 (92.86\%) & 3420.73 (72.52\%)\tabularnewline
+\midrule
+\bjet veto & 25715.19 (34.87\%) & 2327.27 (11.43\%) & 3072.80 (65.14\%)\tabularnewline
+\midrule
+\(\mtlepmet > 200~\GeV\) & 25715.19 (34.87\%) & 2327.27 (11.43\%) & 3072.80 (65.14\%)\tabularnewline
+\midrule
+\met \(>\) 250 ~\GeV & 13414.58 (18.19\%) & 1164.55 (5.72\%) & 1996.86 (42.33\%)\tabularnewline
+\midrule
+\(\Wcandm \in (65, 95)~\GeV\) & 4631.85 (6.28\%) & 551.53 (2.71\%) & 775.87 (16.45\%)\tabularnewline
+\midrule
+\(\metsig > 16\)  & 3041.38 (4.12\%) & 166.40 (0.82\%) & 430.06 (9.12\%)\tabularnewline
+\midrule
+\(\drWl < 1.4\) & 774.62 (1.05\%) & 58.37 (0.29\%) & 114.26 (2.42\%)\tabularnewline
+\midrule
+\(\Wcandpt > 150~\GeV\) & 244.31 (0.33\%) & 21.17 (0.10\%) & 51.07 (1.08\%)\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+Tables \ref{tab:SR1L_Merged_bkg_cutflow} and  \ref{tab:SR1L_Resolved_bkg_cutflow} show the predicted yield of MC simulated events for the DH signal model at three sample mass points in \((\ms, \mZp)\) after successive application of selections in the merged and resolved signal regions respectively, starting with the baseline selection.
+
+\begin{table}[ht]
+\caption{\label{tab:SR1L_Merged_sig_cutflow} Cutflow yields after application of preselection cuts for three sample signal points in the ``merged" SR. Signal points are labelled in column headers as (m\(\
+_{Z'}\), m\(_s\)) (units of GeV). Percent passage is reported relative to the number of weighted events prior to application of any data skimming or preselection cuts.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Cut} & \textbf{(1000, 360)} & \textbf{(1700, 335)} & \textbf{(2100, 210)}\tabularnewline
+\midrule
+\midrule
+None & 798.61 (100.00\%) & 396.57 (100.00\%) & 537.03 (100.00\%)\tabularnewline
+\midrule
+baseline selection & 132.42 (16.58\%) & 91.16 (22.99\%) & 119.60 (22.27\%)\tabularnewline
+\midrule
+\(\NTAR \geq 1\) & 114.50 (14.34\%) & 78.99 (19.92\%) & 103.56 (19.28\%)\tabularnewline
+\midrule
+\bjet veto & 102.28 (12.81\%) & 70.53 (17.78\%) & 92.53 (17.23\%)\tabularnewline
+\midrule
+\(\mtlepmet > 220~\GeV\) & 95.32 (11.94\%) & 66.10 (16.67\%) & 87.26 (16.25\%)\tabularnewline
+\midrule
+\(\mTAR \in (68, 89)~\GeV\)  & 43.01 (5.39\%) & 29.69 (7.49\%) & 30.98 (5.77\%)\tabularnewline
+\midrule
+\(\metsig > 16\)  & 34.39 (4.31\%) & 24.32 (6.13\%) & 24.82 (4.62\%)\tabularnewline
+\midrule
+\(\drTARl < 1.2\) & 16.14 (2.02\%) & 13.58 (3.42\%) & 23.66 (4.41\%)\tabularnewline
+\midrule
+\(\DtwoTAR < 1.1\) & 11.38 (1.42\%) & 9.71 (2.45\%) & 16.50 (3.07\%)\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{\label{tab:SR1L_Resolved_sig_cutflow} Cutflow yields after application of preselection cuts for three sample signal points in the ``resolved" SR. Signal points are labelled in column headers as \
+(m\(_{Z'}\), m\(_s\)) (units of GeV). Percent passage is reported relative to the number of weighted events prior to application of any data skimming or preselection cuts.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Cut} & \textbf{(1000, 360)} & \textbf{(1700, 335)} & \textbf{(2100, 210)}\tabularnewline
+\midrule
+\midrule
+None & 798.61 (100.00\%) & 396.57 (100.00\%) & 537.03 (100.00\%)\tabularnewline
+\midrule
+baseline selection & 132.42 (16.58\%) & 91.16 (22.99\%) & 119.60 (22.27\%)\tabularnewline
+\midrule
+Fails merged selection & 116.53 (14.59\%) & 79.86 (20.14\%) & 102.87 (19.16\%)\tabularnewline
+\midrule
+\(\Njets \geq 2\) & 104.19 (13.05\%) & 71.43 (18.01\%) & 88.24 (16.43\%)\tabularnewline
+\midrule
+\bjet veto & 91.07 (11.40\%) & 62.42 (15.74\%) & 76.63 (14.27\%)\tabularnewline
+\midrule
+\(\mtlepmet > 200~\GeV\) & 91.07 (11.40\%) & 62.42 (15.74\%) & 76.63 (14.27\%)\tabularnewline
+\midrule
+\met \(>\) 250 ~\GeV & 73.19 (9.16\%) & 51.71 (13.04\%) & 63.41 (11.81\%)\tabularnewline
+\midrule
+\(\Wcandm \in (65, 95)~\GeV\) & 51.81 (6.49\%) & 36.40 (9.18\%) & 39.29 (7.32\%)\tabularnewline
+\midrule
+\(\metsig > 16\)  & 40.17 (5.03\%) & 28.53 (7.19\%) & 28.91 (5.38\%)\tabularnewline
+\midrule
+\(\drWl < 1.4\) & 16.70 (2.09\%) & 14.35 (3.62\%) & 23.45 (4.37\%)\tabularnewline
+\midrule
+\(\Wcandpt > 150~\GeV\) & 13.22 (1.66\%) & 11.22 (2.83\%) & 15.56 (2.90\%)\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Control regions}
+
+There are in general numerous floating theoretical parameters involved in modelling signal and SM background processes produced by \(pp\) collisions at the LHC, and it is necessary to fix the values of these floating parameters when generating the MC simulated events and weights used to predict the yields of these processes in the ATLAS collision data. These include parameters associated with the parton distribution function used to model the protons involved in the high-energy collisions \cite{PDF4LHC_recos_2016,PDF_determination_2013}. 
+
+In some cases, the range of theoretically plausible choices for the value of a floating parameter, or of a set of related floating parameters, could produce an associated range of yield predictions which is non-negligible compared with the statistical yield uncertainties. As presented in Section zzz \textcolor{red}{(Note to Bob: will update when chapter 6 on systematics is written)}, so-called ``systematic uncertainties" are evaluated in these cases to quantify the systematic shifts in the predicted yields that would be induced by shifting specific parameters or sets of parameters within an acceptable range on the basis of existing theoretical or experimental constraints. In addition, it is worth noting that since the SR selection is broadly optimized to maximize the yield of a BSM physics process relative to that of the known SM background processes, the SR by design occupies a relatively exclusive kinematic regime in which the parameter choices used for the MC event simulations have not necessarily have been validated extensively. In order to reduce the uncertainty of predicted yields in the SR arising from the particular choices of floating parameters used in the MC simulation, it is desirable to constrain the predicted yields of major background processes in the SR as much as possible using the ATLAS collision data in a kinematically similar region. 
+
+\wjets and \ttbar control regions (CRs), with enriched yields of these respective SM background processes, are defined in this search with the aim of providing data-driven constraints on the total yield of the \wjets and \ttbar backgrounds in the SRs within each of the merged and resolved kinematic categories. As discussed in detail in Chapter zzz \textcolor{red}{(Note to Bob: will update when chapter 7 on the statistical analysis is written)}, the data-driven constraints are obtained within each category by comparing the total yield of MC simulated SM background events to the observed yield of data in the CRs for the given category, and scaling the total predicted yield of the \wjets and \ttbar backgrounds in both the CRs and the SRs by multiplicative ``normalization factors", \(\mu_{\wjets, \text{category}}\) and \(\mu_{\ttbar, \text{category}}\), such that the total predicted yield of SM background processes within each control region is in close agreement with the observed yield of ATLAS collision data.
+
+The selections for the \wjets and \ttbar CRs were designed with the following aims in order to provide effective and reliable constraints on the total yield of the respective SM background processes in the SR:
 
 \begin{itemize}
+\item To obtain a \textbf{high purity} of the background process of interest in the CR, as evaluated by its MC simulated yield in the CR relative to other MC simulated background processes. It is important that the predicted event yield in the CR be dominated by the background process of interest, to ensure that the ratio of total MC simulated yield from all SM background processes, \(\sum\limits_{\text{process }i} (N_\text{MC})_{i\text{, CR}}\) to the observed yield of ATLAS collision events \((N_\text{data})_\text{observed, CR}\) in the CR represents a reasonable approximation of the equivalent ratio for the background process \(p_\text{constraint}\) of interest:
 
-\item Signal region
-\begin{itemize}
-\item Prioritize optimization of signal points near the edge of expected search sensitivity. 
-\item Keep signal region blind during optimization to avoid biasing selection.
-\item Introduce variables used for event selection. Distinguish between variables that are optimized (eg. \mtlepmet) vs. fixed (eg. 1-lepton requirement) during optimization.
-\item Present concept and implementation of signal region optimization strategy.
-\item High-level discussion of why we define CRs to constrain normalizations of dominant \wjets and \ttbar backgrounds.
+\begin{equation}
+\label{eq:cr_ratio}
+\frac{\sum\limits_{\text{process }i} (N_\text{MC})_{i\text{, CR}}}{(N_\text{data})_\text{total observed, CR}} \approx \frac{(N_\text{MC})_{p_{\text{constraint}\text{, CR}}}}{(N_\text{data})_{p_\text{constaint}\text{, CR}}}
+\end{equation}
+
+\noindent where the index \(i\) runs over all simulated SM background processes.
+
+\item To ensure \textbf{orthogonality with the SR}. In order for the control region to provide an unbiased data-driven constraint on the amplitude of a simulated SM background used in the signal region, it must be defined in such a way that there are no events shared between these two regions.
+\item To obtain a \textbf{negligibly small contamination of MC simulated signal events}. Negligible signal contamination is needed to ensure that the constraints on normalization factors are obtained purely from known physics processes in the data.
+\item Events in the control region should occupy a \textbf{kinematic phase space which is as similar as possible to the SR}. This is important to ensure that the ratio of the MC simulated yield of SM background events to the observed yield of ATLAS collision data in the CR is representative of the equivalent ratio in the SR.
 \end{itemize}
 
+Table \ref{tab:CRs} summarizes the CRs used in the analysis and the cut changes relative to the SR used to define each CR. The CRs are discussed in more detail in Sections \ref{sec:wjets_CR_defn} and \ref{sec:ttbar_CR_defn}.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of control regions}
+\label{tab:CRs}
+\begin{tabular}{l l}
+\toprule
+\textbf{Control region}  & \textbf{Modified selections relative to the SR}  \\
+\midrule
+\midrule
+\multirow{2}{*}{\textbf{merged \wjets CR}} & \((\drTARl < 1.2) \rightarrow (\drTARl > 1.8)\) \\
+						       & \((\metsig > 16) \rightarrow (\metsig > 12)\)  \\
+\midrule
+\textbf{resolved \wjets CR}  &  \((\drWl < 1.4) \rightarrow (\drWl > 1.4)\) \\
+\midrule
+\multirow{2}{*}{\textbf{merged \ttbar CR}} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
+						       & \((\metsig > 16) \rightarrow (\metsig > 12)\)  \\
+\midrule
+\textbf{resolved \ttbar CR} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{\wjets Control Region Definition}
+\label{sec:wjets_CR_defn}
+
+A \wjets CR (a.k.a. CRW) is defined to obtain a high purity and yield of the \wjets background by reversing the cut on \DeltaR(W, \(\ell\)). The lower bound on \met significance is also reduced to 12 in the merged category of the CR in order to reduce the relative statistical uncertainty by boosting the number of MC simulated events in the merged \wjets control region. In addition, after some study the cut on \DeltaR(W, \(\ell\)) in the \merged CRW was tightened from a simple reversal - \((\drTARl < 1.2) \rightarrow (\drTARl > 1.2)\) - to a slightly increased lower bound of (\drTARl > 1.8) in order to reduce the predicted yield of signal processes in the CR to an acceptable level.
+
+The motivation for reversing the \DeltaR selection is that, as shown schematically in Figure \ref{fig:CRW_topology}, a \DeltaR reversal would largely reverse the directions of the lepton and neutrino in the \wjets process described in Section \ref{sec:wjets_description}, without modifying the kinematic details of the hadronic activity which fakes a hadronically-decaying \(W\) candidate for this process in the SR. As a result, the modelling of \wjets events in this \DeltaR-reversed region would be expected to be similar to \wjets events in the SR, with the exception of the reversed lepton and neutrino directions in the \(W\rightarrow\ell\nu\) decay.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\textwidth]{figures/5/SR_topology.pdf}
+  \includegraphics[width=0.49\textwidth]{figures/5/CRW_topology.pdf}
+  \caption[Topologies in SR vs. CRW]{Comparison of typical event topologies between the signal region and the \wjets CR, showing that the typical directions of the lepton and neutrino relative to hadronic activity faking the hadronically-decaying \(W\) boson are simply reversed.}
+  \label{fig:CRW_topology}
+\end{figure}
+
+There was some concern that the \met distribution would be substantially biased to lower values in the \DeltaR-reversed topology compared with the signal region due to the neutrino, which constitutes the only true \met in the \wjets background, being approximately aligned with the high-\pt hadronic activity, rather than recoiling against it. However, it was found that the shapes of the \met distributions are reasonably similar between the signal region and the \DeltaR-reversed \wjets control region, as shown for the \resolved category in Figure \ref{fig:MET_SR_CRW}, which suggests that other analysis selections are independently selecting for high \met despite the modified topology.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=0.5\textwidth]{Figures/5/Wjets_shapeComparison_SR_CRW.pdf}
+   \caption[\met in SR vs. CRW]{Shape comparison of \met distributions in the SR vs. the \wjets CR. Both distributions are normalized to unit area.}
+  \label{fig:MET_SR_CRW}
+\end{figure}
+
+Table \ref{tab:Wjets_composition_CRW} compares the yield and relative composition of the \wjets background in the signal regions with the \wjets control regions. Figures ~\ref{fig:signal_composition_CRW_merged} and ~\ref{fig:signal_composition_CRW_resolved} compare the signal yield and signal/background between the signal region and the \wjets control region in the merged and resolved categories, respectively. The \wjets background constitutes over 75\% of the predicted yield of SM background processes in both CRs, making it the dominant SM background process, with signal contamination below \(2.5\%\) for all signal points. The benchmark for assessing an acceptable level of signal contamination
+
+\begin{table}[ht]
+ \centering
+ \small{
+\caption{\label{tab:Wjets_composition_CRW} Comparison of the \wjets background yield, total background yield, and the relative composition of the \wjets background relative to the total background. Uncertainties on the relative composition are obtained from the sum of squared event weights.}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Region} & \textbf{\wjets Yield} & \textbf{Total Background Yield} & \textbf{\wjets Relative Composition}\tabularnewline
+\midrule
+\midrule
+\textbf{merged SR} & 24.0\(\pm\)7.3 & 38.6\(\pm\)7.4 & (62.2\(\pm\)22.3)\%  \tabularnewline
+\midrule
+\textbf{resolved SR} & 245.1\(\pm\)19.7 & 337.9\(\pm\)24.2 & (72.6\(\pm\)7.8)\% \tabularnewline
+\midrule
+\textbf{merged CRW} & 172.6\(\pm\)22.3 & 229.4\(\pm\)23.9 & (75.2\(\pm\)12.5)\% \tabularnewline
+\midrule
+\textbf{resolved CRW} & 594.6\(\pm\)30.4 & 747.9\(\pm\)31.3 & (79.5\(\pm\)5.3)\% \tabularnewline
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/5/SignalYields_CRW_Merged.pdf}
+    \caption{Signal yield in \merged \wjets control region}
+    \label{fig:signal_yield_CRW_merged_CR}
+    \end{subfigure} \hspace{1em}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/5/SignalContaminations_CRW_Merged.pdf}
+    \caption{Signal / background in \merged \wjets control region}
+    \label{fig:signal_over_bkg_CRW_merged_CR}
+    \end{subfigure}
+  \caption[Signal contaminations in \merged SR and CRW]{Predicted yields of MC simulated events (left), and ratio of predicted signal / SM background yields (right) for all signal points in the merged \wjets control region.}
+  \label{fig:signal_composition_CRW_merged}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/5/SignalYields_CRW_Resolved.pdf}
+    \caption{Signal yield in \resolved \wjets control region}\label{fig:signal_yield_CRW_resolved_CR}
+    \end{subfigure} \hspace{1em}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/5/SignalContaminations_CRW_Resolved.pdf}
+    \caption{Signal / background in \resolved \wjets control region}\label{fig:signal_over_bkg_CRW_resolved_CR}
+    \end{subfigure}
+  \caption[Signal contaminations in \merged SR and CRW]{Predicted yields of MC simulated events (left), and ratio of predicted signal / SM background yields (right) for all signal points in the resolved \wjets control region.}
+  \label{fig:signal_composition_CRW_resolved}
+\end{figure}
+
+
+\subsubsection{\ttbar Control Region Definition}
+\label{sec:ttbar_CR_defn}
+
+\begin{itemize}
 \item CRs
-\begin{itemize}
-\item Provides data-driven normalization constraint which can be extrapolated to the signal region (more details on extrapolation procedure in Chapter 7)
-\item Reduces the impact of (and reliance on) theoretical uncertainties involved in simulating the correct normalizations for these backgrounds. Emphasize the difficulty involved with assigning reliable theoretical uncertainties, and hence the value of using data-driven constraints.
-\end{itemize}
-
-\item Summary of design goals for control region
-\begin{itemize}
-\item High purity of background of interest.
-\item Orthogonal to SR.
-\item Phase space kinematically similar to SR.
-\item Signal contamination negligible compared with uncertainty of total background yield.
-\end{itemize}
-
 \item Present the \wjets control region, and motivate the \dR reversal used to define it.
 \item Present the \ttbar control region, and motivate the \bjet veto reversal used to define it.
 \item Present the additional modifications that were needed in the \merged category to optimize the CR definitions
