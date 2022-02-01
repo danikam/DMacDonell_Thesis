@@ -20,3 +20,4 @@ scp_vm -r docker_test_3:/mnt/Git/makehistos/Plots_N_1_significance/* .
 rm SR1L_Merged/*.png
 rm SR1L_Resolved/*.png
 
+scp_vm docker_test_3:/mnt/Git/makehistos/Plots_N_1_comparisons/CRW_Merged_metsig_gt_16/MetTST_met_N_1.pdf MetTST_met_N_1_CRW_metsig_gt_16.pdf 
