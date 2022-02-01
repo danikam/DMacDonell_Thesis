@@ -23,7 +23,7 @@ The set of simulated final state particles, along with their kinematic informati
 ATLAS uses various MC simulation packages (also known as ``generators") to perform truth-level MC simulation of different physics processes. For many processes, particularly SM background processes, independent MC simulations have been performed using several different packages, and the yields and distributions of events predicted by the different packages can be compared to evaluate a systematic uncertainty associated with the choice of generator used to simulated the process. The specific generators used to model the physics processes considered in this search will be discussed in Sections \ref{sec:DH_model_sim} and \ref{sec:SM_bkg_sim}.
 
 \subsection{Weighting and Normalization of MC Simulated Processes}
-\abel{sec:evt_weights}
+\label{sec:evt_weights}
 
 Given a set of MC simulated events for a given process, it is often necessary to apply multiplicative ``weights" to the simulated events in order to correct their distributions and amplitude before comparing with the measured data. The weights are designed to modify the amount that a given event contributes to the amplitude of the bin to which it is assigned when the MC simulated events are binned into histograms. Rather than simply summing the number of simulated events which fall into a given bin, the simulated amplitude, or ``yield", of each bin is evaluated instead as the sum of event weights \(w\) for all events which fall into the bin:
 
