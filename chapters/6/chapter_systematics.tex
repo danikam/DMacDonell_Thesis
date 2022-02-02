@@ -1,13 +1,24 @@
 \startchapter{Systematic Uncertainties}
 \label{chapter:systematics}
 
+In order to properly assess the significance of any discrepancies that may be seen between predicted yields and distributions of signal and SM background and the observed collision data, it is important to assign an uncertainties to all sources which may limit the precision and accuracy of the yield predictions. In addition to the limited precision of the estimates due to statistical uncertainty\footnote{See Chapter \ref{sec:mc_intro} for a discussion of the origin of statistical uncertainty in MC simulations.}, there may be inaccuracies in the values of various parameters involved in the simulation due to a limited precision with which their values are known. These inaccuracies can systematically shift predicted production rates and kinematic properties of the simulated processes, or the objects they produce in the ATLAS detector, and ultimately predicted yields and shapes of the processes in the analysis regions. Systematic uncertainties aim to quantify the maximal range of yield shifts, in each region and bin\footnote{See Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)} for details of the binning in \minms performed in the SR})used in the search, that could result from a potential source of systematic inaccuracy. 
+
+Systematic uncertainties (or simply ``systematics") are classified into two main categories: theoretical and experimental. Theoretical systematics account for inaccuracies that could result from a limited knowledge of parameters involved in modelling the production and decay mechanisms resulting from \(pp\) collision events at the LHC. Experimental systematics account for inaccuracies involved in the physics objects\footnote{See Section \ref{sec:object_defs} for a presentation of the reconstructed physics objects used in this search.} used to reconstruct the decay products of collision events in the ATLAS detector, and in the LHC machine itself. 
+
+Experimental systematics are generally constrained by measurements of the ATLAS collision data in the process of calibrating the LHC machine or particular physics objects reconstructed in the ATLAS detector. Theoretical systematics, on the other hand, are often derived from a broader range of experimental 
+
+ As a result, the confidence and precision with which theoretical uncertainties 
+
+ obtained from experimental results from 
+
+ some cases motivated primarily by theoretical considerations, rather than constraints from 
+
+
 \begin{itemize}
-\item General discussion of how systematic uncertainties can bias the simulation of physical objects, ultimately resulting in a systematic mis-modelling of the yields and shapes of simulated processes in our analysis regions.
 \item Discussion of how systematic uncertainties are evaluated using the up/down shift in the yield within each bin obtained by varying the given source of systematic uncertainty.  
 \item Clearly distinguish between theoretical and experimental sources of systematic uncertainty. Discuss the relative difficulty often involved with assigning reliable theoretical uncertainties (can be challenging to assess realistic bounds on the possible range of values for theoretical inputs, whereas experimental bounds are generally more measurable). 
 \item Discussion of each major source of experimental systematics, how they're evaluated and some plots and tables showing shifts in yield arising from the dominant sources of experimental systematics.
 \item Discussion of the sources of theory systematics considered (QCD scale, PDF, $\alpha_s$, PS) and how each is evaluated for signal and background.
-\item Explanation of the special treatment of the triboson theory uncertainty (i.e. setting it to 100\%) due to the absence of any appropriate alternate generator sample.
 \item Plots and tables showing the yield shifts and relative sizes of each source of theory uncertainty for signal and major backgrounds.
 \item Comparison of the relative impact of statistical vs. systematic uncertainties in each analysis region, to identify where we're stats- vs. systematics-dominated.
 \end{itemize}
