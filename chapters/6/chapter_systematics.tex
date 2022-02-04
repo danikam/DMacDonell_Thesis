@@ -1,11 +1,13 @@
 \startchapter{Systematic Uncertainties}
 \label{chapter:systematics}
 
-In order to properly assess the significance of any discrepancies that may be seen between predicted yields and distributions of signal and SM background and the observed collision data, it is important to assign an uncertainties to all sources which may limit the precision and accuracy of the yield predictions. In addition to the limited precision of the estimates due to statistical uncertainty\footnote{See Chapter \ref{sec:mc_intro} for a discussion of the origin of statistical uncertainty in MC simulations.}, there may be inaccuracies in the values of various parameters involved in the simulation due to a limited precision with which their values are known. These inaccuracies can systematically shift predicted production rates and kinematic properties of the simulated processes, or the objects they produce in the ATLAS detector, and ultimately predicted yields and shapes of the processes in the analysis regions. Systematic uncertainties aim to quantify the maximal range of yield shifts, in each region and bin\footnote{See Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)} for details of the binning in \minms performed in the SR} used in the search, that could result from a potential source of systematic inaccuracy. 
+In order to properly assess the significance of any discrepancies that may be seen between predicted yields and distributions of signal and SM background and the observed collision data, it is important to assign uncertainties to all sources which may limit the precision and accuracy of yield predictions. In addition to limited precision  due to statistical uncertainty\footnote{See Chapter \ref{sec:mc_intro} for a discussion of the origin of statistical uncertainty in MC simulations.}, there may be inaccuracies in the values of various parameters input to the simulation due to a limited precision with which their values are known. These inaccuracies can systematically shift predicted production rates and kinematic properties of the simulated processes, or the objects they produce in the ATLAS detector, and ultimately predicted yields and shapes of the processes in the analysis regions. Systematic uncertainties aim to quantify the maximal range of yield shifts, in each region and bin\footnote{See Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)} for details of the binning in \minms performed in the SR} used in the search, that could result from a potential source of systematic inaccuracy. 
 
 Systematic uncertainties (or simply ``systematics") are classified into two main categories: theoretical and experimental. Theoretical systematics account for inaccuracies that could result from a limited knowledge of parameters involved in modelling the production and decay mechanisms resulting from \(pp\) collision events at the LHC. Experimental systematics account for inaccuracies involved in the physics objects\footnote{See Section \ref{sec:object_defs} for a presentation of the reconstructed physics objects used in this search.} used to reconstruct the decay products of collision events in the ATLAS detector, and in the LHC machine itself. 
 
 Experimental systematics are generally constrained in the process of calibrating particular physics objects reconstructed in the ATLAS detector using the ATLAS collision data, and as a result are generally considered quite robust. In contrast, the choice of an uncertainty to assign to theoretical parameters can be much less clear, as constraints from experimental results may be sparse, or in some cases such as appropriate choice of renormalization scale in perturbative QCD calculations \cite{PDG_2018}, essentially non-existent. 
+
+Experimental and theoretical systematic uncertainties are evaluated in all analysis regions and bins for the SM background processes. Due to the negligible yield of the signal processes in the CRs, systematic uncertainties are only evaluated for the signal process in the SRs.
 
 \section{Experimental Systematics}
 
@@ -145,7 +147,9 @@ JET\_JER\_EffectiveNP\_7restTerm & \(\pm\)0.21\% &\(\pm\)1.72\% &\(\pm\)0.03\% &
 
 \section{Theoretical Systematics}
 
-The sources of theoretical uncertainty considered in this search, as well as the methods used to evaluate the resulting uncertainties in predicted yields for the various processes relevant to the search, are discussed in the following sections.  Some sources are only considered for a subset of the processes. Table \ref{tab:theo_sys_summary} summarizes the theoretical uncertainties that are evaluated for each process.
+The sources of theoretical uncertainty considered in this search, as well as the methods used to evaluate the resulting uncertainties in predicted yields for the various processes relevant to the search, are discussed in the following sections.  Some sources are only considered for a subset of the processes.
+
+Table \ref{tab:theo_sys_summary} summarizes the theoretical uncertainties that are evaluated for each process\footnote{Due the relatively low yield and small number of MC simulated events admitted into the analysis regions for the \zjets process and the similarity in the production mechanisms for the \wjets and \zjets processes, theoretical uncertainties are not explicitly calculated for the \zjets process. Instead, all relative theoretical uncertainties evaluated in each bin for the \wjets process \(\text{syst}\text{(theo unc, \wjets, bin \(j\))} / N_\text{\wjets, nominal, bin \(j\)}\) are also assigned to the \zjets process.}.
 
 \begin{table}
 \centering
@@ -158,7 +162,7 @@ The sources of theoretical uncertainty considered in this search, as well as the
 \textbf{Uncertainty Source} & \textbf{W+jets} & \textbf{Diboson} & \textbf{Triboson} & \textbf{Z+jets} & \(\mathbf{\ttbar}\) & \textbf{Single Top} & \textbf{DH Signal} \\
 \midrule
 \midrule
-PDF & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+PDF & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
 \midrule
 \(\alpha_s\) (PDF) & \checkmark & \checkmark & \checkmark & \checkmark & \(\times\) & \(\times\) & \(\times\) \\
 \midrule
@@ -178,7 +182,7 @@ Parton Showering & \checkmark & \checkmark & \checkmark & \checkmark & \checkmar
 \subsection{Modelling the Parton Distribution Function}
 \label{sec:pdf_unc}
 
-Uncertainties associated with the parton distribution functions\footnote{See Section \ref{sec:parton_model} for an introduction to the parton model and parton distribution functions.} (PDF) used to model the substructure of protons involved in LHC collisions can affect cross sections - and hence production rates - of production and decay processes at the LHC. Following ATLAS guidelines and recommendations from the \textit{PDF4LHC} \cite{PDF4LHC_recos_2016} working group, generator weights\footnote{See discussion of generator weights in Section \ref{sec:evt_wts}} for all simulated events are re-evaluated for 100 replicas of the nominal PDF. Each replica is obtained by randomly re-sampling all uncertain inputs to the model and re-evaluating the PDF with the new inputs \cite{BALL20091}. The yield in each region and bin is re-evaluated with each set of generator weights, and the uncertainty of the yield in each bin is estimated as the standard deviation over all yield variations.
+Uncertainties associated with the parton distribution functions\footnote{See Section \ref{sec:parton_model} for an introduction to the parton model and parton distribution functions.} (PDF) used to model the substructure of protons involved in LHC collisions can affect cross sections - and hence production rates - of production and decay processes at the LHC. Following ATLAS guidelines and recommendations from the \textit{PDF4LHC} \cite{PDF4LHC_recos_2016} working group, generator weights\footnote{See discussion of generator weights in Section \ref{sec:evt_wts}} for simulated events for all processes considered in the search are re-evaluated for 100 replicas of the nominal PDF. Each replica is obtained by randomly re-sampling all uncertain inputs to the model and re-evaluating the PDF with the new inputs \cite{BALL20091}. The yield in each region and bin is re-evaluated with each set of generator weights, and the uncertainty of the yield in each bin for a given process is estimated as the standard deviation over all yield variations.
 
 \subsection{Strong Coupling Constant \(\alpha_s\)}
 
@@ -186,11 +190,11 @@ The nominal PDF is produced with the strong coupling constant \(\alpha_s\) set t
 
 \subsubsection{\(\alpha_s\) in PDF Modelling}
 
-For the \wjets, \zjets, diboson and triboson processes generated using \SHERPA, alternative generator weights are produced using PDFs re-evaluated with \(\alpha_s\) varied up or down by its \(\pm0.0015\) uncertainty. Following the \textit{PDF4LHC} prescription, yield \(N_p\) for a given process \(p\) is re-evaluated in each bin \(j\) with the alternative generator weights, and the uncertainty is evaluated as:
+For the \wjets, \zjets, diboson and triboson processes generated using \SHERPA2.2, alternative generator weights are produced using PDFs re-evaluated with \(\alpha_s\) varied up or down by its \(\pm0.0015\) uncertainty. Following the \textit{PDF4LHC} prescription, yield \(N_p\) for a given process \(p\) is re-evaluated in each bin \(j\) with the alternative generator weights, and the uncertainty is evaluated as:
 
 \begin{equation}
 \label{eq:alphas_syst}
-\text{syst}\text{(\(\alpha_s\), bin \(j\))}= \pm\Bigg(\frac{N_\text{\(p\), \(\alpha_s\)+1\(\sigma\), bin \(j\)} - N_\text{\(p\), \(\alpha_s\)-1\(\sigma\), bin \(j\)} }{2}\Bigg)
+\text{syst}\text{(\(\alpha_s\), \(p\), bin \(j\))}= \pm\Bigg(\frac{N_\text{\(p\), \(\alpha_s\)+1\(\sigma\), bin \(j\)} - N_\text{\(p\), \(\alpha_s\)-1\(\sigma\), bin \(j\)} }{2}\Bigg)
 \end{equation}
 
 \noindent and added in quadrature with the PDF uncertainties described in Section \ref{sec:pdf_unc}.
@@ -203,18 +207,304 @@ For the single-top and \ttbar processes generated using the \POWHEGBOX matrix el
 
 In the framework of perturbative QCD, the strong coupling constant is expressed as a function of the ``renormalization scale" \(\mu_R\) \cite{PDG_2018}, which is unphysical in the sense that the values of physical observables should be independent of \(\mu_R\). However, the choice of \(\mu_R\) can impact the calculated values of observables in perturbative QCD calculations due to missing higher-order terms in truncated expansions. A similar effect is seen with the ``factorization scale" \(\mu_F\) used in PDF calculations \cite{maltoni2007choosing}, which effectively quantifies the resolution with which the proton is probed in a collision. As with \(\mu_R\), the choice of \(\mu_F\) is physically meaningless, but affects the calculated values of observables due to missing higher-order terms in truncated QCD expansions.
 
-To account for the unphysical impact of the choice of \(\mu_R\) and \(\mu_F\), generator weights are re-evaluated for each process with \(\mu_R\) and \(\mu_F\) varied by factors of either \(\frac{1}{2}\) or 2 in pairwise combinations (i.e. \((\mu_R, \mu_F)\rightarrow \{(\frac{1}{2}\mu_R, \mu_F), (\mu_R, 2\mu_F)\}\), etc.) from their values used for the nominal event generation. Following ATLAS guidelines, the systematic uncertainty in the yield in each bin is evaluated as the envelope of yield variations over all pairwise combinations of \(\mu_R\) and \(\mu_F\) variations, excluding the extreme off-diagonals \(\{(\frac{1}{2}\mu_R, 2\mu_F), (2\mu_R, \frac{1}{2}\mu_F)\}\).
+To account for the unphysical impact of the choice of \(\mu_R\) and \(\mu_F\) on simulated observables, generator weights are re-evaluated for each process with \(\mu_R\) and \(\mu_F\) varied by factors of either \(\frac{1}{2}\) or 2 in pairwise combinations (i.e. \((\mu_R, \mu_F)\rightarrow \{(\frac{1}{2}\mu_R, \mu_F), (\mu_R, 2\mu_F)\}\), etc.) from their values used for the nominal event generation. Following ATLAS guidelines, the systematic uncertainty in the yield in each bin is evaluated as the envelope of yield variations over all pairwise combinations of \(\mu_R\) and \(\mu_F\) variations, excluding the extreme off-diagonals \(\{(\frac{1}{2}\mu_R, 2\mu_F), (2\mu_R, \frac{1}{2}\mu_F)\}\). For a given process \(p\), the upward systematic uncertainty in bin \(j\) in the yield prediction \(N_p\) is evaluated as:
 
-\subsection{Matrix Element Generator Comparison}
+\begin{equation}
+\label{eq:scale_systs}
+\text{syst}\text{(scale, up, \(p\), bin j)} = \text{max}\bigg[0, \text{max}_k\big\{N_\text{\(p\), \((\mu_R, \mu_F)\) var'n \(k\), bin \(j\)} - N_\text{\(p\), nominal, bin \(j\)}\big\} \bigg]
+\end{equation}
 
-\subsection{Parton Showering}
+\subsection{Matrix Element (ME) Generator Comparison}
+\label{sec:ME_syst}
 
+For the \ttbar and single-top processes, for which separate generators are used to calculate the ME (\POWHEGBOX) for the hard scatter process and model the subsequent parton shower (\PYTHIA8), an uncertainty associated with the choice of program used to calculate the ME is obtained by comparing the predicted yields obtained with the nominal generation strategy with those obtained using an alternate MadGraph5\_aMC\@NLO \cite{Alwall:2014hca} generator. The associated uncertainty in the predicted yield for a given process \(p\) (\ttbar or single-top) in bin \(j\) is evaluated using the difference in yield obtained with the alternate ME calculator:
 
+\begin{equation}
+\label{eq:ME_syst}
+\text{syst}\text{(ME, \(p\), bin j)}= \pm \Big(N_\text{\(p\), ME=MadGraph5\_aMC\@NLO, bin \(j\)} - N_\text{\(p\), nominal, bin \(j\)}\Big)
+\end{equation}
+
+\subsection{Parton Showering (PS)}
+
+Uncertainties associated with the modelling of the PS are evaluated for all processes. The approach used to evaluate these uncertainties for a given process differs depending on which package, or set of packages, was used to generate the nominal set of MC simulated events for the process.
+
+\subsubsection{Alternate PS Generator}
+
+For the \ttbar, single-top and DH signal processes for which separate packages are used to calculate the ME and to model the subsequent PS, an uncertainty associated with the choice of parton shower generator is evaluated by comparing the predicted yields obtained with the nominal \PYTHIA8 PS generator with an alternate \HERWIG[7] \cite{Bahr:2008pv,Bellm:2015jjp} generator. In analogy with the evaluation of ME uncertainty described in Section \ref{sec:ME_syst} above, the associated uncertainty in yield is evaluated for the \ttbar and single-top processes as:
+
+\begin{equation}
+\label{eq:ME_syst}
+\text{syst}\text{(PS, \(p\), bin j)}= \pm \Big(N_\text{\(p\), PS=\HERWIG[7], bin \(j\)} - N_\text{\(p\), nominal, bin \(j\)}\Big)
+\end{equation}
+
+For the DH signal model, MC simulated samples are generated with the alternate \HERWIG[7] PS generator at three sample points in \ms and \mZp:
+
+\begin{itemize}
+\item \((\ms, m_{Z'}) = (160, 1000)~\GeV\)
+\item \((\ms, m_{Z'}) = (160, 2100)~\GeV\)
+\item \((\ms, m_{Z'}) = (310, 1000)~\GeV\)
+\end{itemize}
+
+For each choice of PS generator - nominal or alternate - all three sets of samples generated at the mass points listed above are statistically combined, with the cross section excluded from the event weights\footnote{see Section \ref{sec:evt_wts} for a detailed discussion of event weights}. The cross section is excluded to prevent the signal points at \(\ms=160~\GeV\) with larger cross sections from dominating the shape of the combined sample. Using the combined DH sample, the relative uncertainty in the predicted yield associated with the alternate PS generator is evaluated as:
+
+\begin{equation}
+\label{eq:ME_syst}
+\text{(rel. syst)}\text{(PS, combined DH, bin \(j\))}= \pm \frac{N_\text{combined DH, PS=\HERWIG[7], bin \(j\)} - N_\text{combined DH, nominal, bin \(j\)}}{N_\text{combined DH, nominal, bin \(j\)}}
+\end{equation}
+
+\noindent This relative uncertainty is then applied to the DH signal yields at all \ms and \mZp:
+
+\begin{footnotesize}
+\begin{equation}
+\label{eq:ckkw_wjets}
+\text{syst}_\text{(PS, (\ms, \mZp), bin \(j\))} = \pm \bigg[\text{(rel. syst)}\text{(PS, combined DH, bin \(j\))}] \times \bigg[N_\text{(\ms, \mZp), nominal, bin \(j\)}\bigg]
+\end{equation}
+\end{footnotesize}
+
+\subsubsection{CKKW and QSF Systematics}
+
+For the \wjets, \zjets, diboson and triboson processes, the \SHERPA2.2 generator is used to model both the ME calculation and the parton shower. Since it is not in general possible to disentangle the ME and PS components of the \SHERPA2.2 event simulation, the uncertainty associated with the PS shower generation is instead evaluated by varying the following theoretical parameters in the parton showering model implemented in \SHERPA2.2:
+
+\begin{itemize}
+\item The ``merging scale" \(Q_\text{cut}\) is used to merge the matrix element associated with partonic emissions with the ensuing parton shower evolution in the CKKW scheme \cite{CKKW_2009,Sherpa1.1_2009}. This merging scale is set to 20 GeV for the nominal event generation. Following ATLAS guidelines, the uncertainty associated with the choice of \(Q_\text{cut}\) is evaluated by comparison with MC simulated data sets produced with \(Q_\text{cut}\) varied to either \(Q_\text{cut, down}=15~\GeV\) or \(Q_\text{cut, up}=30~\GeV\). 
+\item The ``resummation scale" \(\mu_\text{QSF}\) \cite{PDG_2018} used in modelling the evolution of the parton shower. Following ATLAS guidelines, the associated uncertainty is evaluated by repeating the event generation with the QSF varied to either \(\mu_\text{QSF, down} = \frac{1}{2}\text{QSF, nominal}\) or \(\mu_\text{QSF, up} = 2\text{QSF, nominal}\).
+\end{itemize}
+
+Event weights associated with up and down variations of the \(Q_\text{cut}\) and \(\mu_\text{QSF}\) scales are evaluated using truth-level\footnote{See Section \ref{sec:MC_ATLAS} for information on the distinction between truth-level and reconstruction-level information} MC simulated samples generated for the \wjets process with each scale variation using the method described in Ref. \cite{Vjets_ckkw_qsf}. For each scale variation, the predicted yield of \wjets events is re-evaluated in all regions and bins, and the associated uncertainty is calculated as half the difference in yields obtained with the up vs. down scale variations:
+
+\begin{equation}
+\label{eq:ckkw_wjets}
+\text{syst}_\text{(CKKW (QSF), \wjets, bin \(j\))} = \pm\Bigg(\frac{N_\text{\wjets, \(Q_\text{cut}\) up (\(\mu_\text{QSF, up}\)), bin \(j\)} - N_\text{\wjets, \(Q_\text{cut}\) down (\(\mu_\text{QSF, down}\)), bin \(j\)} }{2}\Bigg)
+\end{equation}
+
+For the diboson and triboson processes, predicted yields are evaluated for each truth-level variation sample of MC simulated diboson events, as well as the nominal truth-level sample, in a single ``inclusive" region defined by the following selection on truth-level observables:
+
+\begin{itemize}
+\item (1 signal muon) or (1 signal electron)
+\item (1 or more \(R=1.0\) \largeR jet\footnote{The TAR jets used in the search are by default built at reconstruction level. At truth level, the TAR jets are approximated by \(R=1.0\) jets constructed using the \akt algorithm \cite{akt_algo}.}) or (2 or more \(R=0.4\) jets)
+\item \(\met > 150~\GeV\)
+\item \(\mtlepmet > 150~\GeV\)
+\end{itemize}
+
+The region is designed to encompass all of the analysis regions used in the search, with the lower bounds on \met and \mtlepmet placed as high as possible in order to reflect the kinematics of events in the analysis regions, while admitting enough simulated events to ensure that statistical yield fluctuations are sub-dominant in comparison to the yield shifts resulting from scale variations. Within this inclusive region, the relative uncertainty in yield is evaluated for each set of scale variations as:
+
+\begin{footnotesize}
+\begin{equation}
+\label{eq:ckkw_wjets}
+\text{(rel. syst)}_\text{(CKKW (QSF), diboson)} = \pm\Bigg(\frac{N_\text{diboson (tr.), \(Q_\text{cut}\) up (\(\mu_\text{QSF, up}\)), incl.} - N_\text{diboson (tr.), \(Q_\text{cut}\) down (\(\mu_\text{QSF, down}\)), incl.} }{2\times N_\text{diboson (tr.), nominal, incl.}}\Bigg)
+\end{equation}
+\end{footnotesize}
+
+\noindent The relative uncertainty \(\text{(rel. syst)}_\text{(CKKW (QSF), diboson)}\)  is applied to each analysis region and bin in the reconstruction level diboson and triboson\footnote{The relative CKKW and QSF uncertainty evaluated for the diboson process is also applied to the triboson process because there are currently no MC simulated samples available for the triboson process with \(Q_\text{cut}\) and \(\mu_\text{QSF}\) varied.} samples:
+
+\begin{footnotesize}
+\begin{equation}
+\label{eq:ckkw_wjets}
+\text{syst}_\text{(CKKW (QSF), diboson (triboson), bin \(j\))} = \pm \bigg[\text{(rel. syst)}_\text{(CKKW (QSF), diboson)}\bigg] \times \bigg[N_\text{diboson (triboson), nominal, bin \(j\)}\bigg]
+\end{equation}
+\end{footnotesize}
+
+For each process, the CKKW and QSF systematic uncertainties are combined in quadrature to obtain an overall estimate of the total uncertainty associated with the parton shower modelling.
 
 \subsection{Interference Between single-top and \ttbar Processes at NLO}
 
+Interference between the mechanisms for single-top (\(Wt\)) and \ttbar production \cite{Wt_interference} is accounted for when simulating the single-top process to obtain an accurate total production rate for the two processes. Two schemes, diagram removal (DR) and diagram subtraction (DS) have been developed to account for this interference. The DR scheme is used to generate the nominal MC simulated samples for the single-top process, and an uncertainty associated with the choice of interference handling scheme is evaluated by generating alternate samples for the single-top process using the DS scheme. The associated uncertainty in the predicted yield of the single-top process is evaluated in each bin \(j\) as:
+
+\begin{equation}
+\label{eq:ME_syst}
+\text{syst}\text{(\(Wt\)/\ttbar, single-top, bin j)}= \pm \Big(N_\text{single-top, DS, bin \(j\)} - N_\text{single-top, nominal, bin \(j\)}\Big)
+\end{equation}
+
+Figure \ref{fig:theory_systs} shows yield variations associated with all of the sources of theoretical uncertainty presented in this section in the merged SR for sample processes. 
+
+\begin{figure}[!tb]
+  \centering
+    \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/pdf_plus_alphas_syst_W+Jets_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{PDF+\(\alpha_s\) for \wjets background}
+    \label{fig:wjets_pdf}
+  \end{subfigure} \hspace{1em}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/ISR_alphas_syst_ttbar_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{ISR \(\alpha_s\) for \ttbar background}
+    \label{fig:ttbar_ISR_alphas}
+    \end{subfigure} \\ \vspace{1em}
+    
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/scale_syst_Diboson_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{Envelope of \(\mu_R\) and \(\mu_F\) scale variations for diboson background}
+    \label{fig:diboson_scale}
+  \end{subfigure} \hspace{1em}
+    \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/scale_syst_monoSWWsemilep_zp2100_dm200_dh210_SR_mgd_TARJets10_minmS_mgd_symm_scale.pdf}
+    \caption{Envelope of \(\mu_R\) and \(\mu_F\) scale variations for DH signal at \((\ms, \mZp)=(210, 2100)~\GeV\)}
+    \label{fig:DH_scale}
+  \end{subfigure} \\ \vspace{1em}
+  
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/2pt_AMcPy8_syst_stop_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{ME for single-top background}\label{fig:stop_ME}
+    \end{subfigure} \hspace{1em}
+   \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/2pt_PhHw7_syst_ttbar_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{PS for \ttbar background}\label{fig:ttbar_PS}
+  \end{subfigure} \\ \vspace{1em}
+    \caption{Shifts in the predicted yield of various processes considered in the search in the merged SRs due to theoretical systematic uncertainties. The predicted yield is binned in \minms using the binning strategy employed in the fitting strategy to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). }
+  \label{fig:theory_systs}
+  \end{figure}
+  
+ \begin{figure} \ContinuedFloat
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/2pt_MGHw7_syst_monoSWWsemilep_zp1700_dm200_dh335_SR_mgd_TARJets10_minmS_mgd.pdf}
+    \caption{PS for DH signal at \((\ms, \mZp)=(210, 2100)~\GeV\)}
+    \label{fig:DH_PS}
+  \end{subfigure} \hspace{1em}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/ckkw_plus_qsf_syst_W+Jets_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{PS (CKKW+QSF) for \wjets background}
+    \label{fig:wjets_PS}
+  \end{subfigure} \\ \vspace{1em}
+  
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/ckkw_plus_qsf_syst_Diboson_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{PS (CKKW+QSF) for diboson background}
+    \label{fig:diboson_PS}
+  \end{subfigure} \hspace{1em}
+  \begin{subfigure}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Figures/6/2pt_DS_syst_stop_SR_mgd_TARJets10_minmS_mgd_yield.pdf}
+    \caption{\(Wt\)/\ttbar Interference for single-top background}
+    \label{fig:stop_DS}
+  \end{subfigure}
+  \caption{Shifts in the predicted yield due to theoretical systematic uncertainties (continued) }
+\end{figure}
+
+Tables \ref{tab:systs_bkg_SR} and \ref{tab:systs_bkg_SR}
+
+\begin{table}[ht]
+\small{
+\caption{\label{tab:systs_bkg_SR} Theoretical yield systematic uncertainties for dominant backgrounds in the SRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\begin{tabular}{l l l l l l l }
+\toprule
+\textbf{Bkg and Syst.} & \textbf{Mgd SR} & \textbf{Res SR}\tabularnewline
+\midrule
+\midrule
+W+Jets \(\mu_R\)+\(\mu_F\) & \(\substack{+6.33\\-3.14}\) \big(\(\substack{+26.45\%\\-13.12\%}\)\big) & \(\substack{+35.68\\-43.68}\) \big(\(\substack{+14.97\%\\-18.33\%}\)\big) \tabularnewline
+\midrule
+W+Jets PDF+\(\alpha_s\) & \(\pm\)1.08 (\(\pm\)4.53\%) & \(\pm\)3.27 (\(\pm\)1.37\%) \tabularnewline
+\midrule
+W+Jets PS & \(\pm\)1.25 (\(\pm\)6.22\%) & \(\pm\)16.31 (\(\pm\)7.54\%) \tabularnewline
+\midrule
+diboson \(\mu_R\)+\(\mu_F\) & \(\substack{+1.29\\-1.13}\) \big(\(\substack{+17.39\%\\-15.29\%}\)\big) & \(\substack{+7.62\\-6.60}\) \big(\(\substack{+15.22\%\\-13.19\%}\)\big) \tabularnewline
+\midrule
+diboson PDF+\(\alpha_s\) & \(\pm\)2.44 (\(\pm\)33.05\%) &\(\pm\)16.25 (\(\pm\)32.46\%) \tabularnewline
+\midrule
+diboson PS & \(\pm\)0.28 (\(\pm\)3.77\%) &\(\pm\)1.89 (\(\pm\)3.77\%) \tabularnewline
+\midrule
+\(t\bar{t}\) PS & \(\pm\)1.05 (\(\pm\)24.88\%) & \(\pm\)1.21 (\(\pm\)5.73\%) \tabularnewline
+\midrule
+\(t\bar{t}\) ME & \(\pm\)1.59 (\(\pm\)37.73\%) & \(\pm\)5.60 (\(\pm\)26.59\%) \tabularnewline
+\midrule
+\(t\bar{t}\) PDF & \(\pm\)0.03 (\(\pm\)0.78\%) & \(\pm\)0.09 (\(\pm\)0.42\%) \tabularnewline
+\midrule
+\(t\bar{t}\) \(\mu_R\)+\(\mu_F\) (ME) & \(\substack{+0.16\\-0.22}\) \big(\(\substack{+3.81\%\\-5.26\%}\)\big) & \(\substack{+0.58\\-0.85}\) \big(\(\substack{+2.74\%\\-4.02\%}\)\big) \tabularnewline
+\midrule
+\(t\bar{t}\) ISR \(\alpha_s\) & \(\pm\)0.04 (\(\pm\)0.95\%) & \(\pm\)0.24 (\(\pm\)1.12\%) \tabularnewline
+\midrule
+\(t\bar{t}\) \(\mu_R\)+\(\mu_F\) (FSR) & \(\pm\)0.46 (\(\pm\)10.87\%) & \(\pm\)0.67 (\(\pm\)3.19\%) \tabularnewline
+\midrule
+stop PS & \(\pm\)0.72 (\(\pm\)48.73\%) &\(\pm\)3.00 (\(\pm\)79.77\%) \tabularnewline
+\midrule
+stop ME & \(\pm\)1.51 (\(\pm\)101.97\%) &\(\pm\)2.74 (\(\pm\)72.92\%) \tabularnewline
+\midrule
+stop \(Wt\)/\ttbar & \(\pm\)0.82 (\(\pm\)55.18\%) &\(\pm\)2.35 (\(\pm\)62.38\%) \tabularnewline
+\midrule
+stop PDF & \(\pm\)0.06 (\(\pm\)3.87\%) &\(\pm\)0.08 (\(\pm\)2.11\%) \tabularnewline
+\midrule
+stop \(\mu_R\)+\(\mu_F\) (ME) & \(\substack{+0.21\\-0.15}\) \big(\(\substack{+14.48\%\\-10.44\%}\)\big) & \(\substack{+0.38\\-0.28}\) \big(\(\substack{+10.09\%\\-7.41\%}\)\big) \tabularnewline
+\midrule
+stop ISR \(\alpha_s\) & \(\pm\)0.11 (\(\pm\)7.75\%) &\(\pm\)0.32 (\(\pm\)8.63\%) \tabularnewline
+\midrule
+stop \(\mu_R\)+\(\mu_F\) (FSR) & \(\pm\)1.21 (\(\pm\)81.86\%) &\(\pm\)1.57 (\(\pm\)41.61\%) \tabularnewline
+\midrule
+triboson \(\mu_R\)+\(\mu_F\) & \(\substack{+0.04\\-0.04}\) \big(\(\substack{+3.71\%\\-3.22\%}\)\big) & \(\substack{+0.12\\-0.10}\) \big(\(\substack{+4.29\%\\-3.75\%}\)\big) \tabularnewline
+\midrule
+triboson PDF+\(\alpha_s\) & \(\pm\)0.02 (\(\pm\)1.82\%) &\(\pm\)0.04 (\(\pm\)1.37\%) \tabularnewline
+\midrule
+triboson PS & \(\pm\)0.07 (\(\pm\)6.22\%) &\(\pm\)0.21 (\(\pm\)7.54\%) \tabularnewline
+\midrule
+Z+Jets \(\mu_R\)+\(\mu_F\) & \(\substack{+0.30\\-0.15}\) \big(\(\substack{+26.45\%\\-13.12\%}\)\big) & \(\substack{+2.59\\-3.17}\) \big(\(\substack{+14.97\%\\-18.33\%}\)\big) \tabularnewline
+\midrule
+Z+Jets PDF+\(\alpha_s\) & \(\pm\)0.05 (\(\pm\)4.53\%) &\(\pm\)0.24 (\(\pm\)1.37\%) \tabularnewline
+\midrule
+Z+Jets PS & \(\pm\)0.07 (\(\pm\)6.22\%) &\(\pm\)1.30 (\(\pm\)7.54\%) \tabularnewline
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[ht]
+\footnotesize{
+\caption{\label{tab:systs_bkg_CR} Theoretical yield systematic uncertainties for dominant backgrounds in the CRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\begin{tabular}{l l l l l l l }
+\toprule
+\textbf{Bkg and Syst.} & \textbf{Mgd CRW} & \textbf{Res CRW} & \textbf{Mgd CRTT} & \textbf{Res CRTT}\tabularnewline
+\midrule
+\midrule
+W+Jets \(\mu_R\)+\(\mu_F\) & \(\substack{+42.91\\-25.22}\) \big(\(\substack{+24.86\%\\-14.61\%}\)\big) & \(\substack{+36.17\\-61.14}\) \big(\(\substack{+6.08\%\\-10.28\%}\)\big) & \(\substack{+3.55\\-0.48}\) \big(\(\substack{+137.61\%\\-18.72\%}\)\big) & \(\substack{+6.27\\-0.93}\) \big(\(\substack{-262.80\%\\+39.21\%}\)\big) \tabularnewline
+\midrule
+W+Jets PDF+\(\alpha_s\) & \(\pm\)3.70 (\(\pm\)2.14\%) &\(\pm\)13.10 (\(\pm\)2.20\%) &\(\pm\)0.40 (\(\pm\)15.39\%) &\(\pm\)0.34 (\(\pm\)14.36\%) \tabularnewline
+\midrule
+W+Jets PS & \(\pm\)12.17 (\(\pm\)8.02\%) &\(\pm\)35.66 (\(\pm\)6.86\%) &\(\pm\)0.19 (\(\pm\)8.44\%) &\(\pm\)0.18 (\(\pm\)10.77\%) \tabularnewline
+\midrule
+diboson \(\mu_R\)+\(\mu_F\) & \(\substack{+1.02\\-4.14}\) \big(\(\substack{+3.84\%\\-15.64\%}\)\big) & \(\substack{+18.40\\-15.47}\) \big(\(\substack{+17.40\%\\-14.64\%}\)\big) & \(\substack{+0.04\\-0.03}\) \big(\(\substack{+19.96\%\\-15.00\%}\)\big) & \(\substack{+0.13\\-0.10}\) \big(\(\substack{+22.85\%\\-16.89\%}\)\big) \tabularnewline
+\midrule
+diboson PDF+\(\alpha_s\) & \(\pm\)8.75 (\(\pm\)33.11\%) &\(\pm\)33.29 (\(\pm\)31.48\%) &\(\pm\)0.05 (\(\pm\)21.92\%) &\(\pm\)0.17 (\(\pm\)29.03\%) \tabularnewline
+\midrule
+diboson PS & \(\pm\)1.00 (\(\pm\)3.77\%) &\(\pm\)3.99 (\(\pm\)3.77\%) &\(\pm\)0.00 (\(\pm\)3.77\%) &\(\pm\)0.02 (\(\pm\)3.77\%) \tabularnewline
+\midrule
+\(t\bar{t}\) PS & \(\pm\)0.75 (\(\pm\)7.72\%) &\(\pm\)1.94 (\(\pm\)9.82\%) &\(\pm\)11.39 (\(\pm\)16.13\%) &\(\pm\)12.01 (\(\pm\)18.71\%) \tabularnewline
+\midrule
+\(t\bar{t}\) ME & \(\pm\)3.57 (\(\pm\)36.93\%) &\(\pm\)0.27 (\(\pm\)1.35\%) &\(\pm\)1.84 (\(\pm\)2.60\%) &\(\pm\)8.77 (\(\pm\)13.67\%) \tabularnewline
+\midrule
+\(t\bar{t}\) PDF & \(\pm\)0.03 (\(\pm\)0.32\%) &\(\pm\)0.06 (\(\pm\)0.31\%) &\(\pm\)0.29 (\(\pm\)0.41\%) &\(\pm\)0.14 (\(\pm\)0.22\%) \tabularnewline
+\midrule
+\(t\bar{t}\) \(\mu_R\)+\(\mu_F\) (ME) & \(\substack{+0.35\\-0.25}\) \big(\(\substack{+3.61\%\\-2.63\%}\)\big) & \(\substack{+1.26\\-0.87}\) \big(\(\substack{+6.37\%\\-4.39\%}\)\big) & \(\substack{+2.46\\-3.82}\) \big(\(\substack{+3.48\%\\-5.40\%}\)\big) & \(\substack{+1.04\\-1.66}\) \big(\(\substack{+1.62\%\\-2.58\%}\)\big) \tabularnewline
+\midrule
+\(t\bar{t}\) ISR \(\alpha_s\) & \(\pm\)0.01 (\(\pm\)0.14\%) &\(\pm\)0.11 (\(\pm\)0.57\%) &\(\pm\)0.72 (\(\pm\)1.02\%) &\(\pm\)0.04 (\(\pm\)0.06\%) \tabularnewline
+\midrule
+\(t\bar{t}\) \(\mu_R\)+\(\mu_F\) (FSR) & \(\pm\)1.15 (\(\pm\)11.89\%) &\(\pm\)0.61 (\(\pm\)3.10\%) &\(\pm\)5.27 (\(\pm\)7.46\%) &\(\pm\)2.88 (\(\pm\)4.49\%) \tabularnewline
+\midrule
+stop PS & \(\pm\)2.51 (\(\pm\)80.16\%) &\(\pm\)1.09 (\(\pm\)33.41\%) &\(\pm\)2.09 (\(\pm\)37.87\%) &\(\pm\)4.49 (\(\pm\)41.21\%) \tabularnewline
+\midrule
+stop ME & \(\pm\)0.02 (\(\pm\)0.73\%) &\(\pm\)1.68 (\(\pm\)51.31\%) &\(\pm\)1.62 (\(\pm\)29.40\%) &\(\pm\)1.97 (\(\pm\)18.07\%) \tabularnewline
+\midrule
+stop \(Wt\)/\ttbar & \(\pm\)3.47 (\(\pm\)110.52\%) &\(\pm\)1.18 (\(\pm\)35.96\%) &\(\pm\)3.95 (\(\pm\)71.68\%) &\(\pm\)7.81 (\(\pm\)71.75\%) \tabularnewline
+\midrule
+stop PDF & \(\pm\)0.12 (\(\pm\)3.67\%) &\(\pm\)0.17 (\(\pm\)5.16\%) &\(\pm\)0.11 (\(\pm\)1.94\%) &\(\pm\)0.28 (\(\pm\)2.58\%) \tabularnewline
+\midrule
+stop \(\mu_R\)+\(\mu_F\) (ME) & \(\substack{+0.59\\-0.39}\) \big(\(\substack{+18.89\%\\-12.45\%}\)\big) & \(\substack{+0.46\\-0.34}\) \big(\(\substack{+14.03\%\\-10.46\%}\)\big) & \(\substack{+0.48\\-0.31}\) \big(\(\substack{+8.72\%\\-5.55\%}\)\big) & \(\substack{+1.96\\-1.32}\) \big(\(\substack{+18.03\%\\-12.14\%}\)\big) \tabularnewline
+\midrule
+stop ISR \(\alpha_s\) & \(\pm\)0.05 (\(\pm\)1.60\%) &\(\pm\)0.38 (\(\pm\)11.51\%) &\(\pm\)0.21 (\(\pm\)3.77\%) &\(\pm\)0.17 (\(\pm\)1.55\%) \tabularnewline
+\midrule
+stop \(\mu_R\)+\(\mu_F\) (FSR) & \(\pm\)1.77 (\(\pm\)56.48\%) &\(\pm\)0.05 (\(\pm\)1.38\%) &\(\pm\)1.52 (\(\pm\)27.68\%) &\(\pm\)0.87 (\(\pm\)8.01\%) \tabularnewline
+\midrule
+triboson \(\mu_R\)+\(\mu_F\) & \(\substack{+0.11\\-0.09}\) \big(\(\substack{+5.78\%\\-4.93\%}\)\big) & \(\substack{+0.34\\-0.29}\) \big(\(\substack{+6.10\%\\-5.23\%}\)\big) & \(\substack{+0.00\\-0.00}\) \big(\(\substack{+6.12\%\\-5.24\%}\)\big) & \(\substack{+0.00\\-0.00}\) \big(\(\substack{+10.97\%\\-9.23\%}\)\big) \tabularnewline
+\midrule
+triboson PDF+\(\alpha_s\) & \(\pm\)0.02 (\(\pm\)1.13\%) &\(\pm\)0.06 (\(\pm\)1.12\%) &\(\pm\)0.00 (\(\pm\)1.76\%) &\(\pm\)0.00 (\(\pm\)4.32\%) \tabularnewline
+\midrule
+triboson PS & \(\pm\)0.07 (\(\pm\)3.77\%) &\(\pm\)0.21 (\(\pm\)3.77\%) &\(\pm\)0.00 (\(\pm\)3.77\%) &\(\pm\)0.00 (\(\pm\)3.77\%) \tabularnewline
+\midrule
+Z+Jets \(\mu_R\)+\(\mu_F\) & \(\substack{+2.95\\-1.74}\) \big(\(\substack{+24.86\%\\-14.61\%}\)\big) & \(\substack{+1.10\\-1.85}\) \big(\(\substack{+6.08\%\\-10.28\%}\)\big) & \(\substack{+0.00\\-0.00}\) \big(\(\substack{+137.61\%\\-18.72\%}\)\big) & \(\substack{+0.00\\-0.00}\) \big(\(\substack{-262.80\%\\+39.21\%}\)\big) \tabularnewline
+\midrule
+Z+Jets PDF+\(\alpha_s\) & \(\pm\)0.25 (\(\pm\)2.14\%) &\(\pm\)0.40 (\(\pm\)2.20\%) &\(\pm\)0.00 (\(\pm\)15.39\%) &\(\pm\)0.00 (\(\pm\)-14.36\%) \tabularnewline
+\midrule
+Z+Jets PS & \(\pm\)0.95 (\(\pm\)8.02\%) &\(\pm\)1.24 (\(\pm\)6.86\%) &\(\pm\)0.00 (\(\pm\)8.44\%) &\(\pm\)0.00 (\(\pm\)10.77\%) \tabularnewline
+\bottomrule
+\end{tabular}}
+\end{table}
+
+
+
 \begin{itemize}
-\item Discussion of the sources of theory systematics considered (QCD scale, PDF, $\alpha_s$, PS) and how each is evaluated for signal and background.
-\item Plots and tables showing the yield shifts and relative sizes of each source of theory uncertainty for signal and major backgrounds.
+\item Tables showing the yield shifts and relative sizes of each source of theory uncertainty for signal and major backgrounds.
 \item Comparison of the relative impact of statistical vs. systematic uncertainties in each analysis region, to identify where we're stats- vs. systematics-dominated.
 \end{itemize}

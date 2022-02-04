@@ -1,2 +1,8 @@
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots/exp_systs_total_bkg_SR_*_TARJets10_minmS_*.pdf .
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots/exp_systs_monoSWWsemilep_zp2100_dm200_dh210_SR_*_TARJets10_minmS_*.pdf .
+
+syst_plots=(pdf_plus_alphas_syst_W+Jets_SR_mgd_TARJets10_minmS_mgd_yield.pdf ISR_alphas_syst_ttbar_SR_mgd_TARJets10_minmS_mgd_yield.pdf scale_syst_Diboson_SR_mgd_TARJets10_minmS_mgd_yield.pdf scale_syst_monoSWWsemilep_zp2100_dm200_dh210_SR_mgd_TARJets10_minmS_mgd_symm_scale.pdf 2pt_AMcPy8_syst_stop_SR_mgd_TARJets10_minmS_mgd_yield.pdf 2pt_PhHw7_syst_ttbar_SR_mgd_TARJets10_minmS_mgd_yield.pdf 2pt_MGHw7_syst_monoSWWsemilep_zp2100_dm200_dh210_SR_mgd_TARJets10_minmS_mgd.pdf ckkw_plus_qsf_syst_W+Jets_SR_mgd_TARJets10_minmS_mgd_yield.pdf ckkw_plus_qsf_syst_Diboson_SR_mgd_TARJets10_minmS_mgd_yield.pdf 2pt_DS_syst_stop_SR_mgd_TARJets10_minmS_mgd_yield.pdf)
+
+for FILE in ${syst_plots[@]}; do
+  scp_vm docker_test_3:/mnt/Git/makehistos/Plots/${FILE} .
+done
