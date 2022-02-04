@@ -55,7 +55,8 @@ TAR jets & \(-\) \(R=0.2\) subjets input to TAR algo \newline \phantom{xl} (cons
 \end{tabular}}
 \end{table}
 
-Figure \ref{fig:exp_syst_shifts_bkg} shows the envelope of all symmetrized shifts in the total predicted yield from all SM backgrounds due to sources of systematics considered for each type of physics object in the merged and resolved SRs. Figure \ref{fig:exp_syst_shifts_sig} shows the same set of envelopes for a sample signal point at \((\ms, \mZp)=(210, 2100)~\GeV\). Comparing the yield shifts associated with the reconstruction of the various physics objects, the experimental systematics are dominated by sources of uncertainty associated with the reconstruction of \(R=0.4\) jets and \(R=0.2\) TAR subjets in the merged SR. The \(R=0.2\) TAR subjets uncertainties produce relatively small yield shifts in the resolved SR because TAR jets are not used in this region. Shifts in predicted yield are also noticeably smaller for the signal model compared with the SM background processes. This is likely due to the larger number of MC simulated events which are admitted into the SRs for the signal process, and the consequently smaller relative statistical fluctuations in yield shifts due to varying sources of uncertainty in the object reconstruction.
+Figure \ref{fig:exp_syst_shifts_bkg} shows the envelope of all symmetrized shifts in the total predicted yield from all SM backgrounds due to sources of systematics considered for each type of physics object in the merged and resolved SRs. Figure \ref{fig:exp_syst_shifts_sig} shows the same set of envelopes for a sample signal point at \((\ms, \mZp)=(210, 2100)~\GeV\). Comparing the yield shifts associated with the reconstruction of the various physics objects, the experimental systematics are dominated by sources of uncertainty associated with the reconstruction of \(R=0.4\) jets and \(R=0.2\) TAR subjets in the merged SR. The \(R=0.2\) TAR subjets uncertainties produce relatively small yield shifts in the resolved SR because TAR jets are not used in this region. Shifts in predicted yield are also noticeably smaller for the signal model compared with the SM background processes. 
+%This is likely due to the larger number of MC simulated events which are admitted into the SRs for the signal process, and the consequently smaller relative statistical fluctuations in yield shifts due to varying sources of uncertainty in the object reconstruction.
 
 \begin{figure}[htbp]
   \centering
@@ -179,6 +180,24 @@ Parton Showering & \checkmark & \checkmark & \checkmark & \checkmark & \checkmar
 \end{tabular}}
 \end{table}
 
+\subsection{Use of Acceptance for Evaluating Theoretical Systematics of the DH Signal Model}
+
+For the SM background processes, the systematic uncertainties associated with the predicted yield of a given background process in each bin from a source of theoretical uncertainty in the modelling are in general evaluated directly by calculating the shift in yield in each bin that results from varying the uncertain parameter in the model. Following ATLAS guidelines, theoretical uncertainties associated with the modelling of the DH signal process are instead evaluated in a given bin by calculating the relative shift in the so-called ``acceptance", defined as the ratio of yield in the given bin with all analysis selection applied to the inclusive yield for the process with no selections applied:
+
+\begin{equation}
+\label{eq:acceptance}
+\text{acc(bin \(j\))} = \frac{N(\text{bin j})}{N(\text{inclusive})}
+\end{equation}
+
+The uncertainty in the predicted yield in each bin is then evaluated by multiplying the relative shift in acceptance by the nominal yield in the bin:
+
+\begin{equation}
+\label{eq:yield_unc_from_acceptance}
+\text{syst\text{(up, bin \(j\))}} = N_\text{nom, bin \(j\)}\frac{\text{acc(up, bin \(j\))} - \text{acc(nom, bin \(j\))}}{\text{acc(nom, bin \(j\))}}
+\end{equation}
+
+Unless a given uncertainty applies exclusively to the signal model, the methods used to evaluate the uncertainties in the yield associated with each theoretical source are for sake of brevity applied directly to the yield, as in the case of background processes. It is implied that the methods presented are rather applied to acceptance in the case of the signal model, and the yield uncertainty derived from the relative acceptance uncertainty using Eq. \ref{eq:yield_unc_from_acceptance}.
+
 \subsection{Modelling the Parton Distribution Function}
 \label{sec:pdf_unc}
 
@@ -245,12 +264,14 @@ For the DH signal model, MC simulated samples are generated with the alternate \
 \item \((\ms, m_{Z'}) = (310, 1000)~\GeV\)
 \end{itemize}
 
-For each choice of PS generator - nominal or alternate - all three sets of samples generated at the mass points listed above are statistically combined, with the cross section excluded from the event weights\footnote{see Section \ref{sec:evt_wts} for a detailed discussion of event weights}. The cross section is excluded to prevent the signal points at \(\ms=160~\GeV\) with larger cross sections from dominating the shape of the combined sample. Using the combined DH sample, the relative uncertainty in the predicted yield associated with the alternate PS generator is evaluated as:
+For each choice of PS generator - nominal or alternate - all three sets of samples generated at the mass points listed above are statistically combined, with the cross section excluded from the event weights\footnote{see Section \ref{sec:evt_wts} for a detailed discussion of event weights}. The cross section is excluded to prevent the signal points at \(\ms=160~\GeV\) with larger cross sections from dominating the shape of the combined sample. Using the combined DH sample, the relative uncertainty in the predicted acceptance associated with the alternate PS generator is evaluated as:
 
+\begin{small}
 \begin{equation}
 \label{eq:ME_syst}
-\text{(rel. syst)}\text{(PS, combined DH, bin \(j\))}= \pm \frac{N_\text{combined DH, PS=\HERWIG[7], bin \(j\)} - N_\text{combined DH, nominal, bin \(j\)}}{N_\text{combined DH, nominal, bin \(j\)}}
+\text{(rel. syst)}\text{(PS, comb. DH, bin \(j\))}= \pm \frac{\text{acc}_\text{comb. DH, PS=\HERWIG[7], bin \(j\)} - \text{acc}_\text{comb. DH, nominal, bin \(j\)}}{\text{acc}_\text{comb. DH, nominal, bin \(j\)}}
 \end{equation}
+\end{small}
 
 \noindent This relative uncertainty is then applied to the DH signal yields at all \ms and \mZp:
 
@@ -378,11 +399,11 @@ Figure \ref{fig:theory_systs} shows yield variations associated with all of the 
   \caption{Shifts in the predicted yield due to theoretical systematic uncertainties (continued) }
 \end{figure}
 
-Tables \ref{tab:systs_bkg_SR} and \ref{tab:systs_bkg_SR}
+Tables \ref{tab:systs_bkg_SR} and \ref{tab:systs_bkg_CR} summarize the uncertainties in the total predicted yields from all theoretical sources for each background process in the SRs and CRs, respectively. 
 
 \begin{table}[ht]
 \small{
-\caption{\label{tab:systs_bkg_SR} Theoretical yield systematic uncertainties for dominant backgrounds in the SRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption{\label{tab:systs_bkg_SR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the SRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l l l l }
 \toprule
 \textbf{Bkg and Syst.} & \textbf{Mgd SR} & \textbf{Res SR}\tabularnewline
@@ -443,7 +464,7 @@ Z+Jets PS & \(\pm\)0.07 (\(\pm\)6.22\%) &\(\pm\)1.30 (\(\pm\)7.54\%) \tabularnew
 
 \begin{table}[ht]
 \footnotesize{
-\caption{\label{tab:systs_bkg_CR} Theoretical yield systematic uncertainties for dominant backgrounds in the CRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption{\label{tab:systs_bkg_CR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the CRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l l l l }
 \toprule
 \textbf{Bkg and Syst.} & \textbf{Mgd CRW} & \textbf{Res CRW} & \textbf{Mgd CRTT} & \textbf{Res CRTT}\tabularnewline
@@ -503,8 +524,91 @@ Z+Jets PS & \(\pm\)0.95 (\(\pm\)8.02\%) &\(\pm\)1.24 (\(\pm\)6.86\%) &\(\pm\)0.0
 \end{table}
 
 
+\begin{table}[ht]
+\begin{center}\small{
+\caption{\label{tab:systs_sig_SR_mgd} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the merged SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Signal Point (m\({_{Z'}}\), m\(_s\))} &\textbf{PDF} &\textbf{\(\mu_R\)+\(\mu_F\)} &\textbf{PS}\tabularnewline
+\midrule
+\midrule
+(500, 260) GeV & \(\pm\)0.74\% & \(\substack{+0.95\%\\-0.98\%}\) & \(\pm\)8.35\% \tabularnewline
+\midrule
+(1000, 335) GeV & \(\pm\)1.57\% & \(\substack{+0.80\%\\-0.78\%}\) & \(\pm\)8.35\% \tabularnewline
+\midrule
+(1700, 235) GeV & \(\pm\)1.15\% & \(\substack{+0.71\%\\-0.75\%}\) & \(\pm\)8.35\% \tabularnewline
+\midrule
+(2100, 210) GeV & \(\pm\)0.83\% & \(\substack{+0.78\%\\-0.85\%}\) & \(\pm\)8.35\% \tabularnewline
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
 
-\begin{itemize}
-\item Tables showing the yield shifts and relative sizes of each source of theory uncertainty for signal and major backgrounds.
-\item Comparison of the relative impact of statistical vs. systematic uncertainties in each analysis region, to identify where we're stats- vs. systematics-dominated.
-\end{itemize}
+\begin{table}[ht]
+\begin{center}\small{
+\caption{\label{tab:systs_sig_SR_res} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the resolved SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Signal Point (m\({_{Z'}}\), m\(_s\))} &\textbf{PDF} &\textbf{\(\mu_R\)+\(\mu_F\)} &\textbf{PS}\tabularnewline
+\midrule
+\midrule
+(500, 260) GeV & \(\pm\)0.67\% & \(\substack{+0.68\%\\-0.67\%}\) & \(\pm\)3.26\% \tabularnewline
+\midrule
+(1000, 335) GeV & \(\pm\)1.36\% & \(\substack{+0.52\%\\-0.54\%}\) & \(\pm\)3.26\% \tabularnewline
+\midrule
+(1700, 235) GeV & \(\pm\)1.93\% & \(\pm\)0.42\% & \(\pm\)3.26\% \tabularnewline
+\midrule
+(2100, 210) GeV & \(\pm\)0.82\% & \(\pm\)0.26\% & \(\pm\)3.26\% \tabularnewline
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
+
+\section{Relative Impact of Statistical and Systematic Uncertainties}
+
+Table \ref{tab:rel_impacts_bkg} compares the statistical uncertainty associated with the total MC simulated yield of all background processes in each analysis region with the combined statistical+systematic uncertainty. The combination of systematic uncertainties from all sources is performed by the HistFitter framework used to perform the statistical analysis for the search (see Chapter \ref{chapter:stat} for details). Table \ref{tab:rel_impacts_sig} shows the same comparison for the DH signal model at a sample mass point.
+
+For the SM background, the systematic uncertainties are comparable in size to the statistical uncertainties in the merged SR. In all other analysis regions, the combined systematic uncertainties are dominant. For the DH signal process, the statistical uncertainty dominates in the merged SR, but is comparable to the combined systematic uncertainties in the resolved SR.
+
+\begin{table}[ht]
+\begin{center}
+\caption{\label{tab:rel_impacts_bkg} Comparison of the total statistical uncertainties associated with the total predicted yield of SM background events in each analysis region with the total combined statistical+systematic uncertainties.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Analysis Region}& \textbf{Predicted SM Bkg Yield} & \textbf{Stat Unc} & \textbf{Stat+Sys Unc} \tabularnewline
+\midrule
+\midrule
+Merged SR & 39.32 & \(\pm\)7.41 (19\%) & \(\pm\)12.74 (32\%) \tabularnewline
+\midrule
+Resolved SR & 333.31 & \(\pm\)23.99 (7\%) & \(\pm\)69.09 (20\%) \tabularnewline
+\midrule
+Merged CRW & 225.55 & \(\pm\)23.12 (10\%) & \(\pm\)48.03 (21\%) \tabularnewline
+\midrule
+Resolved CRW & 746.95 & \(\pm\)31.01 (4\%) & \(\pm\)112.19 (15\%) \tabularnewline
+\midrule
+Merged CRTT & 78.95 & \(\pm\)3.01 (4\%) & \(\pm\)17.55 (22\%) \tabularnewline
+\midrule
+Resolved CRTT & 78.02 & \(\pm\)2.91 (4\%) & \(\pm\)24.55 (31\%) \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+\caption{\label{tab:rel_impacts_sig} Comparison of the total statistical uncertainties associated with the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)~\GeV\) in each analysis region with the total combined statistical+systematic uncertainties.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Analysis Region}& \textbf{Predicted SM Bkg Yield} & \textbf{Stat Unc} & \textbf{Stat+Sys Unc} \tabularnewline
+\midrule
+\midrule
+Merged SR & 16.53 & \(\pm\)2.69 (16\%) & \(\pm\)3.02 (18\%) \tabularnewline
+\midrule
+Resolved SR & 15.57 & \(\pm\)1.46 (9\%) & \(\pm\)1.91 (12\%) \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
