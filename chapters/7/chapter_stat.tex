@@ -1,9 +1,49 @@
 \startchapter{Statistical Framework}
 \label{chapter:stat}
 
-A statistical comparison of data and predicted yields is performed using a 
+This chapter presents the statistical framework which is used to search for evidence of new physics in the ATLAS collision data and, if no such evidence is found, establish the range of parameters over which the DH model is excluded by the search. Evidence of new physics would take the form of a statistically significant discrepancy between predicted yield distributions of SM background processes and collision data in the SRs. 
 
-\section{}
+Owing to the presence of \ms-dependent peaks in the \minms distribution of the DH signal model in the SRs\footnote{See Section \ref{sec:minms} for details.}, the sensitivity of the search was found to be dramatically boosted by binning all data - MC simulated and ATLAS collision events - the SRs into several bins of \minms prior to performing the statistical analysis. Section \ref{sec:binning_strategy} presents the details of the binning strategy. Within each analysis region and bin, the statistical comparison between the observed collision data and the predicted yields of SM background and signal processes is performed using the  profiled likelihood function presented in the following section. The computational construction and analysis of the profiled likelihood function is performed within the HistFitter \cite{Baak_2015} statistical analysis framework.
+
+\section{Likelihood Function}
+\label{sec:likelihood}
+
+The likelihood function which lies at the heart of the statistical framework is a product of Poisson distributions of event counts for all regions and bins:
+
+\begin{equation}
+\label{eq:likelihood_func}
+\begin{aligned}
+L(\boldsymbol{n}, \boldsymbol{\theta}^0|\mu_\text{sig}, \boldsymbol{b}, \boldsymbol{\theta}) & = P_\text{SR} \times P_\text{CRs} \times C_\text{syst} \\
+& = \prod_{i\in\text{SR bins}} P(n_{S,i}|\lambda_{S,i}(\mu_\text{sig}, \boldsymbol{b}, \boldsymbol{\theta})) \times \prod_{j \in \text{CRs}} P(n_j|\lambda_j(\mu_\text{sig}, \boldsymbol{b}, \boldsymbol{\theta})) \times C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})
+\end{aligned}
+\end{equation}
+
+where:
+
+\begin{itemize}
+    \item \(\boldsymbol{n}\in{n_{S,i}, n_j}\) is the set of all observed event counts in each region and bin
+    \item \(n_{S,i}\) is the number of observed events in the \(i^\text{th}\) bin of the SR.
+    \item \(n_j\) is the number of observed events in the \(j^\text{th}\) CR.
+    \item \(\boldsymbol{\theta}\) represents the set of nuisance parameters (NPs) that parametrize all uncertainties associated with the MC simulated yields. For each source of uncertainty \(i\), the corresponding nuisance parameter \(\theta_i\) continuously interpolates between the associated nominal and up/down shifts in predicted yield, as discussed in \Sect{4.4} of \Refn{~\cite{Baak_2015}}. For systematics sources, the NPs are normalized in the HistFitter framework such that \(\theta_i=0\) for the nominal yield, \(\theta=+1(-1)\) for the up (down) yield shift. NPs associated with statistical uncertainty of the predicted yields are instead normalized such that \(\theta=1\) represents the nominal yield in the given bin and \(\theta=1\pm1\sigma_\text{stat}/N\) represents \(\pm1\sigma\) yield shifts, where N and \(\sigma_\text{stat}\) are the expected yield in the bin and its statistical uncertainty, respectively.
+    \item \(\boldsymbol{\theta}^0\) are the central values of the nuisance parameters.
+    \item The signal strength \(\mu_\text{sig}\) is an overall factor which scales the predicted yield of the DH signal model in all bins.
+    \item The Poisson expectations \(\lambda_S\) and \(\lambda_i\) are functions which depend on the predicted yields \(\boldsymbol{b}\) for the SM backgrounds and their normalization factors, the nuisance parameters \(\boldsymbol{\theta}\) and the signal strength parameter \(\mu_\text{sig}\). More details on the Poisson expectations are given in \Sect{~\ref{ap:poisson_evtcounts}} below.
+    
+    \item \(C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})\) is a composite function of Gaussian priors which is used to constrain the floating NPs \(\boldsymbol{\theta}\) in the fit based on their central values \(\boldsymbol{\theta^0}\) and uncertainties \(\boldsymbol{\kappa}\):
+
+    \begin{equation}
+    \label{eq:gaussian_np}
+    C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})= \prod_{j\in S} \frac{1}{\kappa\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{\theta^0_j-\theta_j}{\kappa})^2}
+    \end{equation}
+
+    \noindent where \(S\) is the full set of uncertainties considered in the fit.
+\end{itemize}
+
+
+
+\section{Binning Strategy}
+\label{sec:binning_strategy}
+
 
 \begin{itemize}
 \item Presentation of likelihood function to be maximized in fit, and definition of each component of the likelihood.
