@@ -3,7 +3,9 @@
 
 This chapter presents the statistical framework which is used to search for evidence of new physics in the ATLAS collision data and, if no such evidence is found, establish the range of parameters over which the DH model is excluded by the search. Evidence of new physics would take the form of a statistically significant discrepancy between predicted yield distributions of SM background processes and collision data in the SRs. 
 
-Owing to the presence of \ms-dependent peaks in the \minms distribution of the DH signal model in the SRs\footnote{See Section \ref{sec:minms} for details.}, the sensitivity of the search was found to be dramatically boosted by binning all data - MC simulated and ATLAS collision events - the SRs into several bins of \minms prior to performing the statistical analysis. Section \ref{sec:binning_strategy} presents the details of the binning strategy. Within each analysis region and bin, the statistical comparison between the observed collision data and the predicted yields of SM background and signal processes is performed by fitting the  profiled likelihood function presented in the following section to the observed collision data. The computational construction and analysis of the profiled likelihood function is performed within the HistFitter \cite{Baak_2015} statistical analysis framework.
+Owing to the presence of \ms-dependent peaks in the \minms distribution of the DH signal model in the SRs\footnote{See Section \ref{sec:minms} for details.}, the sensitivity of the search was found to be dramatically boosted by binning all data - MC simulated and ATLAS collision events - the SRs into several bins of \minms prior to performing the statistical analysis. Section \ref{sec:binning_strategy} presents the details of the binning strategy. Within each analysis region and bin, the statistical analysis is performed by fitting the predicted yields of background and signal processes to the ATLAS collision data with the aim of maximizing the profiled likelihood function presented in the following section. 
+
+The computational construction and analysis of the profiled likelihood function is performed within the HistFitter \cite{Baak_2015} statistical analysis framework.
 
 \section{Likelihood Function}
 \label{sec:likelihood}
@@ -16,7 +18,7 @@ The likelihood function which lies at the heart of the statistical framework is 
 L(\boldsymbol{n}, \boldsymbol{\theta}^0|\mu_\text{sig}, \boldsymbol{s}, \boldsymbol{\mu}, \boldsymbol{b}, \boldsymbol{\theta}) & = P_\text{SR} \times P_\text{CRs} \times C_\text{syst} \\
 & = \prod_{i\in\text{SR bins}} P(n_{S,i}|\lambda_{S,i}(\mu_\text{sig}, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta})) \times \\ 
 &\phantom{xxx}\prod_{j \in \text{CRs}} P(n_j|\lambda_j(\mu_\text{sig}, \boldsymbol{\mu_j}, s_j, \boldsymbol{b_j}, \boldsymbol{\theta})) \times \\
-&\phantom{xxxxxlxx}C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})
+&\phantom{xxx}C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})
 \end{aligned}
 \end{equation}
 
@@ -73,26 +75,29 @@ The background normalization factors \(\boldsymbol{\mu}\) and uncertainty-relate
 
 \begin{equation}
 \label{eq:norm_factor_breakdown}
-\boldsymbol{\theta}\in\{\boldsymbol{\theta}_\text{statistical}, \boldsymbol{\theta}_\text{sys, exp}, \boldsymbol{\theta}_\text{sys, theory}\}
+\boldsymbol{\theta}\in\{\boldsymbol{\theta}_\text{statistical}, \boldsymbol{\theta}_\text{sys, experimental}, \boldsymbol{\theta}_\text{sys, theory}\}
 \end{equation}
 
-Table \ref{zzz} summarizes the correlations present for each type of NP, and the scheme used in HistFitter to assign names to each.
+Table \ref{tab:np_naming} summarizes the correlations present for each type of NP, and the scheme used by HistFitter to assign names to each.
 
 \begin{table}
 \centering
 \caption{Summary of correlations between nuisance parameters in the likelihood function}
-\label{tab:theo_sys_summary}
+\label{tab:np_naming}
 %\begin{tabular}{l p{6cm} l l }
 \footnotesize{
-\begin{tabular}{l p{4cm} p{4cm} l }
+\begin{tabular}{p{2.5cm} p{4cm} p{4cm} p{3.5cm} }
 \toprule
 \textbf{NP Type} & \textbf{Description} & \textbf{Correlation Info} & \textbf{Naming Scheme} \\
 \midrule
 \midrule
-\(\mu_\text{\wjets, mgd}\) & Normalization factor which constraints the \wjets background in all bins of the merged category & Correlated between all analysis regions and bins in the merged category. & \(\mu_\text{\wjets, mgd}\) \\
+\(-\) \(\mu_\text{\wjets, mgd}\) \newline \(-\) \(\mu_\text{\wjets, res}\) \newline \(-\) \(\mu_\text{\ttbar, mgd}\) \newline \(-\) \(\mu_\text{\ttbar, res}\) & Normalization factor which scales the \wjets (or \ttbar) background in all analysis regions and bins of the merged (resolved) category. & Correlated between all analysis regions and bins for the \wjets (or \ttbar) background in the merged (resolved) category. Not correlated between processes. & \(-\) \(\mu\){\uscore}Wjets{\uscore}mgd \newline \(-\) \(\mu\){\uscore}Wjets{\uscore}res \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}mgd \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}res \\
 \midrule
-\(\mu_\text{\wjets, mgd}\) & Normalization factor which constraints the \wjets background in all bins of the merged category & Correlated between all analysis regions and bins in the merged category. & \(\mu_\text{\wjets, mgd}\) \\
+\(\boldsymbol{\theta}_\text{statistical}\) & NPs which parameterize the statistical uncertainty associated with the predicted yield in each region and bin from MC simulation. & Correlated between all processes. Not correlated between regions or bins.  & \(\gamma\){\uscore}\{region\}{\uscore}\{category\}{\uscore}\newline\{bin type\}{\uscore}bin{\uscore}\newline\{bin index\} \\
 \midrule
+\(\boldsymbol{\theta}_\text{sys, experimental}\) & NPs which parameterize systematic uncertainties from experimental sources. & Correlated between all processes, regions and bins.  & \(\alpha\){\uscore}\{uncertainty source\} \\
+\midrule
+\(\boldsymbol{\theta}_\text{sys, theory}\) & NPs which parameterize systematic uncertainties for each process from theoretical sources. & Correlated between all regions and bins. Not correlated between processes.  & \(\alpha\){\uscore}{process}{\uscore}\newline\{uncertainty source\} \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -101,15 +106,67 @@ Table \ref{zzz} summarizes the correlations present for each type of NP, and the
 \section{Binning Strategy}
 \label{sec:binning_strategy}
 
+As shown in Figure \ref{fig:minms_shape_discrimination}, the \minms variable presented in Section \ref{sec:minms} has a \ms-dependent peaked distribution which for most \ms values is distinct in shape from the distribution of SM background processes. This shape discrimination between the signal and background processes is exploited when performing the likelihood fit by binning the MC simulated events and collision data into several \minms bins. 
 
-\begin{itemize}
-\item Present the methods used in HistFitter to handle different types of uncertainty in the fit
-\begin{itemize}
-\item Global normalization uncertainties
-\item Correlated uncertainties of shape and normalization
-\item Statistical uncertainty in each bin associated with MC simulation
-\end{itemize}
-\end{itemize}
+\begin{figure}[htbp]
+  \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Merged/TARJets10_minmS_mgd.pdf}
+    \caption{Merged SR}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Resolved/TARJets10_minmS_res.pdf}
+     \caption{Resolved SR}
+    \end{subfigure}
+    \caption{Predicted yield of SM background (stacked filled) DH signal (unfilled) processes at several mass points in the merged (left) and resolved (right) SRs, binned in \minms. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
+   \label{fig:minms_shape_discrimination}
+\end{figure}
+
+
+The exact placement of bin edges in \minms used when performing the fit was optimized with the aim of maximizing the projected exclusion of the DH model for a background-only hypothesis using the limit-setting strategy presented in Section zzz. Distributions of \minms are shown with the optimized binning in Figure \ref{fig:minms_binning}. In the merged SR, binning the data into four \minms bins with non-equidistant bin edges was found to provide maximal sensitivity. In the resolved SR, binning into five \minms bins was found to be optimal, and equidistant bin edges are used, as no appreciable sensitivity improvements were found for non-equidistant binning.
+
+\begin{figure}[htbp]
+  \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Merged_fit/TARJets10_minmS_mgd.pdf}
+    \caption{Merged SR}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+    \centering
+     \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Resolved_fit/TARJets10_minmS_res.pdf}
+     \caption{Resolved SR}
+    \end{subfigure}
+    \caption{Predicted yield of SM background (stacked filled) DH signal (unfilled) processes at several mass points in the merged (left) and resolved (right) SRs, binned in \minms with the optimized bin edges. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
+   \label{fig:minms_binning}
+\end{figure}
+
+The CRs are left unbinned in the fit in order to provide constraints on the overall yield of the \wjets and \ttbar processes in each kinematic category. Table \ref{tab:statisticalevaluation_regions} summarizes the binning strategy in all analysis regions.
+
+\begin{table}[ht]
+\centering
+\footnotesize{
+    \caption{Binning used in the regions entering the statistical analysis.}
+    \label{tab:statisticalevaluation_regions}
+    \begin{tabular}{l ll}
+    \toprule
+    \textbf{Region}         &  \textbf{Binning in Merged Category} & \textbf{Binning in Resolved Category} \\
+    \midrule
+    \midrule
+    \multirow{2}{*}{SR} & 4 non-equidistant bins in \(m_s\) & 5 equidistant bins in \(m_{s}\)  \\
+    					     & bin edges: [125, 165, 190, 225, 375] \GeV & bin edges: [125, 175, 225, 275, 325, 375] \GeV \\
+    \midrule   					   
+    \wjets CR & none & none \\
+    \midrule    
+    \ttbar CR & none  & none \\ 
+    \bottomrule
+    \end{tabular}}
+\end{table}
+
+
+
 \begin{itemize}
 \item Presentation of how normalization factors for the \wjets and \ttbar backgrounds are constrained in the CRs using a background-only fit and extrapolated to the SRs. 
 \item Discussion of the evaluation of transfer factor systematics for the \wjets and \ttbar backgrounds to account for the above normalization constraint and extrapolation procedure.
