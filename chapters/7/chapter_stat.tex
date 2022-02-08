@@ -165,24 +165,93 @@ The CRs are left unbinned in the fit in order to provide constraints on the over
     \end{tabular}}
 \end{table}
 
-\subsection{Fit Setup}
+\section{Fit Setup}
 \label{sec:fit_setup}
 
+With the MC simulated yields and ATLAS collision data binned into CRs and \minms bins within the SRs, as detailed in Section \ref{sec:binning_strategy} above, the statistical analysis is performed by fitting the simulated yields to the collision data in all regions and bins.The fits are performed within the HistFitter framework by varying the signal strength parameter \(\mu_\text{sig}\) and all floating nuisance parameters \(\{\boldsymbol{\mu}, \boldsymbol{\theta}\}\) in the likelihood function presented in Eq. \ref{eq:likelihood_func}, until the set of parameter values which maximizes the likelihood is determined.  
 
 \subsection{Background-only Fit and Signal Region Extrapolation}
 \label{sec:extrapolation}
 
-To 
+To initially check for an excess of data in the SRs, a ``background-only" fit of the SM background yield prediction to the observed collision data is performed in the CRs to constrain the normalization factors (eg. \(\mu_\text{\wjets, mgd}\) \wjets and \ttbar backgrounds within each of the merged and resolved categories, along with other NPs \(\boldsymbol{\theta}\) which are constrained in the CRs. The likelihood function in Eq. \ref{eq:likelihood_func} used in this fit has \(\mu_\text{sig}\) fixed to 0 (i.e. ``background-only"), and the SR component \(P_\text{SR}\) fixed to 1 (i.e. ``CR-only"). 
+
+The values of normalization factors and other NPs which were constrained in the background-only fit to data in the CRs to maximize this modified likelihood function are subsequently extrapolated to SR to incorporate these constraints into the predicted yields of background processes in the SR. The updated distributions of the total  predicted SM background yield in the SR are compared with distributions of the observed collision data to check for the presence of any  discrepancies which, if statistically significant considering alll statistical and systematic uncertainties, would be indicative of new physics in the data. 
+
+The extrapolation to the SR is performed by building the total expected yield of SM background events in each SR bin using the Poisson expectation formula in Eq. \ref{eq:lambda} with the constrained NPs, and \(\mu_\text{sig}=0\). Any NPs which are specific to the SR and thus not constrained in the fit are maintained at their nominal pre-fit values when constructing the extrapolated Poisson expectations. Further details of the extrapolation method used by the HistFitter framework can be found in Section 5.2 of \Refn{~\cite{Baak_2015}}.
+
+\subsubsection{Evaluation of Systematic Uncertainties by Means of the Transfer Factor}
+\label{sec:TF}
+After the values of all background normalization factors \(\boldsymbol{\mu}\) are constrained in the background-only fit, total yield \((b_\text{fit})_{p,\text{ mgd CRW}} + 
+(b_\text{fit})_{p,\text{ mgd CRTT}}\) of a process \(p\) (either \wjets or \ttbar) in the merged CRs whose normalization factor \(\mu_{p\text{,mgd}}\) is constrained in the fit can be expressed using the formalism of Eq. \ref{eq:lambda} (neglecting for now the \(\boldsymbol{\theta}\) constraints) as:
+
+\begin{small}
+\begin{equation}
+\label{eq:normfactor}
+(b_\text{fit})_{p,\text{ mgd CRW}} + 
+(b_\text{fit})_{p,\text{ mgd CRTT}} = 
+\mu_{p\text{,mgd}} \Big[b_{p,\text{ mgd CRW}}  + 
+b_{p,\text{ mgd CRTT}}\Big]
+\end{equation}
+\end{small}
+
+\noindent where an equivalent formula would apply in the resolved CRs with ``mgd"\(\rightarrow\)``res".
+
+%After extrapolating the normalization factors from the background-only fit to the SRs as described in Section \ref{sec:extrapolation} above, the extrapolated estimate of the
+
+Extrapolating the constrained normalization factor \(\mu_{p\text{,mgd}}\) to any region or bin \(j\) in the merged category scales the predicted yield of the process \(p\) in a bin \(j\) of the merged SR as follows:
+
+\begin{equation}
+\label{eq:extrapolation}
+\begin{aligned}
+(b_\text{fit})_\text{\(p\), \(j\)} &= \mu_{p\text{,mgd}} \times b_\text{\(p\), \(j\)}  \\
+&= \Big[(b_\text{fit})_{p,\text{ mgd CRW}} + (b_\text{fit})_{p,\text{ mgd CRTT}}\Big] \times 
+\Bigg[\frac{b_\text{\(p\), \(j\)}}{b_{p,\text{ mgd CRW}}  + b_{p,\text{ mgd CRTT}}}\Bigg]
+\end{aligned}
+\end{equation}
+
+The ratio of raw MC yields in brackets which extrapolates the fitted yield \((b_\text{fit})_{p,\text{ mgd CRW}} + (b_\text{fit})_{p,\text{ mgd CRTT}}\) of process \(p\) in the merged CRs to the estimated yield \((b_\text{fit})_\text{\(p\), \(j\)}\) is referred to as the ``transfer factor" \(TF\).
+
+When considering how the systematic uncertainties, which are correlated between regions and bins, will impact the predicted yields \((b_\text{fit})_\text{\(p\), SR bin \(j\)}\) in the SR, the fitted yield of the process in the CRs will be predominantly set by the observed yield of collision data. As a result, the systematic uncertainties will largely impact the predicted yields \((b_\text{fit})_\text{\(p\), SR bin \(j\)}\) in the SR by means of correlated shifts of the predicted yields on the top and bottom of the \(TF\) ratio. For this reason, when performing the fit relative systematic uncertainties associated with the post-fit predicted yields in all regions are evaluated for the \wjets and \ttbar backgrounds using systematic shifts in the \(TF\) rather than in the pre-fit yields. In a given SR bin or CR \(j\) in the merged category:
+
+\begin{equation}
+\label{eq:tf_unc}
+\begin{aligned}
+\text{rel. syst}\text{(TF, sys up, \(p\), \(j\))} &= \frac{TF(\text{sys up, \(p\), \(j\))}}{TF_\text{nom}} \\ 
+&= \Bigg[\frac{b_\text{\(p\), sys up, \(j\)}}{b_\text{\(p\), \(j\)}}\Bigg] \times \\
+& \phantom{xxl} \Bigg[\frac{b_{p,\text{ mgd CRW}}  + b_{p,\text{ mgd CRTT}}}{b_{p,\text{ sys up, mgd CRW}}  + b_{p,\text{ sys up, mgd CRTT}}}\Bigg] -1
+\end{aligned}
+\end{equation}
+
+\noindent where an analogous equation holds in the merged category with "mgd"\(\rightarrow\)"res". If yield shifts associated with a given systematic source are positively correlated between the region or bin \(j\) and the CRs and comparable in size relative to the nominal yield, then the relative systematic uncertainty of the transfer factor can be significantly reduced compared with that of the raw yields due to cancellation between the two terms in square brackets. 
+
+Table \ref{tab:TF_sys_comp} compares the total relative systematic uncertainty associated with the predicted yield of the \wjets process in the SRs and \wjets CRs (SR bins combined), evaluated using either the systematic yield uncertainties alone or the \(TF\), as in Eq. \ref{eq:tf_unc}. The \ttbar CRs are excluded from the comparison due to the small yield of \wjets events in these CRs The combination of systematic uncertainties from all sources is performed within the HistFitter framework. The relative systematic uncertainties are reduced in all regions except the merged SR when evaluated using the transfer factor rather than the yield. In the \wjets CR (CRW), much of the reduction comes from the fact that most of the \wjets events in the combined CRW+CRTT are located in the CRW, so systematic shifts in the combined CRW+CRTT yield are guaranteed to be highly correlated with those in the CRW alone. 
+
+\begin{table}[ht]
+\begin{center}
+\caption{\label{tab:TF_sys_comp} Comparison of total relative systematic uncertainty associated with the predicted yield of the \wjets process in the SRs and \wjets CRs (CRW), evaluated using either the predicted yield (second column) or the \(TF\) (third column). The relative statistical uncertainty is shown in the first column for comparison.}
+\begin{tabular}{l l l l }
+\toprule
+\textbf{Analysis Region} &\textbf{Stat} &\textbf{Total Sys (yield)} & \textbf{Total Sys (TF)} \tabularnewline
+\midrule
+\midrule
+Merged SR & \(\pm\)17\% & \(\pm\)35\% & \(\pm\)35\% \tabularnewline
+\midrule
+Resolved SR & \(\pm\)7\% & \(\pm\)25\% & \(\pm\)19\% \tabularnewline
+\midrule
+Merged CRW & \(\pm\)10\% & \(\pm\)24\% & \(\pm\)10\% \tabularnewline
+\midrule
+Resolved CRW & \(\pm\)4\% & \(\pm\)17\% & \(\pm\)2\% \tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
 
 \subsection{Exclusion Hypothesis Test}
 \label{ap:hypo_test}
 
-
+Given the absence of 
 
 \begin{itemize}
-\item Presentation of how normalization factors for the \wjets and \ttbar backgrounds are constrained in the CRs using a background-only fit and extrapolated to the SRs. 
-\item Discussion of the evaluation of transfer factor systematics for the \wjets and \ttbar backgrounds to account for the above normalization constraint and extrapolation procedure.
-\item Presentation of the discovery test to be done after unblinding $\rightarrow$ check if any fits for signal strength with unblinded data produce a statistically significant inconsistency with 0.
 \item Presentation of the profiled log-likelihood ratio $q_{\mu_\text{sig}}$, and description of how $q_{\mu_\text{sig}}$ is used to calculate a p-value for the exclusion hypothesis test (in case no significant excess found in the discovery test).
 \item Discussion of the use of the asymptotic formula to avoid the need to throw random pseudo-experiments when evaluating the p-value, and its regime of validity ($>\mathcal{O}(5)$ events per bin).
 \item Brief discussion of the CLs method for limit setting.
