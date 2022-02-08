@@ -173,6 +173,13 @@ The CRs are left unbinned in the fit to provide constraints on the overall yield
 
 With the MC simulated yields and ATLAS collision data binned into CRs and \minms bins within the SRs, as detailed in Section \ref{sec:binning_strategy} above, the statistical analysis is performed by fitting the simulated yields to the collision data in all regions and bins. The fits are performed within the HistFitter framework by varying the signal strength parameter \(\mu_\text{sig}\) and all floating NPs \(\{\boldsymbol{\mu}, \boldsymbol{\theta}\}\) in the likelihood function presented in Eq. \ref{eq:likelihood_func}, until the set of parameter values which maximizes the likelihood is determined.  
 
+\subsection{Pruning of Systematics}
+\label{sec:pruning}
+
+Prior to performing a fit, NPs associated with systematic uncertainties are pruned within the HistFitter framework at a user-defined threshold. The pruning is done as follows: for a given source of systematic uncertainty, HistFitter compares the relative up and down yield shifts due to a given NP in each analysis region and bin. If the relative shift in both directions is below the user-defined threshold in all regions and bins, the given NP is `pruned', which means that it is not included in fit. Pruning helps to reduce fitting time, as well as minimizing numerical instabilities in the fit. 
+
+For this search, a 1\% pruning threshold is applied. Dedicated studies were done to ensure that the impact of pruning systematics at a 1\% threshold has no appreciable impact on the overall fit behaviour or search results. 
+
 \subsection{Background-only Fit and Signal Region Extrapolation}
 \label{sec:extrapolation}
 
