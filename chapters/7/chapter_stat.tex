@@ -1,11 +1,11 @@
 \startchapter{Statistical Framework}
 \label{chapter:stat}
 
-This chapter presents the statistical framework which is used to search for evidence of new physics in the ATLAS collision data and, if no such evidence is found, establish the range of parameters over which the DH model is excluded by the search. Evidence of new physics would take the form of a statistically significant discrepancy between predicted yield distributions of SM background processes and collision data in the SRs. 
+This chapter presents the statistical framework used to search for evidence of new physics in the ATLAS collision data and, if no such evidence is found, establish the range of parameters over which the DH model is excluded by the search. Evidence of new physics would take the form of a statistically significant discrepancy between distributions of the observed collision data in the SRs compared with those of the SM background yield expectation.
 
-Owing to the presence of \ms-dependent peaks in the \minms distribution of the DH signal model in the SRs\footnote{See Section \ref{sec:minms} for details.}, the sensitivity of the search was found to be dramatically boosted by binning all data - MC simulated and ATLAS collision events - the SRs into several bins of \minms prior to performing the statistical analysis. Section \ref{sec:binning_strategy} presents the details of the binning strategy. Within each analysis region and bin, the statistical analysis is performed by fitting the predicted yields of background and signal processes to the ATLAS collision data with the aim of maximizing the profiled likelihood function presented in the following section. 
+Owing to the observation of \ms-dependent peaks in the \minms distribution of the DH signal model in the SRs\footnote{See Section \ref{sec:minms} for details.}, the sensitivity of the search was found to be dramatically boosted by binning all data - MC simulated and ATLAS collision events - in the SRs into several bins of \minms prior to performing the statistical analysis. Section \ref{sec:binning_strategy} presents the details of the binning strategy. Within each analysis region and bin, the statistical analysis is performed by fitting the predicted yields of background and signal processes to the ATLAS collision data with the aim of maximizing the likelihood function presented in the following section. 
 
-The computational construction and analysis of the profiled likelihood function is performed within the HistFitter \cite{Baak_2015} statistical analysis framework.
+The computational construction and analysis of the likelihood function is performed within the HistFitter \cite{Baak_2015} statistical analysis framework.
 
 \section{Likelihood Function}
 \label{sec:likelihood}
@@ -27,9 +27,9 @@ where:
 \begin{itemize}
     \item \(\boldsymbol{n}\in{n_{S,i}, n_j}\) is the set of all observed event counts in each region and bin.
     \item \(n_{S,i}\) and \(n_j\) are the number of observed events in the \(i^\text{th}\) bin of the SR and in the \(j^\text{th}\) CR, respectively.
-    \item \(\boldsymbol{\mu}_i\) represents the normalization factors in each bin \(i\), which scale the \wjets and \ttbar backgrounds in all regions regions of the fit, with separate factors in the merged and resolved categories. The normalization factors are treated as unconstrained nuisance parameters (NPs) in the fit. They are initialized as 1 in the fit, with an uncertainty of \(\pm1\).  
-    \item \(\boldsymbol{\theta}\) represents the set of NPs that parametrize all uncertainties associated with the MC simulated yields. For each normalization factor or uncertainty source \(i\), the corresponding nuisance parameter \(\theta_i\) continuously interpolates between the associated nominal and up/down shifts in predicted yield, as discussed in \Sect{4.4} of \Refn{~\cite{Baak_2015}}. For systematics sources, the NPs are normalized in the HistFitter framework such that \(\theta_i=0\) for the nominal yield, \(\theta=+1(-1)\) for the up (down) yield shift. NPs associated with statistical uncertainty of the predicted yields are instead normalized such that \(\theta=1\) represents the nominal yield in the given bin and \(\theta=1\pm1\sigma_\text{stat}/N\) represents \(\pm1\sigma\) yield shifts, where N and \(\sigma_\text{stat}\) are the expected yield in the bin and its statistical uncertainty, respectively. 
-    \item The signal strength \(\mu_\text{sig}\) is an overall factor which scales the predicted yield of collision events produce by the DH signal model in all bins.
+    \item \(\boldsymbol{\mu}_i\) represents the normalization factors in each bin \(i\), which scale the \wjets and \ttbar backgrounds in all regions of the fit. Separate normalization factors are used in the merged and resolved categories. The normalization factors are treated as unconstrained nuisance parameters (NPs) in the fit. They are initialized as 1 in the fit, with an uncertainty of \(\pm1\).  
+    \item \(\boldsymbol{\theta}\) represents the set of NPs that parametrize all uncertainties associated with the MC simulated yields. For each uncertainty source \(i\), the corresponding NP \(\theta_i\) continuously interpolates between the nominal value of the predicted yield and the up/down shifts associated with varying the given uncertainty source by \(\pm1\sigma\), as discussed in \Sect{4.4} of \Refn{~\cite{Baak_2015}}. For systematics sources, the NPs are normalized in the HistFitter framework such that \(\theta_i=0\) for the nominal yield and \(\theta=+1\text{ }(-1)\) corresponds to the \(+1\sigma\) (\(-1\sigma\)) variation of the uncertainty source. NPs associated with statistical uncertainty of the predicted yields are instead normalized such that \(\theta=1\) represents the nominal yield in the given bin and \(\theta=1\pm1\sigma_\text{stat}/N\) represents \(\pm1\sigma\) yield shifts, where N and \(\sigma_\text{stat}\) are the expected yield in the bin and its statistical uncertainty, respectively. 
+    \item The signal strength \(\mu_\text{sig}\) is an overall factor which scales the predicted yield of collision events produced by the DH signal model in all bins.
     \item \(C_\text{syst}(\boldsymbol{\theta}^0, \boldsymbol{\theta})\) is a composite function of Gaussian priors which is used to constrain the floating NPs \(\boldsymbol{\theta}\) in the fit based on their central values \(\boldsymbol{\theta^0}\) and uncertainties \(\boldsymbol{\kappa}\):
 
     \begin{equation}
@@ -38,7 +38,7 @@ where:
     \end{equation}
     \noindent where \(S\) is the full set of uncertainties considered in the fit.
     
-    \item The Poisson expectation functions \(\lambda_{S,i}(\mu_\text{sig}, \boldsymbol{\mu_i}, s_k, \boldsymbol{b_i}, \boldsymbol{\theta})\) and \(\lambda_j(\mu_\text{sig}, \boldsymbol{\mu_j}, s_j, \boldsymbol{b_j}, \boldsymbol{\theta})\), represent the total expected yield in each SR bin \(i\) and CR bin \(j\), respectively. 
+    \item The Poisson expectation functions \(\lambda_{S,i}(\mu_\text{sig}, \boldsymbol{\mu_i}, s_k, \boldsymbol{b_i}, \boldsymbol{\theta})\) and \(\lambda_j(\mu_\text{sig}, \boldsymbol{\mu_j}, s_j, \boldsymbol{b_j}, \boldsymbol{\theta})\), represent the total expected yield in each SR bin \(i\) and CR bin \(j\), respectively. The Poisson expectation function is discussed in further detail in the following section.
 \end{itemize}
 
 \subsection{Poisson Expectation Formula}
@@ -55,14 +55,14 @@ Within a given SR bin or CR \(k\), the Poisson expectation function \(\lambda_k\
 
         \begin{equation}
             \label{eq:sigma}
-            \eta_{k,p}(\boldsymbol{\theta}) = 1 + \sum_{s\in\text{all systematics}}I(\theta_s(k,p), \sigma_\text{down}(k,p), \sigma_\text{up}(k,p))
+            \eta_{k,p}(\boldsymbol{\theta}) = 1 + \sum_{s\in\text{all systematics}}I(\theta_s(k,p), N_\text{down}(k,p), N_\text{up}(k,p))
         \end{equation}
 
-        where \(I(\theta_p, \sigma_\text{down}(i,s), \sigma_{up}(i,s))\) is continuous function of \(\theta_s(k,p)\) which interpolates\footnote{HistFitter employs a 6th-order polynomial to interpolate between  \(\sigma_\text{down}(i,s)\) and \(\sigma_\text{up}(k,p)\) a linear extrapolation beyond these extrema. See \Sect{4.1} of \Refn{~\cite{Cranmer:1456844}} for details.} the relative shift in predicted yield between the up and down extrema, \(\sigma_\text{up}(k,p)\) and \(\sigma_\text{down}(k,p)\), associated with varying the given uncertainty source by \(\pm1\sigma\). 
+        where \(I(\theta_p, \sigma_\text{down}(i,s), \sigma_{up}(i,s))\) is continuous function of \(\theta_s(k,p)\) which interpolates\footnote{HistFitter employs a 6th-order polynomial to interpolate between  \(\sigma_\text{down}(i,s)\) and \(\sigma_\text{up}(k,p)\) a linear extrapolation beyond these extrema. See \Sect{4.1} of \Refn{~\cite{Cranmer:1456844}} for details.} the relative shift in predicted yields between the up \(N_\text{up}(k, p)\) and down \(N_\text{down}(k, p)\) extrema, associated with varying the given uncertainty source by \(\pm1\sigma\). 
 
 \subsection{Nuisance Parameter Nomenclature and Correlations}
 
-Many of the NPs which appear in the likelihood function are correlated between bins, categories, and/or processes. For example, if a given NP is correlated between all bins in the fit, the value of the NP will be the same within all bins: \(\theta_s(k, p) \rightarrow \theta_s(p)\). The names given to NPs in the HistFitter framework reflect the presence of any such correlations by omitting the correlated parameter in the NP name. Taking the above example of an NP which is correlated between all bins, this correlation will be reflected by the omission of any bin number specification (eg \verb|_bin1|) 
+Many of the NPs which appear in the likelihood function are correlated between bins, categories, and/or processes. For example, if a given NP is correlated between all bins in the fit, the value of the NP will be the same within all bins: \(\theta_s(k, p) \rightarrow \theta_s(p)\). The names given to NPs in the HistFitter framework reflect the presence of any such correlations by omitting the correlated parameter in the NP name. Taking the above example of an NP which is correlated between all bins, this correlation will be reflected by the omission of any bin number specification (eg \verb|_bin1|).
 
 The background normalization factors \(\boldsymbol{\mu}\) and uncertainty-related NPs \(\boldsymbol{\theta}\) are broken down as follows:
 
@@ -91,9 +91,10 @@ Table \ref{tab:np_naming} summarizes the correlations present for each type of N
 \textbf{NP Type} & \textbf{Description} & \textbf{Correlation Info} & \textbf{Naming Scheme} \\
 \midrule
 \midrule
-\(-\) \(\mu_\text{\wjets, mgd}\) \newline \(-\) \(\mu_\text{\wjets, res}\) \newline \(-\) \(\mu_\text{\ttbar, mgd}\) \newline \(-\) \(\mu_\text{\ttbar, res}\) & Normalization factor which scales the \wjets (or \ttbar) background in all analysis regions and bins of the merged (resolved) category. & Correlated between all analysis regions and bins for the \wjets (or \ttbar) background in the merged (resolved) category. Not correlated between processes. & \(-\) \(\mu\){\uscore}Wjets{\uscore}mgd \newline \(-\) \(\mu\){\uscore}Wjets{\uscore}res \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}mgd \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}res \\
+\(-\) \(\mu_\text{\wjets, mgd}\) \newline \(-\) \(\mu_\text{\wjets, res}\) \newline \(-\) \(\mu_\text{\ttbar, mgd}\) \newline \(-\) \(\mu_\text{\ttbar, res}\) & Normalization factor which scales the \wjets (\ttbar) background in all analysis regions and bins of the merged (resolved) category. & Correlated between all analysis regions and bins for the \wjets (\ttbar) background in the merged (resolved) category. Not correlated between processes. & \(-\) \(\mu\){\uscore}Wjets{\uscore}mgd \newline \(-\) \(\mu\){\uscore}Wjets{\uscore}res \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}mgd \newline \(-\) \(\mu\){\uscore}ttbar{\uscore}res \\
 \midrule
 \(\boldsymbol{\theta}_\text{statistical}\) & NPs which parameterize the statistical uncertainty associated with the predicted yield in each region and bin from MC simulation. & Correlated between all processes. Not correlated between regions or bins.  & \(\gamma\){\uscore}\{region\}{\uscore}\{category\}{\uscore}\newline\{bin type\}{\uscore}bin{\uscore}\newline\{bin index\} \\
+& & \begin{equation}\nonumber \phantom{xxxxxxxxxxxxx} \text{bin type}=\begin{cases} \text{``mS{\uscore}bin"} & \text{in SR bins} \\ \text{``cuts"} & \text{in CRs} \end{cases}\end{equation}   \\
 \midrule
 \(\boldsymbol{\theta}_\text{sys, experimental}\) & NPs which parameterize systematic uncertainties from experimental sources. & Correlated between all processes, regions and bins.  & \(\alpha\){\uscore}\{uncertainty source\} \\
 \midrule
@@ -106,7 +107,7 @@ Table \ref{tab:np_naming} summarizes the correlations present for each type of N
 \section{Binning Strategy}
 \label{sec:binning_strategy}
 
-As shown in Figure \ref{fig:minms_shape_discrimination}, the \minms variable presented in Section \ref{sec:minms} has a \ms-dependent peaked distribution which for most \ms values is distinct in shape from the distribution of SM background processes. This shape discrimination between the signal and background processes is exploited when performing the likelihood fit by binning the MC simulated events and collision data into several \minms bins. 
+As shown in Figure \ref{fig:minms_shape_discrimination}, the \minms variable presented in Section \ref{sec:minms} has a \ms-dependent peaked distribution which for most \ms values is distinct in shape from the distribution of SM background processes in this variable. This shape discrimination between the signal and background processes is exploited when performing the likelihood fit by binning the MC simulated events and collision data into several \minms bins. 
 
 \begin{figure}[htbp]
   \centering
@@ -120,12 +121,14 @@ As shown in Figure \ref{fig:minms_shape_discrimination}, the \minms variable pre
      \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Resolved/TARJets10_minmS_res.pdf}
      \caption{Resolved SR}
     \end{subfigure}
-    \caption{Predicted yield of SM background (stacked filled) DH signal (unfilled) processes at several mass points in the merged (left) and resolved (right) SRs, binned in \minms. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
+    \caption{Predicted yields of SM background processes (stacked filled) and the DH signal model (unfilled lines) at several mass points in the merged (left) and resolved (right) SRs, binned in \minms. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
    \label{fig:minms_shape_discrimination}
 \end{figure}
 
 
-The exact placement of bin edges in \minms used when performing the fit was optimized with the aim of maximizing the projected exclusion of the DH model for a background-only hypothesis using the limit-setting strategy presented in Section zzz. Distributions of \minms are shown with the optimized binning in Figure \ref{fig:minms_binning}. In the merged SR, binning the data into four \minms bins with non-equidistant bin edges was found to provide maximal sensitivity. In the resolved SR, binning into five \minms bins was found to be optimal, and equidistant bin edges are used, as no appreciable sensitivity improvements were found for non-equidistant binning.
+The exact placement of bin edges in \minms used when performing the fit was optimized with the aim of maximizing the projected exclusion of the DH model for a background-only hypothesis using the limit-setting strategy presented in Section \ref{sec:hypo_test}, while maintaining a total predicted yield of \(>5\) SM background events in each bin to justify the use of the asymptotic approximation during limit-setting (see Section \ref{sec:hypo_test} for details). 
+
+Distributions of \minms are shown with the optimized binning in Figure \ref{fig:minms_binning}. In the merged SR, binning the data into four \minms bins with non-equidistant bin edges was found to provide maximal sensitivity while maintaining \(>5\) predicted SM background events per bin. In the resolved SR, binning into five \minms bins was found to be optimal, and equidistant bin edges are used because no appreciable sensitivity improvements were found with non-equidistant edges.
 
 \begin{figure}[htbp]
   \centering
@@ -139,11 +142,11 @@ The exact placement of bin edges in \minms used when performing the fit was opti
      \includegraphics[width = 0.99\textwidth]{Figures/7/SR1L_Resolved_fit/TARJets10_minmS_res.pdf}
      \caption{Resolved SR}
     \end{subfigure}
-    \caption{Predicted yield of SM background (stacked filled) DH signal (unfilled) processes at several mass points in the merged (left) and resolved (right) SRs, binned in \minms with the optimized bin edges. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
+    \caption{Predicted yield of SM background processes (stacked filled) and the DH signal model (unfilled lines) at several mass points in the merged (left) and resolved (right) SRs, binned in \minms with the optimized bin edges presented in Table \ref{tab:statisticalevaluation_regions}. The lower panel shows the ratio of yields predicted for the DH signal process over the sum of MC background processes. Grey bands show the statistical uncertainty of the background estimate.}
    \label{fig:minms_binning}
 \end{figure}
 
-The CRs are left unbinned in the fit in order to provide constraints on the overall yield of the \wjets and \ttbar processes in each kinematic category. Table \ref{tab:statisticalevaluation_regions} summarizes the binning strategy in all analysis regions.
+The CRs are left unbinned in the fit to provide constraints on the overall yield of the \wjets and \ttbar processes in each kinematic category. Table \ref{tab:statisticalevaluation_regions} summarizes the binning strategy in all analysis regions.
 
 \begin{table}[ht]
 \centering
@@ -168,21 +171,21 @@ The CRs are left unbinned in the fit in order to provide constraints on the over
 \section{Fit Setup}
 \label{sec:fit_setup}
 
-With the MC simulated yields and ATLAS collision data binned into CRs and \minms bins within the SRs, as detailed in Section \ref{sec:binning_strategy} above, the statistical analysis is performed by fitting the simulated yields to the collision data in all regions and bins.The fits are performed within the HistFitter framework by varying the signal strength parameter \(\mu_\text{sig}\) and all floating nuisance parameters \(\{\boldsymbol{\mu}, \boldsymbol{\theta}\}\) in the likelihood function presented in Eq. \ref{eq:likelihood_func}, until the set of parameter values which maximizes the likelihood is determined.  
+With the MC simulated yields and ATLAS collision data binned into CRs and \minms bins within the SRs, as detailed in Section \ref{sec:binning_strategy} above, the statistical analysis is performed by fitting the simulated yields to the collision data in all regions and bins. The fits are performed within the HistFitter framework by varying the signal strength parameter \(\mu_\text{sig}\) and all floating NPs \(\{\boldsymbol{\mu}, \boldsymbol{\theta}\}\) in the likelihood function presented in Eq. \ref{eq:likelihood_func}, until the set of parameter values which maximizes the likelihood is determined.  
 
 \subsection{Background-only Fit and Signal Region Extrapolation}
 \label{sec:extrapolation}
 
-To initially check for an excess of data in the SRs, a ``background-only" fit of the SM background yield prediction to the observed collision data is performed in the CRs to constrain the normalization factors (eg. \(\mu_\text{\wjets, mgd}\) \wjets and \ttbar backgrounds within each of the merged and resolved categories, along with other NPs \(\boldsymbol{\theta}\) which are constrained in the CRs. The likelihood function in Eq. \ref{eq:likelihood_func} used in this fit has \(\mu_\text{sig}\) fixed to 0 (i.e. ``background-only"), and the SR component \(P_\text{SR}\) fixed to 1 (i.e. ``CR-only"). 
+To initially check for an excess of data in the SRs, a ``background-only" fit of the SM background yield prediction to the observed collision data is performed in the CRs to constrain the normalization factors (eg. \(\mu_\text{\wjets, mgd}\)) for the \wjets and \ttbar backgrounds within each category, along with all other NPs \(\boldsymbol{\theta}\) that affect yields expectations in the CRs. The likelihood function in Eq. \ref{eq:likelihood_func} used in this fit has \(\mu_\text{sig}\) fixed to 0 (i.e. ``background-only"), and the SR component \(P_\text{SR}\) fixed to 1 (i.e. ``CR-only"). 
 
-The values of normalization factors and other NPs which were constrained in the background-only fit to data in the CRs to maximize this modified likelihood function are subsequently extrapolated to SR to incorporate these constraints into the predicted yields of background processes in the SR. The updated distributions of the total  predicted SM background yield in the SR are compared with distributions of the observed collision data to check for the presence of any  discrepancies which, if statistically significant considering alll statistical and systematic uncertainties, would be indicative of new physics in the data. 
+The values of normalization factors and other NPs which are constrained in the background-only fit to maximize this modified likelihood function are subsequently extrapolated to SR to incorporate these constraints into the predicted yields of background processes in the SR. The updated distributions of the total  predicted SM background yield in the SR are compared with distributions of the observed collision data to check for the presence of any  discrepancies which, if statistically significant considering all statistical and systematic uncertainties, would be indicative of new physics in the data. 
 
-The extrapolation to the SR is performed by building the total expected yield of SM background events in each SR bin using the Poisson expectation formula in Eq. \ref{eq:lambda} with the constrained NPs, and \(\mu_\text{sig}=0\). Any NPs which are specific to the SR and thus not constrained in the fit are maintained at their nominal pre-fit values when constructing the extrapolated Poisson expectations. Further details of the extrapolation method used by the HistFitter framework can be found in Section 5.2 of \Refn{~\cite{Baak_2015}}.
+The extrapolation to the SR is performed by building the total expected yield of SM background events in each SR bin using the Poisson expectation formula in Eq. \ref{eq:lambda} with the constrained NPs, and with \(\mu_\text{sig}\) still set to 0. Any NPs which are specific to the SR and thus not constrained in the fit are maintained at their nominal pre-fit values when constructing the extrapolated Poisson expectations. Further details of the extrapolation method and its implementation within the HistFitter framework can be found in Section 5.2 of \Refn{~\cite{Baak_2015}}.
 
 \subsubsection{Evaluation of Systematic Uncertainties by Means of the Transfer Factor}
 \label{sec:TF}
-After the values of all background normalization factors \(\boldsymbol{\mu}\) are constrained in the background-only fit, total yield \((b_\text{fit})_{p,\text{ mgd CRW}} + 
-(b_\text{fit})_{p,\text{ mgd CRTT}}\) of a process \(p\) (either \wjets or \ttbar) in the merged CRs whose normalization factor \(\mu_{p\text{,mgd}}\) is constrained in the fit can be expressed using the formalism of Eq. \ref{eq:lambda} (neglecting for now the \(\boldsymbol{\theta}\) constraints) as:
+After the values of all background normalization factors \(\boldsymbol{\mu}\) are constrained in the background-only fit, the total yield \(\big((b_\text{fit})_{p,\text{ mgd CRW}} + 
+(b_\text{fit})_{p,\text{ mgd CRTT}}\big)\) of a process \(p\) (either \wjets or \ttbar) in the merged CRs whose normalization factor \(\mu_{p\text{,mgd}}\) is constrained in the fit can be expressed using the formalism of Eq. \ref{eq:lambda} (neglecting for now the \(\boldsymbol{\theta}\) constraints) as:
 
 \begin{small}
 \begin{equation}
@@ -209,9 +212,9 @@ Extrapolating the constrained normalization factor \(\mu_{p\text{,mgd}}\) to any
 \end{aligned}
 \end{equation}
 
-The ratio of raw MC yields in brackets which extrapolates the fitted yield \((b_\text{fit})_{p,\text{ mgd CRW}} + (b_\text{fit})_{p,\text{ mgd CRTT}}\) of process \(p\) in the merged CRs to the estimated yield \((b_\text{fit})_\text{\(p\), \(j\)}\) is referred to as the ``transfer factor" \(TF\).
+The ratio of raw MC yields in brackets which extrapolates the fitted yield \(\big((b_\text{fit})_{p,\text{ mgd CRW}} + (b_\text{fit})_{p,\text{ mgd CRTT}}\big)\) of process \(p\) in the merged CRs to the estimated yield \((b_\text{fit})_\text{\(p\), \(j\)}\) in a given region or bin \(j\) is referred to as the ``transfer factor" \(TF\).
 
-When considering how the systematic uncertainties, which are correlated between regions and bins, will impact the predicted yields \((b_\text{fit})_\text{\(p\), SR bin \(j\)}\) in the SR, the fitted yield of the process in the CRs will be predominantly set by the observed yield of collision data. As a result, the systematic uncertainties will largely impact the predicted yields \((b_\text{fit})_\text{\(p\), SR bin \(j\)}\) in the SR by means of correlated shifts of the predicted yields on the top and bottom of the \(TF\) ratio. For this reason, when performing the fit relative systematic uncertainties associated with the post-fit predicted yields in all regions are evaluated for the \wjets and \ttbar backgrounds using systematic shifts in the \(TF\) rather than in the pre-fit yields. In a given SR bin or CR \(j\) in the merged category:
+When considering how the systematic uncertainties, which are correlated between regions and bins, can be expected to impact the predicted yields \((b_\text{fit})_\text{\(p\), \(j\)}\), the fitted yield of the process \(p\in\{\wjets, \ttbar\}\) in the CRs will be predominantly set by the observed yield of collision data, and consequently should be effectively unshifted when systematic uncertainty sources are varied. As a result, the primary impact of systematic uncertainty sources on the predicted yields \((b_\text{fit})_\text{\(p\), SR bin \(j\)}\) in the SR will take the form of correlated shifts of the predicted yields on the top and bottom of the \(TF\) ratio. For this reason, when performing the fit relative systematic uncertainties associated with the post-fit predicted yields in all regions are evaluated for the \wjets and \ttbar backgrounds using systematic shifts in the \(TF\) rather than in the pre-fit yields. In a given SR bin or CR \(j\) in the merged category:
 
 \begin{equation}
 \label{eq:tf_unc}
@@ -224,7 +227,7 @@ When considering how the systematic uncertainties, which are correlated between 
 
 \noindent where an analogous equation holds in the merged category with "mgd"\(\rightarrow\)"res". If yield shifts associated with a given systematic source are positively correlated between the region or bin \(j\) and the CRs and comparable in size relative to the nominal yield, then the relative systematic uncertainty of the transfer factor can be significantly reduced compared with that of the raw yields due to cancellation between the two terms in square brackets. 
 
-Table \ref{tab:TF_sys_comp} compares the total relative systematic uncertainty associated with the predicted yield of the \wjets process in the SRs and \wjets CRs (SR bins combined), evaluated using either the systematic yield uncertainties alone or the \(TF\), as in Eq. \ref{eq:tf_unc}. The \ttbar CRs are excluded from the comparison due to the small yield of \wjets events in these CRs The combination of systematic uncertainties from all sources is performed within the HistFitter framework. The relative systematic uncertainties are reduced in all regions except the merged SR when evaluated using the transfer factor rather than the yield. In the \wjets CR (CRW), much of the reduction comes from the fact that most of the \wjets events in the combined CRW+CRTT are located in the CRW, so systematic shifts in the combined CRW+CRTT yield are guaranteed to be highly correlated with those in the CRW alone. 
+Table \ref{tab:TF_sys_comp} compares the total relative systematic uncertainty associated with the predicted yield of the \wjets process in the SRs and \wjets CRs (SR bins combined), evaluated using either the systematic yield uncertainties alone (first term in square brackets in Eq. \ref{eq:tf_unc}) or the \(TF\). The \ttbar CRs are excluded from the comparison due to the small relatively predicted yield of \wjets events in these CRs The combination of systematic uncertainties from all sources is performed within the HistFitter framework. The relative systematic uncertainties are reduced in all regions except the merged SR when evaluated using the transfer factor rather than the yield. In the \wjets CR (CRW), much of the reduction comes from the fact that most of the \wjets events in the combined CRW+CRTT are contained within the CRW, so systematic shifts in the combined CRW+CRTT yield are guaranteed to be highly correlated with those in the CRW. 
 
 \begin{table}[ht]
 \begin{center}
@@ -246,14 +249,31 @@ Resolved CRW & \(\pm\)4\% & \(\pm\)17\% & \(\pm\)2\% \tabularnewline
 \end{center}
 \end{table}
 
-\subsection{Exclusion Hypothesis Test}
-\label{ap:hypo_test}
+\subsection{Exclusion Hypothesis Test and Limit Setting}
+\label{sec:hypo_test}
 
-Given the absence of 
+In the event that no significant discrepancy is seen in the comparison of SM background yield predictions to the ATLAS collision data in the SR following the background-only fit and extrapolation of constraints to the SR, an exclusion hypothesis test is performed for the DH signal model at each simulated \ms and \mZp to assess the range, or ``limits", of model parameters that can be excluded by the search. This procedure is referred to as ``limit setting".
 
-\begin{itemize}
-\item Presentation of the profiled log-likelihood ratio $q_{\mu_\text{sig}}$, and description of how $q_{\mu_\text{sig}}$ is used to calculate a p-value for the exclusion hypothesis test (in case no significant excess found in the discovery test).
-\item Discussion of the use of the asymptotic formula to avoid the need to throw random pseudo-experiments when evaluating the p-value, and its regime of validity ($>\mathcal{O}(5)$ events per bin).
-\item Brief discussion of the CLs method for limit setting.
-\item Description of how the limits are presented in the \ms vs. $m_{Z'}$ plane.
-\end{itemize}
+The exclusion hypothesis test is performed using ``signal+background fits", which incorporate all regions and bins in the likelihood function presented in Eq. \ref{sec:likelihood}, and allow for a nonzero signal strength \(\mu_\text{sig}\). The ultimate product of the hypothesis test at each \ms and \mZp of the DH model is a ``CL\(_s\) value". The CL\(_s\) value can be interpreted as the relative confidence with which the observed data can be explained by the alternative signal+background compared with the null background-only hypothesis. A CL\(_s\) value below 0.05 is considered to exclude the signal+background hypothesis at a 95\% confidence level.
+
+For a given value of the hypothesized signal strength \(\mu_\text{sig}\), a ``profiled log-likelihood ratio" \(q_{\mu_\text{sig}}\) is constructed as follows:
+
+\begin{equation}
+\label{eq:prof_likelihood_ratio}
+q_{\mu_\text{sig}} = -2\log\Bigg( \frac{L(\mu_\text{sig}, \hat{\hat{\boldsymbol{\theta}}})}{L(\hat{\mu}_\text{sig}, \hat{\boldsymbol{\theta})}} \Bigg)
+\end{equation}
+
+\noindent where \(\hat{\mu}_\text{sig}\) and \(\hat{\boldsymbol{\theta}}\) are the values of the signal strength parameter \(\mu_\text{sig}\) and NPs \(\boldsymbol{\theta}\) that maximize the likelihood function with all parameters left floating (i.e. profiled over) in the signal+background fit. \(\hat{\hat{\boldsymbol{\theta}}}\) is the set of floating NP values that maximize the likelihood function for a given fixed \(\mu_\text{sig}\) in the fit. Note that the background normalization parameters \(\boldsymbol{\mu}\) are folded into the set of NPs \(\boldsymbol{\theta}\) in Eq. 
+\ref{eq:prof_likelihood_ratio}, and in all equations which follow in this section.
+
+A p-value is computed to test the hypothesized signal strength parameter \(\mu_\text{sig}\) using the integrated distribution \(f(q_{\mu_\text{sig}}|\mu_\text{sig}, \boldsymbol{\theta})\) of the test statistic above the value \(q_{\mu_\text{sig},\text{ obs}}\) evaluated with the observed ATLAS collision data and the central NP values input to the fit:
+
+\begin{equation}
+\label{eq:pvalue}
+p_{\mu_\text{sig}} = \int_{q_{\mu_\text{sig},\text{ obs}}}^\infty f(q_{\mu_\text{sig}}|\mu_\text{sig}, \boldsymbol{\theta})dq_{\mu_\text{sig}}
+\end{equation}
+
+The distribution \(f(q_{\mu_\text{sig}}|\mu_\text{sig}, \boldsymbol{\theta})\) can be obtained by throwing pseudo-experiments which randomize the number of observed events and the central values of the NPs \(\boldsymbol{\theta}\), and re-calculating \(q_{\mu_\text{sig}}\) for each pseudo-experiment. However, for sufficiently high statistics in the analysis regions - typically taken to be at least \(\mathcal{O}(5)\) expected SM background events per region or bin - \(f(q_{\mu_\text{sig}}|\mu_\text{sig}, \boldsymbol{\theta})\) is known to follow a \(\chi^2\) distribution according to Wilks' theorem \cite{Wilks_1938}. In this ``asymptotic regime", asymptotic formulae \cite{Cowan_2011} are used to evaluate the p-value, thus avoiding the need to generate pseudo-experiments. The CL\(_s\) method \cite{Read_2002} is then applied to \(f(q_{\mu_\text{sig}}|\mu_\text{sig}, \boldsymbol{\theta})\) to evaluate the CL\(_s\) value used to test the exclusion of the DH signal hypothesis at the given \ms and \mZp.
+
+Having obtained a CL\(_s\) value for each \ms and \mZp by the above procedure, interpolation is performed with respect to the CL\(_s\) values within in the (\ms, \mZp) plane obtain an ``exclusion contour" along CL\(_s=0.05\) with a \(\pm1\sigma\) uncertainty band, in addition to a fine-grained colour-coded distribution of the CL\(_s\) within the modelled range of \ms and \mZp. The interpolation is performed internally by HistFitter using a radial basis interpolation function\footnote{Interpolation is performed using the \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.Rbf.html}{interpolate.Rbf() class} function in python's scipy module. This work uses the `linear' (\(r\)) interpolation function rather than the default `multiquadratic', because linear interpolation was found to provide a smoother interpolation of the signal grid.}. The contour is considered to exclude the entire phase space of \ms and \mZp that lie within it at a 95\% confidence level.
+
