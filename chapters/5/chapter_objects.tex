@@ -1,4 +1,4 @@
-\startchapter{Objects, Event Selections and Triggers}
+\startchapter{Data Reconstruction, Selection and Triggers}
 \label{chapter:objects}
 
 This chapter describes the physics objects which are reconstructed on an event-by-event basis using collision data from the ATLAS detector and used in this DM search. It also discusses the triggers and event selection cuts which are applied to define the subsets of collision data and MC simulated data, also known as ``analysis regions", which are used for the search. 
@@ -6,12 +6,12 @@ This chapter describes the physics objects which are reconstructed on an event-b
 \section{Object Definitions}
 \label{sec:object_defs}
 
-The goal of the ATLAS detector is to identify particles that are produced by the proton-proton collisions that take place in the centre of the detector, and to reconstruct their kinematic properties. The particle identification and reconstruction is performed using various collections of measured signals in the detector sub-systems, which are broadly referred to as ``physics objects" \cite{physics_objects_atlas_2013}. The physics objects used to reconstruct all particles considered in this search are described in the following sections.
+The goal of the ATLAS detector is to identify particles that are produced by the proton-proton collisions that take place in the centre of the detector, and to reconstruct their kinematic properties. The particle identification and reconstruction is performed using collections of measured signals in the detector sub-systems, which are broadly referred to as ``physics objects" \cite{physics_objects_atlas_2013}. The physics objects used to reconstruct all particles considered in this search are described in the following sections.
 
 \subsection{Charged Leptons}
 \label{sec:charged_leptons}
 
-The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability \cite{PDG_2018} be an electron \(e\), a muon \(\mu\) or a tau \(\tau\). Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons can decay only to a \(e\bar{\nu}_e\) pair, because any other particles that a virtual \(W\) could otherwise decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
+The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability \cite{PDG_2018} be an electron \(e\), a muon \(\mu\) or a tau \(\tau\). Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Only the \(W\rightarrow e\bar{\nu}_e\) decay is possible in the 3-body muon decay, because any other particles that a virtual \(W\) could otherwise decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
 
 \begin{figure}[hp]
 	\centering
@@ -69,7 +69,7 @@ The final state charged lepton produced from the leptonic decay of a \(W\) in th
 	\label{fig:lepton_decays}
 \end{figure}
 
-Due to their relatively large mass of 1.8 \GeV, taus can decay either leptonically to \(e\bar{\nu}_e\) or \(\mu\bar{\nu}_\mu\), or hadronically to \(d\bar{u}\), as shown in Figure \ref{fig:tau_decay}, and their decays proceed with a much shorter mean lifetime of of 0.3ps compared with that of the muon. Because of this relatively short lifetime, taus will decay before passing through the ATLAS detector, and as such it is their leptonic or hadronic decay products that are actually measured in the detector \cite{ATLAS-CONF-2017-029}. As will be discussed in Section \ref{sec:evt_selections} below, the selections applied for this analysis require that events have exactly one electron or muon in the final state in order to be considered for the search. As a result, the search is sensitive to \(s\rightarrow WW\) decays in which the leptonically decaying \(W\) decays to \(\tau\nu_\tau\) only in the case where the \(\tau\) decays leptonically to produce a single energetic electron or muon in the final state. This leptonic \(tau\) decay mode occurs with a 35\% branching fraction \cite{ATLAS-CONF-2017-029}.
+Due to the relatively large tau mass of 1.8 \GeV, the virtual \(W\) boson in the 3-body tau decay can itself decay either leptonically to \(e\bar{\nu}_e\) or \(\mu\bar{\nu}_\mu\), or hadronically to \(d\bar{u}\), as shown in Figure \ref{fig:tau_decay}. As a result of the additional decay channels, tau decays proceed with a much shorter mean lifetime of 0.3ps compared with that of the muon. Because of this relatively short lifetime, taus will decay before passing through the ATLAS detector, and as such it is their leptonic or hadronic decay products that are actually measured in the detector \cite{ATLAS-CONF-2017-029}. As will be discussed in Section \ref{sec:evt_selections} below, the selections applied for this analysis require that events have exactly one electron or muon in the final state in order to be considered for the search. As a result, the search is sensitive to \(s\rightarrow WW\) decays in which the leptonically decaying \(W\) decays to \(\tau\nu_\tau\) only in the case where the \(\tau\) decays leptonically to produce a single energetic electron or muon in the final state. This leptonic \(tau\) decay mode occurs with a 35\% branching fraction \cite{ATLAS-CONF-2017-029}.
 
 \subsubsection{Electrons}
 
@@ -77,20 +77,20 @@ As discussed in Section \ref{sec:EM_calo}, electron objects are reconstructed fr
 
 The identification efficiency refers to the probability that an electron passing through the detector will be correctly reconstructed and identified as such. In general, a higher efficiency is achieved by loosening electron identification criteria, which comes at the cost of an increased background acceptance. The increased background acceptance means that reconstructed objects have a higher probability of being incorrectly identified as having originated from an electron. 
 
-Electron isolation tackles a slightly different, though related, challenge in comparison with identification. The goal of isolation is to separate the so-called ``prompt" electrons that are produced from the primary decay processes of heavy mediators produced in the \(pp\) collisions from background processes such as semileptonic quark decays, hadrons misidentified as leptons and photons that convert into \(e^+e^-\) pairs before reaching the EM calorimeter. It is generally found that reconstructed objects which originate from prompt electrons can be characterized by a relative absence of (i.e. isolation) from significant activity in a small angular radius \(R\) around the object in the space of \(\eta\times\phi\). In analogue with the identification efficiency, a high isolation efficiency is achieved by loosening the criteria for defining an object as isolated. As such, loosening isolation criteria will improve the probability that the prompt electrons targeted by the isolation requirement are identified as isolated objects, at the cost of an increase in the rate at which objects which originate from background processes are also identified as isolated.
+Electron isolation tackles a slightly different, though related, challenge in comparison with identification. The goal of isolation is to separate the so-called ``prompt" electrons that are produced from the primary decay processes of heavy mediators produced in the \(pp\) collisions from background processes such as semileptonic quark decays, hadrons misidentified as leptons and photons that convert into \(e^+e^-\) pairs before reaching the EM calorimeter. It is generally found that reconstructed objects which originate from prompt electrons can be characterized by a relative absence of (i.e. isolation from) significant activity in a small angular radius \(R\) around the object in the space of \(\eta\times\phi\). In analogy with the identification efficiency, a high isolation efficiency is achieved by loosening the criteria for defining an object as isolated. As such, loosening isolation criteria will improve the probability that the prompt electrons targeted by the isolation requirement are identified as isolated objects, at the cost of an increase in the rate at which objects which originate from background processes are also identified as isolated.
  
 Two types of electrons are defined for the search based on different sets of criteria.
 \emph{Baseline} electrons use the \emph{Loose} working point for both identification and isolation. Isolation is measured within a fixed angular radius of \(\Delta R=0.2\) around the reconstructed electron object \cite{PERF-2017-01}. The \emph{Loose} identification working point is measured in dedicated studies performed within the ATLAS collaboration to have an efficiency of 93\% \cite{PERF-2017-01} for identifying prompt electrons with \(E_T=40~\GeV\). The \emph{Loose} isolation working point has a total measured efficiency of 98\% \cite{PERF-2017-01}. Because of their relatively high efficiency, \emph{baseline} electrons are used to veto the presence of additional electrons in the final state.
 
 \emph{Signal} electrons are designed reconstruct prompt electrons with high purity. They are required to satisfy the \emph{Medium} identification criteria, which are measured to have an 88\% efficiency \cite{PERF-2017-01}, and \emph{Loose} isolation criteria.
 
-Both types of electrons require are required to have \(\pT > 7~\GeV\) and a pseudorapidity in the range of \(|\eta| < 2.47\).
+Both types of electrons are required to have \(\pT > 7~\GeV\) and a pseudorapidity in the range of \(|\eta| < 2.47\).
 
 \subsubsection{Muons}
 
 As described in Section \ref{sec:muon_spec}, muons are reconstructed using information from the the inner detector and the muon spectrometer. Detailed information about muon reconstruction, identification and calibration can be found in Refs. \cite{PERF-2015-10} and \cite{ATL-PHYS-PROC-2018-052}. As is the case with electron objects, muon objects are reconstructed at several identification and isolation working points, and two definitions for muons are considered for this analysis:
 \newline \emph{Baseline} muons do not have any isolation requirement, but are required to satisfy the \emph{Loose} identification criteria, with a measured efficiency of 98\% for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}.
-\newline \emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 98\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052} which use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
+\newline \emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 96\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052} which use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
 \newline Both types of muons use a threshold of \(\pt > 7~\GeV \). 
 
 Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2.7\). For signal muons, a tighter pseudorapidity range of \(|\eta| < 2.5\) is required to ensure that the muons are well measured in the inner detector as well as the muon spectrometer. 
@@ -100,7 +100,7 @@ Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2
 
 As discussed in detail in Section \ref{sec:had_calo}, quarks and gluons induce showers of energy deposits in the calorimeter known as jets. This search uses the ``particle flow algorithm" \cite{PERF-2015-09} to reconstruct objects associated with the energy deposits in the hadronic calorimeter. The particle flow algorithm matches signals from the inner tracker with topologically connected clusters of energy deposits in the calorimeter known as ``topo-clusters" with the aim of forming objects which represent individual charged particles. The energy deposited in the calorimeter by these identified charged particle objects is removed, leaving behind an ensemble of ``particle flow objects" which consist of the remaining calorimeter energy and tracks. The anti-\(k_t\) algorithm described in Ref. \cite{akt_algo} is then used to reconstruct jets using these particle flow objects. A range of jet radii \(R\)\footnote{See Eq. \ref{eq:jet_radius} for the definition of the angular radius \(R\).} may be chosen within which the \akt algorithm should include particle flow objects for jet reconstruction. The choice of \(R\) depends on the kinematics and anticipated origins of the quark or gluon which initiated the shower (see discussion in Section \ref{sec:had_calo} for more details).
 
-As discussed in Chapter \ref{chapter:dh_model}, the final state signature of the DH model targeted in this search involves a pair of energetic \(W\) bosons in the final state, one of which decays leptonically to a \(\ell\nu\) pair, and the other hadronically to a pair of quarks. If the boost of the hadronically decaying \(W\) is sufficiently low, the angular separation between the two quarks may be large enough that the quarks are most effectively reconstructed as two separate jets with small a small jet radius \(R\). In the so-called ``resolved" regime of the search, the two sets of energy deposits in the calorimeter produced by the \(W\rightarrow qq\) decay are so separated that it is not even possible to reconstruct the two quarks within a single large-radius jet. For this search, these so-called ``\smallR" jets are reconstructed with a jet radius of \(R=0.4\).
+As discussed in Chapter \ref{chapter:dh_model}, the final state signature of the DH model targeted in this search involves a pair of energetic \(W\) bosons in the final state, one of which decays leptonically to a \(\ell\nu\) pair, and the other hadronically to a pair of quarks. If the boost of the hadronically decaying \(W\) is sufficiently low, the angular separation between the two quarks may be large enough that the quarks are most effectively reconstructed as two separate jets, each with a small jet radius \(R\). In the so-called ``resolved" regime of the search, the two sets of energy deposits in the calorimeter produced by the \(W\rightarrow qq\) decay are so separated that it is not even possible to reconstruct the two quarks within a single large-radius jet. For this search, these so-called ``\smallR" jets are reconstructed with a jet radius of \(R=0.4\).
 
 After all \smallR jets in the final state are reconstructed and fully calibrated \cite{ATLAS-CONF-2015-037}, only jets with \(\pt > 20~\GeV\) and \(|\eta| < 2.5\) are considered for the search. Jet cleaning \cite{ATLAS-CONF-2015-029} with the \emph{TightBad} working point is applied to suppress noise in the calorimeter and background jets which are not produced from the primary \(pp\) collision. The jet vertex tagger \cite{ATLAS-CONF-2014-018} is applied with the \emph{Tight} working point to suppress pileup jets \cite{pileup} from other \(pp\) interactions in the same and neighbouring bunch crossings - see Section \ref{sec:evt_wts} for a more detailed discussion of pileup events. 
 %As described in Section \ref{sec:resolved_w_cand} below, these jets are used in the analysis to identify quarks originating from the hadronically-decaying \(W\) boson in the DH signal model in the resolved regime, and to reconstruct the \(W\) boson in this regime.
@@ -113,7 +113,7 @@ When \(b\) quarks are produced by \(pp\) collisions in the ATLAS detector, they 
 \subsection{Resolved \(W\) Candidate}
 \label{sec:resolved_w_cand}
 
-As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced by the hadronic decay of the \(W\) boson in the signal model are reconstructed as two resolved \smallR jets in the less-boosted resolved regime. The parent \(W\) boson can then be reconstructed from \smallR jets induced by its daughter quarks using the combined energy and momentum of the \smallR jet pair. Given that \smallR jets can also be produced by, for example, initial-state radiation and pileup, it is quite common for there to be more than two \smallR jets reconstructed in the final state. These additional jet sources complicate the task of identifying which of the reconstructed \smallR jets in a given event should be associated with the \(W\rightarrow qq\) in the signal model. For events with more than two \smallR jets in the final state, the pair of \smallR jets whose combined invariant mass is closest to the \(W\) boson mass are associated with the \(W\) decay products, and used to reconstruct the \(W\) boson candidate. The algorithm for this jet identification and \(W\) boson reconstruction so is as follows:
+As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced by the hadronic decay of the \(W\) boson in the signal model are reconstructed as two resolved \smallR jets in the less-boosted resolved regime. The parent \(W\) boson can then be reconstructed from \smallR jets induced by its daughter quarks using the combined energy and momentum of the \smallR jet pair. Given that \smallR jets can also be produced by, for example, initial-state radiation and pileup, it is quite common for there to be more than two \smallR jets reconstructed in the final state. These additional jet sources complicate the task of identifying which of the reconstructed \smallR jets in a given event should be associated with the \(W\rightarrow qq\) in the signal model. For events with more than two \smallR jets in the final state, the pair of \smallR jets whose combined invariant mass is closest to the \(W\) boson mass is assumed to have originated from the \(W\) decay, and used to reconstruct the \(W\) boson candidate. The algorithm for this jet identification and \(W\) boson reconstruction is as follows:
 
 \begin{itemize}
 \item Construct all possible combinations of two \smallR jets (a.k.a. ``dijet pairs") in the final state.
@@ -124,21 +124,21 @@ As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced b
 M_{j_1,j_2} = \sqrt{\mathbf{p}_{j_1,j_2} \cdot \mathbf{p}_{j_1,j_2} } 
 \end{equation}
 \item Select the dijet pair whose invariant mass is closest to the \(W\) boson mass of \(80.4~\GeV\) \cite{PDG_2018} as the \smallR jets to be associated with the \(W\rightarrow q\bar{q}\) decay.
-\item Reconstruct the candidate hadronically decaying \(W\) boson using the dijet pair with four-momentum \(\mathbf{p}_{j_1,j_2}\).
+\item Reconstruct the hadronically decaying \(W\) boson candidate using the dijet pair with four-momentum \(\mathbf{p}_{j_1,j_2}\).
 \end{itemize}
 
-Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed \(W\) boson candidate mass for MC simulated events generated at a range of sample \ms and \mZp after application of the baseline event selections presented in Section \ref{sec:evt_selections}, with the additional requirement that there be at least two \smallR jets in the final state. The distributions are in general well centred around the \(W\) boson mass.
+Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed \(W\) boson candidate mass for MC simulated events generated for a range of \ms and \mZp after application of the baseline event selections presented in Section \ref{sec:evt_selections}, with the additional requirement that there be at least two \smallR jets in the final state. The distributions are in general well centred around the \(W\) boson mass.
 
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/WCand_m_ms.pdf}
-	\caption{\mZp Fixed, \ms Varied}
+	\caption{\mZp fixed, \ms varied}
 	\label{fig:resolved_Wmass_reco_ms}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/WCand_m_mZp.pdf}
-	\caption{\ms Fixed, \mZp Varied}
+	\caption{\ms fixed, \mZp varied}
 	\label{fig:resolved_Wmass_reco_mZp}
 	\end{subfigure}
 	\caption[]{Distributions of the reconstructed W candidate mass for MC simulated events produced with the DH signal model over a range of \ms and \mZp. All events included in the distributions are required to have passed the baseline event selection described in Section \ref{sec:evt_selections}, and to have at least two \smallR jets in the final state. The red dashed vertical line is placed at the \(W\) boson mass of 80.4 \GeV. Distributions are normalized to unit area.}
@@ -150,14 +150,14 @@ Figure \ref{fig:resolved_Wmass_reco} shows distributions of the reconstructed \(
 
 If the hadronically decaying \(W\) boson is produced with a sufficiently large momentum (i.e. boost), the jets produced by the \(q\bar{q}\) pair may be sufficiently collimated (i.e. ``merged") that they are most effectively reconstructed as a single multi-pronged \largeR jet, as opposed to the resolved \smallR jets used for \(W\) reconstruction in the resolved regime (see Sections \ref{sec:atk4_jets} and \ref{sec:resolved_w_cand} above for details). 
 
-Since the signal model predicts that charged particle tracks and energy deposits in the detector will have originated primarily from the two quarks produced by the \(W\rightarrow q\bar{q}\) decay in the signal model, it is important to reconstruct the large-radius jet in this so-called merged regime with as much detailed kinematic and substructure information as possible. This information is used in the search to help identify whether the hadronic activity contained within a \largeR jet is consistent with having been induced by two energetic quarks originating from a \(W\) parent, as predicted by the signal model. Such features include the combined invariant mass \mTAR of all particles which produced the jet, which would be expected to be consistent with the \(W\) boson mass within detector resolution. Important substructure information includes variables which aim to quantify the number of distinct ``prongs" of localized energy deposition within the jet, which can be correlated to the number of high-\pt strongly interacting particles whose energy deposits are included in the jet (two such prongs would be expected for the signal model). 
+Since the signal model predicts that charged particle tracks and energy deposits in the detector will have originated primarily from the two quarks produced by the \(W\rightarrow q\bar{q}\) decay in the signal model, it is important to reconstruct the large-radius jet in this so-called merged regime with as much detailed kinematic and substructure information as possible. This information is used in the search to help identify whether the hadronic activity contained within a \largeR jet is consistent with having been induced by two energetic quarks originating from a \(W\) parent, as predicted by the signal model. Such features include the combined invariant mass \mTAR of all particles associated with the jet, which would be expected to be consistent with the \(W\) boson mass within detector resolution. Important substructure information includes variables which aim to quantify the number of distinct ``prongs" of localized energy deposition within the jet, which can be correlated to the number of high-\pt strongly interacting particles whose energy deposits are included in the jet (two such prongs would be expected for the signal model). 
 
 This search uses the track-assisted reclustered (TAR) jet algorithm \cite{ATL-PHYS-PUB-2018-012} for \largeR jet reconstruction in the merged regime. In this regime, the highest-\pt TAR jet reconstructed with a radius parameter of \(R=1.0\) is used to reconstruct the hadronically decaying \(W\) boson (\(W_\text{had}\)) in the DH signal model. Whereas most \largeR jet reconstruction techniques rely on energy deposits in the calorimeter to reconstruct the jet substructure information, TAR jets are designed to profit from the superior resolution of the inner tracker for improved substructure reconstruction by matching charged particle tracks with energy deposits in the calorimeter. 
 
 \subsubsection{TAR Algorithm}
 \label{sec:TAR_algo}
 
-For this search, \(R=0.2\) \smallR jets are used to reconstruct energy deposits in the calorimeter, and are input to the TAR algorithm along with tracks measured by the inner detector which satisfy a set of quality criteria summarized in Table \ref{tab:TARparameters}. The TAR algorithm \cite{ATL-PHYS-PUB-2018-012} is as follows: the input \(R=0.2\) \smallR ``subjets" are reclustered using the \akt algorithm with \(R=1.0\) to \largeR jets. A trimming procedure is applied to mitigate the effects of pileup and background QCD processes within the triggered event which do not originate from the hard interaction. The trimming procedure removes any of the input subjets which carry less than a fraction \(\fcut=0.05\) of the total transverse momentum of the \largeR jet: \(\pt^\text{subjet}/\pt^\text{\largeR jet} < 0.05\).  The tracks from the inner detector are then matched to the remaining \smallR subjets using the ghost association procedure described in Ref. \cite{ghost_association_2008}, if possible. Any tracks which cannot be matched to subjets using ghost association are instead matched to the nearest subjet, provided that there is a jet within an angular radius \(\Delta R=0.3\) of the track. To account for the energy of the neutral hadronic jet components which do not leave tracks in the inner detector, the \pt of each track is scaled such that the summed \pt of all tracks matched to a given subjet will evaluates to the energy of the subjet as measured by the calorimeter:
+For this search, \(R=0.2\) \smallR jets are used to reconstruct energy deposits in the calorimeter, and are input to the TAR algorithm along with tracks measured by the inner detector which satisfy a set of quality criteria summarized in Table \ref{tab:TARparameters}. The TAR algorithm \cite{ATL-PHYS-PUB-2018-012} is as follows: the input \(R=0.2\) \smallR ``subjets" are reclustered using the \akt algorithm with \(R=1.0\) to form \largeR jets. A trimming procedure is applied to mitigate the effects of pileup and background QCD processes within the triggered event which do not originate from the hard interaction. The trimming procedure removes any of the input subjets which carry less than a fraction \(\fcut=0.05\) of the total transverse momentum of the \largeR jet: \(\pt^\text{subjet}/\pt^\text{\largeR jet} < 0.05\).  The tracks from the inner detector are then matched to the remaining \smallR subjets using the ghost association procedure described in Ref. \cite{ghost_association_2008}, if possible. Any tracks which cannot be matched to subjets using ghost association are instead matched to the nearest subjet, provided that there is a jet within an angular radius \(\Delta R=0.3\) of the track. To account for the energy of the neutral hadronic jet components which do not leave tracks in the inner detector, the \pt of each track is scaled such that the summed \pt of all tracks matched to a given subjet will evaluate to the energy of the subjet as measured by the calorimeter:
 
 \begin{equation}
 \label{eq:tar_track_pt_scaling}
@@ -184,26 +184,16 @@ Figure \ref{fig:TARdisentaglementplots} shows a comparison of the distributions 
 \begin{figure}[H]
 \centering
 \begin{subfigure}{0.49\textwidth}
-   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp500_dm200_dh310.pdf}
-   \caption{\((\ms, \mZp) = (310, 500)~\GeV\)}
-   \label{fig:TARdisentaglementplots_zp500_dh310}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/zp1000_dm200_dh260_disentanglement.pdf}
+   \caption{\((\ms, \mZp) = (260, 1000)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp1000_dh260}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
-   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp1000_dm200_dh310.pdf}
-   \caption{\((\ms, \mZp) = (310, 1000)~\GeV\)}
-   \label{fig:TARdisentaglementplots_zp1000_dh310}
+   \includegraphics[width = 0.95\textwidth]{Figures/5/zp1000_dm200_dh335_disentanglement.pdf}
+   \caption{\((\ms, \mZp) = (335, 1000)~\GeV\)}
+   \label{fig:TARdisentaglementplots_zp1000_dh335}
 \end{subfigure}
-\begin{subfigure}{0.49\textwidth}
-   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp1700_dm200_dh260.pdf}
-   \caption{\((\ms, \mZp) = (260, 1700)~\GeV\)}
-   \label{fig:TARdisentaglementplots_zp1700_dh260}
-\end{subfigure}
-\begin{subfigure}{0.49\textwidth}
-   \includegraphics[width = 0.95\textwidth]{Figures/5/monoSww_semilep_zp2100_dm200_dh210.pdf}
-   \caption{\((\ms, \mZp) = (210, 2100)~\GeV\)}
-   \label{fig:TARdisentaglementplots_zp2100_dh210}
-\end{subfigure}
-   \caption{Distributions of \mTAR for the leading-\pt TAR jet in MC simulated events generated for the DH signal model process with semileptonic \(WW\) decay at several representative \ms and \mZp, with and without application of the lepton disentanglement preselection. Events included in the distributions are required to pass the baseline selection requirements presented in Section \ref{evt_selections}, and to have one signal electron and at least one reconstructed TAR jet. Distributions are normalized to unit area.}
+   \caption{Distributions of \mTAR for the leading-\pt TAR jet in MC simulated events generated for the DH signal model process with semileptonic \(WW\) decay at several representative \ms and \mZp, with and without application of the lepton disentanglement preselection. Events included in the distributions are required to have one signal electron and at least one reconstructed TAR jet, both within an angular radius of \(\Delta R=1.0\). Distributions are normalized to unit area.}
    \label{fig:TARdisentaglementplots}
 \end{figure}
 
@@ -309,7 +299,7 @@ In principle, the four-momentum of the Dark Higgs boson \(s\) in the DH signal m
 \mathbf{p}_{W_\text{lep}} = \mathbf{p}_\ell + \mathbf{p}_\nu
 \end{equation}
 
-If the neutrino were the only anticipated source of ``true \met" (i.e. \met arising from undetected particles rather than limited detector resolution) in the final state, the measured four-momentum of the final state \met could be unambiguously assigned to the neutrino, i.e. \(\mathbf{p}_\nu = \mathbf{p}_\nu\). However, since the DH signal model additionally predicts  \met originating from the DM pair in the final state, there is some ambiguity involved with assessing which component of the measured \met is accounted for by the neutrino vs. the DM pair.
+If the neutrino were the only anticipated source of ``true \met" (i.e. \met arising from undetected particles rather than limited detector resolution) in the final state, the final state \met could be unambiguously assigned to the neutrino, i.e. (\(p_{x,\nu}, p_{y,\nu}) = (E_x^\text{miss}, E_y^\text{miss})\), at which point the only missing information would be the z-component \(p_{\nu,z}\) of the neutrino momentum. However, since the DH signal model additionally predicts  \met originating from the DM pair in the final state, there is some ambiguity involved with assessing how much of the measured \met is accounted for by the neutrino vs. the DM pair.
 
 An approximate solution is obtained by determining the minimum \ms that would be required in order for the \(s\) decay to have produced a lepton and \(W_\text{had}\) with the observed momenta, subject to the constraint that the invariant mass of the reconstructed \(m_{W_\text{lep}}\) be equal to the on-shell \(W\) mass of \(80.4~\GeV\). Although this minimum \ms may not necessarily evaluate to the actual modelled \ms, by providing an absolute lower bound on the possible range of \ms that could produce the observed final state, it is expected to at least be positively correlated with the actual modelled \ms.
 
@@ -361,7 +351,7 @@ Setting \(\phi_v=0\) in Eq. \ref{eq:ms_squared} and using the pythagorean identi
 m_s^2 = \left(E_\ell + E_\nu + E_{W_\text{had}}\right)^2 - \left(p_{W_\text{had}, x}  + E_\nu\sqrt{1 - \cos^2\theta_{\ell\nu}}\right)^2 \\ - \left(E_\ell + p_{W_\text{had}, z}\cos \theta_{Wl} + E_\nu\cos \theta_{\ell\nu} \right)^2
 \end{multline}
 
-This leaves an equation for \ms with two unknowns: the energy \(E_\nu\) of the neutrino, and the cosine \(\cos\theta_{\ell\nu}\) of the angle between the lepton and the neutrino. The neutrino energy is determined independently, by imposing the constraint that the mass \(m_{W_\text{lep}}\) of the leptonically decaying \(W\) boson be set to the on-shell \(W\) boson mass of \(m_W=80.4~\GeV\):
+This leaves an equation for \ms with two unknowns: the energy \(E_\nu\) of the neutrino, and the cosine \(\cos\theta_{\ell\nu}\) of the angle between the lepton and the neutrino. The neutrino energy is determined as a function of \(\cos\theta_{\ell\nu}\), by imposing the constraint that the mass \(m_{W_\text{lep}}\) of the leptonically decaying \(W\) boson be set to the on-shell \(W\) boson mass of \(m_W=80.4~\GeV\):
 
 \begin{equation}
 \label{eq:Ev}
@@ -379,31 +369,31 @@ With this independent determination of \(E_\nu\), the minimum \ms in Eq. \ref{eq
 
 Figure \ref{fig:minms_reco} shows distributions of this minimized ``\minms" for MC simulated events produced with the DH signal model over a range of \ms (left column) or \mZp (right column). The distributions are more sharply peaked for lower \ms, and for higher \ms the location of peak in \minms becomes increasingly shifted to the left of (i.e. below) the actual modelled \ms. The minimal variation between the different modelled values of \mZp presented in distributions in the right-hand column of Figure \ref{fig:minms_reco}, which scan over a range of \mZp for the same \ms, offers an encouraging indication that the value of the \minms variable is primarily a function of the \ms parameter in the model that it is designed to approximate.
 
-Despite the shifted location of the peaks at higher \ms, the presence of distinct peaks in the approximate vicinity of the modelled \ms imply that the \minms variable can be a valuable tool to aid in discriminating events in the data that could be consistent with the DH signal process from the SM background processes. For this reason, events in the signal regions are binned in \ms when searching for evidence of the signal model in the ATLAS collision data. The binning in \minms is presented in detail in Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)}.
+Despite the shifted location of the peaks at higher \ms, the presence of distinct peaks in the approximate vicinity of the modelled \ms imply that the \minms variable can be a valuable tool to aid in discriminating events in the data that could be consistent with the DH signal process from the SM background processes. For this reason, events in the signal regions are binned in \ms when searching for evidence of the signal model in the ATLAS collision data. The binning in \minms is presented in detail in Section \ref{sec:binning_strategy}.
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_res_ms.pdf}
-	\caption{\(p_{W_\text{had}}\) reconstructed using \(R=0.4\) \smallR jets (see Section \ref{sec:resolved_w_cand}): \mZp Fixed, \ms Varied}
+	\caption{\mZp fixed, \ms varied}
 	\label{fig:minms_res_ms}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_res_mZp.pdf}
-	\caption{\(p_{W_\text{had}}\) reconstructed using \(R=0.4\) \smallR jets (see Section \ref{sec:resolved_w_cand}): \mZp Fixed, \ms Varied\ms Fixed, \mZp Varied}
+	\caption{\ms fixed, \mZp varied}
 	\label{fig:minms_res_mZp}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_mgd_ms.pdf}
-	\caption{\(p_{W_\text{had}}\) reconstructed using the leading TAR jet (see Section \ref{sec:TAR_jets}): \mZp Fixed, \ms Varied}
+	\caption{\mZp fixed, \ms varied}
 	\label{fig:minms_res_ms}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 	\includegraphics[width=0.95\textwidth]{Figures/5/TARJets10_minmS_mgd_mZp.pdf}
-	\caption{\(p_{W_\text{had}}\) reconstructed using the leading TAR jet (see Section \ref{sec:TAR_jets}): \mZp Fixed, \ms Varied\ms Fixed, \mZp Varied}
+	\caption{\ms fixed, \mZp varied}
 	\label{fig:minms_res_mZp}
 	\end{subfigure}
-	\caption[]{Distributions of the candidate \ms, reconstructed using the minimization strategy presented in Section \ref{sec:minms}, for MC simulated events produced for the DH signal model over a range of \ms and \mZp. Distributions are normalized to unit area. Events included in all distributions are required to pass the baseline selection requirements presented in Section \ref{sec:evt_selections}. Events in the top row are required to have at least two \(R=0.4\) \smallR jets reconstructed in the final state, and events in the bottom row are required to have at least one TAR jet reconstructed in the final state.}
+	\caption[]{Distributions of the DH candidate mass \minms, reconstructed using the minimization strategy presented in Section \ref{sec:minms}, for MC simulated events produced for the DH signal model over a range of \ms and \mZp. Distributions are normalized to unit area. Events included in all distributions are required to pass the baseline selection requirements presented in Section \ref{sec:evt_selections}. For the distributions shown in the top (bottom) row, the \(W_\text{had}\) is reconstructed as a resolved candidate (TAR jet) using the strategy presented in Section \ref{sec:resolved_w_cand} (\ref{sec:TAR_algo}), and events are required to have \(\geq2\) \(R=0.4\) \smallR jets (\(\geq1\) \(R=1.0\) TAR jets) reconstructed in the final state.}
 	\label{fig:minms_reco}
 \end{figure}
 
@@ -426,7 +416,7 @@ m_{T, \text{ full}}^2(\ell, \met) = (E_{T, \ell}^2 + E_{T, \met}^2 - (p_{T, \ell
 = m_\ell^2+m_{\met}^2 + 2E_{T, \ell}, E_{T, \met}(1-\cos\theta_{\ell, \met})
 \end{multline}
 
-\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the high energy of the \(pp\) collisions at the LHC. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met arising from DM production. The result, shown in figure \ref{fig:mT_lep_met} after applying the baseline selection, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
+\noindent under the assumptions that the masses associated with the lepton and \met are negligibly small compared with their momenta. The assumption of negligible lepton mass is in general justified given the high energy of the \(pp\) collisions at the LHC. The assumption of negligible mass associated with \met is justified if the true \met arises only from the neutrino in the leptonic \(W_\text{lep}\) decay, as it would in the leading SM backgrounds. In the signal model, however, there is additional mass associated with the \met, which arises from the decay of the massive \Zprime mediator to an invisible DM pair. The result, shown in figure \ref{fig:mT_lep_met} after applying the baseline selection, is that the bulk of the SM background has \mtlepmet below the W mass peak, but the signal distribution tends to be peaked closer to \(\sim 250~\GeV\). 
 
 \begin{figure}[H]
 	\centering
@@ -539,7 +529,7 @@ Z(v_u) = Z(s_u, b_u, \sigma_{b_u} )
 
 The optimization was performed first in the merged category of the SR, after placing an additional requirement of at least one \(R=1.0\) TAR jet. Once the selections defining the merged SR were finalized, optimization was subsequently performed in the resolved category, with the \(\NTAR > 0\) requirement replaced by \(\Njets > 1\) in addition to a veto on any events which pass the finalized merged SR selections. 
 
-Since the optimal placement of selections was found to vary to some extent for MC simulated signal data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. The \mZp values of these four mass points were chosen because they are near the edge of the so-called ``exclusion range", which represents the range of \ms and \mZp within which the search was expected to be sensitive to the presence (or absence) of events produced by the DH signal model in the ATLAS data, at a 95\% confidence level on the basis of sensitivity studies discussed in Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)}. It is particularly desirable to optimize the cut placements for mass points near the edge of the exclusion range in order to extend this range as much as possible. 
+Since the optimal placement of selections was found to vary to some extent for MC simulated signal data sets with different \ms and \mZp, the cut placements were initially optimized with the aim of maximizing the average Asimov discovery significance for MC simulated data sets at the following four mass points which cover most of the \ms range considered in the search: (\ms, \mZp) = \{(210, 2100), (285, 1700), (310, 500), (335, 1000)\} GeV. The \mZp values of these four mass points were chosen because they are near the edge of the so-called ``exclusion range", which represents the range of \ms and \mZp within which the search was expected to be sensitive to the presence (or absence) of events produced by the DH signal model in the ATLAS data, at a 95\% confidence level on the basis of sensitivity projections obtained using the method presented in Section \ref{sec:hypo_test} with the Asimov data set. It is particularly desirable to optimize the cut placements for mass points near the edge of the exclusion range in order to extend this range as much as possible. 
 
 An iterative approach was used to optimize cut placements at the four signal points which combined:
 
@@ -550,7 +540,7 @@ An iterative approach was used to optimize cut placements at the four signal poi
 
 It is worth noting that, inspecting Eq. \ref{eq:asimov}, the Asimov discovery significance does not account for the statistical uncertainty \(\sigma_s\) arising from limited MC simulated events in the signal sample. Therefore, in order to ensure sufficient signal region that there were sufficient events in the signal samples, the grid search included an option to avoid cut combinations which reduced the predicted signal yield below some acceptable minimum set by the user. After some testing, it was found that setting a minimum acceptable predicted yield of 15 for the signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was adequate to ensure that the signal samples of interest for cut optimization had a sufficient number of events as to prevent their statistical uncertainty from becoming appreciable compared with other sources of uncertainty. The signal point \((\ms, \mZp)=(210, 2100)~\GeV\) was chosen to define the minimum yield because, at the time of optimization, it was among the mass points with the lowest predicted yield over the set of \mZp and \ms masses for which MC simulated datasets were produced for the search (also referred to as the ``signal grid").
 
-After an optimized set of selections were determined for the four signal points considered in the iterative optimization procedure described above, these selections were validated and further refined by examining the projected sensitivity of the search over the signal grid. Some minor refinements were made to cut placements with the aim of maximizing the exclusion range. See Section zzz \textcolor{red}{(Note to Bob: will update when section on sensitivity projections is written)} for a description of how the sensitivity is quantified for each MC simulated signal data set, and visualized over the full signal grid. For efficiency, only the statistical uncertainties associated with the MC simulation of signal and background processes were considered when evaluating the Asimov discovery significance and the sensitivity projections used for optimization, and the systematic uncertainties presented in Chapter zzz \textcolor{red}{(Note to Bob: will update when systematics chapter is written)} were neglected. The choice to neglect systematic uncertainties was justified by the fact that, following initial efforts to include the dominant theoretical sources of systematic uncertainty in evaluation of the Asimov discovery significance, their inclusion was found to have a negligible impact on the evaluation of optimal cut placements.
+After an optimized set of selections were determined for the four signal points considered in the iterative optimization procedure described above, these selections were validated and further refined by examining the projected sensitivity of the search over the signal grid. Some minor refinements were made to cut placements with the aim of maximizing the exclusion range. See Section \ref{sec:hypo_test} for a description of how the sensitivity is quantified for each MC simulated signal data set, and visualized over the full signal grid. For expediency, only the statistical uncertainties associated with the MC simulation of signal and background processes were considered when evaluating the Asimov discovery significance and the sensitivity projections used for optimization, and the systematic uncertainties presented in Chapter \ref{chapter:systematics} were neglected. The choice to neglect systematic uncertainties was justified by the fact that, following initial efforts to include the dominant theoretical sources of systematic uncertainty in evaluation of the Asimov discovery significance, their inclusion was found to have a negligible impact on the evaluation of optimal cut placements.
 
 \begin{table}
 \centering
@@ -704,7 +694,7 @@ Tables \ref{tab:SR1L_Merged_bkg_cutflow} and  \ref{tab:SR1L_Resolved_bkg_cutflow
 \caption{\label{tab:SR1L_Merged_bkg_cutflow} Cutflow yields after application of preselection cuts for the dominant SM backgrounds in the merged SR. Percent passage is reported relative to the number of weighted events after application of the baseline selection.}
 \begin{tabular}{l l l l }
 \toprule
-\textbf{Cut} & \textbf{\wjets} & \textbf{\ttbar} & \textbf{Diboson}\tabularnewline
+\textbf{Cut} & \textbf{W+jets} & \(\boldsymbol{t\bar{t}}\) & \textbf{Diboson}\tabularnewline
 \midrule
 \midrule
 None & 11352445.72 & 101404110.82  & 1270378.37 \tabularnewline
@@ -732,7 +722,7 @@ baseline selection & 93740.14 (100.00\%) & 51264.60 (100.00\%) & 8469.92 (100.00
 \caption{\label{tab:SR1L_Resolved_bkg_cutflow} Cutflow yields after application of preselection cuts for the dominant SM backgrounds in the resolved SR. Percent passage is reported relative to the number of weighted events after application of the baseline selection.}
 \begin{tabular}{l l l l }
 \toprule
-\textbf{Cut} & \textbf{\wjets} & \textbf{\ttbar} & \textbf{Diboson}\tabularnewline
+\textbf{Cut} & \textbf{W+jets} & \(\boldsymbol{t\bar{t}}\) & \textbf{Diboson}\tabularnewline
 \midrule
 \midrule
 None & 11352445.72 & 101404110.82  & 1270378.37 \tabularnewline
@@ -821,12 +811,15 @@ Fails merged selection & 152.47 (90.57\%) & 100.36 (89.87\%) & 126.89 (88.33\%)\
 \end{table}
 
 \subsection{Control regions}
+\label{sec:CRs}
 
-There are in general numerous floating theoretical parameters involved in modelling signal and SM background processes produced by \(pp\) collisions at the LHC, and it is necessary to fix the values of these floating parameters when generating the MC simulated events and weights used to predict the yields of these processes in the ATLAS collision data. These include, for example, parameters associated with the parton distribution function used to model the protons involved in the high-energy collisions \cite{PDF4LHC_recos_2016,PDF_determination_2013}. 
+There are in general numerous uncertain theoretical parameters involved in modelling signal and SM background processes produced by \(pp\) collisions at the LHC, and it is necessary to fix their values when generating the MC simulated events and weights used to predict the yields of these processes in the ATLAS collision data. These include, for example, parameters associated with the parton distribution function used to model the protons involved in the high-energy collisions \cite{PDF4LHC_recos_2016,PDF_determination_2013}. 
 
-In some cases, the range of theoretically plausible choices for the value of a floating parameter, or of a set of related floating parameters, could produce an associated range of yield predictions which is non-negligible compared with the statistical yield uncertainties. As presented in Section zzz \textcolor{red}{(Note to Bob: will update when chapter 6 on systematics is written)}, so-called ``systematic uncertainties" are evaluated in these cases to quantify the systematic shifts in the predicted yields that would be induced by shifting specific parameters or sets of parameters within an acceptable range on the basis of existing theoretical or experimental constraints. In addition, it is worth noting that since the SR selection is broadly optimized to maximize the yield of a BSM physics process relative to that of the known SM background processes, the SR by design occupies a relatively exclusive kinematic regime in which the parameter choices used for the MC event simulations have not necessarily have been validated extensively. In order to reduce the uncertainty of predicted yields in the SR arising from the particular choices of floating parameters in the MC simulations, it is desirable to constrain the predicted yields of major background processes in the SR as much as possible using the ATLAS collision data in a kinematically similar region. 
+In some cases, the range of plausible choices for an uncertain parameter, or a set of related uncertain parameters, can produce an associated uncertain range of yield predictions which is non-negligible compared with the statistical yield uncertainties. The resulting uncertainties in predicted yields in the SR can be reduced by constraining the predicted yields using the ATLAS collision data in a kinematically similar region. 
+%As presented in Chapter \ref{chapter:systematics}, so-called ``systematic uncertainties" are evaluated in these cases to quantify the systematic shifts in the predicted yields that would be induced by shifting specific parameters or sets of parameters within an acceptable range on the basis of existing theoretical or experimental constraints. 
+%In addition, it is worth noting that since the SR selection is broadly optimized to maximize the yield of a BSM physics process relative to that of the known SM background processes, the SR by design occupies a relatively exclusive kinematic regime in which the parameter choices used for the MC event simulations have not necessarily have been validated extensively. In order to reduce the uncertainty of predicted yields in the SR arising from the particular choices of floating parameters in the MC simulations, it is desirable to constrain the predicted yields of major background processes in the SR as much as possible using the ATLAS collision data in a kinematically similar region. 
 
-\wjets and \ttbar control regions (CRs), with enriched yields of these respective SM background processes, are defined in this search with the aim of providing data-driven constraints on the total yield of the \wjets and \ttbar backgrounds in the SRs within each of the merged and resolved kinematic categories. As discussed in detail in Chapter zzz \textcolor{red}{(Note to Bob: will update when chapter 7 on the statistical analysis is written)}, the data-driven constraints are obtained within each category by comparing the total yield of MC simulated SM background events to the observed yield of data in the CRs for the given category, and scaling the total predicted yield of the \wjets and \ttbar backgrounds in both the CRs and the SRs by multiplicative ``normalization factors", \(\mu_{\wjets, \text{category}}\) and \(\mu_{\ttbar, \text{category}}\), such that the total predicted yield of SM background processes within each control region is in close agreement with the observed yield of ATLAS collision data.
+\wjets and \ttbar control regions (CRs), with enriched yields of these respective SM background processes, are defined in this search with the aim of providing data-driven constraints on the total yield of the \wjets and \ttbar backgrounds in the SRs within each of the merged and resolved kinematic categories. As discussed in detail in Section \ref{sec:fit_setup}, the data-driven constraints are obtained within each category by comparing the total yield of MC simulated SM background events to the observed yield of data in the CRs for the given category, and scaling the total predicted yield of the \wjets and \ttbar backgrounds in both the CRs and the SRs by multiplicative ``normalization factors", \(\mu_{\wjets, \text{category}}\) and \(\mu_{\ttbar, \text{category}}\), such that the total predicted yield of SM background processes within each control region is in close agreement with the observed yield of ATLAS collision data.
 
 The selections for the \wjets and \ttbar CRs were designed with the following aims in order to provide effective and reliable constraints on the total yield of the respective SM background processes in the SR:
 
@@ -840,13 +833,13 @@ The selections for the \wjets and \ttbar CRs were designed with the following ai
 
 \noindent where the index \(i\) runs over all simulated SM background processes.
 
-\item The CR should contain a \textbf{relatively large number of MC simulated events} (and consequently a lower relative statistical uncertainty) for the background process of interest compared with the SR. This requirement is designed to ensure that the normalization factors \(\mu_{\wjets, \text{category}}\) and \(\mu_{\ttbar, \text{category}}\) will be constrained predominantly in the overall fit of MC simulated yields to the observed data (see Section zzz \textcolor{red}{(Note to Bob: will update when section on fit strategy is written)} for details on the fitting strategy) by the comparison with data in the CRs, and also to minimize the statistical uncertainties of the fitted normalization factors associated with the limited number of MC simulated events in the CRs. 
+\item The CR should contain a \textbf{relatively large number of MC simulated events} (and consequently a lower relative statistical uncertainty) for the background process of interest compared with the SR. This requirement is designed to ensure that the normalization factors \(\mu_{\wjets, \text{category}}\) and \(\mu_{\ttbar, \text{category}}\) will be constrained predominantly in the overall fit of MC simulated yields to the observed data (see Section \ref{sec:fit_setup} for details on the fitting strategy) by the comparison with data in the CRs, and also to minimize the statistical uncertainties of the fitted normalization factors associated with the limited number of MC simulated events in the CRs. 
 \item To ensure \textbf{orthogonality with the SR}. In order for the CR to provide an unbiased data-driven constraint on the amplitude of a simulated SM background used in the signal region, it must be defined in such a way that no events are shared between these two regions.
 \item To obtain a \textbf{negligibly small contamination of MC simulated signal events}. Negligible signal contamination is needed to ensure that the constraints on normalization factors are obtained purely from known physics processes in the data.
 \item Events in the CR should occupy a \textbf{kinematic phase space which is as similar as possible to the SR}. This is important to ensure that the ratio of the MC simulated yield of SM background events to the observed yield of ATLAS collision data in the CR is representative of the equivalent ratio in the SR.
 \end{itemize}
 
-Table \ref{tab:CRs} summarizes the CRs used in the analysis and the cut changes relative to the SR that are used to define each CR. The CRs are discussed in more detail in Sections \ref{sec:wjets_CR_defn} and \ref{sec:ttbar_CR_defn}.
+Table \ref{tab:CRs} summarizes the CRs used in the analysis and the cut changes relative to the SR that are used to define each CR. The CRs are discussed in more detail in Section \ref{sec:CRs}.
 
 \begin{table}[htbp]
 \centering
@@ -857,15 +850,15 @@ Table \ref{tab:CRs} summarizes the CRs used in the analysis and the cut changes 
 \textbf{Control region}  & \textbf{Modified selections relative to the SR}  \\
 \midrule
 \midrule
-\multirow{2}{*}{\textbf{merged \wjets CR}} & \((\drTARl < 1.2) \rightarrow (\drTARl > 1.8)\) \\
+\multirow{2}{*}{\textbf{Merged W+jets CR}} & \((\drTARl < 1.2) \rightarrow (\drTARl > 1.8)\) \\
 						       & \((\metsig > 16) \rightarrow (\metsig > 12)\)  \\
 \midrule
-\textbf{resolved \wjets CR}  &  \((\drWl < 1.4) \rightarrow (\drWl > 1.4)\) \\
+\textbf{Resolved W+jets CR}  &  \((\drWl < 1.4) \rightarrow (\drWl > 1.4)\) \\
 \midrule
-\multirow{2}{*}{\textbf{merged \ttbar CR}} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
+\multirow{2}{*}{\textbf{Merged }\(\boldsymbol{t\bar{t}}\)\textbf{ CR}} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
 						       & \((\metsig > 16) \rightarrow (\metsig > 12)\)  \\
 \midrule
-\textbf{resolved \ttbar CR} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
+\textbf{\textbf{Resolved }\(\boldsymbol{t\bar{t}}\)\textbf{ CR}} & \((\text{N(b-tagged jets)} < 1) \rightarrow \text{N(b-tagged jets)} \geq 2\)  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -887,7 +880,7 @@ The motivation for reversing the \DeltaR selection is that, as shown schematical
 
 Kinematic distributions of interest are compared between the \wjets CRs and the SRs in Figures \ref{fig:N_1_CRW_merged} and \ref{fig:N_1_CRW_resolved} in Appendix \ref{app:appendix_SR_CR_distributions_wjets}. 
 
-A comparison of the \met distributions between the merged SR and CRW in Figures \ref{fig:N_1_SR_merged_met} and \ref{fig:N_1_CRW_merged_met} indicates some bias towards lower \met for events which pass the the merged CRW selection. This difference is attributable to two factors. First, because the \metsig is in general expected to be positively correlated with \met, the loosened \metsig cut of \(\metsig>12\) in the merged CRW compared with \(\metsig>16\) in the SR would be expected to allow a larger proportion of low-\met events into the region. The impact of the loosened \metsig selection in the merged CRW is shown in Figure \ref{fig:N_1_SR_CRW_merged_metsig} by comparing the \met distribution between the merged SR and the merged CRW, either with or without the loosened \metsig selection in the merged CRW. Tightening the \metsig lower bound is seen to remove most of the low-\met bias in the merged CRW. The small remaining bias towards low \met in the merged CRW even after tightening the \metsig selection is attributed to the expected reversal of the neutrino direction in the \DeltaR-reversed topology of \wjets background in the CRW, such that it becomes approximately aligned with the high-pt TAR jet rather than recoiling against both the TAR jet and the lepton. The neutrino \pt required to conserve momentum in the \DeltaR-reversed topology will on average be somewhat smaller due to the approximately opposing momenta of the lepton and the TAR jet. Since the neutrino constitutes the only source of true \met in the \wjets background, this implies that the \met distribution would be expected to become somewhat biased to lower values in the CRW topology, as observed. 
+A comparison of the \met distributions between the merged SR and CRW in Figures \ref{fig:N_1_SR_merged_met} and \ref{fig:N_1_CRW_merged_met} indicates some bias towards lower \met for events which pass the merged CRW selection. This difference is attributable to two factors. First, because the \metsig is in general expected to be positively correlated with \met, the loosened \metsig cut of \(\metsig>12\) in the merged CRW compared with \(\metsig>16\) in the SR would be expected to allow a larger proportion of low-\met events into the region. The impact of the loosened \metsig selection in the merged CRW is shown in Figure \ref{fig:N_1_SR_CRW_merged_metsig} by comparing the \met distribution between the merged SR and the merged CRW, either with or without the loosened \metsig selection in the merged CRW. Tightening the \metsig lower bound is seen to remove most of the low-\met bias in the merged CRW. The small remaining bias towards low \met in the merged CRW even after tightening the \metsig selection is attributed to the expected reversal of the neutrino direction in the \DeltaR-reversed topology of \wjets background in the CRW, such that it becomes approximately aligned with the high-pt TAR jet rather than recoiling against both the TAR jet and the lepton. The neutrino \pt required to conserve momentum in the \DeltaR-reversed topology will on average be somewhat smaller due to the approximately opposing momenta of the lepton and the TAR jet. Since the neutrino constitutes the only source of true \met in the \wjets background, this implies that the \met distribution would be expected to become somewhat biased to lower values in the CRW topology, as observed. 
 
  \begin{figure}[htbp]
     \begin{subfigure}[t]{0.48\textwidth}
@@ -911,7 +904,7 @@ A comparison of the \met distributions between the merged SR and CRW in Figures 
 
 A comparison of Figures \ref{fig:N_1_SR_merged_met} and \ref{fig:N_1_CRW_merged_met} shows that, though present, this bias in the \met distribution is much more subtle in the resolved SR. This is attributed to the fact that the lower bound on \metsig is not loosened compared with the SR in the resolved category, in addition to the relatively low \pt of the hadronic activity that the neutrino is approximately aligned with in the CRW. 
 
-Based on the comparable shapes of the other kinematic distributions in the merged and resolved categories, it is concluded that the kinematics of events in the \wjets CRs are sufficiently similar to those in the SR of the corresponding category that the constraints on normalizations of the \wjets and \ttbar backgrounds evaluated in the \wjets CRs can be reasonably applied in the SR. 
+Based on the comparable shapes of the other kinematic distributions in the merged and resolved categories, it is concluded that the kinematics of events in the \wjets CRs are sufficiently similar to those in the SR of the corresponding category that the constraints on normalization of the \wjets background evaluated in the \wjets CRs can be reasonably applied in the SR. 
 
 %\begin{figure}[htbp]
 %  \centering
@@ -920,7 +913,7 @@ Based on the comparable shapes of the other kinematic distributions in the merge
 %  \label{fig:MET_SR_CRW}
 %\end{figure}
 
-Table \ref{tab:Wjets_composition_CRW} compares the yield and relative composition of the \wjets background in the SRs with the \wjets CRs. Figures ~\ref{fig:signal_composition_CRW_merged} and ~\ref{fig:signal_composition_CRW_resolved} compare the signal yield and signal/background between the SR and the \wjets CR in the merged and resolved categories, respectively. The \wjets background constitutes over 75\% of the predicted yield of SM background processes in both CRs, making it the dominant SM background process, with signal contamination below \(2.5\%\) for all signal points. Thanks to the boost in the number of of MC simulated events in the CRs afforded by the reversal of the \DeltaR cut, as well as the reduced lower bound on \metsig in the merged CR, the relative statistical uncertainties of the predicted \wjets yields are reduced by factors of 2 and 1.5 in the CRW compared with the SR in the merged and resolved categories, respectively. This ensures that the normalization of the \wjets background process can be predominantly established in the \wjets CR with a reasonably low statistical uncertainty. 
+Table \ref{tab:Wjets_composition_CRW} compares the yield and relative composition of the \wjets background in the SRs with the \wjets CRs. Figures ~\ref{fig:signal_composition_CRW_merged} and ~\ref{fig:signal_composition_CRW_resolved} compare the signal yield and signal/background between the SR and the \wjets CR in the merged and resolved categories, respectively. The \wjets background constitutes over 75\% of the predicted yield of SM background processes in both CRs, making it the dominant SM background process, with signal contamination below \(2.5\%\) for all signal points. Thanks to the boost in the number of MC simulated events in the CRs afforded by the reversal of the \DeltaR cut, as well as the reduced lower bound on \metsig in the merged CR, the relative statistical uncertainties of the predicted \wjets yields are reduced by factors of 2 and 1.5 in the CRW compared with the SR in the merged and resolved categories, respectively. This ensures that the normalization of the \wjets background process can be predominantly established in the \wjets CR with a reasonably low statistical uncertainty. 
 
 The benchmark used to evaluate the maximum acceptable level of signal contamination in a given CR is as follows: if the predicted yield of the signal process is negligibly small (i.e. less than \(\sim\)half as large) compared with the statistical uncertainty associated with the predicted yield of all SM background processes in the CR, then the level of signal contamination is considered acceptably small, since the presence or absence of the signal process would not be detectable given the statistical uncertainty of the total predicted yield. In the merged \wjets CR, the predicted signal yield is at most 5.1 (from Figure \ref{fig:signal_yield_CRW_merged_CR}, which is negligibly small compared with the total background yield uncertainty of 23.9 (from the third row in Table \ref{tab:Wjets_composition_CRW}). The signal yields in the resolved CRW are similarly small compared with the statistical uncertainty of the total background yield.
 
@@ -930,16 +923,16 @@ The benchmark used to evaluate the maximum acceptable level of signal contaminat
 \caption{\label{tab:Wjets_composition_CRW} Comparison of the \wjets background yield, total background yield, and the relative composition of the \wjets background relative to the total background. Uncertainties on the relative composition are obtained from the sum of squared event weights.}
 \begin{tabular}{l l l l}
 \toprule
-\textbf{Region} & \textbf{\wjets Yield} & \textbf{Total Background Yield} & \textbf{Relative \wjets Composition}\tabularnewline
+\textbf{Region} & \textbf{W+jets Yield} & \textbf{Total Background Yield} & \textbf{Relative W+jets Composition}\tabularnewline
 \midrule
 \midrule
-\textbf{merged SR} & 24.0\(\pm\)7.3 & 38.6\(\pm\)7.4 & (62.2\(\pm\)22.3)\%  \tabularnewline
+\textbf{Merged SR} & 24.0\(\pm\)7.3 & 38.6\(\pm\)7.4 & (62.2\(\pm\)22.3)\%  \tabularnewline
 \midrule
-\textbf{resolved SR} & 245.1\(\pm\)19.7 & 337.9\(\pm\)24.2 & (72.6\(\pm\)7.8)\% \tabularnewline
+\textbf{Resolved SR} & 245.1\(\pm\)19.7 & 337.9\(\pm\)24.2 & (72.6\(\pm\)7.8)\% \tabularnewline
 \midrule
-\textbf{merged CRW} & 172.6\(\pm\)22.3 & 229.4\(\pm\)23.9 & (75.2\(\pm\)12.5)\% \tabularnewline
+\textbf{Merged CRW} & 172.6\(\pm\)22.3 & 229.4\(\pm\)23.9 & (75.2\(\pm\)12.5)\% \tabularnewline
 \midrule
-\textbf{resolved CRW} & 594.6\(\pm\)30.4 & 747.9\(\pm\)31.3 & (79.5\(\pm\)5.3)\% \tabularnewline
+\textbf{Resolved CRW} & 594.6\(\pm\)30.4 & 747.9\(\pm\)31.3 & (79.5\(\pm\)5.3)\% \tabularnewline
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -984,24 +977,24 @@ Further tightening the \bjet veto reversal to require to at least two \btagged j
 
  \Tab{\ref{tab:tt_CR}} summarizes the modifications made to the SR selections to define the \ttbar CR in both the merged and resolved categories. 
  
-Table \ref{tab:ttbar_cr_yields} compares the yield and relative composition of the \wjets background in the SRs with those in the \wjets CRs. Figures ~\ref{fig:signal_composition_CRTT_merged} and ~\ref{fig:signal_composition_CRTT_resolved} compare the signal yield and signal/background between the signal region and the \wjets CR in the merged and resolved categories, respectively. As expected, the reversal of the \ttbar veto produces a region which is highly enriched in \ttbar events, which constitute \(~90\%\) of the predicted yield in the \ttbar CR. The merged and resolved \ttbar CRs admit comparable yields of \(\sim 65-70\) \ttbar events, which in both categories constitutes a several-fold increase the predicted yield compared with SR. Comparing the predicted signal yields in the merged and resolved CRTT, shown in Figures \ref{fig:signal_yield_CRTT_merged_CR} and \ref{fig:signal_yield_CRTT_resolved_CR} respectively, with the statistical uncertainties associated with the total yield of events in these CRTTs from Table \ref{tab:tt_CR}, the predicted signal yields are in all cases well below the statistical uncertainty of the background yield, and thus constitute a reasonably low level of signal contamination the CRTT.
+Table \ref{tab:ttbar_cr_yields} compares the yield and relative composition of the \ttbar background in the SRs with those in the \ttbar CRs. Figures ~\ref{fig:signal_composition_CRTT_merged} and ~\ref{fig:signal_composition_CRTT_resolved} compare the signal yield and signal/background between the SR and the \ttbar CR in the merged and resolved categories, respectively. As expected, the reversal of the \ttbar veto produces a region which is highly enriched in \ttbar events, which constitute \(~90\%\) of the predicted yield in the \ttbar CR. The merged and resolved \ttbar CRs admit comparable yields of \(\sim 65-70\) \ttbar events, which in both categories constitutes a several-fold increase the predicted yield compared with SR. Comparing the predicted signal yields in the merged and resolved CRTT, shown in Figures \ref{fig:signal_yield_CRTT_merged_CR} and \ref{fig:signal_yield_CRTT_resolved_CR} respectively, with the statistical uncertainties associated with the total yield of events in these CRTTs from Table \ref{tab:tt_CR}, the predicted signal yields are in all cases well below the statistical uncertainty of the background yield, and thus constitute a reasonably low level of signal contamination the CRTT.
 
 
 \begin{table}[ht]
  \centering
-\caption{\label{tab:tt_CR} Summary of differences in selections on \(N \bjet\) and \metsig between signal regions and \ttbar control regions.}
+\caption{\label{tab:tt_CR} Summary of differences in selections on \(N(\bjet)\) and \metsig between signal regions and \ttbar control regions.}
 \begin{tabular}{l l l}
 \toprule
-\textbf{Region} & \btagged Jet Veto/Requirement & \metsig Cut \tabularnewline
+\textbf{Region} & \textbf{\btagged Jet Veto/Requirement} & \textbf{\metsig Cut} \tabularnewline
 \midrule
 \midrule
-\textbf{merged SR} & \(N(\bjet) = 0\) & \(\metsig > 16\)\tabularnewline
+\textbf{Merged SR} & \(N(\bjet) = 0\) & \(\metsig > 16\)\tabularnewline
 \midrule
-\textbf{resolved SR} & \(N(\bjet) = 0\) & \(\metsig > 16\)\tabularnewline
+\textbf{Resolved SR} & \(N(\bjet) = 0\) & \(\metsig > 16\)\tabularnewline
 \midrule
-\textbf{merged CRTT} & \(N(\bjet) > 1\) & \(\metsig > 12\)\tabularnewline
+\textbf{Merged CRTT} & \(N(\bjet) > 1\) & \(\metsig > 12\)\tabularnewline
 \midrule
-\textbf{resolved CRTT} & \(N(\bjet) > 1\) & \(\metsig > 16\)\tabularnewline
+\textbf{Resolved CRTT} & \(N(\bjet) > 1\) & \(\metsig > 16\)\tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1043,16 +1036,16 @@ Table \ref{tab:ttbar_cr_yields} compares the yield and relative composition of t
     \caption{Comparison of the \ttbar background yield, total background yield, and the relative composition of the \ttbar background relative to the total background. Uncertainties on the relative composition are obtained from the sum of squared event weights.}
     \begin{tabular}{l l l l}
       \toprule
-     \textbf{Region} & \textbf{\ttbar Yield} & \textbf{Total Background Yield} & \textbf{\ttbar Relative Composition} \\
+     \textbf{Region} & \(\boldsymbol{t\bar{t}}\)\textbf{ Yield} & \textbf{Total Background Yield} & \(\boldsymbol{t\bar{t}}\)\textbf{ Relative Composition} \\
       \midrule
       \midrule
-      \textbf{merged SR} & 4.2\(\pm\)0.3 & 38.6\(\pm\)7.4 & (11.0\(\pm\)2.2)\%  \tabularnewline
+      \textbf{Merged SR} & 4.2\(\pm\)0.3 & 38.6\(\pm\)7.4 & (11.0\(\pm\)2.2)\%  \tabularnewline
       \midrule
-      \textbf{resolved SR} & 21.2\(\pm\)0.7 & 337.9\(\pm\)24.2 & (6.3\(\pm\)0.5)\% \tabularnewline
+      \textbf{Resolved SR} & 21.2\(\pm\)0.7 & 337.9\(\pm\)24.2 & (6.3\(\pm\)0.5)\% \tabularnewline
       \midrule
-      \textbf{merged CRTT} & 70.6\(\pm\)1.7 & 79.0\(\pm\)3.0 & (89.4\(\pm\)4.0)\% \tabularnewline
+      \textbf{Merged CRTT} & 70.6\(\pm\)1.7 & 79.0\(\pm\)3.0 & (89.4\(\pm\)4.0)\% \tabularnewline
       \midrule
-      \textbf{resolved CRTT} & 64.2\(\pm\)1.2 & 73.3\(\pm\)4.9 & (87.6\(\pm\)6.1)\% \tabularnewline
+      \textbf{Resolved CRTT} & 64.2\(\pm\)1.2 & 73.3\(\pm\)4.9 & (87.6\(\pm\)6.1)\% \tabularnewline
       \bottomrule
     \end{tabular}
     \label{tab:ttbar_cr_yields}
@@ -1070,22 +1063,22 @@ Tables \ref{tab:bkg_yield_merged} and \ref{tab:bkg_yield_resolved} show the over
 \caption{\label{tab:bkg_yield_merged} Background yields after application of all analysis cuts in the merged analysis regions. Uncertainty on the yields is statistical.}
 \begin{tabular}{l l l l}
 \toprule
-\textbf{Background} & \textbf{merged SR} & \textbf{merged CRW} & \textbf{merged CRTT}\tabularnewline
+\textbf{Background} & \textbf{Merged SR} & \textbf{Merged CRW} & \textbf{Merged CRTT}\tabularnewline
 \midrule
 \midrule
-\textbf{\wjets} & 24.038 \(\pm\) 7.318 & 172.579 \(\pm\) 22.315 & 2.582 \(\pm\) 2.308\tabularnewline
+\textbf{W+jets} & 24.0 \(\pm\) 7.3 & 172.6 \(\pm\) 22.3 & 2.6 \(\pm\) 2.3\tabularnewline
 \midrule
-\textbf{\ttbar} & 4.244 \(\pm\) 0.308 & 9.681 \(\pm\) 0.647 & 70.642 \(\pm\) 1.707\tabularnewline
+\(\boldsymbol{t\bar{t}}\) & 4.2 \(\pm\) 0.3 & 9.7 \(\pm\) 0.6 & 70.6 \(\pm\) 1.7\tabularnewline
 \midrule
-\textbf{Diboson} & 7.499 \(\pm\) 0.375 & 26.439 \(\pm\) 1.487 & 0.220 \(\pm\) 0.083\tabularnewline
+\textbf{Diboson} & 7.5 \(\pm\) 0.4 & 26.4 \(\pm\) 1.5 & 0.2 \(\pm\) 0.1\tabularnewline
 \midrule
-\textbf{Triboson} & 1.153 \(\pm\) 0.119 & 1.835 \(\pm\) 0.143 & 0.004 \(\pm\) 0.002\tabularnewline
+\textbf{Triboson} & 1.2 \(\pm\) 0.1 & 1.8 \(\pm\) 0.1 & 0.0 \(\pm\) 0.0\tabularnewline
 \midrule
-\textbf{\zjets} & 1.142 \(\pm\) 0.941 & 11.877 \(\pm\) 5.800 & 0.000 \(\pm\) 0.000\tabularnewline
+\textbf{Z+jets} & 1.1 \(\pm\) 0.9 & 11.9 \(\pm\) 5.8 & 0.0 \(\pm\) 0.0\tabularnewline
 \midrule
-\textbf{single \(t\)} & 1.329 \(\pm\) 0.328 & 2.791 \(\pm\) 0.503 & 5.039 \(\pm\) 0.665\tabularnewline
+\textbf{single \(\boldsymbol{t}\)} & 1.3 \(\pm\) 0.3 & 2.8 \(\pm\) 0.5 & 5.0 \(\pm\) 0.7\tabularnewline
 \midrule
-\textbf{Total} & 39.404 \(\pm\) 7.402 &225.202 \(\pm\) 23.119 &78.487 \(\pm\) 2.948\tabularnewline
+\textbf{Total} & 39.4 \(\pm\) 7.4 &225.2 \(\pm\) 23.1 &78.5 \(\pm\) 2.9\tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1095,22 +1088,22 @@ Tables \ref{tab:bkg_yield_merged} and \ref{tab:bkg_yield_resolved} show the over
 \caption{\label{tab:bkg_yield_resolved} Background yields after application of all analysis cuts in the resolved analysis regions. Uncertainty on the yields is statistical.}
 \begin{tabular}{l l l l}
 \toprule
-\textbf{Background} & \textbf{resolved SR} & \textbf{resolved CRW} & \textbf{resolved CRTT}\tabularnewline
+\textbf{Background} & \textbf{Resolved SR} & \textbf{Resolved CRW} & \textbf{Resolved CRTT}\tabularnewline
 \midrule
 \midrule
-\textbf{\wjets} & 245.149 \(\pm\) 19.684 & 594.590 \(\pm\) 30.353 & -2.384 \(\pm\) 4.555\tabularnewline
+\textbf{W+jets} & 245.1 \(\pm\) 19.7 & 594.6 \(\pm\) 30.3 & -2.4 \(\pm\) 4.6\tabularnewline
 \midrule
-\textbf{\ttbar} & 21.160 \(\pm\) 0.708 & 19.782 \(\pm\) 0.643 & 64.161 \(\pm\) 1.215\tabularnewline
+\(\boldsymbol{t\bar{t}}\) & 21.2 \(\pm\) 0.7 & 19.8 \(\pm\) 0.6 & 64.2 \(\pm\) 1.2\tabularnewline
 \midrule
-\textbf{Diboson} & 51.105 \(\pm\) 1.067 & 105.723 \(\pm\) 1.474 & 0.582 \(\pm\) 0.072\tabularnewline
+\textbf{Diboson} & 51.1 \(\pm\) 1.1 & 105.7 \(\pm\) 1.5 & 0.6 \(\pm\) 0.1\tabularnewline
 \midrule
-\textbf{Triboson} & 2.948 \(\pm\) 0.189 & 5.564 \(\pm\) 0.253 & 0.005 \(\pm\) 0.003\tabularnewline
+\textbf{Triboson} & 2.9 \(\pm\) 0.2 & 5.6 \(\pm\) 0.3 & 0.0 \(\pm\) 0.0\tabularnewline
 \midrule
-\textbf{\zjets} & 17.406 \(\pm\) 13.674 & 18.015 \(\pm\) 6.105 & 0.000 \(\pm\) 0.000\tabularnewline
+\textbf{Z+jets} & 17.4 \(\pm\) 13.7 & 18.0 \(\pm\) 6.1 & 0.0 \(\pm\) 0.0\tabularnewline
 \midrule
-\textbf{single \(t\)} & 3.929 \(\pm\) 0.638 & 3.566 \(\pm\) 0.552 & 10.625 \(\pm\) 0.916\tabularnewline
+\textbf{single \(\boldsymbol{t}\)} & 3.9 \(\pm\) 0.6 & 3.6 \(\pm\) 0.6 & 10.6 \(\pm\) 0.9\tabularnewline
 \midrule
-\textbf{Total} & 341.698 \(\pm\) 24.011 &747.241 \(\pm\) 31.008 &72.989 \(\pm\) 4.803\tabularnewline
+\textbf{Total} & 341.7 \(\pm\) 24.0 &747.2 \(\pm\) 31.0 &73.0 \(\pm\) 4.8\tabularnewline
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1131,7 +1124,7 @@ To simplify the trigger efficiency analysis and determine whether any scale fact
 	\begin{center}
 	\begin{tabular}{l l }
 		\toprule
-			Period & MET Trigger \\
+			\textbf{Period} & \textbf{MET Trigger} \\
 			\midrule
 			\midrule
 			2015 & \textsc{HLT\_xe70\_mht} \\
@@ -1164,7 +1157,7 @@ The ATLAS trigger system also includes single-muon and single-electron triggers,
 	\begin{center}
 	\begin{tabular}{l l l }
 		\toprule
-			Periods & Single Muon Trigger & Muon \pt threshold \\
+			\textbf{Periods} & \textbf{Single Muon Trigger} & \textbf{Muon \pt threshold} \\
 			\midrule
 			\midrule
 			2015 & \textsc{HLT\_mu20\_iloose\_L1MU15} & 20 \GeV \\
@@ -1196,7 +1189,7 @@ The ATLAS trigger system also includes single-muon and single-electron triggers,
 	\begin{center}
 	\begin{tabular}{l l l }
 		\toprule
-			Periods & Single Muon Trigger & Electron \pt threshold \\
+			\textbf{Periods} & \textbf{Single Muon Trigger} & \textbf{Electron \pt threshold} \\
 			\midrule
 			\midrule
 			2015 & \textsc{HLT\_e24\_lhmedium\_L1EM20VH} & 24 \GeV \\
@@ -1230,7 +1223,8 @@ The ATLAS trigger system also includes single-muon and single-electron triggers,
 	}
 \end{table}
 
-The lepton triggers are known to be \(<100\%\) efficient, but the resulting scale factors and associated systematic uncertainties are in general well calibrated by dedicated measurements performed within the ATLAS collaboration. As a result, the charged lepton triggers are useful as a means of independently quantifying the efficiency of the \met trigger, as will be shown in a moment. However, if the \met trigger can be shown to pass the events considered in this search with 100\% efficiency then it is desirable simply to explicitly require all selected events to have additionally passed the \met trigger in order to avoid any need to apply scaling factors and evaluate related uncertainties.
+The lepton triggers are known to be \(<100\%\) efficient, but the resulting scale factors and associated systematic uncertainties are in general well calibrated by dedicated measurements performed within the ATLAS collaboration. As a result, the charged lepton triggers are useful as a means of independently quantifying the efficiency of the \met trigger, as will be shown in a moment. However, if the \met trigger can be shown to pass the events considered in this search with 100\% efficiency then there is no need to apply scaling factors or evaluate related uncertainties.
+%it is desirable simply to explicitly require all selected events to have additionally passed the \met trigger in order to avoid any need to apply scaling factors and evaluate related uncertainties.
 
 The efficiency of the \met trigger for a set of event selection criteria which define a given region ``X" is defined equivalently for ATLAS data (``data") and MC simulated events (``MC"). Events considered for the calculation of trigger efficiency are also required to have passed the single lepton trigger (defined as the logical OR of the single muon trigger and the single electron trigger), to independently ensure that all data events considered passed a trigger which is relevant to the final state of interest. The trigger efficiency is given by:
 
@@ -1266,7 +1260,7 @@ Figure \ref{fig:mettrig} compares the \met trigger efficiency defined in Eq. \re
      \label{fig:mettrig}
   \end{figure}
   
-Comparing the trigger efficiencies in Figures \ref{fig:mettrig_e} and \ref{fig:mettrig_mu}, the efficiency in the electron channel converges to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim90\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons largely pass through the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't use information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) \(> 200~\GeV\). 
+Comparing the trigger efficiencies in Figures \ref{fig:mettrig_e} and \ref{fig:mettrig_mu}, the efficiency in the electron channel converges to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim90\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons leave very little energy in the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't use information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) \(> 200~\GeV\). 
 
 \begin{figure}[htbp]
     \centering
@@ -1293,4 +1287,4 @@ It was found that high-\met events in the muon channel which fail the \met trigg
      \label{fig:trigger_OR}
   \end{figure}
 
-Based on the analysis presented in this section, it is concluded that, if all events considered in the analysis are explicitly required to have passed the (\met OR the single muon) trigger, the trigger efficiency is known to be 100\% for all events, except for the small subset of events with a high-\pt muon which pass the muon trigger but fail the \met trigger. For these events, scaling factors are included in the event weight to correct for the known \(<100\%\) efficiency of the single muon trigger. An additional ``trigger-matching" requirement is applied for events which fail the \met trigger but pass the single muon trigger. This requirement ensures that the final state muon object that activated the single muon trigger can be identified as the same muon object (i.e. as having originated from the same muon) that was used to reconstruct the signal muon used in the search. 
+Based on the analysis presented in this section, it is concluded that, if all events considered in the analysis are explicitly required to have passed the (\met OR single muon) trigger, the trigger efficiency is known to be 100\% for all events, except for the small subset of events with a high-\pt muon which pass the muon trigger but fail the \met trigger. For these events, scaling factors are included in the event weight to correct for the known \(<100\%\) efficiency of the single muon trigger. An additional ``trigger-matching" requirement is applied for events which fail the \met trigger but pass the single muon trigger. This requirement ensures that the final state muon object that activated the single muon trigger can be identified as the same muon object (i.e. as having originated from the same muon) that was used to reconstruct the signal muon used in the search. 
