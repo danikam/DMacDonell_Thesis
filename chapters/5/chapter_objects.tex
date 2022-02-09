@@ -1247,24 +1247,29 @@ Figure \ref{fig:mettrig} compares the \met trigger efficiency defined in Eq. \re
 \begin{figure}[htbp]
   \centering
      \begin{subfigure}{0.49\textwidth}
-     \includegraphics[width = 0.98\textwidth]{Figures/5/METTrigger/PreE_MetTST_met.pdf}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/efficiency_baseline_electron.pdf}
     \caption{Electron Channel}
     \label{fig:mettrig_e}
      \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
-     \includegraphics[width = 0.98\textwidth]{Figures/5/METTrigger/PreM_MetTST_met.pdf}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/efficiency_baseline_muon.pdf}
      \caption{Muon Channel}
      \label{fig:mettrig_mu}
      \end{subfigure}
-     \caption{Comparison of the \met trigger efficiency defined in Eq. \ref{eq:met_trig_eff}, as a function of the \met lower bound in the event selection, between MC simulated events and ATLAS data in a region defined by the baseline selection. The event selection is separated into electron (left) and muon (right) channels.}
+         \begin{subfigure}{0.49\textwidth}
+     \includegraphics[width = 0.98\textwidth]{Figures/5/efficiency_baseline_muon_zoom.pdf}
+     \caption{Muon Channel (y-axis range reduced)}
+     \label{fig:mettrig_mu_zoom}
+     \end{subfigure}
+     \caption{Comparison of the \met trigger efficiency defined in Eq. \ref{eq:met_trig_eff}, as a function of the \met lower bound in the event selection, between MC simulated events and ATLAS data in a region defined by the baseline selection. The event selection is separated into electron (top left) and muon (top right and bottom center) channels.}
      \label{fig:mettrig}
   \end{figure}
   
-Comparing the trigger efficiencies in Figures \ref{fig:mettrig_e} and \ref{fig:mettrig_mu}, the efficiency in the electron channel converges to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim90\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons leave very little energy in the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't use information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) \(> 200~\GeV\). 
+Comparing the trigger efficiencies in the electron channel (Figure \ref{fig:mettrig_e}) and the muon channel (Figures \ref{fig:mettrig_mu} and \ref{fig:mettrig_mu_zoom}), the efficiency in the electron channel converges to 100\% for \(\met > 200~\GeV\), but in the muon channel it instead converges to \(\sim97\%\) for \(\met > 200~\GeV\). After some investigation, the inefficiency in the muon channel was found to be due to events which have large \met arising from high-\pt muons. This is because high-\pt muons leave very little energy in the ATLAS calorimeter and are detected instead by the muon spectrometer. As a result, such high-\pt muon events can be missed by the \met triggers, which don't use information from the muon spectrometer \cite{met_performance_2019}. This can be seen by plotting the \met trigger efficiency using a calculation of \met in the event selection that ignores the muon \pt (a.k.a. ``muon invisible") in Figure \ref{fig:metmuinvis}, and observing that in this case the efficiency converges to 100\% for \met (muon invisible) \(> 200~\GeV\). 
 
 \begin{figure}[htbp]
     \centering
-     \includegraphics[width = 0.6\textwidth]{Figures/5/TriggerMuInvis/Pre_MetTST_met.pdf}
+     \includegraphics[width = 0.6\textwidth]{Figures/5/efficiency_baseline_muInvis.pdf}
      \caption{\met trigger efficiency, as a function of the \met lower bound with the baseline event selection applied in the muon channel, with muons treated as invisible in the calculation of \met}
      \label{fig:metmuinvis}
   \end{figure}
@@ -1282,8 +1287,8 @@ It was found that high-\met events in the muon channel which fail the \met trigg
 
   \begin{figure}[htbp]
   \centering
-     \includegraphics[width = 0.49\textwidth]{Figures/5/TriggerOR/Pre_MetTST_met.pdf}
-     \caption{Efficiency of the \met OR single muon trigger, as a function of the \met lower bound, in the muon channel for the baseline event selection in the muon channel.}
+     \includegraphics[width = 0.49\textwidth]{Figures/5/efficiency_baseline_muon_leptrig.pdf}
+     \caption{Efficiency of the \met OR single muon trigger, as a function of the \met lower bound, for the baseline event selection in the muon channel.}
      \label{fig:trigger_OR}
   \end{figure}
 

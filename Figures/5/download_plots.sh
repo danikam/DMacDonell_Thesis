@@ -25,3 +25,7 @@ scp_vm docker_test_3:/mnt/Git/makehistos/Plots_N_1_comparisons/CRW_Merged_metsig
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots_presel_1TARjet/Baseline_1TARjet_e_zp1000_dm200_dh335/TARJets10_mTAR0.pdf zp1000_dm200_dh335_disentanglement.pdf
 
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots_presel_1TARjet/Baseline_1TARjet_e_zp1000_dm200_dh260/TARJets10_mTAR0.pdf zp1000_dm200_dh260_disentanglement.pdf
+
+scp_vm lxplus:/eos/user/d/damacdon/TriggerEfficiency/*.pdf .
+
+
