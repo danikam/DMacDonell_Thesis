@@ -48,7 +48,7 @@ Within a given SR bin or CR \(k\), the Poisson expectation function \(\lambda_k\
     
 \begin{equation}
 \label{eq:lambda}
-        \lambda_k(\mu_\text{sig}, \boldsymbol{\mu_k}, s_k, \boldsymbol{b}_k, \boldsymbol{\theta}) = \mu_\text{sig}s_k\eta_{k, \text{sig}}(\boldsymbol{\theta}) + \sum\limits_{p\in{\text{\{SM bkg processes\}}}} \mu_{k,p} b_{k,p}\sigma_{k,p}(\boldsymbol{\theta})
+        \lambda_k(\mu_\text{sig}, \boldsymbol{\mu_k}, s_k, \boldsymbol{b}_k, \boldsymbol{\theta}) = \mu_\text{sig}s_k\eta_{k, \text{sig}}(\boldsymbol{\theta}) + \sum\limits_{p\in{\text{\{SM bkg processes\}}}} \mu_{k,p} b_{k,p}\eta_{k,p}(\boldsymbol{\theta})
 \end{equation}
     
 \noindent where \(s_k\) (\(b_{k,p}\)) is the yield of the signal process (SM background process \(p\)) predicted by MC simulation, as discussed in Section \ref{sec:MC_ATLAS}. \(\eta_{i,s}(\boldsymbol{\theta})\) is a scaling factor, nominally set to 1, which parametrizes the variations in expected yield induced by varying the NPs \(\boldsymbol{\theta}\) in the fit:
