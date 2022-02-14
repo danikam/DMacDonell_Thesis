@@ -1,0 +1,186 @@
+\startappendix{Descriptions of Nuisance Parameters Associated with Systematic Uncertainties}
+\label{chapter:appendix_systematics_descriptions}
+
+Tables \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} provide qualitative descriptions of the NPs used to parameterize systematic uncertainties in the likelihood function presented in Section \ref{}. Details of the systematic uncertainty sources can be found in Chapter \ref{chapter:systematics}.
+
+{\label{tab:syst}
+\scriptsize
+\begin{longtable}{p{7cm} p{8cm}}
+\caption{Qualitative description of NPs associated with sources of experimental systematic uncertainty considered in the search.} \label{tab:exp_syst_naming} \\
+\toprule
+\textbf{Nuisance Parameter} & \textbf{Short Description}              \\ 
+\midrule 
+\midrule 
+\multicolumn{2}{c}{\textbf{Event}} \\ \midrule
+\(\alpha\)\_lumiSys  & uncertainty on the total integrated luminosity   \\ \midrule
+\(\alpha\)\_PRW\_DATASF  & pileup reweighting uncertainty   \\ \midrule
+
+\multicolumn{2}{c}{\textbf{Electrons}}  \\ \midrule
+\(\alpha\)\_EL\_EFF\_Reco\_TOTAL\_1NPCOR\_PLUS\_UNCOR    & reconstruction efficiency uncertainty        \\
+\(\alpha\)\_EL\_EFF\_ID\_TOTAL\_1NPCOR\_PLUS\_UNCOR    & ID efficiency uncertainty     \\
+\(\alpha\)\_EL\_EFF\_Iso\_TOTAL\_1NPCOR\_PLUS\_UNCOR    & isolation efficiency uncertainty     \\
+\(\alpha\)\_EG\_SCALE\_ALL & energy scale uncertainty  \\
+\(\alpha\)\_EG\_RESOLUTION\_ALL & energy resolution uncertainty  \\ \midrule
+
+\multicolumn{2}{c}{\textbf{Muons}}  \\ \midrule
+\(\alpha\)\_MUON\_EFF\_TrigSystUncertainty        & \multirow{2}{*}{trigger efficiency uncertainties}    \\
+\(\alpha\)\_MUON\_EFF\_TrigStatUncertainty        &    \\
+\(\alpha\)\_MUON\_EFF\_RECO\_STAT        & \multirow{ 2}{*}{reconstruction and ID efficiency uncertainty for \(\pt > 15~\GeV\)}      \\
+\(\alpha\)\_MUON\_EFF\_RECO\_SYS      \\
+\(\alpha\)\_MUON\_EFF\_RECO\_STAT\_LOWPT        & \multirow{ 2}{*}{reconstruction and ID efficiency uncertainty for \(\pt < 15~\GeV\)}     \\
+\(\alpha\)\_MUON\_EFF\_RECO\_SYS\_LOWPT        \\
+\(\alpha\)\_MUON\_EFF\_ISO\_STAT        & \multirow{ 2}{*}{isolation efficiency uncertainty}        \\
+\(\alpha\)\_MUON\_EFF\_ISO\_SYS            \\
+\(\alpha\)\_MUON\_EFF\_TTVA\_STAT       & \multirow{ 2}{*}{track-to-vertex association efficiency uncertainty}      \\
+\(\alpha\)\_MUON\_EFF\_TTVA\_SYS         \\
+
+\(\alpha\)\_MUON\_SCALE            & energy scale uncertainty                \\
+\(\alpha\)\_MUON\_ID               & energy resolution uncertainty from inner detector    \\
+\(\alpha\)\_MUON\_MS               & energy resolution uncertainty from muon system     \\
+\(\alpha\)\_MUON\_SAGITTA\_RESBIAS & uncertainty in the momentum scale  \\
+\(\alpha\)\_MUON\_SAGITTA\_RHO     & uncertainty in the momentum scale   \\
+
+% \midrule
+% \multicolumn{2}{c}{\textbf{Taus}}  \\ \midrule
+% TAUS\_TRUEHADTAU\_SME\_TES\_DETECTOR  & energy scale uncertainty (detector effects)    \\
+% TAUS\_TRUEHADTAU\_SME\_TES\_INSITUFIT & energy scale uncertainty (in-situ correction)   \\
+% TAUS\_TRUEHADTAU\_SME\_TES\_INSITUEXP & energy scale uncertainty (in-situ correction)   \\
+% TAUS\_TRUEHADTAU\_SME\_TES\_MODEL     & tau-related uncertainty (MC modeling)        \\
+
+\midrule
+\multicolumn{2}{c}{\textbf{\akt \(R=0.4\) jets}}  \\
+\midrule
+\(\alpha\)\_JET\_EffectiveNP\_Detector   & JES uncertainty: detector effects (2 components)       \\
+\(\alpha\)\_JET\_EffectiveNP\_Mixed      & JES uncertainty: mixed effects (3 components)          \\
+\(\alpha\)\_JET\_EffectiveNP\_Modelling  & JES uncertainty: modelling effects (5 components)        \\
+\(\alpha\)\_JET\_EffectiveNP\_Statistical  & JES uncertainty: statistical uncertainty (6 components)         \\
+\(\alpha\)\_JET\_EtaIntercalibration\_Modelling            & \multirow{6}{*}{uncertainties in scale calibration of forward / central jets}  \\
+\(\alpha\)\_JET\_EtaIntercalibration\_NonClosure\_2018data &    \\
+\(\alpha\)\_JET\_EtaIntercalibration\_NonClosure\_highE    &     \\
+\(\alpha\)\_JET\_EtaIntercalibration\_NonClosure\_negEta  &    \\
+\(\alpha\)\_JET\_EtaIntercalibration\_NonClosure\_posEta  &    \\
+\(\alpha\)\_JET\_EtaIntercalibration\_TotalStat &  \\
+\(\alpha\)\_JET\_BJES\_Response      & \multirow{3}{*}{flavour-related uncertainties}  \\
+\(\alpha\)\_JET\_Flavor\_Composition &   \\
+\(\alpha\)\_JET\_Flavor\_Response    &    \\
+\(\alpha\)\_JET\_JER\_EffectiveNP    & jet energy resolution uncertainty (7 components)  \\
+\(\alpha\)\_JET\_JER\_DataVsMC\_MC16 & jet energy resolution uncertainty (data vs. MC)  \\
+\(\alpha\)\_JET\_JvtEfficiency       & jet-vertex-tagger efficiency uncertainty   \\
+\(\alpha\)\_JET\_Pileup\_OffsetMu    & \multirow{4}{*}{Pileup uncertainties}  \\
+\(\alpha\)\_JET\_Pileup\_OffsetNPV   &    \\
+\(\alpha\)\_JET\_Pileup\_PtTerm &  \\
+\(\alpha\)\_JET\_Pileup\_RhoTopology &   \\
+\(\alpha\)\_JET\_PunchThrough\_MC16 & punch through uncertainty  \\
+\midrule
+
+\multicolumn{2}{c}{\textbf{Tagging efficiency (using \akt \(R=0.4\) jets)}} \\
+\midrule
+\(\alpha\)\_FT\_EFF\_EIGEN\_B & \(b\)-tagging efficiency uncs (medium eigenvector decomp. of flavour tagging uncs)  \\
+\(\alpha\)\_FT\_EFF\_EIGEN\_C & \multirow{2}{*}{3 components for \(b\)-jets, 4 for \(c\)-jets and 5 for light jets}    \\
+\(\alpha\)\_FT\_EFF\_EIGEN\_L  \\
+\(\alpha\)\_FT\_EFF\_EIGEN\_extrapolation &  \(b\)-tagging efficiency uncertainty on the extrapolation on high \pt-jets \\
+\(\alpha\)\_FT\_EFF\_EIGEN\_extrapolation\_from\_charm & \(b\)-tagging efficiency uncertainty on \(\tau\)-jets \\ 
+\midrule
+
+\multicolumn{2}{c}{\textbf{Rscan \(R=0.2\) jets for TAR jet construction }}  \\
+\midrule
+\(\alpha\)\_JET\_R02\_EffectiveNP\_Detector   & JES uncertainty: detector effects (2 components)        \\
+\(\alpha\)\_JET\_R02\_EffectiveNP\_Mixed      & JES uncertainty: mixed effects (3 components)            \\
+\(\alpha\)\_JET\_R02\_EffectiveNP\_Modelling  & JES uncertainty: modelling effects (5 components)         \\
+\(\alpha\)\_JET\_R02\_EffectiveNP\_Statistical  & JES uncertainty: statistical uncertainty (6 components)         \\
+\(\alpha\)\_JET\_R02\_EtaIntercalibration\_Modelling            & \multirow{5}{*}{uncertainties in scale calibration of forward / central jets}  \\
+\(\alpha\)\_JET\_R02\_EtaIntercalibration\_NonClosure\_highE    &  \\
+\(\alpha\)\_JET\_R02\_EtaIntercalibration\_NonClosure\_negEta  &   \\
+\(\alpha\)\_JET\_R02\_EtaIntercalibration\_NonClosure\_posEta  &  \\
+\(\alpha\)\_JET\_R02\_EtaIntercalibration\_TotalStat &  \\
+\(\alpha\)\_JET\_R02\_BJES\_Response      & \multirow{3}{*}{flavour-related uncertainty}  \\
+\(\alpha\)\_JET\_R02\_Flavor\_Composition &   \\
+\(\alpha\)\_JET\_R02\_Flavor\_Response    &  \\
+\(\alpha\)\_JET\_R02\_JER\_EffectiveNP    & jet energy resolution uncertainty (7 components)  \\
+\(\alpha\)\_JET\_R02\_JER\_DataVsMC\_MC16 & jet energy resolution uncertainty (data vs. MC)  \\
+\(\alpha\)\_JET\_R02\_Pileup\_OffsetMu    &  \multirow{4}{*}{Pileup uncertainty}  \\
+\(\alpha\)\_JET\_R02\_Pileup\_OffsetNPV   &  \\
+\(\alpha\)\_JET\_R02\_Pileup\_PtTerm &  \\
+\(\alpha\)\_JET\_R02\_Pileup\_RhoTopology &   \\
+\(\alpha\)\_JET\_R02\_PunchThrough\_MC16 & punch through uncertainty  \\
+\(\alpha\)\_JET\_R02\_SingleParticle\_HighPt  & High pT term (2012 version)  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Dijet\_DeltaR & Dijet Direct matching, delta R between Rscan and Ref jets  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Dijet\_Isolation & Dijet Rscan isolation requirement  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Dijet\_Jvt & Dijet Rscan LAr JVT  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Dijet\_MC & Dijet Rscan MC generator difference  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Dijet\_Stat & Dijet Rscan comb. of stat. components  \\
+\(\alpha\)\_JET\_R02\_Rscan\_NonClosure & Non closure observed at low \pt in the Z+jets calibration method  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Zjet\_DeltaR & Zjet Direct matching, \(\Delta R\) between Rscan and Ref jets  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Zjet\_Isolation & Zjet Rscan isolation requirement  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Zjet\_MC & Zjet Rscan MC generator difference  \\
+\(\alpha\)\_JET\_R02\_Rscan\_Zjet\_stat & Zjet Rscan comb. of stat. components  \\
+\(\alpha\)\_JET\_R02\_Zjet\_Jvt & Zjet Rscan LAr JVT  \\
+\midrule
+
+\multicolumn{2}{c}{\textbf{Tracks used for TAR jet construction}}  \\
+\midrule
+\(\alpha\)\_TRK\_BIAS\_D0\_WM & \(d_0\) residual alignment tracking uncertainties  \\
+\(\alpha\)\_TRK\_BIAS\_Z0\_WM & \(z_0\) residual alignment uncertainties  \\
+\(\alpha\)\_TRK\_BIAS\_QOVERP\_SAGITTA\_WM & \(\pt\) residual alignment tracking uncertainties   \\
+\(\alpha\)\_TRK\_EFF\_LOOSE\_GLOBAL & tracking efficiency (loose working point) uncertainty  \\
+\(\alpha\)\_TRK\_EFF\_LOOSE\_IBL & tracking efficiency (loose working point) uncertainty  \\
+\(\alpha\)\_TRK\_EFF\_LOOSE\_PHYSMODEL & tracking efficiency (loose working point) uncertainty  \\
+\(\alpha\)\_TRK\_EFF\_LOOSE\_PP0 & tracking efficiency (loose working point) uncertainty  \\
+\(\alpha\)\_TRK\_EFF\_LOOSE\_TIDE & tracking in dense environments efficiency (loose working point) uncertainty  \\
+\(\alpha\)\_TRK\_FAKE\_RATE\_LOOSE & tracking uncertainties on fake rate  \\
+\(\alpha\)\_TRK\_FAKE\_RATE\_LOOSE\_ROBUST & tracking uncertainties on fake rate   \\
+\(\alpha\)\_TRK\_FAKE\_RATE\_LOOSE\_TIDE & tracking uncertainties on fake rate in dense environments  \\
+\(\alpha\)\_TRK\_RES\_D0\_DEAD & tracking uncertainties associated with IP \(d_0\) resolution  \\
+\(\alpha\)\_TRK\_RES\_D0\_MEAS & tracking uncertainties associated with IP \(d_0\) resolution  \\
+\(\alpha\)\_TRK\_RES\_Z0\_DEAD & tracking uncertainties associated with IP \(z_0\) resolution \\
+\(\alpha\)\_TRK\_RES\_Z0\_MEAS & tracking uncertainties associated with IP \(z_0\) resolution  \\
+\midrule
+
+\multicolumn{2}{c}{\textbf{\MET-Trigger and \MET-Terms}}  \\ \midrule
+\(\alpha\)\_MET\_SoftTrk\_ResoPerp           & track-based soft term related to transversal resolution uncertainty       \\
+\(\alpha\)\_MET\_SoftTrk\_ResoPara           & track-based soft term related to longitudinal resolution uncertainty      \\
+\(\alpha\)\_MET\_SoftTrk\_Scale                  & track-based soft term related to longitudinal scale uncertainty         \\
+\(\alpha\)\_MET\_JetTrk\_Scale                   & track MET scale uncertainty due to tracks in jets          \\ \bottomrule
+\end{longtable}
+}
+
+
+{\label{tab:syst2}
+\scriptsize
+\begin{longtable}{p{7cm} p{8cm}}
+\caption{Qualitative description of NPs associated with sources of theoretical systematic uncertainty considered in the search.} \label{tab:theo_syst_naming} \\
+\toprule \\
+\textbf{Nuisance Parameter}        & Short Description                            \\ \midrule
+\(\alpha\)\_W+jets\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for \wjets process          \\
+\(\alpha\)\_W+jets\_pdf\_plus\_alphas & combined PDF + \(\alpha_s\) for \wjets process           \\
+\(\alpha\)\_W+jets\_CKKW\_plus\_QSF & combined CKKW + QSF PS  for \wjets process           \\
+\(\alpha\)\_Z+jets\_scale & uncertainty of QCD scale (\(\mu_R\)+\(\mu_F\)) for \zjets process           \\
+\(\alpha\)\_Z+jets\_pdf\_plus\_alphas & combined PDF + \(\alpha_s\) for \zjets process           \\
+\(\alpha\)\_Z+jets\_CKKW\_plus\_QSF & combined CKKW + QSF PS for \zjets process           \\
+\(\alpha\)\_Diboson\_pdf\_plus\_alphas & combined PDF + \(\alpha_s\) for diboson process            \\
+\(\alpha\)\_Diboson\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for diboson process         \\
+\(\alpha\)\_Diboson\_CKKW\_plus\_QSF & combined CKKW + QSF PS for diboson process  \\
+\(\alpha\)\_Triboson\_pdf\_plus\_alphas & combined PDF + \(\alpha_s\) for diboson process            \\
+\(\alpha\)\_Triboson\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for diboson process         \\
+\(\alpha\)\_Triboson\_CKKW\_plus\_QSF & combined CKKW + QSF PS for diboson process  \\
+\(\alpha\)\_ttbar\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for \ttbar process            \\
+\(\alpha\)\_ttbar\_pdf & PDF for \ttbar process            \\
+\(\alpha\)\_ttbar\_2pt\_PhHw7 & comparison with alternate PS generator for \ttbar process  \\
+\(\alpha\)\_ttbar\_2pt\_AMcPy8 & comparison with alternate ME generator for \ttbar process  \\
+\(\alpha\)\_ttbar\_ISR\_alphas & ISR \(\alpha_s\) for \ttbar process  \\
+\(\alpha\)\_ttbar\_FSR\_alphas & FSR \(\alpha_s\) (\(\mu_R\)+\(\mu_F\)) for \ttbar process    \\
+\(\alpha\)\_stop\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for single top process            \\
+\(\alpha\)\_stop\_pdf & PDF for single top process           \\
+\(\alpha\)\_stop\_2pt\_PhHw7 & comparison with alternate PS generator for single top process \\
+\(\alpha\)\_stop\_2pt\_AMcPy8 & comparison with alternate ME generator for single top process \\
+\(\alpha\)\_stop\_ISR\_alphas & ISR \(\alpha_s\) for single top process \\
+\(\alpha\)\_stop\_FSR\_alphas & FSR \(\alpha_s\) (\(\mu_R\)+\(\mu_F\)) for single top process   \\
+\(\alpha\)\_stop\_2pt\_DS & \ttbar/Wt interference at NLO for single top process \\
+\(\alpha\)\_monoSww\_*\_zp*\_dm200\_dh*\_scale & QCD scale (\(\mu_R\)+\(\mu_F\)) for DH signal process           \\
+\(\alpha\)\_monoSww\_*\_zp*\_dm200\_dh*\_pdf & PDF for DH signal process            \\
+\(\alpha\)\_monoSww\_*\_zp*\_dm200\_dh*\_2pt\_MGHw7\_3pt\_noxsec & comparison with alternate PS generator for DH signal process        \\
+\bottomrule 
+\end{longtable}
+}
+
+
