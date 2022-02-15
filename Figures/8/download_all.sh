@@ -24,3 +24,9 @@ do
   . convert_to_pdf.sh
   cd ..
 done
+
+scp_vm docker_test_3:/mnt/Git/histfitter-config/plots/unblinded_0.20_nosig.pdf .
+mv unblinded_0.20_nosig.pdf unblinded_0_20_nosig.pdf
+
+scp_vm docker_test_3:/mnt/Git/histfitter-config/plots/unblinded_0.15_nosig.pdf .
+mv unblinded_0.15_nosig.pdf unblinded_0_15_nosig.pdf

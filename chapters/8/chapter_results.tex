@@ -38,7 +38,7 @@ Very close agreement between the predicted and observed yields is observed in al
 
 \subsection{Nuisance Parameter Pulls and Correlations}
 
-Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties of all NPs included in the background-only fit. Both the values and uncertainties of the \(\boldsymbol{\mu}\) normalization factors, which scale the \wjets and \ttbar backgrounds separately in the merged and resolved categories, are constrained by the fit to obtain the post-fit agreement see in Figure \ref{fig:before_after_CRs} between the total predicted yield of SM background processes and the observed yields in the ATLAS collision data. The values of all other NPs which parametrize sources of statistical and systematic uncertainty are largely unconstrained by the fit. However, the uncertainties of the \(\gamma_*\) parameters which parametrize the statistical uncertainty associated with the MC simulated yield predictions are reduced by the fit to data,  which results in the reduction seen in Figure \ref{fig:before_after_CRs} the uncertainty associated with the post-fit yield expectations.
+Figure \ref{tab:pull_bkgonly} summarizes the post-fit shifts (a.k.a. ``pulls") in the values of all NPs included in the background-only fit, as well as their post-fit uncertainties. Both the values and uncertainties of the \(\boldsymbol{\mu}\) normalization factors, which scale the \wjets and \ttbar backgrounds separately in the merged and resolved categories, are constrained by the fit to obtain the post-fit agreement see in Figure \ref{fig:before_after_CRs} between the total predicted yield of SM background processes and the observed yields in the ATLAS collision data. The values of all other NPs which parametrize sources of statistical and systematic uncertainty receive negligible pulls in the fit. However, the uncertainties of the \(\gamma_*\) parameters which parametrize the statistical uncertainty associated with the MC simulated yield predictions are reduced by the fit to data,  which results in the reduction seen in Figure \ref{fig:before_after_CRs} the uncertainty associated with the post-fit yield expectations.
 
 \begin{figure}[h]
   \centering
@@ -47,7 +47,7 @@ Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties o
   \label{fig:pull_bkgonly}
 \end{figure}
 
-Figure \ref{fig:corrs_bkgonly} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the fit. There is some appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu_*\), and between normalization factors and a few of the \(\gamma_*\) NPs which parametrize statistical uncertainties associated with predicted yields - for example, \(r(\mu\_\text{Wjets\_mgd}, \gamma\_\text{stat\_CRW\_Merged\_cuts\_bin\_0})=-0.7\). However, there is in general very little correlation (\(r<0.01\)) between the \(\gamma_*\) and \(\alpha_*\) NPs which parametrize uncertainties in the fit, likely due to the minimal constraints placed on these parameters by the background-only fit, as shown in Figure \ref{fig:pull_bkgonly}.
+Figure \ref{fig:corrs_bkgonly} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the fit. There is some appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu\)\_*, and between normalization factors and a few of the \(\gamma\)\_* NPs which parametrize statistical uncertainties associated with predicted yields - for example, \(r(\mu\_\text{Wjets\_mgd}, \gamma\_\text{stat\_CRW\_Merged\_cuts\_bin\_0})=-0.7\). However, there is in general very little correlation (\(r<0.01\)) between the \(\gamma\)\_* and \(\alpha\)\_* NPs which parametrize uncertainties in the fit, likely due to the negligible shifts induced on these parameters by the background-only fit, as shown in Figure \ref{fig:pull_bkgonly}.
 
 \begin{figure}[h]
   \centering
@@ -109,8 +109,6 @@ Resolved SR & 285 & $333.3\pm 69$ & $323.4 \pm 50$ \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-
 
 \section{Exclusion of the Dark Higgs Signal Model}
 
@@ -221,8 +219,9 @@ Figure \ref{fig:fitted_mu_Sig} summarizes the post-fit value and uncertainty of 
 \end{figure}
 
 \subsubsection{Nuisance Parameter Pulls and Correlations}
+\label{sec:np_pulls_sig_plus_bkg}
 
-Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties of all NPs included in the signal+background fit using the DH signal model at the sample mass point \((\ms, \mZp) = (210, 2100)~\GeV\). In contrast with the background-only fit, the post-fit values of some \(\gamma\)\_* and \(\alpha\)\_* NPs which constrain the statistical and systematic uncertainties associated with MC simulated yields can be appreciably shifted relative to their pre-fit values. This is due to differences in the shapes of \minms distributions in the SRs between the observed ATLAS collision data and the predicted yields of the SM background and signal processes, which cannot be corrected by varying the \(\mu\)\_* normalization parameters alone. Particularly large post-fit shifts are seen in the \(\alpha\)\_JET\_JER\_* which parametrize the systematic jet energy resolution (JER) uncertainty associated with the \(R=0.4\) jets\footnote{See Section \ref{sec:atk4_jets} for a description of the \(R=0.4\) jets, and Section \ref{sec:resolved_w_cand} for a description of the method used to reconstruct the \(W\) boson candidate in the resolved category.} used to reconstruct the \(W\) boson candidate in the resolved category, and the \(\alpha\)\_JET\_R02\_JER\_* NPs which parametrize the JER uncertainty associated with the \(R=0.2\) jets\footnote{See Section \ref{sec:TAR_algo} for a description of the algorithm used to construct TAR jets using input \(R=0.2\) jets.} used as input to the TAR algorithm used to reconstruct the \(W\) boson candidate in the merged category (see Tables \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for descriptions of individual NPs used to parametrize systematic uncertainties). 
+Figure \ref{tab:pull_bkgonly} summarizes the pulls and uncertainties of all NPs included in the signal+background fit using the DH signal model at the sample mass point \((\ms, \mZp) = (210, 2100)~\GeV\). In contrast with the background-only fit, the pulls of some \(\gamma\)\_* and \(\alpha\)\_* NPs which constrain the statistical and systematic uncertainties associated with MC simulated yields can be appreciably shifted relative to their pre-fit values. This is due to differences in the shapes of \minms distributions in the SRs between the observed ATLAS collision data and the predicted yields of the SM background and signal processes, which cannot be corrected by varying the \(\mu\)\_* normalization parameters alone. Particularly large post-fit shifts are seen in the NPs \(\alpha\)\_JET\_JER\_* and \(\alpha\)\_JET\_R02\_JER\_* which parametrize the systematic jet energy resolution (JER) uncertainty associated with the \(R=0.4\)\footnote{See Section \ref{sec:atk4_jets} for a description of the \(R=0.4\) jets, and Section \ref{sec:resolved_w_cand} for a description of the method used to reconstruct the \(W\) boson candidate in the resolved category.} and \(R=0.2\)\footnote{See Section \ref{sec:TAR_algo} for a description of the algorithm used to construct TAR jets using input \(R=0.2\) jets.}  jets, respectively (see Tables \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for descriptions of individual NPs used to parametrize systematic uncertainties). As shown in Figures \ref{fig:exp_syst_shifts_bkg} and \ref{fig:exp_syst_shifts_sig}, the JER systematic uncertainties induce the largest yield shifts in the SRs among all systematic sources, so it is not unexpected that these NPs would in general be given relatively strong pulls in the signal+background fit to help correct for the observed differences between expected and observed yields in the SRs. 
 
 \begin{figure}[h]
   \centering
@@ -231,7 +230,7 @@ Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties o
   \label{fig:pull_sigPlusBkg}
 \end{figure}
 
-Figure \ref{fig:corrs_sigPlusBkg} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the signal+background fit. There is some appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu_*\), and between normalization factors and a few of the \(\gamma_*\) NPs which parametrize statistical uncertainties associated with predicted yields - for example, \(r(\mu\_\text{Wjets\_mgd}, \gamma\_\text{stat\_CRW\_Merged\_cuts\_bin\_0})=-0.7\). However, there is in general very little correlation (\(r<0.01\)) between the \(\gamma_*\) and \(\alpha_*\) NPs which parametrize uncertainties in the fit, likely due to the minimal constraints placed on these parameters by the background-only fit, as shown in Figure \ref{fig:pull_bkgonly}.
+Figure \ref{fig:corrs_sigPlusBkg} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the signal+background fit. As with the background-only fit, there is appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu\)\_*, and between normalization parameters and several of the \(\gamma\)\_* NPs which parametrize the statistical uncertainties associated with MC simulated yield predictions. In contrast to the background-only fit, some of the \(\alpha\)\_* parameters also have non-negligible correlations (\(|r|\) up to \(\sim0.3\)) with one another and with \(\gamma\)\_* and \(\mu\)\_* NPs. The introduction of correlations involving \(\alpha\)\_* NPs in the signal+background fit compared with the background-only fit is attributed to the non-negligible post-fit shifts of these NPs observed in Figure \ref{fig:pull_sigPlusBkg} for the signal+background fit.
 
 \begin{figure}[h]
   \centering
@@ -242,21 +241,34 @@ Figure \ref{fig:corrs_sigPlusBkg} shows the Pearson correlation coefficient \(r\
 
 \subsubsection{Ranking of Systematic Uncertainties}
 
+Figure \ref{fig:ranking_ms210} shows the pre- and post-fit values and impacts of NPs in the signal+background fit on the fitted signal strength \(\mu_\text{Sig}\). The 30 leading NPs are ranked from top to bottom in order of the size of their impacts. The pre- and post-fit impact of a given NP \(\theta\) is measured as follows:
+
+\begin{itemize}
+    \item \textbf{Pre-fit impact:} Shift the value of \(\theta\) to the upper bound \(\theta_0+\Delta\theta\) of its pre-fit uncertainty. Perform the signal+background fit with \(\theta\) fixed to this upper value, and all other NPs left floating. Repeat with the value of \(\theta\) fixed to the lower bound \(\theta_0+\Delta\theta\) of its pre-fit uncertainty. The resulting shifts \(\Delta_\text{up/down}{\reallywidehat{\mu_\text{Sig}}}\) of the best-fit \(\mu_\text{Sig}\) are shown as unfilled white boxes with black borders in Figure \ref{fig:ranking_ms210}.
+    \item \textbf{Post-fit impact:} As above, but with the value of \(\theta\) shifted instead to the upper and lower bounds of its post-fit uncertainty. The resulting shifts \(\Delta_\text{up/down}{\reallywidehat{\mu_\text{Sig}}}\) are shown as filled boxes, where the colour of the box indicates whether \(\mu_\text{Sig}\) is correlated (blue) or anti-correlated (green) with the NP.
+\end{itemize}
+
+The highest-ranked NPs are associated with systematic JER uncertainties, which also receive some of the largest pulls in the fit (see Figure \ref{fig:pull_sigPlusBkg} and related discussion in Section \ref{sec:np_pulls_sig_plus_bkg}). These are followed by some of the \(\gamma\)\_* NPs associated with statistical uncertainties of MC simulated yield predictions. 
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/8/ranking_mu_Sig_rank_0001_to_0030_zp2100_dm200_dh210_unblinded.pdf}
-  \caption[Pre- and post-fit impacts for unblinded CRs (\ms, \mZp)=(210, 2100) GeV]{Leading 30 pre-and post-fit impacts on \(\mu_\text{Sig}\) for nuisance parameters associated with experimental and theoretical uncertainties in the signal+background fit at the sample signal point (\ms, \mZp)=(210, 2100) GeV. NPs are ranked from top to bottom in order of the size of their impact on \(\mu_\text{Sig}\). Blue (green) colouring of post-fit impacts indicates positive (negative) correlation with the signal strength. Red (black) error bars show size of pre-fit (post-fit) uncertainty.}
+  \caption[Pre- and post-fit impacts for unblinded CRs (\ms, \mZp)=(210, 2100) GeV]{Leading 30 pre-and post-fit impacts on \(\mu_\text{Sig}\) for NPs associated with experimental and theoretical uncertainties in the signal+background fit at the sample signal point (\ms, \mZp)=(210, 2100) GeV. NPs are ranked from top to bottom in order of the size of their impact on \(\mu_\text{Sig}\). Blue (green) colouring of post-fit impacts indicates positive (negative) correlation with the signal strength. Post-fit values of the NPs (a.k.a. ``pulls") are also shown as black circles, where red (black) error bars show size of pre-fit (post-fit) uncertainty.}
   \label{fig:ranking_ms210}
 \end{figure}
 
 \subsection{Hypothesis Testing and Model Exclusion}
 
+Hypothesis testing is performed following the method presented in Section \ref{sec:hypo_test} to determine the range of \ms and \mZp that can be confidently excluded by the search. The colour map in Figure \ref{fig:limits} shows the expected CL\(_s\) value evaluated over the range of \ms and \mZp considered in the search. Interpolated contours are drawn at CL\(_s=0.05\) for the expected (grey dashed) and observed (solid red) values, and the contained areas represent the expected and observed range of \ms and \mZp that are excluded by the search for the assumed DM mass and coupling choices.
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/8/unblinded_nosig.pdf}
-  \caption[]{Projected (grey dashed with \(\pm1\sigma\) uncertainty band) and observed (solid red) range of \ms and \mZp in the DH model excluded by this search. All \ms and \mZp contained within the solid red line are excluded by the search for the choice of \(\sin\theta=0.01\), \(\gchi=1.0\) and \(g_q=0.25\).}
+  \caption[]{Expected (grey dashed with \(\pm1\sigma\) uncertainty band) and observed (solid red) range of \ms and \mZp in the DH model excluded by this search. All \ms and \mZp contained within the solid red line are excluded by the search for the choice of \(\sin\theta=0.01\), \(\gchi=1.0\) and \(g_q=0.25\).}
   \label{fig:limits}
 \end{figure}
+
+Figure \ref{fig:limits_comparison} summarizes the excluded range of \ms and \mZp in the DH model, for the assumed DH mass and couplings, by this and all other searches presented in Section \ref{sec:dh_searches} which place constraints on the model by targeting various decay modes of the DH boson \(s\). This search extends the excluded range for on-shell \(WW\) decays (\(\ms>160~\GeV\)), and by additionally probing off-shell \(WW\) decays in the range \(\ms<160\), largely closes the range of \ms excluded by the \(s\rightarrow\) and \(s\rightarrow WW\) DH decay channels.
 
 \begin{figure}[h]
   \centering
@@ -265,4 +277,24 @@ Figure \ref{fig:corrs_sigPlusBkg} shows the Pearson correlation coefficient \(r\
   \label{fig:limits_comparison}
 \end{figure}
 
+
+\subsection{Dependence of Sensitivity on \(g_q\)}
+
+As noted in Section \ref{sec:dh_model_free_parameters}, upper bounds are placed on the coupling strength \(g_q\) between the \Zprime mediator and quarks in the DH model by dijet searches, which range from approximately 0.04 to 0.2 depending on the value of \mZp and the assumptions involved in placing constraints. Tests were done to assess the impact of reducing \(g_q\) from the nominal choice of \(g_q=0.25\). Since the coupling between the Z' and quarks occurs exclusively at the \(q\bar{q}\rightarrow\Zprime\) annihilation vertex, the expected production rate of events produced by \(pp\) collisions at the LHC varies as \(g_q^2\) \cite{griffiths_2008}. Due to the reduction in expected production rate, the range of \ms and \mZp excluded by the search is diminished as the choice of \(g_q\) is reduced. 
+
+Figure \ref{fig:limits_vary_gq} shows the reduction in the range of \ms and \mZp excluded by the search for reduced \(g_q\) choices of \(g_q=0.20\) and \(g_q=0.15\). For \(g_q\lesssim0.15\), the search cannot exclude the DH model for any choice of \ms and \mZp.
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{Figures/8/unblinded_0_20_nosig.pdf}
+    \caption{\(g_q=0.20\)}\label{fig:unblinded_0.20}
+  \end{subfigure} \hspace{0.3em}
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\textwidth]{Figures/8/unblinded_0_15_nosig.pdf}
+    \caption{\(g_q=0.15\)}\label{fig:unblinded_0.15}
+  \end{subfigure} \vspace{1em}
+  \caption[]{Exclusion of the DH signal model with the coupling strength \(g_q\) in the model reduced relative to the nominal choice of 0.25 used to interpret all searches which constrain the model.}
+  \label{fig:limits_vary_gq}
+\end{figure}
 
