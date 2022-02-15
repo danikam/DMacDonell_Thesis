@@ -6,9 +6,15 @@ This chapter presents the results of applying the statistical analysis presented
 
 \section{Background-only Fit}
 
+This section presents the results of fitting MC simulated predictions of the yields of SM background processes to the observed yields of ATLAS collision events in the CRs - a.k.a. the ``background-only fit" - as described in Section \ref{sec:extrapolation}.
+
 \subsection{Pre- and Post-Fit Yields of MC Simulated Background Events}
 
-\begin{figure}[H]
+Figure \ref{fig:before_after_CRs} compares the total predicted yield of all SM background processes considered in the CRs with the yield of observed events in the ATLAS collision data, both before and after the background-only fit in the CRs. The observed yield of ATLAS collision events is consistent with the pre-fit predicted yield of SM background events within the combined statistical and systematic uncertainties of the MC simulated yield predictions and the Poisson uncertainties associated with the observed event counts in all CRs, with the exception of the merged CRTT. In the merged CRTT, an overprediction of the SM background yield is observed, though the discrepancy is only slightly outside the bounds of the combined uncertainties of the predicted and observed yields. 
+
+Very close agreement between the predicted and observed yields is observed in all CRs after the background-only fit. The uncertainty of the total expected yield of SM background processes is reduced in all CRs after the fit, as the post-fit uncertainty is predominantly set by the Poisson uncertainty associated with the observed event count in each CR.
+
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/CRW_Merged_before_after.pdf}
@@ -26,20 +32,24 @@ This chapter presents the results of applying the statistical analysis presented
     \includegraphics[width=\textwidth]{Figures/8/CRTT_Resolved_before_after.pdf}
     \caption{Resolved CRTT}\label{fig:before_after_CRTT_resolved}
   \end{subfigure} \\ \vspace{1em}
-  \caption[]{Comparison between predicted yields of SM background processes and observed yields in the CRs, before and after the background-only fit.}
+  \caption[]{Comparison between predicted yields of SM background processes and observed yields in the CRs, before and after the background-only fit. Hatched band shows the combined statistical and systematic uncertainty of the total yield prediction of SM background processes. Black error bars represent the Poisson uncertainty associated with the observed event count in each CR.}
   \label{fig:before_after_CRs}
 \end{figure}
 
 \subsection{Nuisance Parameter Pulls and Correlations}
 
-\begin{figure}[H]
+Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties of all NPs included in the background-only fit. Both the values and uncertainties of the \(\boldsymbol{\mu}\) normalization factors, which scale the \wjets and \ttbar backgrounds separately in the merged and resolved categories, are constrained by the fit to obtain the post-fit agreement see in Figure \ref{fig:before_after_CRs} between the total predicted yield of SM background processes and the observed yields in the ATLAS collision data. The values of all other NPs which parametrize sources of statistical and systematic uncertainty are largely unconstrained by the fit. However, the uncertainties of the \(\gamma_*\) parameters which parametrize the statistical uncertainty associated with the MC simulated yield predictions are reduced by the fit to data,  which results in the reduction seen in Figure \ref{fig:before_after_CRs} the uncertainty associated with the post-fit yield expectations.
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.55\textwidth]{Figures/8/BkgOnly/fit_parameters.pdf}
-  \caption[Pull plots for background-only fit]{\footnotesize{Post-fit values of all NPs in the background-only fit. See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs. Yellow hatched band shows the pre-fit uncertainty for each NP, and black horizontal error bars show the post-fit uncertainty.}}
+  \caption[Pull plots for background-only fit]{\footnotesize{Post-fit values and uncertainties of all NPs in the background-only fit. See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs. Yellow hatched band shows the pre-fit uncertainty for each NP, and black horizontal error bars show the post-fit uncertainty.}}
   \label{fig:pull_bkgonly}
 \end{figure}
 
-\begin{figure}[H]
+Figure \ref{fig:corrs_bkgonly} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the fit. There is some appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu_*\), and between normalization factors and a few of the \(\gamma_*\) NPs which parametrize statistical uncertainties associated with predicted yields - for example, \(r(\mu\_\text{Wjets\_mgd}, \gamma\_\text{stat\_CRW\_Merged\_cuts\_bin\_0})=-0.7\). However, there is in general very little correlation (\(r<0.01\)) between the \(\gamma_*\) and \(\alpha_*\) NPs which parametrize uncertainties in the fit, likely due to the minimal constraints placed on these parameters by the background-only fit, as shown in Figure \ref{fig:pull_bkgonly}.
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/8/BkgOnly/c_corrMatrix_RooExpandedFitResult_afterFit_edited.pdf}
   \caption[Pull plots for background-only fit]{\footnotesize{Correlation matrix for all NPs considered in the background-only fit for which at least one correlation coefficient with another NP is larger than 0.1. See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs.}}
@@ -48,7 +58,20 @@ This chapter presents the results of applying the statistical analysis presented
 
 \section{Comparison of SM Background Expectation and Data in the Signal Region}
 
-\begin{figure}[H]
+After performing the background-only fit in the CRs, the constraints on the background normalization factors \(\boldsymbol{\mu}\) and other NPs \(\boldsymbol{\theta}\) summarized in Figure \ref{fig:pull_bkgonly} are extrapolated to the SR following the procedure described in Section \ref{sec:extrapolation}. Figure \ref{fig:before_after_SRs} compares the predicted yields of SM background processes in the SR, binned in \minms using the binning strategy presented in Section \ref{sec:binning_strategy}, before and after the background-only fit and extrapolation procedure. Table \ref{tab:pre_post_yields_SR} summarizes the total predicted and observed yields in the merged SRs, combined over all bins in each SR.
+
+Both before and after the extrapolation from the background-only fit, Figures \ref{fig:before_SR_merged} and \ref{fig:after_SR_merged} show an excess of observed ATLAS collision events compared with the predicted yield of SM background processes in the first three bins of the merged SR. However, the difference is within uncertainty in all three bins, and a comparison of the combined yields reported in the first row of Table \ref{tab:pre_post_yields_SR} reveals that the overall yield of ATLAS collision data in the merged SR a factor of 1.3 larger than the total post-fit uncertainty associated with the expected yield of SM background processes (a.k.a. a 1.3\(\sigma\) excess):
+
+\begin{equation}
+\label{eq:merged_sigma}
+\frac{ \sum_{\text{bin }i\in\{\text{merged SR (S)}\}}\big[n_{S,i} - \lambda_{S,i, \text{ post-fit }}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta})\big] }{\sigma\Big(\sum_{\text{bin }i\in\{\text{merged SR (S)}\}} \lambda_{S,i}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta}) \Big)} = 1.3
+\end{equation}
+
+where \(n_{S,i}\) is the number of ATLAS collision events observed in bin \(i\) of the merged SR, \(\lambda_{S,i, \text{ post-fit }}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta})\) is the Poisson expectation defined in Eq. \ref{eq:lambda} for the total yield of MC background events in bin \(i\), assuming no signal content (\(\mu_\text{Sig}=0\)), and using values of the NPs \(\boldsymbol{\mu_i}\) and \(\boldsymbol{\theta}\) constrained in the background-only fit. \(\sigma\Big(\sum_{\text{bin }i\in\{\text{merged SR (S)}\}} \lambda_{S,i}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta}) \Big)\) is the total  uncertainty associated with the total post-fit yield expectation of SM background events in the merged SR, combined over all bins. If the ratio evaluated in Eq. \ref{eq:merged_sigma} is assumed to be sampled from a Gaussian parent distribution centred at 0 with standard deviation \(\sigma\Big(\sum_{\text{bin }i\in\{\text{merged SR (S)}\}} \lambda_{S,i}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta}) \Big)\), the observed 1.3\(\sigma\) discrepancy corresponds to a two-sided p-value \cite{Stats_2003} of 0.18, which implies that the observed yield of events in the merged SR is statistically compatible with the null hypothesis that all events observed in the SR were produced by SM background processes. 
+
+Figures \ref{fig:before_SR_resolved} and \ref{fig:after_SR_resolved} how an over-prediction of the SM background yield compared with the observed number of ATLAS collision events in all bins of the resolved SR, both before and after NP constraints from the background-only fit are extrapolated to the SRs. Applying the procedure described by Eq. \ref{eq:merged_sigma} to the resolved SR, a -0.8\(\sigma\) difference is observed between the observed yield of ATLAS collision events and the post-fit predicted yield of SM background events in the resolved SR. The resulting two-sided Gaussian p-value of 0.42 yields the same conclusion as in the merged SR, namely that the observed yields are statistically compatible with the null background-only hypothesis. 
+
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/SR_Merged_before.pdf}
@@ -56,25 +79,66 @@ This chapter presents the results of applying the statistical analysis presented
   \end{subfigure} \hspace{1em}
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/SR_Merged_after.pdf}
-    \caption{Merged SR (After Fit)}\label{fig:after_SR_resolved}
+    \caption{Merged SR (After Fit)}\label{fig:after_SR_merged}
   \end{subfigure} \vspace{1em}
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/SR_Resolved_before.pdf}
-    \caption{Resolved SR (Before Fit)}\label{fig:before_SR_merged}
+    \caption{Resolved SR (Before Fit)}\label{fig:before_SR_resolved}
   \end{subfigure} \hspace{1em}
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/SR_Resolved_after.pdf}
-    \caption{Resolved SR (After Fit)}\label{fig:after_SR_merged}
+    \caption{Resolved SR (After Fit)}\label{fig:after_SR_resolved}
   \end{subfigure} \\ \vspace{1em}
-  \caption[]{Comparison between predicted yields of SM background processes and observed yields in the SRs, before (left) and after (right) the background-only fit and extrapolation to the SR.}
+  \caption[]{Comparison between predicted yields of SM background processes and observed yields in the SRs, before (left) and after (right) the background-only fit and extrapolation to the SR. Yields are binned in \minms using the binning strategy presented in Section \ref{sec:binning_strategy}.}
   \label{fig:before_after_SRs}
 \end{figure}
 
+\begin{table}
+\centering
+\caption{Comparison of the total observed yields of events in the SRs with the predicted yield of SM background processes, either before (pre-fit) or after (post-fit) extrapolation of constraints from the background-only fit in the CRs.}
+\label{tab:pre_post_yields_SR}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Region} & \textbf{Observed Yield} & \textbf{SM Bkg Prediction} & \textbf{SM Bkg Prediction} \\
+ & & \textbf{(Pre-fit)} & \textbf{(Post-fit)} \\
+\midrule
+\midrule
+Merged SR & 51 & $39.3 \pm 13$ & $35.7 \pm 12$ \\
+\midrule
+Resolved SR & 285 & $333.3\pm 69$ & $323.4 \pm 50$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
 \section{Exclusion of the Dark Higgs Signal Model}
+
+Given the absence of any statistically significant discrepancy between the observed yields of ATLAS collision events in the SRs and the predicted yields of events produced by SM background processes, the method presented in Section \ref{sec:hypo_test} is used to determine the range of \ms and \mZp for which the DH signal model can be confidently excluded by the search for the chosen values of the other free parameters in the model presented in Sections \ref{sec:dh_model_free_parameters} and \ref{sec:dh_searches}:
+
+\begin{itemize}
+\item \(g_q=0.25\)
+\item \(g_\chi=1\)
+\item \(\sin\theta=0.01\)
+\end{itemize}
 
 \subsection{Signal+Background Fit}
 
-\begin{figure}[H]
+Figures \ref{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp1000_dm200_dh160}, \ref{fig:before_SR_merged_MonoSlep_monoSWWsemilep_zp2100_dm200_dh210} and \ref{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp2900_dm200_dh310} compare the observed yield of ATLAS collision events in the SRs, binned in \minms, with the predicted yields for SM background and for the DH signal processes at the following three sample \ms and \mZp in the signal model:
+
+\begin{itemize}
+\item \((\ms, \mZp) = (160, 1000)~\GeV\) (cross section: 93.3 fb\(^{-1}\))
+\item \((\ms, \mZp) = (210, 2100)~\GeV\) (cross section: 3.9 fb\(^{-1}\))
+\item \((\ms, \mZp) = (310, 2900)~\GeV\) (cross section: 0.31 fb\(^{-1}\))
+\end{itemize}
+
+The sample mass points are chosen to cover the range of production cross sections for the DH model considered in the search. As shown in Figure \ref{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp1000_dm200_dh160}, the signal point at \((\ms, \mZp) = (160, 1000)~\GeV\) with a cross section of 93.3 fb\({^{-1}}\) has a sufficiently large production rate that the signal+background fit can confidently constrain the signal strength parameter to \(\mu_\text{Sig}\approx0\) (i.e. the  signal+background hypothesis is excluded with a high degree of confidence). 
+
+For the fit shown in Figure \ref{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp2100_dm200_dh210} at the mass point \((\ms, \mZp) = (210, 2100)~\GeV\) with an intermediate cross section of 3.9 fb\(^{-1}\)), the predicted yield of the signal process is comparable in the first three bins of the SR to the discrepancy between the observed yield of data and the predicted yield of SM background processes, which results in a fitted signal strength close to 1 (\(\mu_\text{Sig}=0.88\)). However, since the predicted yield of the signal and background processes are still consistent with the background-only prediction, there is a large (nearly 100\%) uncertainty associated with the fitted signal strength. As a result, the fit can neither support nor confidently exclude the signal+background hypothesis at this mass point. 
+
+A similar result is seen in Figure \ref{fig:after_SR_merged_MonoSlep_monoSWWsemilep_zp2900_dm200_dh310} at the mass point \((\ms, \mZp) = (310, 2900)~\GeV\) with the lowest cross section of the three points considered. The signal yields are so small compared with the uncertainty of the total yield prediction that the fitted signal strength could range from \(-3.82\) to \(5.06\) within its post-fit uncertainty, and the search can neither meaningfully support nor exclude the DH signal model at this mass point.
+
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp1000_dm200_dh160/SR_Merged_before.pdf}
@@ -92,11 +156,11 @@ This chapter presents the results of applying the statistical analysis presented
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp1000_dm200_dh160/SR_Resolved_after.pdf}
     \caption{Resolved SR (After Fit)}\label{fig:after_SR_merged_MonoSlep_monoSWWsemilep_zp1000_dm200_dh160}
   \end{subfigure} \\ \vspace{1em}
-  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (160, 1000)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit.}
+  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (160, 1000)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit. The pre-and post-fit values of the signal strength \(\mu_\text{Sig}\) are also reported. Yields are binned in \minms using the binning strategy presented in Section \ref{sec:binning_strategy}.}
   \label{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp1000_dm200_dh160}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2100_dm200_dh210/SR_Merged_before.pdf}
@@ -114,11 +178,11 @@ This chapter presents the results of applying the statistical analysis presented
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2100_dm200_dh210/SR_Resolved_after.pdf}
     \caption{Resolved SR (After Fit)}\label{fig:after_SR_merged_MonoSlep_monoSWWsemilep_zp2100_dm200_dh210}
   \end{subfigure} \\ \vspace{1em}
-  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (210, 2100)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit.}
+  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (210, 2100)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit. The pre-and post-fit values of the signal strength \(\mu_\text{Sig}\) are also reported. Yields are binned in \minms using the binning strategy presented in Section \ref{sec:binning_strategy}.}
   \label{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp2100_dm200_dh210}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2900_dm200_dh310/SR_Merged_before.pdf}
@@ -136,12 +200,13 @@ This chapter presents the results of applying the statistical analysis presented
     \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2900_dm200_dh310/SR_Resolved_after.pdf}
     \caption{Resolved SR (After Fit)}\label{fig:after_SR_merged_MonoSlep_monoSWWsemilep_zp2900_dm200_dh310}
   \end{subfigure} \\ \vspace{1em}
-  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (310, 2900)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit.}
+  \caption[]{Comparison between predicted yields of SM background processes, the DH signal process at \((\ms, \mZp) = (310, 2900)~\GeV\) and observed yields in the SRs. Yields are shown before (left) and after (right) the signal+background fit. The pre-and post-fit values of the signal strength \(\mu_\text{Sig}\) are also reported. Yields are binned in \minms using the binning strategy presented in Section \ref{sec:binning_strategy}.}
   \label{fig:before_after_SRs_MonoSlep_monoSWWsemilep_zp2900_dm200_dh310}
 \end{figure}
 
+Figure \ref{fig:fitted_mu_Sig} summarizes the post-fit value and uncertainty of the signal strength parameter \(\mu_\text{Sig}\) for the signal+background fit performed with the DH signal model at all \ms and \mZp considered in the search. The fitted value and uncertainty vary depending on the production cross section and the shape of the signal distribution with respect to \minms, but in general the fitted value is consistent with 0 within 1.5\(\sigma\).
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \begin{subfigure}{0.49\textwidth}
     \includegraphics[width=\textwidth]{Figures/8/mu_sigs.pdf}
@@ -157,14 +222,18 @@ This chapter presents the results of applying the statistical analysis presented
 
 \subsubsection{Nuisance Parameter Pulls and Correlations}
 
-\begin{figure}[H]
+Figure \ref{tab:pull_bkgonly} summarizes the post-fit values and uncertainties of all NPs included in the signal+background fit using the DH signal model at the sample mass point \((\ms, \mZp) = (210, 2100)~\GeV\). In contrast with the background-only fit, the post-fit values of some \(\gamma\)\_* and \(\alpha\)\_* NPs which constrain the statistical and systematic uncertainties associated with MC simulated yields can be appreciably shifted relative to their pre-fit values. This is due to differences in the shapes of \minms distributions in the SRs between the observed ATLAS collision data and the predicted yields of the SM background and signal processes, which cannot be corrected by varying the \(\mu\)\_* normalization parameters alone. Particularly large post-fit shifts are seen in the \(\alpha\)\_JET\_JER\_* which parametrize the systematic jet energy resolution (JER) uncertainty associated with the \(R=0.4\) jets\footnote{See Section \ref{sec:atk4_jets} for a description of the \(R=0.4\) jets, and Section \ref{sec:resolved_w_cand} for a description of the method used to reconstruct the \(W\) boson candidate in the resolved category.} used to reconstruct the \(W\) boson candidate in the resolved category, and the \(\alpha\)\_JET\_R02\_JER\_* NPs which parametrize the JER uncertainty associated with the \(R=0.2\) jets\footnote{See Section \ref{sec:TAR_algo} for a description of the algorithm used to construct TAR jets using input \(R=0.2\) jets.} used as input to the TAR algorithm used to reconstruct the \(W\) boson candidate in the merged category (see Tables \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for descriptions of individual NPs used to parametrize systematic uncertainties). 
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2100_dm200_dh210/fit_parameters.pdf}
-  \caption[Pull plots for blinded SRs]{\footnotesize{Post-fit values of all NPs in the signal+background fit at a sample signal point of \((\ms, \mZp) = (210, 2100)~\GeV\). See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs. Yellow hatched band shows the pre-fit uncertainty for each NP, and black horizontal error bars show the post-fit uncertainty.}}
+  \caption[Pull plots for blinded SRs]{\footnotesize{Post-fit values of all NPs in the signal+background fit  \((\ms, \mZp) = (210, 2100)~\GeV\). See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs. Yellow hatched band shows the pre-fit uncertainty for each NP, and black horizontal error bars show the post-fit uncertainty.}}
   \label{fig:pull_sigPlusBkg}
 \end{figure}
 
-\begin{figure}[H]
+Figure \ref{fig:corrs_sigPlusBkg} shows the Pearson correlation coefficient \(r\) between nuisance parameters in the signal+background fit. There is some appreciable correlation (\(|r|\gtrsim0.2\)) between separate background normalization factors \(\mu_*\), and between normalization factors and a few of the \(\gamma_*\) NPs which parametrize statistical uncertainties associated with predicted yields - for example, \(r(\mu\_\text{Wjets\_mgd}, \gamma\_\text{stat\_CRW\_Merged\_cuts\_bin\_0})=-0.7\). However, there is in general very little correlation (\(r<0.01\)) between the \(\gamma_*\) and \(\alpha_*\) NPs which parametrize uncertainties in the fit, likely due to the minimal constraints placed on these parameters by the background-only fit, as shown in Figure \ref{fig:pull_bkgonly}.
+
+\begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{Figures/8/MonoSlep_monoSWWsemilep_zp2100_dm200_dh210/c_corrMatrix_RooExpandedFitResult_afterFit_edited.pdf}
   \caption[Pull plots for blinded SRs]{\footnotesize{Correlation matrix for all NPs considered in the signal+background fit at a sample signal point of \((\ms, \mZp) = (210, 2100)~\GeV\) for which at least one correlation coefficient with another NP is larger than 0.1. See Tables \ref{tab:np_naming}, \ref{tab:exp_syst_naming} and \ref{tab:theo_syst_naming} for details of the scheme used to name the NPs.}}
@@ -173,7 +242,7 @@ This chapter presents the results of applying the statistical analysis presented
 
 \subsubsection{Ranking of Systematic Uncertainties}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/8/ranking_mu_Sig_rank_0001_to_0030_zp2100_dm200_dh210_unblinded.pdf}
   \caption[Pre- and post-fit impacts for unblinded CRs (\ms, \mZp)=(210, 2100) GeV]{Leading 30 pre-and post-fit impacts on \(\mu_\text{Sig}\) for nuisance parameters associated with experimental and theoretical uncertainties in the signal+background fit at the sample signal point (\ms, \mZp)=(210, 2100) GeV. NPs are ranked from top to bottom in order of the size of their impact on \(\mu_\text{Sig}\). Blue (green) colouring of post-fit impacts indicates positive (negative) correlation with the signal strength. Red (black) error bars show size of pre-fit (post-fit) uncertainty.}
@@ -182,14 +251,14 @@ This chapter presents the results of applying the statistical analysis presented
 
 \subsection{Hypothesis Testing and Model Exclusion}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/8/unblinded_nosig.pdf}
   \caption[]{Projected (grey dashed with \(\pm1\sigma\) uncertainty band) and observed (solid red) range of \ms and \mZp in the DH model excluded by this search. All \ms and \mZp contained within the solid red line are excluded by the search for the choice of \(\sin\theta=0.01\), \(\gchi=1.0\) and \(g_q=0.25\).}
   \label{fig:limits}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/8/combined_contour.pdf}
   \caption[]{Summary of \ms and \mZp parameters in the Dark Higgs model excluded by all searches for the model by ATLAS and CMS. All values of \ms and \mZp contained within a coloured area are excluded. The range excluded by the search presented in this thesis is shown in blue.}
