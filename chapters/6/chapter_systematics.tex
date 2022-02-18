@@ -1,9 +1,9 @@
 \startchapter{Systematic Uncertainties}
 \label{chapter:systematics}
 
-In order to properly assess the significance of any discrepancies between predicted yields of signal and SM background and of the observed collision data, it is important to assign uncertainties to all sources which may limit the precision and accuracy of yield predictions. In addition to a limited precision arising from statistical uncertainty\footnote{See Chapter \ref{sec:mc_intro} for a discussion of the origin of statistical uncertainty in MC simulations.}, there may be inaccuracies in the values of various parameters input to the simulation due to a limited precision with which their values are known. These inaccuracies can systematically shift predicted production rates and kinematic properties of the simulated processes. Systematic uncertainties aim to quantify the uncertainty of  predicted yields of signal and SM background processes within each region and bin\footnote{See Section zzz \textcolor{red}{(Note to Bob: will update when section on binning is written)} for details of the binning in \minms performed in the SR} used in the search that could result from each source of potential inaccuracy in the modelling. 
+In order to properly assess the significance of any discrepancies between predicted yields of signal and SM background and of the observed collision data, it is important to assign uncertainties to all sources which may limit the precision and accuracy of yield predictions. In addition to a limited precision arising from statistical uncertainty\footnote{See Chapter \ref{sec:mc_intro} for a discussion of the origin of statistical uncertainty in MC simulations.}, there may be inaccuracies in the values of various parameters input to the simulation due to a limited precision with which their values are known. These inaccuracies can systematically shift predicted production rates and kinematic properties of the simulated processes. Systematic uncertainties aim to quantify the uncertainty of  predicted yields of signal and SM background processes within each region and bin\footnote{See Section \ref{sec:binning_strategy} for details of the binning in \minms performed in the SR} used in the search that could result from each source of potential inaccuracy in the modelling. 
 
-Systematic uncertainties (or simply ``systematics") are broadly classified into two categories according to their origin: theoretical and experimental. Theoretical systematics account for inaccuracies that could result from a limited knowledge of parameters involved in modelling the production and decay mechanisms resulting from \(pp\) collision events at the LHC. Experimental systematics account for inaccuracies involved in the operation of the LHC machine, and in building the physics objects\footnote{See Section \ref{sec:object_defs} for a presentation of the reconstructed physics objects used in this search.} used to reconstruct the decay products of collision events in the ATLAS detector. 
+Systematic uncertainties (or simply ``systematics") are broadly classified into two categories according to their origin: theoretical and experimental. Theoretical systematics account for inaccuracies that could result from a limited knowledge of parameters involved in modelling the production and decay mechanisms resulting from \(pp\) collision events at the LHC. Experimental systematics account for the limited precision of the measured LHC beam luminosity, and in building the physics objects\footnote{See Section \ref{sec:object_defs} for a presentation of the reconstructed physics objects used in this search.} used to reconstruct the decay products of collision events in the ATLAS detector. 
 
 Experimental systematics are generally constrained in the process of calibrating particular physics objects reconstructed in the ATLAS detector using the ATLAS collision data, and as a result are generally considered quite well-defined and robust. In contrast, the choice of uncertainty to assign to theoretical parameters can be much less clear, as constraints from experimental results may be sparse, or in some cases such as appropriate choice of renormalization scale in perturbative QCD calculations \cite{PDG_2018}, essentially non-existent. 
 
@@ -13,7 +13,7 @@ Experimental and theoretical systematic uncertainties are evaluated in all analy
 
 Experimental systematics are evaluated for all physics objects considered in the search, and for the LHC beam luminosity. 
 
-The integrated luminosity \(\mathcal{L}_\text{int}\) recorded by the ATLAS detector for the full data set considered in this search is known with a precision of \(1.7\%\) \cite{ATLAS-CONF-2019-021}. Since, from Eq. \ref{eq:integrated_lumi}, the total number of recorded collision events scales linearly with the integrated beam luminosity, propagating this \(\pm1.7\%\) systematic to the yields results in coherent \(1.7\%\) up and down shifts of the predicted yield for each process within a given analysis region and bin.
+The integrated luminosity \(\mathcal{L}_\text{int}\) recorded by the ATLAS detector for the full data set considered in this search is known with a precision of \(1.7\%\) \cite{ATLAS-CONF-2019-021}. Since, from Eq. \ref{eq:integrated_lumi}, the total number of recorded collision events scales linearly with the integrated beam luminosity, propagating this \(\pm1.7\%\) systematic to the yields results in coherent \(1.7\%\) up and down shifts of the predicted yield for each process across all analysis regions and bins.
 
 For a given systematic uncertainty on a parameter \(k\) used in the reconstruction of physics objects, the general procedure for propagating the systematic uncertainty to the predicted yield \(N_p\) of a process \(p\) in a bin \(j\) is as follows:
 
@@ -159,7 +159,7 @@ Table \ref{tab:theo_sys_summary} summarizes the theoretical uncertainties that a
 
 \begin{table}
 \centering
-\caption{Summary of theoretical uncertainties which are evaluated for each process}
+\caption{Summary of theoretical uncertainties evaluated for each process considered in the search.}
 \label{tab:theo_sys_summary}
 %\begin{tabular}{l p{6cm} l l }
 \footnotesize{
@@ -180,14 +180,14 @@ ME & \(\times\) & \(\times\) & \(\times\) & \(\times\) & \checkmark & \checkmark
 \midrule
 PS & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
 \midrule
-\(Wt\)/\ttbar Int. & \(\times\) & \(\times\) & \(\times\) & \(\times\) & \(\times\) &  \(\times\) & \checkmark \\
+\(Wt\)/\ttbar Int. & \(\times\) & \(\times\) & \(\times\) & \(\times\) & \(\times\) &  \checkmark & \(\times\) \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
 \subsection{Use of Acceptance for Evaluating Theoretical Systematics of the DH Signal Model}
 
-For the SM background processes, the systematic uncertainties of predicted yields due to theoretical sources are in general evaluated directly using yield shifts induced by varying the uncertain parameter. Following ATLAS guidelines, theoretical uncertainties associated with the modelling of the DH signal process are instead evaluated in a given bin by calculating the relative shift in the so-called ``acceptance". The acceptance is defined for a given process as the ratio of yield in the given bin with all analysis selection applied, relative to the inclusive yield of the process with no selections applied:
+For the SM background processes, the systematic uncertainties of predicted yields due to theoretical sources are in general evaluated directly using yield shifts induced by varying the uncertain parameter. Following ATLAS guidelines, theoretical uncertainties associated with the modelling of the DH signal process are instead evaluated in a given bin by calculating the relative shift in the so-called ``acceptance". The acceptance is defined for a given process \(p\) as the ratio of yield in the given bin with all analysis selection applied, relative to the inclusive yield of the process with no selections applied:
 
 \begin{equation}
 \label{eq:acceptance}
@@ -238,6 +238,8 @@ To account for the unphysical impact of the choice of \(\mu_R\) and \(\mu_F\) on
 \label{eq:scale_systs}
 \text{syst}\text{(scale, up, \(p\), bin \(j\))} = \max\bigg[0, \max\limits_{k\in\{\mu_R, \mu_F \text{ var'ns}\}} \big\{N_\text{\(p\), \(k\), \(j\)} - N_\text{\(p\), nom, \(j\)}\big\} \bigg]
 \end{equation}
+
+\noindent where ``max"\(\rightarrow\)``min" for the ``down" variation.
 
 \subsection{Matrix Element (ME) Generator Comparison}
 \label{sec:ME_syst}
@@ -598,7 +600,7 @@ Z+Jets PS & \(\pm\)0.95 (\(\pm\)8.02\%) &\(\pm\)1.24 (\(\pm\)6.86\%) & \(\pm0.00
 
 \section{Relative Impact of Statistical and Systematic Uncertainties in Analysis Regions}
 
-Table \ref{tab:rel_impacts_bkg} compares the statistical uncertainty associated with the total MC simulated yield of all background processes in each analysis region with the combined statistical+systematic uncertainty. The combination of systematic uncertainties from all sources is done within the HistFitter framework used to perform the statistical analysis for the search (see Chapter \ref{chapter:stat} for details). Table \ref{tab:rel_impacts_sig} shows the same comparison for the DH signal model at a sample mass point.
+Table \ref{tab:rel_impacts_bkg} compares the statistical uncertainty associated with the total MC simulated yield of all background processes in each analysis region with the combined statistical+systematic uncertainty. The combination of systematic uncertainties from all sources is done within the HistFitter framework used to perform the statistical analysis for the search (see Chapter \ref{chapter:stat} for details). Table \ref{tab:rel_impacts_sig} shows the same comparison for the DH signal model at a sample mass point. As discussed in Section \ref{sec:np_naming_corr}, shifts in the predicted yield of a given process induced by varying a given systematic source are treated as correlated between all regions and bins in the fit. Yield shifts associated with experimental sources are additionally treated as correlated between all processes. 
 
 For the SM background, the combined systematic uncertainty is comparable in size to the statistical uncertainty in the merged SR, but all other analysis regions the combined systematic uncertainty is dominant. For the DH signal process, the statistical uncertainty dominates in the merged SR, but is comparable to the combined systematic uncertainties in the resolved SR.
 

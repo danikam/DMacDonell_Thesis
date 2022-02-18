@@ -61,6 +61,7 @@ Within a given SR bin or CR \(k\), the Poisson expectation function \(\lambda_k\
         where \(I(\theta_p, \sigma_\text{down}(i,s), \sigma_{up}(i,s))\) is a continuous function of \(\theta_s(k,p)\) which interpolates\footnote{HistFitter employs a 6th-order polynomial to interpolate between  \(\sigma_\text{down}(i,s)\) and \(\sigma_\text{up}(k,p)\) a linear extrapolation beyond these extrema. See \Sect{4.1} of \Refn{~\cite{Cranmer:1456844}} for details.} the relative shift in predicted yields between the up \(N_\text{up}(k, p)\) and down \(N_\text{down}(k, p)\) extrema, associated with varying the given uncertainty source by \(\pm1\sigma\). 
 
 \subsection{Nuisance Parameter Nomenclature and Correlations}
+\label{sec:np_naming_corr}
 
 Many of the NPs which appear in the likelihood function are correlated between bins, categories, and/or processes. For example, if a given NP is correlated between all bins in the fit, the value of the NP will be the same within all bins: \(\theta_s(k, p) \rightarrow \theta_s(p)\). The names given to NPs in the HistFitter framework reflect the presence of any such correlations by omitting the correlated parameter in the NP name. Taking the above example of an NP which is correlated between all bins, this correlation will be reflected by the omission of any bin number specification (eg \verb|_bin1|).
 
