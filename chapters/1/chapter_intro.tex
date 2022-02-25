@@ -38,16 +38,18 @@ Scalar bosons are defined as spin 0 particles. There is only one known scalar bo
 
 \subsection{Mathematical Formulation of the Standard Model}
 
-The SM is formulated mathematically as a quantum field theory, in which particles of the SM are represented as quantum fields. As with classical field theories, the quantum fields of the SM and their interactions are powerfully described by the formalism of Lagrangian density functions. For example, interactions between photons and electrically charged fermions are described in quantum electrodynamics (QED) by the following Lagrange density term:
+The SM is formulated mathematically as a quantum field theory, in which particles of the SM are represented as excitations of quantum fields. The mathematical formulation of the SM is presented in detail in standard texts \cite{Griffiths_2008, }, and aspects relevant to later discussions in this thesis are summarized in this section.
+
+As in classical field theories, the quantum fields of the SM and their interactions are powerfully described by the formalism of Lagrangian densities, which are functions of the quantum fields and their derivatives. For example, interactions between photons and electrically charged fermions are described in quantum electrodynamics (QED) by the following Lagrangian density term:
 
 \begin{equation}
 \label{eq:qed_interaction}
 \mathcal{L}_\text{QED, interaction} = -q\phi^\dagger\gamma^0\gamma^\mu\psi A_\mu
 \end{equation}
 
-\noindent where the field \(psi\) represents fermions in the SM, and the field \(A_\mu\) represents photons. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. \(\gamma^\mu\) and \(\gamma^0\) and \(\gamma^\mu\) are Dirac matrices \cite{Griffiths_2008}.
+\noindent where \(\psi\) represents the fermion field in the SM, and \(A_\mu\) represents the photon field. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. \(\gamma^\mu\) and \(\gamma^0\) and \(\gamma^\mu\) are Dirac matrices \cite{Griffiths_2008}.
 
-Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe the symmetries. QED is described by the U(1) gauge group, which means that the Lagrangian density is invariant under a change of phase of the fermion field \cite{electroweak_2012} with one gauge boson (the photon). The strong interactions between coloured quarks and gluons are described by quantum chromodynamics (QCD) (see Chapter 9 of Ref. \cite{PDG_2018} for details), whose symmetries and three gauge bosons (gluons with three colours) are described by the SU(3) gauge group. 
+Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe their symmetries. QED is described by the U(1) gauge group, which means that the Lagrangian density is invariant under a change of phase of the fermion field \cite{electroweak_2012} with one gauge boson (the photon). The strong interactions between coloured quarks and gluons are described by quantum chromodynamics (QCD) (see Chapter 9 of Ref. \cite{PDG_2018} for details), whose symmetries and three gauge bosons (gluons with three colours) are described by the SU(3) gauge group. 
 
 The electromagnetic interactions mediated by photons and the weak interactions mediated by the neutral \(Z\) boson and the electrically charged \(W^{\pm}\) bosons are collectively described by a unified theory of electroweak interactions, which is described by a SU(2)
 
