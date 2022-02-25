@@ -7,7 +7,7 @@ Start with 2-3 introductory paragraphs which present the search and summarize th
 
 The Standard Model (SM) describes all known elementary particles and three of the four known forces by which they interact with one another - the strong, the electromagnetic, and weak forces. The theory of general relativity, which describes the gravitational force, has yet to be incorporated into the SM. 
 
-The known particles, illustrated in Figure \ref{fig:standard_model} are divided into two classes known as ``fermions" and ``bosons" on the basis of an intrinsic form of angular momentum known as ``spin". Fermions carry spin 1/2 and bosons carry integer spin. 
+The known particles, illustrated in Figure \ref{fig:standard_model} are divided into two classes known as ``fermions" and ``bosons" on the basis of an intrinsic form of angular momentum known as ``spin". Fermions carry spin \(\frac{1}{2}\) and bosons carry integer spin. 
 
 The specific forces by which particles in the SM interact with one another are determined by the charge(s) that they carry. Particles carrying electric charge interact with other particles carrying this charge via the electromagnetic force. Similarly, particles carrying weak and colour charge interact via the weak and strong forces, respectively. 
 
@@ -36,22 +36,107 @@ Bosons in the SM are divided into ``gauge bosons" and ``scalar bosons". The gaug
 
 Scalar bosons are defined as spin 0 particles. There is only one known scalar boson in the SM, namely the Higgs boson (or, simply, the ``Higgs"). Particles in the SM acquire mass via their interaction with the Higgs field. As such, the Higgs only interacts with massive SM particles, which includes all particles except the photon and the gluon. The more massive the particle, the greater its interaction strength - i.e. probability of interaction - with the Higgs. Neutrinos are a possible exception; there is at present no mechanism in the SM by which neutrinos could interact with the Higgs field, so the origin of their tiny masses remains an open question.  
 
+\subsection{Mathematical Formulation of the Standard Model}
+
+The SM is formulated mathematically as a quantum field theory, in which particles of the SM are represented as quantum fields. As with classical field theories, the quantum fields of the SM and their interactions are powerfully described by the formalism of Lagrangian density functions. For example, interactions between photons and electrically charged fermions are described in quantum electrodynamics (QED) by the following Lagrange density term:
+
+\begin{equation}
+\label{eq:qed_interaction}
+\mathcal{L}_\text{QED, interaction} = -q\phi^\dagger\gamma^0\gamma^\mu\psi A_\mu
+\end{equation}
+
+\noindent where the field \(psi\) represents fermions in the SM, and the field \(A_\mu\) represents photons. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. \(\gamma^\mu\) and \(\gamma^0\) and \(\gamma^\mu\) are Dirac matrices \cite{Griffiths_2008}.
+
+Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe the symmetries. QED is described by the U(1) gauge group, which means that the Lagrangian density is invariant under a change of phase of the fermion field \cite{electroweak_2012} with one gauge boson (the photon). The strong interactions between coloured quarks and gluons are described by quantum chromodynamics (QCD) (see Chapter 9 of Ref. \cite{PDG_2018} for details), whose symmetries and three gauge bosons (gluons with three colours) are described by the SU(3) gauge group. 
+
+The electromagnetic interactions mediated by photons and the weak interactions mediated by the neutral \(Z\) boson and the electrically charged \(W^{\pm}\) bosons are collectively described by a unified theory of electroweak interactions, which is described by a SU(2)
+
 \subsection{Particle Decay and Lifetime}
 
-The lowest-mass ``first-generation" quarks and leptons that comprise column I in Figure \ref{fig:standard_model}, along with the massless photons and gluons, are the only stable particles in the SM. All other particles are unstable, and will decay to less-massive particles after they are produced. The decay of an unstable particle is a random process governed by Poisson statistics, but the mean time whih
+The lowest-mass ``first-generation" quarks and leptons that comprise column I in Figure \ref{fig:standard_model}, along with the massless photons and gluons, are the only stable particles in the SM. All other particles are unstable, and will decay to less-massive particles after they are produced. The decay of an unstable particle occurs randomly with respect to the time elapsed since the particle was produced. However, this random process is governed by Poisson statistics, and the likelihood that an unstable particle will remain after some period \(t\) decays exponentially, with a mean lifetime \(\tau\) in the particle's rest frame:
 
-The lifetime of an unstable particle quantifies the average length of time 
+\begin{equation}
+\label{eq:particle_decay}
+P(t) = e^{\frac{t}{\tau}}
+\end{equation}
 
-\subsection{Particle Production and Decay at Colliders}
+\noindent where the decay rate \(\Gamma\) is the inverse of the mean lifetime.  
 
-The LHC is designed to collide protons at a sufficiently high energy that the colliding proton constituents, known as ``partons"\footnote{See section \ref{sec:parton_model} for an introduction to the parton model.}, can pair annihilate to form massive particles. If the massive particles formed by these energetic pair annihilations are 
+\subsection{Collision and Decay Processes at Colliders}
+\label{sec:col_decay_procs}
 
-\begin{itemize}
-\item Also take this opportunity to clearly introduce SM details particularly relevant to search
-\item Include a discussion of real vs. virtual particles, and on- vs. off-shell production.
-\item Hard scatter ME and PS
-\item intereference
-\end{itemize}
+The high-energy counter-rotating proton beams at the LHC are brought into head-on collisions at four interaction points around the ring, each of which is surrounded by a detector\footnote{See Chapter \ref{chapter:lhc_atlas} for a detailed discussion of the LHC and the detectors which surround the four interaction points.}. At each interaction point, constituents of the colliding protons known as ``partons"\footnote{See Section \ref{sec:parton_model} for an introduction to the parton model.} can pair annihilate to form observable collision products via one or more ``virtual mediators"\footnote{See Section \ref{sec:virtual_particles} for a discussion of virtual particles.}, and the collision products are subsequently measured by the detector. 
+
+Each process that describes a mechanism by which partons may annihilate to form observable products has a certain probability of taking place relative to other possible annihilation and production processes. The probability that a given process will take place is quantified by its ``cross section" \(\sigma\). The beam luminosity \(\mathcal{L}\) relates the rate of collisions \(\frac{dN}{dt}\) which proceed via a given process to the cross section of the process:
+
+\begin{equation}
+\frac{dN}{dt} = \mathcal{L}\sigma
+\end{equation}
+
+The luminosity can be integrated over a period of time \(t_1\) to \(t_2\), such that the total number of events expected to be produced via a process with cross section \(\sigma\) over the given period is related to the ``integrated luminosity" \(\mathcal{L}_\text{int}\) by:
+
+\begin{equation}
+\label{eq:integrated_lumi}
+N = \sigma\int_{t_1}^{t_2}\mathcal{L}(t)dt = \sigma\mathcal{L}_\text{int}
+\end{equation}
+
+\subsubsection{Feynman Diagrams}
+
+The interaction mechanisms by which observable collision products are produced from the annihilation of two partons can be represented by Feynman diagrams, which are described in detail in Chapter 2 of Ref. \cite{griffiths_2008} and summarized here. As an example, the Feynman diagram for the Drell Yan process in which a \(q\bar{q}\) pair annihilate to form a lepton pair \(\ell\bar{ell}\) via a virtual photon \(\gamma^{*}\) or Z boson \(Z^{*}\) mediator is shown in Figure \ref{fig:drell_yan}. 
+
+The particles involved in the interactions are represented as lines in a Feynman diagram, with different particle types represented by different line styles - fermions are generally represented by solid straight lines, and bosons (with the exception of gluons) are generally represented by wavy lines. Particle interactions are represented by vertices at which the lines in the diagram intersect. The \(q\bar{q}\) annihilation to form the virtual \(\gamma^{*}/Z^{*}\) mediator is represented in Figure \ref{fig:drell_yan} by the vertex at which the \(q\) and \(\bar{q}\) fermion lines meet the \(\gamma^{*}/Z^{*}\) boson line, and the subsequent decay of the  \(\gamma^{*}/Z^{*}\) to \(\ell\bar{\ell}\) is represented by the vertex to the right at which the \(\gamma^{*}/Z^{*}\) line meets the \(\ell\) and \(\bar{\ell}\) lines. Note that time flows horizontally from left to right in Feynman diagrams, so the colliding \(q\bar{q}\) pair are shown on the left and the observable decay products \(\ell\bar{\ell}\) on the right.
+
+\begin{figure}[hp]
+	\centering
+%	\includegraphics[width=0.95\textwidth]{Figures/2/Fey1.pdf}
+		\begin{tikzpicture}
+			\begin{feynman}
+
+		 		\vertex (a1);
+		 		\vertex at ($(a1) + (0cm, -3cm)$) (b1);
+		 		\vertex at ($(a1) + (1cm, -1.5cm)$) (c1); %gamma/Z
+		 		\vertex at ($(c1) + (2cm, 0cm)$) (c2); %gamma/Z
+				\vertex at ($(c2) + (1cm, -1.5cm)$) (d1);
+				\vertex at ($(c2) + (1cm, 1.5cm)$) (d2);
+
+		 		\diagram* {
+		 		  {[edges=fermion]
+		 		    (b1) -- [edge label=\(q\)]( c1) -- [edge label=\(\bar{q}\)](a1),
+				    (d1) -- [edge label=\(\bar{\ell}\)]( c2) -- [edge label=\(\bar{\ell}\)](d2),
+		 		  },
+		 		  (c1) -- [boson, edge label=\(\gamma^{*}/Z^{*}\)] (c2),
+		 		};
+		 	\end{feynman}
+		 \end{tikzpicture}
+	\caption{Feynman diagram for the Drell Yan process.}
+	\label{fig:drell_yan}
+\end{figure}
+
+\subsubsection{Virtual Particles}
+\label{sec:virtual_particles}
+
+In general, ingoing and outgoing lines in a Feynman diagram represent real observable particles, and internal lines represent so-called virtual particles. Virtual particles are not observable, but are rather a representation of the mechanism involved with producing the observable final state products. Importantly, virtual particles are not in general produced with the mass of their corresponding real particle, but can in principle take on whatever mass is needed to satisfy energy and momentum conservation at each interaction vertex that they are involved with. However, the more ``off-shell" the mass of the virtual particle, meaning the more it differs from the mass of the corresponding real particle, the lower is the production cross section \(\sigma(m^{*})\) with which the process would be expected to proceed for the given mass \(m^{*}\) of the virtual particle required to satisfy energy-momentum conservation. This relationship is described quantitatively by the Breit-Wigner formula \cite{breit_wigner}:
+
+\begin{equation}
+\label{eq:breit_wigner}
+\sigma(m^{*}) \propto \frac{1}{(m^{*}-m_0)^2 + \frac{\Gamma_E^2}{4}}
+\end{equation}
+
+\noindent where \(m_0\) is the ``on-shell" mass of the corresponding real particle, and \(\Gamma\) is the total decay width of the real particle. The Breit-Wigner formula describes a peak centred at \(m_0\) with width \(\Gamma_E\). The lifetime of the corresponding particle is related to the width of its Breit-Wigner resonance by \(\tau = \frac{\hbar}{\Gamma_E}\).
+
+%\subsubsection{Matrix Element and Interference}
+%
+%%In order to study collision events measured by particle detectors at the LHC, it is important to calculate the rate at which the detector would be expected to measure collision events which proceed by different processes, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}. 
+%
+%The cross section associated with a process of particle production from \(pp\) collisions at the LHC, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}, is in general proportional to an integral of the squared matrix element \(|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2\):
+%
+%\begin{equation}
+%\label{eq:matrix_element}
+%\sigma \propto \int|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2 d\boldsymbol{x} 
+%\end{equation}
+%
+%\noindent where the quantities \(\boldsymbol{x}\) describe the dynamics (masses, momenta, quantum numbers, etc.) of the incoming and outgoing observable particles, and \(\boldsymbol{\alpha}\) are terms which describe the internal structure process represented by the Feynman diagram, including the coupling constants which quantify the interaction strength of the particles involved at each interaction vertex and an integration over the possible dynamics of the virtual particles. 
+
 
 \section{Evidence for Dark Matter from Observational Astronomy and Cosmology}
 
