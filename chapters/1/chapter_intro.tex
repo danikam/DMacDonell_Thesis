@@ -38,20 +38,32 @@ Scalar bosons are defined as spin 0 particles. There is only one known scalar bo
 
 \subsection{Mathematical Formulation of the Standard Model}
 
-The SM is formulated mathematically as a quantum field theory, in which particles of the SM are represented as excitations of quantum fields. The mathematical formulation of the SM is presented in detail in standard texts \cite{Griffiths_2008, }, and aspects relevant to later discussions in this thesis are summarized in this section.
+The SM is formulated mathematically as a quantum field theory, in which particles of the SM are represented as excitations of quantum fields of spacetime \(x\). The mathematical formulation of the SM is presented in detail in standard texts \cite{Griffiths_2008, SM_intro}, and briefly summarized in this section, with focus placed on aspects that are relevant to later discussions in this thesis.
+
+\subsubsection{Lagrangian Densities}
 
 As in classical field theories, the quantum fields of the SM and their interactions are powerfully described by the formalism of Lagrangian densities, which are functions of the quantum fields and their derivatives. For example, interactions between photons and electrically charged fermions are described in quantum electrodynamics (QED) by the following Lagrangian density term:
 
 \begin{equation}
 \label{eq:qed_interaction}
-\mathcal{L}_\text{QED, interaction} = -q\phi^\dagger\gamma^0\gamma^\mu\psi A_\mu
+\mathcal{L}_\text{QED, interaction} = -q\psi^\dagger(x)\gamma^0\gamma^\mu\psi(x) A_\mu(x)
 \end{equation}
 
-\noindent where \(\psi\) represents the fermion field in the SM, and \(A_\mu\) represents the photon field. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. \(\gamma^\mu\) and \(\gamma^0\) and \(\gamma^\mu\) are Dirac matrices \cite{Griffiths_2008}.
+\noindent where \(\psi(x)\) represents the spinor field of the spin-\(\frac{1}{2}\) fermions in the SM, \(A_\mu(x)\) represents the vector field of the spin-1 photon and \(\gamma^\mu\) are the Dirac matrices \cite{Griffiths_2008}. The index \(\mu\) runs over the four spacetime coordinates. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. 
 
-Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe their symmetries. QED is described by the U(1) gauge group, which means that the Lagrangian density is invariant under a change of phase of the fermion field \cite{electroweak_2012} with one gauge boson (the photon). The strong interactions between coloured quarks and gluons are described by quantum chromodynamics (QCD) (see Chapter 9 of Ref. \cite{PDG_2018} for details), whose symmetries and three gauge bosons (gluons with three colours) are described by the SU(3) gauge group. 
+\subsubsection{Symmetries and Groups Theory Description}
 
-The electromagnetic interactions mediated by photons and the weak interactions mediated by the neutral \(Z\) boson and the electrically charged \(W^{\pm}\) bosons are collectively described by a unified theory of electroweak interactions, which is described by a SU(2)
+Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe their symmetries. For example, QED exhibits a symmetry under local phase transformation, described by the unitary local gauge group U(1). This means that the Lagrangian \(\mathcal{L}_\text{QED}\) is invariant under the multiplication of the fermion spinor \(\psi\) by a unitary \(1\times1\) matrix U (\(U^\dagger U=1\)), which represents a local phase transformation \(U = e^{i\theta(x)}\) where \(\theta(x)\) can be any function of the spacetime coordinates \(x\). This symmetry is ensured by the inclusion of the vector field \(A_\mu(x)\) in the QED Lagrangian, which is identified with the physical photon. The symmetries in the SM are described by the direct product\footnote{General definitions of group theory can be found, for example, in Section 1.1 of Ref. \cite{costa2012symmetries}.} of U(1)\(\times\)SU(2)\(\times\)SU(3) gauge groups. 
+
+The theory of quantum chromodynamics (QCD) \cite{qcd_2007}, which describes the strong interactions mediated by gluons between particles with particles with colour charge (quarks and gluons) is described by the SU(3) gauge group. The quarks are represented by a three-component vector of spinors: \(\psi_c = \{\psi_r, \psi_b, \psi_g\}\), where the subscripts refer to the three colours that constitute the charges of the strong interaction. The QCD Lagrangian (see eg. Eq. 10.88 in Ref. \cite{Griffiths_2008}) is symmetric under a transformation of the quark spinor \(\psi_c\) by a \(3\times3\) SU(3) matrix which is unitary with determinant 1. The SU(3) symmetry is ensured by the presence of an eight-component set \(\boldsymbol{\boldsymbol{A}^\mu}\) of vector fields in the QCD Lagrangian which are identified with the eight physical gluons, where each of the eight physical gluons possesses a unique superposition of \({rgb}\) colour states \cite{Griffiths_2008}.
+
+\subsubsection{Electroweak Theory and the Higgs Mechanism}
+
+The mathematical descriptions of the weak and electromagnetic forces are unified into a single ``electroweak" \cite{electroweak_2012} theory whose symmetries are described by the SU(2)\(\times\)U(1) product of gauge groups. 
+
+The electromagnetic interactions mediated by photons and the weak interactions mediated by the neutral \(Z\) boson and the electrically charged \(W^{\pm}\) bosons are collectively described by a unified theory of electroweak interactions.
+
+\subsubsection{Spontaneous Symmetry Breaking and the Higgs Mechanism}
 
 \subsection{Particle Decay and Lifetime}
 
@@ -126,18 +138,18 @@ In general, ingoing and outgoing lines in a Feynman diagram represent real obser
 
 \noindent where \(m_0\) is the ``on-shell" mass of the corresponding real particle, and \(\Gamma\) is the total decay width of the real particle. The Breit-Wigner formula describes a peak centred at \(m_0\) with width \(\Gamma_E\). The lifetime of the corresponding particle is related to the width of its Breit-Wigner resonance by \(\tau = \frac{\hbar}{\Gamma_E}\).
 
-%\subsubsection{Matrix Element and Interference}
-%
-%%In order to study collision events measured by particle detectors at the LHC, it is important to calculate the rate at which the detector would be expected to measure collision events which proceed by different processes, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}. 
-%
-%The cross section associated with a process of particle production from \(pp\) collisions at the LHC, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}, is in general proportional to an integral of the squared matrix element \(|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2\):
-%
-%\begin{equation}
-%\label{eq:matrix_element}
-%\sigma \propto \int|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2 d\boldsymbol{x} 
-%\end{equation}
-%
-%\noindent where the quantities \(\boldsymbol{x}\) describe the dynamics (masses, momenta, quantum numbers, etc.) of the incoming and outgoing observable particles, and \(\boldsymbol{\alpha}\) are terms which describe the internal structure process represented by the Feynman diagram, including the coupling constants which quantify the interaction strength of the particles involved at each interaction vertex and an integration over the possible dynamics of the virtual particles. 
+\subsubsection{Matrix Element and Interference}
+
+%In order to study collision events measured by particle detectors at the LHC, it is important to calculate the rate at which the detector would be expected to measure collision events which proceed by different processes, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}. 
+
+The cross section associated with a process of particle production from \(pp\) collisions at the LHC, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}, is in general proportional to an integral of the squared matrix element \(|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2\):
+
+\begin{equation}
+\label{eq:matrix_element}
+\sigma \propto \int|\mathcal{M(\boldsymbol{x}, \boldsymbol{\alpha})}|^2 d\boldsymbol{x} 
+\end{equation}
+
+\noindent where the quantities \(\boldsymbol{x}\) describe the dynamics (masses, momenta, quantum numbers, etc.) of the incoming and outgoing observable particles, and \(\boldsymbol{\alpha}\) are terms which describe the internal structure process represented by the Feynman diagram, including the coupling constants which quantify the interaction strength of the particles involved at each interaction vertex and an integration over the possible dynamics of the virtual particles. 
 
 
 \section{Evidence for Dark Matter from Observational Astronomy and Cosmology}
