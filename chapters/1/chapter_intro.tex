@@ -49,21 +49,76 @@ As in classical field theories, the quantum fields of the SM and their interacti
 \mathcal{L}_\text{QED, interaction} = -q\psi^\dagger(x)\gamma^0\gamma^\mu\psi(x) A_\mu(x)
 \end{equation}
 
-\noindent where \(\psi(x)\) represents the spinor field of the spin-\(\frac{1}{2}\) fermions in the SM, \(A_\mu(x)\) represents the vector field of the spin-1 photon and \(\gamma^\mu\) are the Dirac matrices \cite{Griffiths_2008}. The index \(\mu\) runs over the four spacetime coordinates. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. 
+\noindent where \(\psi(x)\) represents the spinor field of the spin-\(\frac{1}{2}\) fermions in the SM, \(A_\mu(x)\) represents the vector field of the massless spin-1 photon and \(\gamma^\mu\) are the Dirac matrices \cite{Griffiths_2008}. The index \(\mu\) runs over the four spacetime coordinates. The factor \(q\) represents the charge of the fermion involved in the interaction, and its value - \(\pm1\) for charged leptons, \(+\frac{2}{3}\) (\(-\frac{1}{3}\)) for up (down) type quarks and 0 for neutrinos - determines the strength of the interaction. 
 
 \subsubsection{Symmetries and Groups Theory Description}
 
-Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe their symmetries. For example, QED exhibits a symmetry under local phase transformation, described by the unitary local gauge group U(1). This means that the Lagrangian \(\mathcal{L}_\text{QED}\) is invariant under the multiplication of the fermion spinor \(\psi\) by a unitary \(1\times1\) matrix U (\(U^\dagger U=1\)), which represents a local phase transformation \(U = e^{i\theta(x)}\) where \(\theta(x)\) can be any function of the spacetime coordinates \(x\). This symmetry is ensured by the inclusion of the vector field \(A_\mu(x)\) in the QED Lagrangian, which is identified with the physical photon. The symmetries in the SM are described by the direct product\footnote{General definitions of group theory can be found, for example, in Section 1.1 of Ref. \cite{costa2012symmetries}.} of U(1)\(\times\)SU(2)\(\times\)SU(3) gauge groups. 
+Symmetries in the Lagrangian densities are described in the language of group theory by classifying the fundamental interactions into gauge groups which describe their symmetries. For example, QED exhibits a symmetry under local phase transformation, described by the unitary local gauge group U(1). This means that the Lagrangian \(\mathcal{L}_\text{QED}\) is invariant under the multiplication of the fermion spinor \(\psi\) by a unitary \(1\times1\) matrix U (\(U^\dagger U=1\)), which represents a local phase transformation \(U = e^{i\theta(x)}\) where \(\theta(x)\) can be any function of the spacetime coordinates \(x\). This symmetry is ensured by the inclusion of the vector field \(A_\mu(x)\) in the QED Lagrangian, which is identified with the physical photon. Because it ensures invariance under the U(1) gauge group, the vector field \(A_\mu(x)\) is referred to as a ``gauge field", and the corresponding boson (the photon) as a ``gauge boson". The symmetries in the SM are described by the direct product\footnote{General definitions of group theory can be found, for example, in Section 1.1 of Ref. \cite{costa2012symmetries}.} of U(1)\(\times\)SU(2)\(\times\)SU(3) gauge groups. 
 
-The theory of quantum chromodynamics (QCD) \cite{qcd_2007}, which describes the strong interactions mediated by gluons between particles with particles with colour charge (quarks and gluons) is described by the SU(3) gauge group. The quarks are represented by a three-component vector of spinors: \(\psi_c = \{\psi_r, \psi_b, \psi_g\}\), where the subscripts refer to the three colours that constitute the charges of the strong interaction. The QCD Lagrangian (see eg. Eq. 10.88 in Ref. \cite{Griffiths_2008}) is symmetric under a transformation of the quark spinor \(\psi_c\) by a \(3\times3\) SU(3) matrix which is unitary with determinant 1. The SU(3) symmetry is ensured by the presence of an eight-component set \(\boldsymbol{\boldsymbol{A}^\mu}\) of vector fields in the QCD Lagrangian which are identified with the eight physical gluons, where each of the eight physical gluons possesses a unique superposition of \({rgb}\) colour states \cite{Griffiths_2008}.
+\subsubsection{Quantum Chromodynamics}
 
-\subsubsection{Electroweak Theory and the Higgs Mechanism}
+The theory of quantum chromodynamics (QCD) \cite{qcd_2007}, which describes the strong interactions mediated by gluons between particles with colour charge (quarks and gluons) is described by the SU(3) gauge group. The quarks are represented by a three-component vector of spinors: \(\psi_c = \{\psi_r, \psi_b, \psi_g\}\), where the subscripts refer to the three colours that constitute the charges of the strong interaction. The QCD Lagrangian (see eg. Eq. 10.88 in Ref. \cite{Griffiths_2008}) is symmetric under a transformation of the quark spinor \(\psi_c\) by a \(3\times3\) SU(3) matrix which is unitary with determinant 1. The SU(3) symmetry is ensured by the presence of an eight-component set \(\boldsymbol{\boldsymbol{A}^\mu}\) of vector gauge fields in the QCD Lagrangian associated with massless gauge bosons. The massless gauge bosons are identified as the eight physical gluons, where each of the eight physical gluons possesses a unique superposition of \({rgb}\) colour states \cite{Griffiths_2008}.
+
+\subsubsection{Electoweak Theory and the Higgs Mechanism}
 
 The mathematical descriptions of the weak and electromagnetic forces are unified into a single ``electroweak" \cite{electroweak_2012} theory whose symmetries are described by the SU(2)\(\times\)U(1) product of gauge groups. 
 
-The electromagnetic interactions mediated by photons and the weak interactions mediated by the neutral \(Z\) boson and the electrically charged \(W^{\pm}\) bosons are collectively described by a unified theory of electroweak interactions.
+Yang-Mills theory \cite{yang_mills_1954} shows that a set of three vector gauge fields associated with massless gauge bosons are needed to satisfy the SU(2) symmetry, and a fourth massless vector gauge boson is needed to satisfy the U(1) symmetry. The three-component set of vector bosons required to satisfy the SU(2) symmetry are identified as the ``weak isospin triplet" \(\boldsymbol{W}\), and the single gauge boson needed to satisfy the U(1) symmetry as the singlet \(B\). 
 
-\subsubsection{Spontaneous Symmetry Breaking and the Higgs Mechanism}
+The SU(2)\(\times\)U(1) symmetry of the SM Lagrangian does not admit mass terms of the form \(m_X^2X^\dagger X\), where X is an arbitrary field. Masses of the physical \(W^\pm\) and \(Z\) bosons, and all other massive particles in the SM are generated by the ``Higgs mechanism" \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3}, which adds the following term to the SM Lagrangian:
+
+\begin{equation}
+\label{eq:higgs_lagrangian}
+\mathcal{L}_\text{Higgs} = (D^\mu H)^\dagger(D_\mu H) - V(H)
+\end{equation}
+
+\noindent where \(H\) is a complex scalar field whose symmetries are described by the SU(2) group:
+
+\begin{equation}
+H = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+0 \\
+h+v
+\end{pmatrix}
+\end{equation}
+
+\noindent where \(h(x)\) is interpreted as the scalar field of the physical Higgs boson, and \(v\) is the vacuum expectation value. With \(H\) in this form, \(\mathcal{L}_\text{Higgs}\) is described by the U(1) symmetry group but not the SU(2) group, and is thus said to ``break" the electroweak symmetry SU(2)\(times\)U(1) to the QED gauge symmetry U(1).
+
+The covariant derivative \(D_\mu H\) in Eq. \ref{eq:higgs_lagrangian} takes the form:
+
+\begin{equation}
+\label{eq:D_muH}
+D_\mu H = \big(\partial_\mu + i\frac{1}{2}g\sigma_k W^k_\mu+i\frac{1}{2}g'B_\mu\big)H
+\end{equation}
+
+\noindent where \(\sigma_k\) are the Pauli matrices, and \(g\) and \(g'\) are the coupling constants between the Higgs field and the \(\boldsymbol{W}\) and \(\boldsymbol{B}\) fields, respectively.
+
+The Higgs potential \(V(H)\) takes the form 
+
+\begin{equation}
+V(H) = -\mu^2H\dagger H + \lambda(H^\dagger H)^2
+\end{equation}
+
+\noindent where the second term describes quartic self-interactions of the Higgs field.
+
+The emergence of the massive physical \(W^\pm\), \(Z\) bosons and the massless photon can be seen by expanding Eq. \ref{eq:D_muH}, considering only the terms involving the vacuum expectation value \(v\):
+
+\begin{equation}
+\label{eq:higgs_expanded}
+\mathcal{L}_\text{Higgs} = \frac{v^2}{8}\Big[g^2\big((W^1_\mu)^2+(W_mu^2)^2\big) + (gW^3_\mu-g'B_\mu)^2\Big] + ...
+\end{equation}
+
+With the physical vector boson fields and masses defined as:
+
+\begin{equation}
+\begin{split}
+W^\pm_\mu & \equiv \frac{1}{2}(W_\mu^1 \mp W_\mu^2) \phantom{xxxxxxxxxlxx}\text{ with mass }\phantom{xxx} m_W=\frac{gv}{2} \\
+Z_\mu & \equiv \frac{1}{\sqrt{g^2+g'^2}}(gW_\mu^3-g'B_\mu) \phantom{xxx}\text{ with mass }\phantom{xxx} m_Z = \frac{v}{2}\sqrt{g^2+g'^2} \\
+A_\mu & \equiv \frac{1}{\sqrt{g^2+g'^2}}(g'W^3_\mu+gB_\mu) \phantom{xxx}\text{ with mass }\phantom{xxx} m_A = 0
+\end{split}
+\end{equation}
+
+It can be readily confirmed that Eq. \ref{eq:higgs_expanded} takes the form \(\mathcal{L}_\text{Higgs} = \big[(W^\pm)_\mu^\dagger(W^\pm)^\mu + Z_\mu^\dagger Z^\mu + A_\mu^\dagger A^\mu\big] + ...\). Masses of fermions are likewise generated by so-called Yukawa couplings \cite{weinberg_1967} between the fermion and Higgs fields.
 
 \subsection{Particle Decay and Lifetime}
 
@@ -138,7 +193,7 @@ In general, ingoing and outgoing lines in a Feynman diagram represent real obser
 
 \noindent where \(m_0\) is the ``on-shell" mass of the corresponding real particle, and \(\Gamma\) is the total decay width of the real particle. The Breit-Wigner formula describes a peak centred at \(m_0\) with width \(\Gamma_E\). The lifetime of the corresponding particle is related to the width of its Breit-Wigner resonance by \(\tau = \frac{\hbar}{\Gamma_E}\).
 
-\subsubsection{Matrix Element and Interference}
+\subsubsection{Matrix Element}
 
 %In order to study collision events measured by particle detectors at the LHC, it is important to calculate the rate at which the detector would be expected to measure collision events which proceed by different processes, such as the Drell-Yan process shown in Figure \ref{fig:drell_yan}. 
 
