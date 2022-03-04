@@ -12,7 +12,7 @@ This section presents the results of performing the ``background-only" fit of th
 
 Figure \ref{fig:before_after_CRs} compares the total predicted yield of all SM background processes considered in the CRs with the yield of observed events in the ATLAS collision data, both before and after the background-only fit in the CRs. The observed yield of ATLAS collision events is consistent with the pre-fit predicted yield of SM background events within the combined statistical and systematic uncertainties in all CRs, with the exception of the merged CRTT. In the merged CRTT, a slight overprediction of the SM background yield is observed. 
 
-The background-only fit produces very close agreement between the total background expectation and the observed yield in all CRs. The uncertainty of the total expected yield of SM background processes is reduced in all CRs after the fit, as the post-fit uncertainty is predominantly set by the Poisson uncertainty associated with the observed event counts.
+The uncertainty of the total expected yield of SM background processes is reduced in all CRs after the fit, as the post-fit uncertainty is predominantly set by the Poisson uncertainty associated with the observed event counts.
 
 \begin{figure}[h]
   \centering
@@ -38,7 +38,7 @@ The background-only fit produces very close agreement between the total backgrou
 
 \subsection{Nuisance Parameter Pulls and Correlations}
 
-Figure \ref{fig:pull_bkgonly} summarizes the post-fit shifts (a.k.a. ``pulls") of the values of all NPs included in the background-only fit, as well as their post-fit uncertainties. Both the values and uncertainties of the \(\boldsymbol{\mu}\) normalization factors, which scale the \wjets and \ttbar backgrounds separately in the merged and resolved categories, are constrained by the fit to obtain the post-fit agreement seen in Figure \ref{fig:before_after_CRs} between the total predicted yield of SM background processes and the observed yields in the ATLAS collision data. The values of all other NPs which parametrize sources of statistical and systematic uncertainty receive negligible pulls in the fit, thus indicating that good agreement with data can be obtained in all CRs just by varying the \wjets and \ttbar normalization factors. The uncertainties of the \(\gamma\)\_* parameters\footnote{See Table \ref{tab:np_naming} for a description of the scheme used to name NPs.} which parametrize the statistical uncertainty associated with the MC simulated yield predictions in each CR are reduced by the fit to data, which results in the reduction seen in Figure \ref{fig:before_after_CRs} of the uncertainty associated with the post-fit expected yield of SM background events.
+Figure \ref{fig:pull_bkgonly} summarizes the post-fit shifts (a.k.a. ``pulls") of the values of all NPs included in the background-only fit, as well as their post-fit uncertainties. Both the values and uncertainties of the \(\boldsymbol{\mu}\) normalization factors, which scale the \wjets and \ttbar backgrounds separately in the merged and resolved categories, are constrained by the fit to obtain the post-fit agreement seen in Figure \ref{fig:before_after_CRs} between the total predicted yield of SM background processes and the observed yields in the ATLAS collision data. The values of all other NPs which parametrize sources of statistical and systematic uncertainty receive negligible pulls in the fit, since agreement with data can be obtained in all CRs just by varying the \wjets and \ttbar normalization factors. The uncertainties of the \(\gamma\)\_* parameters\footnote{See Table \ref{tab:np_naming} for a description of the scheme used to name NPs.} which parametrize the statistical uncertainty associated with the MC simulated yield predictions in each CR are reduced by the fit to data, which results in the reduction seen in Figure \ref{fig:before_after_CRs} of the uncertainty associated with the post-fit expected yield of SM background events.
 
 \begin{figure}[h]
   \centering
@@ -69,7 +69,7 @@ Both before and after the background-only fit extrapolation, Figures \ref{fig:be
 %
 %where \(n_{S,i}\) is the number of ATLAS collision events observed in bin \(i\) of the merged SR, \(\lambda_{S,i, \text{ post-fit }}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta})\) is the Poisson expectation defined in Eq. \ref{eq:lambda} for the total yield of MC background events in bin \(i\), assuming no signal content (\(\mu_\text{Sig}=0\)), and using values of the NPs \(\boldsymbol{\mu_i}\) and \(\boldsymbol{\theta}\) constrained in the background-only fit. \(\sigma\Big(\sum_{\text{bin }i\in\{\text{merged SR (S)}\}} \lambda_{S,i}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta}) \Big)\) is the total  uncertainty associated with the total post-fit yield expectation of SM background events in the merged SR, combined over all bins. If the ratio evaluated in Eq. \ref{eq:merged_sigma} is assumed to be sampled from a Gaussian parent distribution centred at 0 with standard deviation \(\sigma\Big(\sum_{\text{bin }i\in\{\text{merged SR (S)}\}} \lambda_{S,i}(\mu_\text{Sig}=0, \boldsymbol{\mu_i}, s_i, \boldsymbol{b_i}, \boldsymbol{\theta}) \Big)\), 
 
-Figures \ref{fig:before_SR_resolved} and \ref{fig:after_SR_resolved} show an over-prediction of the SM background yield compared with the observed number of ATLAS collision events in all bins of the resolved SR, both before and after NP constraints from the background-only fit are extrapolated to the SRs. Comparing the observed yield of collision events from Table \ref{tab:pre_post_yields_SR} in resolved SR with the post-fit predicted yield of SM background events reveals a \(-0.8\sigma\) discrepancy. The resulting two-sided Gaussian p-value of 0.42 indicates that, as in the merged SR, the observed yields are statistically compatible with the null background-only hypothesis. 
+Figures \ref{fig:before_SR_resolved} and \ref{fig:after_SR_resolved} show an over-prediction of the SM background yield compared with the observed number of ATLAS collision events in all bins of the resolved SR, both before and after NP constraints from the background-only fit are extrapolated to the SRs. Comparing the observed yield of collision events from Table \ref{tab:pre_post_yields_SR} in the resolved SR with the post-fit predicted yield of SM background events reveals a \(-0.8\sigma\) discrepancy. The resulting two-sided Gaussian p-value of 0.42 indicates that, as in the merged SR, the observed yields are statistically compatible with the null background-only hypothesis. 
 
 \begin{figure}[h]
   \centering
@@ -103,9 +103,9 @@ Figures \ref{fig:before_SR_resolved} and \ref{fig:after_SR_resolved} show an ove
  & & \textbf{(Pre-fit)} & \textbf{(Post-fit)} \\
 \midrule
 \midrule
-Merged SR & 51 & $39.3 \pm 13$ & $35.7 \pm 12$ \\
+Merged SR & 51 & $39.7 \pm 11$ & $36.8 \pm 10$ \\
 \midrule
-Resolved SR & 285 & $333.3\pm 69$ & $323.4 \pm 50$ \\
+Resolved SR & 285 & $331.7\pm 65$ & $321.2 \pm 40$ \\
 \bottomrule
 \end{tabular}
 \end{table}

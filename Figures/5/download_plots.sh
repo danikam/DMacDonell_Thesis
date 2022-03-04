@@ -26,6 +26,8 @@ scp_vm docker_test_3:/mnt/Git/makehistos/Plots_presel_1TARjet/Baseline_1TARjet_e
 
 scp_vm docker_test_3:/mnt/Git/makehistos/Plots_presel_1TARjet/Baseline_1TARjet_e_zp1000_dm200_dh260/TARJets10_mTAR0.pdf zp1000_dm200_dh260_disentanglement.pdf
 
+scp_vm docker_test_3:/mnt/Git/makehistos/Plots_for_tables/*/*.pdf .
+
 scp_vm lxplus:/eos/user/d/damacdon/TriggerEfficiency/*.pdf .
 
 
