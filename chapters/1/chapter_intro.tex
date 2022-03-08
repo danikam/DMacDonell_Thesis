@@ -1,13 +1,11 @@
 \startfirstchapter{Introduction}
 \label{chapter:introduction}
 
-The discovery of the Higgs boson in 2012 \cite{atlas_higgs_2012, cms_higgs_2012} marked the complete detection of all particles described within the Standard Model. Developed during the latter half of the 20th century, the Standard Model describes all known particles and their interactions. The model has demonstrated remarkable predictive power, and nearly all phenomena observed in particle physics detectors to date can be described within its framework. Yet, it is known to be incomplete. Among the observed phenomena which it fails to explain \cite{einstein_1920, neutrino_oscillations_1998, Canetti_2012} are multiple lines of astronomical observation which collectively point to the abundance of a new form of massive non-luminous matter in the universe known as ``dark matter" (DM). 
+With the discovery of the Higgs boson in 2012 \cite{atlas_higgs_2012, cms_higgs_2012}, the final piece of the Standard Model fell into place. Developed during the latter half of the 20th century, the Standard Model describes all known particles and their interactions. The model has demonstrated remarkable predictive power, and can account for nearly all phenomena observed in particle physics detectors to date, with no firmly established deviations from its predictions. Yet, it is known to be incomplete. Among the observed phenomena which it fails to explain \cite{einstein_1920, neutrino_oscillations_1998, Canetti_2012} are multiple lines of astronomical observation which collectively point to the abundance of a new form of massive non-luminous matter in the universe known as ``dark matter" (DM). 
 
 While the nature of DM remains a mystery, the observational data strongly suggest that it will take the form of one or more new particles beyond the Standard Model. In addition to its gravitational interactions with massive particles, theoretical considerations relating to the origin of DM in the universe give good reason to expect that the new particle(s) could experience additional, albeit weak, couplings to particles of the Standard Model by mechanisms yet to be determined. The study presented in this thesis is part of a multi-pronged international effort to search for evidence of particle DM by means of its non-gravitational interactions in particle physics experiments. In particular, the study probes new ground in the search for DM production in high-energy particle collisions at the Large Hadron Collider (LHC). 
 
-This chapter introduces the Standard Model, focusing on aspects that are particularly relevant to the presented search, and discusses the astronomical evidence for the existence of DM in the universe. It also introduces the range of experimental strategies that are currently employed to search for evidence of DM in particle physics detectors, and how this search fits into the wider DM search programme at the LHC. Chapter 2 presents the ``Dark Higgs" model that is used to interpret the search
-%, and discusses the theoretical and experimental motivation for studying it. 
-Chapter 3 introduces the LHC machine and the ATLAS detector used to collect the particle collision data. Chapter 4 introduces the Monte Carlo method and its application to modelling the expected yields of events in the ATLAS detector, both from the Dark Higgs signal process and from known Standard Model processes which constitute a background in the search. The reconstruction and analysis of the ATLAS collision data is discussed in Chapter 5, and Chapter 6 presents the methods used to quantify the impacts of uncertainties from theoretical and experimental sources. Chapter 7 discusses the statistical framework used to interpret the results of the search. Chapter 8 presents the range of Dark Higgs model parameters excluded by the search. Chapter 9 concludes with a discussion of the experimental strategy and results. 
+This chapter introduces the Standard Model, focusing on aspects that are particularly relevant to the presented search, and discusses the astronomical evidence for the existence of DM in the universe. It also introduces the range of experimental strategies that are currently employed to search for evidence of DM in particle physics detectors, and how this search fits into the wider DM search programme at the LHC. 
 %in the context of existing searches for the Dark Higgs model, emphasizing the importance of facilitating re-interpretations to constrain other models which may be sensitive to the final state probed by the search. 
 
 \section{Introduction to the Standard Model}
@@ -45,23 +43,13 @@ Bosons in the SM are divided into ``gauge bosons" and ``scalar bosons". The gaug
 
 Scalar bosons are defined as spin 0 particles. There is only one scalar boson known to the SM, namely the Higgs boson (or, simply, the ``Higgs"). Particles in the SM acquire mass via their interaction with the Higgs field. As such, the Higgs only interacts with massive SM particles, which includes all particles except the photon and the gluon. The more massive the particle, the stronger its coupling with the Higgs. Neutrinos are a possible exception; there is at present no mechanism in the SM by which neutrinos could interact with the Higgs field, so the origin of their tiny masses remains an open question.  
 
-\subsection{Particle Decay and Lifetime}
-
-The lowest-mass ``first-generation" quarks and leptons that comprise column I in Figure \ref{fig:standard_model} are, along with the massless photons and gluons, the only stable particles in the SM. All other particles are unstable, and will decay to less-massive particles after they are produced. The decay of an unstable particle occurs randomly with respect to the time elapsed since the particle was produced, with the elapsed time governed by Poisson statistics. The probability \(P(t)\) that an unstable particle will remain after some period \(t\) decays exponentially, with a mean lifetime \(\tau\) in the particle's rest frame:
-
-\begin{equation}
-\label{eq:particle_decay}
-P(t) = e^{-\frac{t}{\tau}} % = e^{-\Gamma t}
-\end{equation}
-
-%\noindent where the decay rate \(\Gamma\) is the inverse of the mean lifetime.  
 
 \subsection{Collision and Decay Processes at Colliders}
 \label{sec:col_decay_procs}
 
 The high-energy counter-rotating proton beams at the LHC are brought into head-on collisions at four interaction points around the ring, each of which is surrounded by a detector\footnote{See Chapter \ref{chapter:lhc_atlas} for a detailed discussion of the LHC and the detectors which surround the four interaction points.}. At each interaction point, constituents of the colliding protons known as ``partons"\footnote{See Section \ref{sec:parton_model} for an introduction to the parton model.} can pair annihilate to form observable collision products via one or more ``virtual mediators"\footnote{See Section \ref{sec:virtual_particles} for a discussion of virtual particles.}, and the collision products are subsequently measured by the detector. 
 
-Each process that describes a physically allowed mechanism by which partons may annihilate to form observable products has a certain probability of taking place relative to other possible annihilation and production processes. The probability that a given process will take place is quantified by its ``cross section" \(\sigma\). The beam luminosity \(\mathcal{L}\) relates the rate of collisions \(\frac{dN}{dt}\) which proceed via a given process to the cross section of the process:
+Each process that describes a physically allowed mechanism by which partons may annihilate to form observable particles has a certain probability of taking place relative to other possible annihilation and production processes. The probability that a given process will take place is quantified by its ``cross section" \(\sigma\). The beam luminosity \(\mathcal{L}\) relates the rate of collisions \(\frac{dN}{dt}\) which proceed via a given process to the cross section of the process:
 
 \begin{equation}
 \frac{dN}{dt} = \mathcal{L}\sigma
@@ -74,11 +62,39 @@ The luminosity can be integrated over a period of time \(t_1\) to \(t_2\), such 
 N = \sigma\int_{t_1}^{t_2}\mathcal{L}(t)dt = \sigma\mathcal{L}_\text{int}
 \end{equation}
 
-\subsubsection{Feynman Diagrams}
+\subsection{Unstable Particles}
 
-The interaction mechanisms by which observable collision products are produced from the annihilation of two partons can be represented by Feynman diagrams, which are described in detail in Chapter 2 of Ref. \cite{griffiths_2008} and summarized here. As an example, the Feynman diagram for the Drell Yan process in which a \(q\bar{q}\) pair annihilate to form a lepton pair \(\ell\bar{\ell}\) via a virtual photon (\(\gamma^{*}\))\footnote{The \(^{*}\) indicates that mass of the virtual photon is off-shell (see discussion of virtual particles below).} or Z boson mediator is shown in Figure \ref{fig:drell_yan}. 
+The lowest-mass ``first-generation" quarks and leptons that comprise column I in Figure \ref{fig:standard_model} are, along with the massless photons and gluons, the only stable particles in the SM. All other particles are unstable, and will decay to less-massive particles after they are produced. 
 
-The particles involved in the interactions are represented as lines in a Feynman diagram, with different particle types represented by different line styles - fermions are generally represented by solid straight lines, and bosons (with the exception of gluons) are generally represented by wavy lines. Particle interactions are represented by vertices at which lines in the diagram intersect. The annihilation of a \(q\bar{q}\) pair to form the virtual \(\gamma^{*}/Z\) mediator is represented in Figure \ref{fig:drell_yan} by the vertex at which the \(q\) and \(\bar{q}\) fermion lines meet the \(\gamma^{*}/Z\) boson line, and the subsequent decay of the  \(\gamma^{*}/Z\) to \(\ell\bar{\ell}\) is represented by the vertex to the right at which the \(\gamma^{*}/Z\) line meets the \(\ell\) and \(\bar{\ell}\) lines. Note that time flows horizontally from left to right in Feynman diagrams, so the colliding \(q\bar{q}\) pair are shown on the left and the observable decay products \(\ell\bar{\ell}\) on the right.
+The decay of an unstable particle occurs randomly with respect to the time elapsed since the particle was produced, with the elapsed time governed by Poisson statistics. The probability \(P(t)\) that an unstable particle will have decayed after a time \(t\) has elapsed in its rest frame is given by the following cumulative exponential distribution:
+
+\begin{equation}
+\label{eq:particle_decay}
+P(t) = 1-e^{-\frac{t}{\tau}} % = e^{-\Gamma t}
+\end{equation}
+
+\noindent where \(\tau\) is the mean lifetime of the particle.
+
+%\noindent where the decay rate \(\Gamma\) is the inverse of the mean lifetime.  
+
+\subsubsection{Unstable Resonance and the Breit-Wigner Formula}
+
+Due to their finite lifetime, the Heisenberg uncertainty principle implies that unstable particles will not be produced with a well-defined mass, but rather with a mass distribution peaked at a central value \(m_0\). The probability density function \(p(m)\) associated with measuring an unstable particle with a mass \(m\) is given by the Breit-Wigner formula \cite{breit_wigner}:
+
+\begin{equation}
+\label{eq:breit_wigner}
+p(m) \propto \frac{1}{(m-m_0)^2 + \frac{\Gamma_E^2}{4}}
+\end{equation}
+
+\noindent where \(\Gamma_E\) is the full width of the resonance peak. The lifetime of the unstable particle is related to the width of its Breit-Wigner resonance by \(\tau = \frac{\hbar}{\Gamma_E}\).
+
+For unstable mediators produced in high-energy colliders which decay to a pair of detectable particles, the mediator mass can be reconstructed as the combined invariant mass\footnote{The invariant mass \(m\) of two particles with four-momenta \(p_1\) and \(p_2\) is in general given by: \(m^2 = p_1 \cdot p_2 = (E_1+E_2)^2 - (\mathbf{p}_1+\mathbf{p}_2)^2\)} of its measured decay products. Neglecting detector resolution effects, the cross section \(\sigma(m)\) associated with producing an unstable particle with a given reconstructed mass is expected to be proportional to its Breit-Wigner distribution: \(\sigma(m)\propto p(m)\). This results in a characteristic resonant peak in the reconstructed invariant mass distribution of the mediator's decay products, which can be used to identify the unstable mediator, and to measure its mass and lifetime.
+
+\subsection{Feynman Diagrams}
+
+The interaction mechanisms by which observable collision products are produced from the annihilation of two partons can be represented by Feynman diagrams, which are described in detail in Chapter 2 of Ref. \cite{griffiths_2008} and summarized here. As an example, the Feynman diagram for the Drell Yan process in which a \(q\bar{q}\) pair annihilate to form a lepton pair \(\ell\bar{\ell}\) via a virtual photon (\(\gamma^{*}\))\footnote{The \(^{*}\) indicates that mass of the virtual particle may be off-shell (see discussion of virtual particles below).} or \(Z^{*}\) boson mediator is shown in Figure \ref{fig:drell_yan}. 
+
+The particles involved in the interactions are represented as lines in a Feynman diagram, with different particle types represented by different line styles - fermions are generally represented by solid straight lines, and bosons (with the exception of gluons) are generally represented by wavy lines. Particle interactions are represented by vertices at which lines in the diagram intersect. The annihilation of a \(q\bar{q}\) pair to form the virtual \(\gamma^{*}/Z^{*}\) mediator is represented in Figure \ref{fig:drell_yan} by the vertex at which the \(q\) and \(\bar{q}\) fermion lines meet the \(\gamma^{*}/Z^{*}\) boson line, and the subsequent decay of the  \(\gamma^{*}/Z^{*}\) to \(\ell\bar{\ell}\) is represented by the vertex to the right at which the \(\gamma^{*}/Z^{*}\) line meets the \(\ell\) and \(\bar{\ell}\) lines. Note that time flows horizontally from left to right in Feynman diagrams, so the colliding \(q\bar{q}\) pair are shown on the left and the observable decay products \(\ell\bar{\ell}\) on the right.
 
 \begin{figure}[h]
 	\centering
@@ -98,7 +114,7 @@ The particles involved in the interactions are represented as lines in a Feynman
 		 		    (b1) -- [edge label=\(q\)]( c1) -- [edge label=\(\bar{q}\)](a1),
 				    (d1) -- [edge label=\(\bar{\ell}\)]( c2) -- [edge label=\(\bar{\ell}\)](d2),
 		 		  },
-		 		  (c1) -- [boson, edge label=\(\gamma^{*}/Z\)] (c2),
+		 		  (c1) -- [boson, edge label=\(\gamma^{*}/Z^{*}\)] (c2),
 		 		};
 		 	\end{feynman}
 		 \end{tikzpicture}
@@ -109,14 +125,7 @@ The particles involved in the interactions are represented as lines in a Feynman
 \subsubsection{Virtual Particles}
 \label{sec:virtual_particles}
 
-In general, ingoing and outgoing lines in a Feynman diagram represent real observable particles, and internal lines represent so-called virtual particles. Virtual particles are not observable, but are rather a representation of the mechanism involved with producing the observable final state products. Importantly, virtual particles are not in general produced with the mass of their corresponding real particle, but can in principle take on whatever mass is needed to satisfy energy and momentum conservation at each interaction vertex that they are involved with. However, the more ``off-shell" the mass of the virtual particle, meaning the more it differs from the mass of the corresponding real particle, the lower is the production cross section \(\sigma(m^{*})\) with which the process would be expected to proceed for the given virtual particle mass \(m^{*}\). This relationship is described quantitatively by the Breit-Wigner formula \cite{breit_wigner}:
-
-\begin{equation}
-\label{eq:breit_wigner}
-\sigma(m^{*}) \propto \frac{1}{(m^{*}-m_0)^2 + \frac{\Gamma_E^2}{4}}
-\end{equation}
-
-\noindent where \(m_0\) is the ``on-shell" mass of the corresponding real particle, and \(\Gamma_E\) is the total decay width of the real particle. The Breit-Wigner formula describes a peak centred at \(m_0\) with width \(\Gamma_E\). The lifetime of the corresponding particle is related to the width of its Breit-Wigner resonance by \(\tau = \frac{\hbar}{\Gamma_E}\).
+In general, ingoing and outgoing lines in a Feynman diagram represent real observable particles, and internal lines represent so-called virtual particles. Virtual particles are not observable, but are rather a representation of the mechanism involved with producing the observable final state products. Importantly, virtual particles are not in general produced with the mass of their corresponding real particle, but can in principle take on whatever mass is needed to satisfy energy and momentum conservation at each interaction vertex that they are involved with. 
 
 \subsubsection{Matrix Element}
 
@@ -154,7 +163,7 @@ where \(\theta(x)\) can be any function of the spacetime coordinates \(x\). It i
 
 \subsubsection{Quantum Chromodynamics}
 
-The theory of quantum chromodynamics (QCD) \cite{qcd_2007} describes the strong interactions mediated by gluons between particles with colour charge (quarks and gluons). Its symmetries are described by the SU(3) gauge group. The quarks are represented by a three-component vector of spinors: \(\psi_c = \{\psi_r, \psi_b, \psi_g\}\), where the subscripts refer to the three colours - red, green and blue - that constitute the charges of the strong interaction. The QCD Lagrangian (see eg. Eq. 10.88 in Ref. \cite{griffiths_2008}) is symmetric under a transformation of the quark spinor \(\psi_c\) by a \(3\times3\) SU(3) matrix which is unitary with determinant 1. The SU(3) symmetry is ensured by the inclusion of an eight-component set \(\boldsymbol{\boldsymbol{A}_\mu}\) of vector gauge fields in the QCD Lagrangian. The associated gauge bosons are identified as the eight physical gluons, each of which possesses a unique superposition of \({rgb}\) colour states \cite{griffiths_2008}.
+The theory of quantum chromodynamics (QCD) \cite{qcd_2007} describes the strong interactions mediated by gluons between particles with colour charge (quarks and gluons). Its symmetries are described by the SU(3) gauge group. The quarks are represented by a three-component vector of spinors: \(\psi_c = \{\psi_r, \psi_g, \psi_b\}\), where the subscripts refer to the three colours - red, green and blue - that constitute the charges of the strong interaction. The QCD Lagrangian (see eg. Eq. 10.88 in Ref. \cite{griffiths_2008}) is symmetric under a transformation of the vector of quark spinors \(\psi_c\) by a \(3\times3\) SU(3) matrix which is unitary with determinant 1. The SU(3) symmetry is ensured by the inclusion of an eight-component set \(\boldsymbol{\boldsymbol{A}_\mu}\) of vector gauge fields in the QCD Lagrangian. The associated gauge bosons are identified as the eight physical gluons, each of which possesses a unique superposition of \({rgb}\) colour states \cite{griffiths_2008}.
 
 \subsubsection{Electoweak Theory and the Higgs Mechanism}
 
@@ -162,7 +171,7 @@ The mathematical descriptions of the weak and EM forces are unified into a singl
 
 Developed in 1954, Yang-Mills theory \cite{yang_mills_1954} showed that a set of three vector gauge bosons, referred to as the ``isospin triplet" \(\boldsymbol{W}\) are needed to satisfy the SU(2) symmetry, and a fourth massless vector gauge boson \(B\) is needed to satisfy the U(1) symmetry. Despite satisfying the SU(2) symmetry of the weak interaction, the weak isospin triplet predicted by Yang-Mills theory falls short of fully describing the physical \(W^{\pm}\) and \(Z\) bosons that mediate the weak interaction, which are known to be massive \cite{pdg_2018}.
 
-The U(1)\(\times\)SU(2)\(\times\)SU(3) symmetry of the SM Lagrangian does not admit mass terms of the form \(m_X^2X^\dagger X\), where X is an arbitrary field. Proposed in 1964, the ``Higgs mechanism" \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3} provides a means of generating the masses of the physical \(W^\pm\) and \(Z\) bosons, as well as all other massive particles (with the exception of neutrinos), by adding following term to the SM Lagrangian:
+The U(1)\(\times\)SU(2)\(\times\)SU(3) symmetry of the SM Lagrangian does not admit mass terms of the form \(m_X^2X^\dagger X\), where X is an arbitrary field. Proposed in 1964, the ``Higgs mechanism" \cite{HiggsTheory1,HiggsTheory2,HiggsTheory3} provides a means of generating the masses of the physical \(W^\pm\) and \(Z\) bosons, as well as all other massive particles (with the exception of neutrinos), by adding the following term to the SM Lagrangian:
 
 \begin{equation}
 \label{eq:higgs_lagrangian}
@@ -198,7 +207,7 @@ V(H) = -\mu^2H^\dagger H + \lambda(H^\dagger H)^2
 
 \noindent where the second term describes quartic self-interactions of the Higgs field.
 
-The emergence of the massive physical \(W^\pm\), \(Z\) bosons and the massless photon comes from the interactions of the electroweak \(\boldsymbol{W}\) and \(B\) fields with the Higgs field to produce ``mass" terms in the Lagrangian of the form \(m_X^2X^\dagger X\). This can be seen by expanding Eq. \ref{eq:D_muH}, considering only the terms involving the vacuum expectation value \(v\):
+The emergence of the massive physical \(W^\pm\), \(Z\) bosons and the massless photon comes from the interactions of the electroweak \(\boldsymbol{W}\) and \(B\) fields with the Higgs field to produce ``mass" terms in the Lagrangian of the form \(m_X^2X^\dagger X\). This can be seen by expanding Equations \ref{eq:higgs_lagrangian} and  \ref{eq:D_muH}, considering only the terms involving the vacuum expectation value \(v\):
 
 \begin{equation}
 \label{eq:higgs_expanded}
@@ -326,5 +335,11 @@ In principle, complete theories of physics beyond the SM, such as the minimal su
 
 Simplified models, widely used in recent and ongoing DM searches at the LHC, are designed to bridge the gap between EFT and complete theories. They provide a ``first-order" description of theoretically motivated new physics scenarios that could be accessible at collider energies. They provide guidance for experimental searches without fully specifying the details of any additional new physics at energies above the collider scale that would be needed for a complete theory \cite{DM_colliders}. In terms of DM production at the LHC, one or more new ``portal mediators" associated with new physics scenarios may be considered, which allow for mixing between SM particles and DM. The process by which the mixing occurs is represented with a tree-level diagram whose experimental signature would be accessible at LHC energies, such as the diagram shown in Figure \ref{fig:eft_simplified_model} which represents a DM benchmark model featured in the 2015 report of the ATLAS/CMS Dark Matter Forum \cite{dm_forum}. 
 
-The search presented in this thesis, which targets a final state of \met produced in association with a pair of \(W\) bosons, is interpreted with the ``Dark Higgs" simplified model \cite{Duerr2017} discussed in Chapter \ref{chapter:dh_model}. Searches for this model at the LHC are sensitive to DM with a mass in the range of \(\sim100~\GeV\).
+The search presented in this thesis, which targets a final state of \met produced in association with a pair of \(W\) bosons, is interpreted with the ``Dark Higgs" simplified model \cite{Duerr2017} discussed in Chapter \ref{chapter:dh_model}. Searches for this model at the LHC are sensitive to DM with mass in the range of \(\sim100~\GeV\).
+
+\section{Summary of the Thesis}
+
+Following a brief introduction to the Standard Model (SM) of particle physics, this chapter presented multiple lines of evidence from observational astronomy for the abundance of DM in the universe, and for its hypothesized composition as one or more new particles beyond the SM. This was followed by a discussion of the ongoing worldwide effort to search for evidence of particle DM using particle detectors, and how this search fits into the wider effort. 
+
+The following chapter discusses the ``Dark Higgs" model that is used to interpret the search. Chapter 3 introduces the LHC machine and the ATLAS detector used to collect the particle collision data. Chapter 4 introduces the Monte Carlo method and its application to modelling the expected yields of events in the ATLAS detector, both from the Dark Higgs signal process and from known Standard Model processes which constitute a background in the search. The reconstruction and analysis of the ATLAS collision data is discussed in Chapter 5, and Chapter 6 presents the methods used to quantify the impacts of uncertainties from theoretical and experimental sources. Chapter 7 discusses the statistical framework used to interpret the results of the search. Chapter 8 presents the range of Dark Higgs model parameters excluded by the search. Chapter 9 concludes with a discussion of the experimental strategy and results. 
 
