@@ -11,7 +11,7 @@ The goal of the ATLAS detector is to identify particles that are produced by the
 \subsection{Charged Leptons}
 \label{sec:charged_leptons}
 
-The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability \cite{PDG_2018} be an electron \(e\), a muon \(\mu\) or a tau \(\tau\). Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Only the \(W\rightarrow e\bar{\nu}_e\) decay is possible in the 3-body muon decay, because any other particles that a virtual \(W\) could otherwise decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
+The final state charged lepton produced from the leptonic decay of a \(W\) in the DH model could with approximately equal probability \cite{pdg_2020} be an electron \(e\), a muon \(\mu\) or a tau \(\tau\). Electrons are stable and as such do not decay before depositing their energy in the ATLAS detector. This allows them to be reconstructed directly using information from the inner tracker and the EM calorimeter, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Muons are unstable and will ultimately decay to a \(\nu_\mu\) and a \(e\bar{\nu}_e\) pair via a virtual \(W\) boson mediator, as shown in Figure \ref{fig:muon_decay}. However, their mean lifetime of 2.2\(\mu s\), which is the average time after they are produced before they undergo the decay to \(\nu_\mu+e\bar{\nu}_e\), is long enough that muons do make it through the ATLAS detector before they decay, and are reconstructed using information from the inner tracker and the muon spectrometer, as discussed in Sections \ref{sec:inner_detector} and \ref{sec:EM_calo}. Only the \(W\rightarrow e\bar{\nu}_e\) decay is possible in the 3-body muon decay, because any other particles that a virtual \(W\) could otherwise decay to are too massive to be produced from the initial \(106~\MeV\) rest mass energy of the muon. 
 
 \begin{figure}[hp]
 	\centering
@@ -108,7 +108,7 @@ After all \smallR jets in the final state are reconstructed and fully calibrated
 \subsubsection{\btag}
 \label{sec:btag}
 
-When \(b\) quarks are produced by \(pp\) collisions in the ATLAS detector, they immediately form ``\(b\)-hadrons" due to colour confinement. The \(b\)-hadrons subsequently decay primarily via the weak force \cite{PDG_2018} to form lighter hadrons. The so-called secondary decays of b-hadrons occur with a typical lifetime of \(\sim 1.5\)ps \cite{PDG_2018}, and as a result the b-hadrons can travel several millimeters from the primary \(pp\) interaction point \cite{ATLAS-CONF-2018-006} before undergoing secondary decay. The displaced secondary vertex represents a signature of \(b\)-hadron decay in the ATLAS detector. It can be reconstructed using precision tracking of charged particles provided by the inner detector, and used to assign a ``\(b\) tag" to hadronic jets in the ATLAS calorimeter to identify them as having originated from the decay of a \(b\)-hadron. This so-called ``\bjet tagging" is performed with the \verb|DL1r| algorithm \cite{ATLAS-CONF-2018-006}, which uses a deep learning method for the identification. A fixed working point with a 77\% efficiency is used. \btagged jets are vetoed in the signal region to reduce the background of SM \ttbar and single-top processes (see Section \ref{sec:dominant_bkgs} for details).
+When \(b\) quarks are produced by \(pp\) collisions in the ATLAS detector, they immediately form ``\(b\)-hadrons" due to colour confinement. The \(b\)-hadrons subsequently decay primarily via the weak force \cite{pdg_2020} to form lighter hadrons. The so-called secondary decays of b-hadrons occur with a typical lifetime of \(\sim 1.5\)ps \cite{pdg_2020}, and as a result the b-hadrons can travel several millimeters from the primary \(pp\) interaction point \cite{ATLAS-CONF-2018-006} before undergoing secondary decay. The displaced secondary vertex represents a signature of \(b\)-hadron decay in the ATLAS detector. It can be reconstructed using precision tracking of charged particles provided by the inner detector, and used to assign a ``\(b\) tag" to hadronic jets in the ATLAS calorimeter to identify them as having originated from the decay of a \(b\)-hadron. This so-called ``\bjet tagging" is performed with the \verb|DL1r| algorithm \cite{ATLAS-CONF-2018-006}, which uses a deep learning method for the identification. A fixed working point with a 77\% efficiency is used. \btagged jets are vetoed in the signal region to reduce the background of SM \ttbar and single-top processes (see Section \ref{sec:dominant_bkgs} for details).
 
 \subsection{Resolved \(W\) Candidate}
 \label{sec:resolved_w_cand}
@@ -123,7 +123,7 @@ As described in Section \ref{sec:atk4_jets} above, the pair of quarks produced b
 \label{eq:dijet_invt_mass}
 M_{j_1,j_2} = \sqrt{\mathbf{p}_{j_1,j_2} \cdot \mathbf{p}_{j_1,j_2} } 
 \end{equation}
-\item Select the dijet pair whose invariant mass is closest to the \(W\) boson mass of \(80.4~\GeV\) \cite{PDG_2018} as the \smallR jets to be associated with the \(W\rightarrow q\bar{q}\) decay.
+\item Select the dijet pair whose invariant mass is closest to the \(W\) boson mass of \(80.4~\GeV\) \cite{pdg_2020} as the \smallR jets to be associated with the \(W\rightarrow q\bar{q}\) decay.
 \item Reconstruct the hadronically decaying \(W\) boson candidate using the dijet pair with four-momentum \(\mathbf{p}_{j_1,j_2}\).
 \end{itemize}
 
@@ -408,7 +408,7 @@ m_T(\ell, \met) = \sqrt{2p_{T, \ell} \met(1-\cos\theta_{\ell, \met})}
 \end{equation}
 
 
-\noindent which is derived from the more general transverse mass definition \cite{PDG_2018}
+\noindent which is derived from the more general transverse mass definition \cite{pdg_2020}
 
 \begin{multline}
 \label{eq:mtlepmet_full}
