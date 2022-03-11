@@ -80,6 +80,7 @@ The identification efficiency refers to the probability that an electron passing
 Electron isolation tackles a slightly different, though related, challenge in comparison with identification. The goal of isolation is to separate the so-called ``prompt" electrons that are produced from the primary decay processes of heavy mediators produced in the \(pp\) collisions from background processes such as semileptonic quark decays, hadrons misidentified as leptons and photons that convert into \(e^+e^-\) pairs before reaching the EM calorimeter. It is generally found that reconstructed objects that originate from prompt electrons can be characterized by a relative absence of (i.e. isolation from) significant activity in a small angular radius \(R\) around the object in the space of \(\eta\times\phi\). In analogy with the identification efficiency, a high isolation efficiency is achieved by loosening the criteria for defining an object as isolated. As such, loosening isolation criteria will improve the probability that the prompt electrons targeted by the isolation requirement are identified as isolated objects, at the cost of an increase in the rate at which objects that originate from background processes are also identified as isolated.
  
 Two types of electrons are defined for the search based on different sets of criteria.
+
 \emph{Baseline} electrons use the \emph{Loose} working point for both identification and isolation. Isolation is measured within a fixed angular radius of \(\Delta R=0.2\) around the reconstructed electron object \cite{PERF-2017-01}. The \emph{Loose} identification working point is measured in dedicated studies performed within the ATLAS collaboration to have an efficiency of 93\% \cite{PERF-2017-01} for identifying prompt electrons with \(E_T=40~\GeV\). The \emph{Loose} isolation working point has a total measured efficiency of 98\% \cite{PERF-2017-01}. Because of their relatively high efficiency, \emph{baseline} electrons are used to veto the presence of additional electrons in the final state.
 
 \emph{Signal} electrons are designed reconstruct prompt electrons with high purity. They are required to satisfy the \emph{Medium} identification criteria, which are measured to have an 88\% efficiency \cite{PERF-2017-01}, and \emph{Loose} isolation criteria.
@@ -89,9 +90,12 @@ Both types of electrons are required to have \(\pT > 7~\GeV\) and a pseudorapidi
 \subsubsection{Muons}
 
 As described in Section \ref{sec:muon_spec}, muons are reconstructed using information from the the inner detector and the muon spectrometer. Detailed information about muon reconstruction, identification and calibration can be found in Refs. \cite{PERF-2015-10} and \cite{ATL-PHYS-PROC-2018-052}. As is the case with electron objects, muon objects are reconstructed at several identification and isolation working points, and two definitions for muons are considered for this analysis:
-\newline \emph{Baseline} muons do not have any isolation requirement, but are required to satisfy the \emph{Loose} identification criteria, with a measured efficiency of 98\% for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}.
-\newline \emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 96\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052}. These tight isolation criteria use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
-\newline Both types of muons use a threshold of \(\pt > 7~\GeV \). 
+
+\emph{Baseline} muons do not have any isolation requirement, but are required to satisfy the \emph{Loose} identification criteria, with a measured efficiency of 98\% for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}.
+
+\emph{Signal} muons are designed to have a relatively high purity, and must satisfy the \emph{Medium} identification criteria, with a 96\% efficiency for \(20~\GeV<p_{T, \mu}<100~\GeV\) \cite{PERF-2015-10}. Signal muons are additionally required to pass a set of tight isolation criteria referred to as \emph{TightTrackOnly\_VarRad} \cite{ATL-PHYS-PROC-2018-052}. These tight isolation criteria use information from the inner tracker, and are defined within an angular radius \(\Delta R\) around the reconstructed muon object that depends on the \pt of the muon object.
+
+Both types of muons use a threshold of \(\pt > 7~\GeV \). 
 
 Baseline muons are required to have pseudorapidity in the range of  \(|\eta| < 2.7\). For signal muons, a tighter pseudorapidity range of \(|\eta| < 2.5\) is required to ensure that the muons are well measured in the inner detector as well as the muon spectrometer. 
 
@@ -344,7 +348,7 @@ In this rotated coordinate system, the four-momenta \(\mathbf{p}_\nu\), \(\mathb
 \noindent It can be shown by taking derivatives of Eq. \ref{eq:ms_squared} that the minimum \ms occurs when \(\phi_v=0\) (i.e. when the neutrino is in the same plane as the \(\mathbf{p}_{W_\text{had}}\)).
 
 
-Setting \(\phi_v=0\) in Eq. \ref{eq:ms_squared} and using the pythagorean identity \(\sin \theta = \sqrt{1-\cos^2\theta}\):
+Setting \(\phi_v=0\) in Eq. \ref{eq:ms_squared} and using the Pythagorean identity \(\sin \theta = \sqrt{1-\cos^2\theta}\):
 
 \begin{multline}
 \label{eq:ms_squared_simplified}
@@ -574,16 +578,16 @@ After an optimized set of selections were determined for the four signal points 
 \end{tabular}}
 \end{table}
 
-Figures \ref{fig:Nminus1mergedSR} and \ref{fig:Nminus1resolvedSR} show N-1 plots with the finalized selections, as well as the placements of cuts, for each of the variables listed in Table \ref{tab:opt_vars}. The finalized selections are summarized in Table \ref{tab:SR_selection_opt} for the merged and resolved SRs, respectively. The lower bound on \met in the merged SR was ultimately kept at the same value of \(200~\GeV\) applied in the baseline selection, because it was found that with the other optimized selections applied there were very few signal and background events with \(\met<~250~\GeV\), and explicitly increasing the lower bound was not found to produce any appreciable improvements in sensitivity.
+Figures \ref{fig:Nminus1mergedSR} and \ref{fig:Nminus1resolvedSR} show N-1 plots with the finalized selections, as well as the placements of cuts, for the \mTAR and \drTARl (\Wcandm and \drWl) variables in the merged (resolved) SR. N-1 plots for the other selection variables listed in Table \ref{tab:opt_vars} can be found in Appendix \ref{chapter:appendix_SR_N_1}. The finalized selections are summarized in Table \ref{tab:SR_selection_opt} for the merged and resolved SRs, respectively. The lower bound on \met in the merged SR was ultimately kept at the same value of \(200~\GeV\) applied in the baseline selection, because it was found that with the other optimized selections applied there were very few signal and background events with \(\met<~250~\GeV\), and explicitly increasing the lower bound was not found to produce any appreciable improvements in sensitivity.
 
 
 \begin{figure}[htbp]
   \centering
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/mT_lep_met_normSig_N_1.pdf}
-    \caption{\mtlepmet}
-    \end{subfigure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/mT_lep_met_normSig_N_1.pdf}
+%    \caption{\mtlepmet}
+%    \end{subfigure}
     \begin{subfigure}[t]{0.48\textwidth}
     \centering
      \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged_mWlt/TARJets10_mTAR0_normSig_N_1.pdf}
@@ -594,40 +598,40 @@ Figures \ref{fig:Nminus1mergedSR} and \ref{fig:Nminus1resolvedSR} show N-1 plots
      \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged_mWgt/TARJets10_mTAR0_normSig_N_1.pdf}
      \caption{\mTAR Cut  (\(Z\) evaluated for lower bound)}
     \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/MetTST_Significance_normSig_N_1.pdf}
-    \caption{\metsig}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/MetTST_met_normSig_N_1.pdf}
-    \caption{\met}
-    \end{subfigure}
-   \caption{N-1 Distributions for selection requirements in the merged signal region. Grey bands show statistical uncertainty on background estimate. The lower panel shows the cumulative Asimov significance normalized to unit peak, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
-   \label{fig:Nminus1mergedSR}
-\end{figure}
- \begin{figure} \ContinuedFloat
-    \begin{subfigure}[t]{0.48\textwidth}
+        \begin{subfigure}[t]{0.48\textwidth}
     \centering
      \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/dR_lep_TARJets10_normSig_N_1.pdf}
     \caption{\drTARl}
     \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/TARJets10_TAR_D20_normSig_N_1.pdf}
-    \caption{\DtwoTAR}
-    \end{subfigure}
-    \caption{N-1 Distributions for selection requirements in the merged signal region (continued)}
-  \end{figure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/MetTST_Significance_normSig_N_1.pdf}
+%    \caption{\metsig}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/MetTST_met_normSig_N_1.pdf}
+%    \caption{\met}
+%    \end{subfigure}
+   \caption{N-1 Distributions for the \mTAR and \drTARl variables used in the merged signal region definition. Grey bands show statistical uncertainty on background estimate. The lower panel shows the cumulative Asimov significance normalized to unit peak, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
+   \label{fig:Nminus1mergedSR}
+\end{figure}
+% \begin{figure} \ContinuedFloat
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Merged/TARJets10_TAR_D20_normSig_N_1.pdf}
+%    \caption{\DtwoTAR}
+%    \end{subfigure}
+%    \caption{N-1 Distributions for selection requirements in the merged signal region (continued)}
+%  \end{figure}
   
   \begin{figure}[htbp]
   \centering
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/mT_lep_met_normSig_N_1.pdf}
-    \caption{\mtlepmet}
-    \end{subfigure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/mT_lep_met_normSig_N_1.pdf}
+%    \caption{\mtlepmet}
+%    \end{subfigure}
     \begin{subfigure}[t]{0.48\textwidth}
     \centering
      \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved_mWlt/WCand_m_normSig_N_1.pdf}
@@ -640,30 +644,30 @@ Figures \ref{fig:Nminus1mergedSR} and \ref{fig:Nminus1resolvedSR} show N-1 plots
     \end{subfigure}
     \begin{subfigure}[t]{0.48\textwidth}
     \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/MetTST_Significance_normSig_N_1.pdf}
-    \caption{\metsig}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/MetTST_met_normSig_N_1.pdf}
-    \caption{\met}
-    \end{subfigure}
-     \caption{N-1 Distributions for selection requirements in the resolved signal region. Grey bands show statistical uncertainty on the background estimate. The lower panel shows the cumulative Asimov significance normalized to unit peak, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
-     \label{fig:Nminus1resolvedSR}
-\end{figure}
-\begin{figure} \ContinuedFloat
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
      \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/dRWl_normSig_N_1.pdf}
     \caption{\drWl}
     \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-    \centering
-     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/WCand_pt_normSig_N_1.pdf}
-    \caption{\Wcandpt}
-    \end{subfigure}
-     \caption{N-1 Distributions for selection requirements in the resolved signal region (continued)}
-  \end{figure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/MetTST_Significance_normSig_N_1.pdf}
+%    \caption{\metsig}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/MetTST_met_normSig_N_1.pdf}
+%    \caption{\met}
+%    \end{subfigure}
+     \caption{N-1 Distributions for the \Wcandm and \drWl variables used in the resolved signal region definition. Grey bands show statistical uncertainty on the background estimate. The lower panel shows the cumulative Asimov significance normalized to unit peak, where the direction (\(>\) or \(<\)) specified in the y label indicates whether the significance is being summed from above (\(>\)) or from below (\(<\)). Red vertical line and arrow show placement and direction of selection on the given variable in this region.}
+     \label{fig:Nminus1resolvedSR}
+\end{figure}
+%\begin{figure} \ContinuedFloat
+%    \begin{subfigure}[t]{0.48\textwidth}
+%    \centering
+%     \includegraphics[width = 0.9\textwidth]{Figures/5/SR1L_Resolved/WCand_pt_normSig_N_1.pdf}
+%    \caption{\Wcandpt}
+%    \end{subfigure}
+%     \caption{N-1 Distributions for selection requirements in the resolved signal region (continued)}
+%  \end{figure}
 
 
 \begin{table}[htbp]
