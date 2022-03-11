@@ -17,6 +17,8 @@
 \include{macros/use_packages} % all usepackage commands and newcommands in this file
 %\include{macros/astro} %unique shortcuts and packages for astro students
 \include{macros/physics} %unique shortcuts and packages for particle physics students
+\include{latex/atlasbiblatex.sty}
+\usepackage{latex/atlasbiblatex}
 %*********************************************************************************************************
 % INCLUDE ONLY
 %*********************************************************************************************************
@@ -33,6 +35,8 @@
 
 \usepackage{lineno}
 \linenumbers
+%\usepackage{natbib,hyperref}
+%\usepackage{doi}
 
 %*********************************************************************************************************
 % DOCUMENT
@@ -42,24 +46,24 @@
 % Title page
 \PhDDisseration %pick one, not both
 %\MastersThesis
-%\input frontmatter/setup    % DMM: uncomment to include frontmatter pages
+\input frontmatter/setup    % DMM: uncomment to include frontmatter pages
 
 \newpage  % DMM: Uncomment when including frontmatter pages
 
-	\include{chapters/1/chapter_intro}
-	\include{chapters/2/chapter_model}
-	\include{chapters/3/chapter_lhc_atlas}
-	\include{chapters/4/chapter_mc}
-	\include{chapters/5/chapter_objects}
-	\include{chapters/6/chapter_systematics}
-	\include{chapters/7/chapter_stat}
-	\include{chapters/8/chapter_results}
-	\include{chapters/9/chapter_conclusion}
-	\appendix
-	\include{chapters/appendix/app_N_1}
-	\include{chapters/appendix/app_SR_CR_distributions}
-	\include{chapters/appendix/app_systematics_descriptions}
-	\include{chapters/appendix/app_signal_strength}
+%	\include{chapters/1/chapter_intro}
+%	\include{chapters/2/chapter_model}
+%	\include{chapters/3/chapter_lhc_atlas}
+%	\include{chapters/4/chapter_mc}
+%	\include{chapters/5/chapter_objects}
+%	\include{chapters/6/chapter_systematics}
+%	\include{chapters/7/chapter_stat}
+%	\include{chapters/8/chapter_results}
+%	\include{chapters/9/chapter_conclusion}
+%	\appendix
+%	\include{chapters/appendix/app_N_1}
+%	\include{chapters/appendix/app_SR_CR_distributions}
+%	\include{chapters/appendix/app_systematics_descriptions}
+%	\include{chapters/appendix/app_signal_strength}
 	
 % The style of bibliography exemplified here is the "plain",
 % normally used in science theses. This is shown
@@ -72,7 +76,8 @@
 % DMacDonell_Thesis.bib and called below
 
 	\TOCadd{Bibliography}
-	\bibliographystyle{unsrt}
-	\bibliography{DMacDonell_Thesis}
+%	\bibliographystyle{unsrturl}
+%	\bibliography{DMacDonell_Thesis}
+	\printbibliography 
 
 \end{document}

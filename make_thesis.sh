@@ -1,4 +1,4 @@
-rm DMacDonell_Thesis.aux DMacDonell_Thesis.log DMacDonell_Thesis.out
+rm DMacDonell_Thesis.aux DMacDonell_Thesis.log DMacDonell_Thesis.out DMacDonell_Thesis.bbl DMacDonell_Thesis.bcf DMacDonell_Thesis.blg DMacDonell_Thesis.cb DMacDonell_Thesis.cb2 DMacDonell_Thesis-blx.bib
 pdflatex DMacDonell_Thesis.tex
 bibtex DMacDonell_Thesis
 pdflatex DMacDonell_Thesis.tex
