@@ -67,9 +67,16 @@
   }
 
   % Turn off printing of arXiv
-  \ifthenelse{\boolean{ABIB@eprint}}{}{%
-    \ExecuteBibliographyOptions{eprint=false}
+  \AtEveryBibitem{%
+    \ifentrytype{article}{\clearfield{url}}{}
   }
+  
+%    % Turn on tech report url
+%   \AtEveryBibitem{%
+%    \ifentrytype{report}{\ExecuteBibliographyOptions{date=year}}
+%    }
+%    %\ifentrytype{report}{\clearfield{title}}{}
+  
 
   % date=year option works for TeX Live 2014 or so onwards
   \ifthenelse{\ABIB@texlive < 2014}{}{%
