@@ -75,7 +75,7 @@ Figure \ref{fig:exp_syst_shifts_bkg} shows the envelope of all symmetrized shift
      \includegraphics[width = 0.99\textwidth]{Figures/6/exp_systs_total_bkg_SR_res_TARJets10_minmS_res.pdf}
      \caption{Resolved SR}
     \end{subfigure}
-    \caption{Envelope of shifts in the total predicted yield of SM background processes in the merged (left) and resolved (right) SRs due to experimental systematics associated with each physics object considered in the search. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield.}
+    \caption[Envelope of shifts in the total predicted yield of Standard Model background processes in the signal regions due to experimental systematics.]{Envelope of shifts in the total predicted yield of SM background processes in the merged (left) and resolved (right) SRs due to experimental systematics associated with each physics object considered in the search. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield.}
    \label{fig:exp_syst_shifts_bkg}
 \end{figure}
 
@@ -91,14 +91,14 @@ Figure \ref{fig:exp_syst_shifts_bkg} shows the envelope of all symmetrized shift
      \includegraphics[width = 0.99\textwidth]{Figures/6/exp_systs_monoSWWsemilep_zp2100_dm200_dh210_SR_res_TARJets10_minmS_res.pdf}
      \caption{Resolved SR}
     \end{subfigure}
-    \caption{Envelope of shifts in the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)\) in the merged (left) and resolved (right) SRs due to experimental systematics associated with each physics object considered in the search. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield. }
+    \caption[Envelope of shifts in the total predicted yield of Dark Higgs signal process at \((\ms, \mZp)=(210, 2100)\) in the signal regions due to experimental systematics.]{Envelope of shifts in the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)\) in the merged (left) and resolved (right) SRs due to experimental systematics associated with each physics object considered in the search. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield. }
    \label{fig:exp_syst_shifts_sig}
 \end{figure}
 
 Tables \ref{tab:systs_total_bkg_JET_JER_SR} and \ref{tab:systs_total_bkg_JET_JER_CR} show a sample breakdown of systematic uncertainties associated with the total predicted yield of SM background processes in the SRs and CRs, respectively, which arise from shifting uncertain parameters associated with the reconstructed jet energy resolution (JER) of \(R=0.4\) jets by \(\pm\sigma\). The \(R=0.4\) JER systematics are shown because they produce relatively large shifts in predicted yields compared with other experimental sources.
 
 \begin{table}[ht]
-\caption{\label{tab:systs_total_bkg_JET_JER_SR} Symmetrized up and down uncertainties in total predicted yield of all SM background processes in the merged and resolved SRs due to varying parameters associated with jet energy resolution (JER) by \(\pm1\sigma\). Uncertainties are reported as percent shift relative to nominal yield.}
+\caption[Symmetrized uncertainties in the total predicted yields of all SM background processes in the signal regions associated with jet energy resolution.]{\label{tab:systs_total_bkg_JET_JER_SR} Symmetrized uncertainties in the total predicted yields of all SM background processes in the merged and resolved SRs due to varying parameters associated with jet energy resolution (JER) by \(\pm1\sigma\). Uncertainties are reported as percent shift relative to nominal yield.}
 \footnotesize{
 \begin{tabular}{l l l l l }
 \toprule
@@ -135,7 +135,7 @@ JET\_JER\_EffectiveNP\_9 & \(\pm\)0.86\% &\(\pm\)0.49\% \tabularnewline
 \end{table}
 
 \begin{table}[ht]
-\caption{\label{tab:systs_total_bkg_JET_JER_CR} Symmetrized up and down uncertainties in total predicted yield of all SM background processes in the merged and resolved CRs due to varying parameters associated with jet energy resolution (JER) by \(\pm1\sigma\). Uncertainties are reported as percent shift relative to nominal yield.}
+\caption[Symmetrized uncertainties in the total predicted yields of all SM background processes in the control regions associated with jet energy resolution.]{\label{tab:systs_total_bkg_JET_JER_CR} Symmetrized up and down uncertainties in total predicted yield of all SM background processes in the merged and resolved CRs due to varying parameters associated with jet energy resolution (JER) by \(\pm1\sigma\). Uncertainties are reported as percent shift relative to nominal yield.}
 \footnotesize{
 \begin{tabular}{l l l l l }
 \toprule
@@ -407,9 +407,12 @@ Figure \ref{fig:theory_systs} shows yield variations associated with all sources
     \caption{\(\mu_R+\mu_F\) for DH signal at \((\ms, \mZp)=(210, 2100)~\GeV\)}
     \label{fig:DH_scale}
   \end{subfigure} \\ \vspace{1em}
-      \caption{Shifts in the predicted yield of various processes considered in the search in the merged SRs due to theoretical systematic uncertainties. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield. }
+      \caption[Shifts in predicted yields in the merged signal regions due to theoretical systematic uncertainties.]{Shifts in the predicted yield of various processes considered in the search in the merged SRs due to theoretical systematic uncertainties. The predicted yield is binned in \minms using the binning strategy employed in the fit used to search for evidence of the DH signal model in the data (see Chapter \ref{chapter:stat} for details). Bottom panel shows ratio of the shifts relative to the nominal yield. }
   \label{fig:theory_systs}
   \end{figure}
+  
+ 	
+\captionsetup[figure]{list=no}
   
  \begin{figure} \ContinuedFloat
   \begin{subfigure}{0.45\textwidth}
@@ -451,11 +454,13 @@ Figure \ref{fig:theory_systs} shows yield variations associated with all sources
   \caption{Shifts in the predicted yield due to theoretical systematic uncertainties (continued) }
 \end{figure}
 
+\captionsetup[figure]{list=yes}
+
 Tables \ref{tab:systs_bkg_SR} and \ref{tab:systs_bkg_CR} summarize the uncertainties associated with the total predicted yield from all theoretical sources for each background process in the SRs and CRs, respectively. 
 
 \begin{table}[ht]
 \small{
-\caption{\label{tab:systs_bkg_SR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the SRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption[Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the signal regions.]{\label{tab:systs_bkg_SR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the SRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l l l l }
 \toprule
 \textbf{Bkg and Syst.} & \textbf{Mgd SR} & \textbf{Res SR}\tabularnewline
@@ -516,7 +521,7 @@ Z+Jets PS & \(\pm\)0.07 (\(\pm\)6.22\%) &\(\pm\)1.30 (\(\pm\)7.54\%) \tabularnew
 
 \begin{table}[ht]
 \footnotesize{
-\caption{\label{tab:systs_bkg_CR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the CRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption[Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the control regions.]{\label{tab:systs_bkg_CR} Theoretical systematic uncertainties associated with predicted yields of dominant backgrounds in the CRs, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l l l l }
 \toprule
 \textbf{Bkg and Syst.} & \textbf{Mgd CRW} & \textbf{Res CRW} & \textbf{Mgd CRTT} & \textbf{Res CRTT}\tabularnewline
@@ -578,7 +583,7 @@ Z+Jets PS & \(\pm\)0.95 (\(\pm\)8.02\%) &\(\pm\)1.24 (\(\pm\)6.86\%) &\(\pm\)0.0
 
 \begin{table}[ht]
 \begin{center}\small{
-\caption{\label{tab:systs_sig_SR_mgd} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the merged SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption[Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the merged signal region.]{\label{tab:systs_sig_SR_mgd} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the merged SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l }
 \toprule
 \textbf{Signal Point (m\({_{Z'}}\), m\(_s\))} &\textbf{PDF} &\textbf{\(\mu_R\)+\(\mu_F\)} &\textbf{PS}\tabularnewline
@@ -599,7 +604,7 @@ Z+Jets PS & \(\pm\)0.95 (\(\pm\)8.02\%) &\(\pm\)1.24 (\(\pm\)6.86\%) &\(\pm\)0.0
 
 \begin{table}[ht]
 \begin{center}\small{
-\caption{\label{tab:systs_sig_SR_res} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the resolved SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
+\caption[Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the resolved signal region.]{\label{tab:systs_sig_SR_res} Theoretical systematic uncertainties associated with predicted yields of the DH signal model at several \ms and \mZp in the resolved SR, reported both in terms of absolute yield, and (in parentheses) as percent relative to nominal yield.}
 \begin{tabular}{l l l l }
 \toprule
 \textbf{Signal Point (m\({_{Z'}}\), m\(_s\))} &\textbf{PDF} &\textbf{\(\mu_R\)+\(\mu_F\)} &\textbf{PS}\tabularnewline
@@ -626,7 +631,7 @@ For the SM background, the combined systematic uncertainty is comparable in size
 
 \begin{table}[ht]
 \begin{center}
-\caption{\label{tab:rel_impacts_bkg} Comparison of the total statistical uncertainties associated with the total predicted yield of SM background events in each analysis region with the total combined statistical+systematic uncertainties.}
+\caption[Comparison of the statistical uncertainties associated with the total predicted yield of SM background events in each analysis region with the total combined statistical+systematic uncertainties.]{\label{tab:rel_impacts_bkg} Comparison of the statistical uncertainties associated with the total predicted yield of SM background events in each analysis region with the total combined statistical+systematic uncertainties.}
 \begin{tabular}{l l l l }
 \toprule
 \textbf{Analysis Region}& \textbf{Predicted SM Bkg Yield} & \textbf{Stat Unc} & \textbf{Stat+Sys Unc} \tabularnewline
@@ -650,7 +655,7 @@ Resolved CRTT & 77.28 & \(\pm\)2.75 (4\%) & \(\pm\)16.57 (21\%) \tabularnewline
 
 \begin{table}[ht]
 \begin{center}
-\caption{\label{tab:rel_impacts_sig} Comparison of the total statistical uncertainties associated with the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)~\GeV\) in each analysis region with the total combined statistical+systematic uncertainties.}
+\caption[Comparison of the statistical uncertainties associated with the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)~\GeV\) in each analysis region with the total combined statistical+systematic uncertainties.]{\label{tab:rel_impacts_sig} Comparison of the statistical uncertainties associated with the predicted yield of the DH signal process at \((\ms, \mZp)=(210, 2100)~\GeV\) in each analysis region with the total combined statistical+systematic uncertainties.}
 \begin{tabular}{l l l l }
 \toprule
 \textbf{Analysis Region}& \textbf{Predicted SM Bkg Yield} & \textbf{Stat Unc} & \textbf{Stat+Sys Unc} \tabularnewline

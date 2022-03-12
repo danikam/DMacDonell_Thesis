@@ -5,6 +5,9 @@
 *.out
 *.bbl
 *.blg
+*.lof
+*.toc
+*.lot
 */*.aux
 *.xml
 .DS_Store
