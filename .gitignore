@@ -6,5 +6,6 @@
 *.bbl
 *.blg
 */*.aux
+*.xml
 .DS_Store
 DMacDonell_Thesis.pdf
